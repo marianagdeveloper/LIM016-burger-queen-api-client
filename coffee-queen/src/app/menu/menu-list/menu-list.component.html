@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Ítem</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let desayuno of desayunos">
+      <th>{{ desayuno.item }}</th>
+      <td>{{ desayuno.precio | currency }}</td>
+      <td *ngIf="desayuno.stock > 0">{{ desayuno.stock }}</td>
+      <td *ngIf="desayuno.stock == 0">Sin Stock</td>
+      <td>
+        <div class="input-group input-group-sm mb-1">
+          <button type="button" class="btn btn-light btn-sm" (click)="disminuirCantidad(desayuno)">-</button>
+          <input type="text" class="form-control form-control-sm" [(ngModel)]="desayuno.cantidad" (focusout)="verificaCantidadInput(desayuno)">
+          <button type="button" class="btn btn-light btn-sm" (click)="aumentarCantidad(desayuno)">+</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
