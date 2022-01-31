@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu/menu.component';
 import { MenuListComponent } from './menu/menu-list/menu-list.component';
 import { DesayunoComponent } from './menu/desayuno/desayuno.component';
 import { HeaderComponent } from './header/header.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 
 @NgModule({
@@ -19,12 +20,13 @@ import { HeaderComponent } from './header/header.component';
     MenuComponent,
     MenuListComponent,
     DesayunoComponent,
-    HeaderComponent
+    HeaderComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
