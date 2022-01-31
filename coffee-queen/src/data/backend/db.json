@@ -2,49 +2,58 @@
   "products": [
     {
       "id": 1,
-      "name": "laptop",
-      "price": 1599.99,
-      "description": "HP Laptop",
-      "categoryId": 1
+      "name": "Cafe americano",
+      "price": 8,
+      "image": "../../src/assets/images/cafe_americano.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
     },
     {
       "id": 2,
-      "name": "monitor",
-      "price": 199.99,
-      "description": "Monitor LCD LG",
-      "categoryId": 1
+      "name": "Café con leche",
+      "price": 15,
+      "image": "../../src/assets/images/cafe_leche.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
     },
     {
       "id": 3,
-      "name": "mouse",
-      "price": 20,
-      "description": "Razer Gaming Mouse",
-      "categoryId": 2
+      "name": "Sandwich de jamón y queso",
+      "price": 10,
+      "image": "../../src/assets/images/Sandwich de jamon y queso.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
     },
     {
-      "name": "keyboard",
-      "price": "399.00",
-      "description": "gaming keyboard",
-      "categoryId": 2,
-      "id": 4
-    }
-  ],
-  "categories": [
-    {
-      "id": "1",
-      "name": "computers",
-      "description": "computers, laptops, monitors, etc"
+      "id": 4,
+      "name": "Jugo de frutas natural",
+      "price": 12,
+      "image": "../../src/assets/images/Jugo de frutas natural.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
     },
     {
-      "id": "2",
-      "name": "gaming",
-      "description": "mouse, monitors, keyboards etc"
+      "id": 5,
+      "name": "Hamburguesa simple",
+      "price": 18,
+      "image": "../../src/assets/images/Hamburguesas.jpg",
+      "type": "almuerzo",
+      "dateEntry": "21/01/2022 09:24:00"
+    },
+    {
+      "id": 6,
+      "name": "Hamburguesa doble",
+      "price": 18,
+      "image": "../../src/assets/images/Hamburguesas doble.jpg",
+      "type": "almuerzo",
+      "dateEntry": "21/01/2022 09:24:00"
     }
   ],
   "auth": [
     {
-      "token": "a4263hey3",
-      "code": 200
+      "email": "maria@gmail.com",
+      "password": "123456",
+      "token": "a4263hey3"
     }
   ],
   "users": [
@@ -74,6 +83,27 @@
         "cook": false,
         "waiter": true
       }
+    }
+  ],
+  "order": [
+    {
+      "_id": "1",
+      "userId": "1",
+      "client": "Mili",
+      "products": [
+          {
+            "id": 2,
+            "name": "Café con leche",
+            "price": 15,
+            "image": "../../src/assets/images/cafe_leche.jpg",
+            "type": "desayuno",
+            "dateEntry": "21/01/2022 09:24:00"
+          }
+      ],
+      "qty": 2,
+      "status": "pending",
+      "dateEntry": "21/01/2022 09:24:00",
+      "dateProcessed": "21/01/2022 10:00:00"
     }
   ]
 
