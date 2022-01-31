@@ -1,12 +1,20 @@
 @import '../../sass/bootstrap/bootstrap.scss';
+
+section{
+  background-image: url("../../assets/bg-prueba.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 .login {
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    padding: 150px;
 }
 
 .input-group {
-    margin: 10px;
+    padding: 10px;
 }
 
 .btn a {
