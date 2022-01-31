@@ -11,6 +11,7 @@ import { MenuListComponent } from './menu/menu-list/menu-list.component';
 import { DesayunoComponent } from './menu/desayuno/desayuno.component';
 import { HeaderComponent } from './header/header.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     MenuListComponent,
     DesayunoComponent,
     HeaderComponent,
-    PedidosComponent
+    PedidosComponent,
+    BienvenidaComponent
   ],
   imports: [
     BrowserModule,
