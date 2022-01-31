@@ -1,12 +1,15 @@
-.login{
-  display: flex;
-  justify-content: center;
-  margin-top: 150px;
+@import '../../sass/bootstrap/bootstrap.scss';
+.login {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
 }
-.input-group{
-  margin: 10px;
+
+.input-group {
+    margin: 10px;
 }
-.btn a{
-  text-decoration: none;
-  color: azure;
+
+.btn a {
+    text-decoration: none;
+    color: azure;
 }
