@@ -1,0 +1,110 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Cafe americano",
+      "price": 8,
+      "image": "../../src/assets/images/cafe_americano.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
+    },
+    {
+      "id": 2,
+      "name": "Café con leche",
+      "price": 15,
+      "image": "../../src/assets/images/cafe_leche.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
+    },
+    {
+      "id": 3,
+      "name": "Sandwich de jamón y queso",
+      "price": 10,
+      "image": "../../src/assets/images/Sandwich de jamon y queso.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
+    },
+    {
+      "id": 4,
+      "name": "Jugo de frutas natural",
+      "price": 12,
+      "image": "../../src/assets/images/Jugo de frutas natural.jpg",
+      "type": "desayuno",
+      "dateEntry": "21/01/2022 09:24:00"
+    },
+    {
+      "id": 5,
+      "name": "Hamburguesa simple",
+      "price": 18,
+      "image": "../../src/assets/images/Hamburguesas.jpg",
+      "type": "almuerzo",
+      "dateEntry": "21/01/2022 09:24:00"
+    },
+    {
+      "id": 6,
+      "name": "Hamburguesa doble",
+      "price": 18,
+      "image": "../../src/assets/images/Hamburguesas doble.jpg",
+      "type": "almuerzo",
+      "dateEntry": "21/01/2022 09:24:00"
+    }
+  ],
+  "auth": [
+    {
+      "email": "maria@gmail.com",
+      "password": "123456",
+      "token": "a4263hey3"
+    }
+  ],
+  "users": [
+    {
+      "_id": "1",
+      "email": "maria@gmail.com",
+      "roles": {
+        "admin": true,
+        "cook": false,
+        "waiter": false
+      }
+    },
+    {
+      "_id": "2",
+      "email": "paco@gmail.com",
+      "roles": {
+        "admin": false,
+        "cook": true,
+        "waiter": false
+      }
+    },
+    {
+      "_id": "3",
+      "email": "manu@gmail.com",
+      "roles": {
+        "admin": false,
+        "cook": false,
+        "waiter": true
+      }
+    }
+  ],
+  "order": [
+    {
+      "_id": "1",
+      "userId": "1",
+      "client": "Mili",
+      "products": [
+          {
+            "id": 2,
+            "name": "Café con leche",
+            "price": 15,
+            "image": "../../src/assets/images/cafe_leche.jpg",
+            "type": "desayuno",
+            "dateEntry": "21/01/2022 09:24:00"
+          }
+      ],
+      "qty": 2,
+      "status": "pending",
+      "dateEntry": "21/01/2022 09:24:00",
+      "dateProcessed": "21/01/2022 10:00:00"
+    }
+  ]
+
+}
