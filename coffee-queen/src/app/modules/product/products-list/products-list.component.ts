@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductosService } from './../../../../data/services/api/productos.service';
+import { ProductosService } from '../../../data/services/api/productos.service';
+
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ProductsListComponent implements OnInit {
   public products: ArrayProducts[];
 
   constructor(
-    private productService:ProductosService
+    private productService: ProductosService
   ) {
     this.productService.getAllProducts().subscribe(r=>{
       if(!r.error){

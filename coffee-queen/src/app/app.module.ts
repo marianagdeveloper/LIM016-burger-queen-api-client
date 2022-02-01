@@ -15,6 +15,9 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { SkeletonComponent } from './layout/skeleton/skeleton.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     HeaderComponent,
     PedidosComponent,
     BienvenidaComponent,
+    SkeletonComponent,
+    FooterComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

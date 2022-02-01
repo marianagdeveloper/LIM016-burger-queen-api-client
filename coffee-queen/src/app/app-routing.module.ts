@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
+
 import { MenuComponent } from './menu/menu/menu.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { LoginComponent } from './login/login.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 
 
 const routes: Routes = [
