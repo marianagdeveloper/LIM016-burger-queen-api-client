@@ -12,7 +12,9 @@ import { DesayunoComponent } from './menu/desayuno/desayuno.component';
 import { HeaderComponent } from './header/header.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,22 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
     DesayunoComponent,
     HeaderComponent,
     PedidosComponent,
-    BienvenidaComponent
+    BienvenidaComponent,
   ],
   imports: [
     BrowserModule,
+    CoreModule,
+    SharedModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy,
+    },
+  ],
+
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
