@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'pedidos', component: PedidosComponent},
 
 ];
-
+//{useHash:true}
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

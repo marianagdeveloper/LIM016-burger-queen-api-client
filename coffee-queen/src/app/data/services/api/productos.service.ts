@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { catchError, map } from 'rxjs';
+import { catchError, map,Observable } from 'rxjs';
 import { Apiclass } from 'src/data/schema/ApiClass.class';
-
+import {Product} from '../../../app/menu/menu/menu.component'
 @Injectable({
   providedIn: 'root',
 })
