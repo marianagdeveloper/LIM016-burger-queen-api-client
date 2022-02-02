@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { catchError, map,Observable } from 'rxjs';
-import { Apiclass } from 'src/data/schema/ApiClass.class';
-import {Product} from '../../../app/menu/menu/menu.component'
+import { Apiclass } from '../../schema/ApiClass.class';
+//import {Product} from '../../../modules/product/product.module'
 @Injectable({
   providedIn: 'root',
 })
 export class ProductosService extends Apiclass {
-  getAllProducts(): Observable<{
+/*   getAllProducts(): Observable<{
     error: boolean;
     msg: string;
     data: Product[];
@@ -19,5 +19,5 @@ export class ProductosService extends Apiclass {
       }),
       catchError(this.error)
     );
-  }
+  } */
 }

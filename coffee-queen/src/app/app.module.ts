@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu/menu.component';
 import { MenuListComponent } from './menu/menu-list/menu-list.component';
 import { DesayunoComponent } from './menu/desayuno/desayuno.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './layout/header/header.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { CoreModule } from './core/core.module';
@@ -17,7 +17,8 @@ import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { ProductModule } from './modules/product/product.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     CoreModule,
     SharedModule,
     FormsModule,
