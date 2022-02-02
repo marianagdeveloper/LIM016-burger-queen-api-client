@@ -10,7 +10,7 @@ import { ProductosService } from '../../../data/services/api/productos.service';
 })
 export class ProductsListComponent implements OnInit {
 
-  public products: ArrayProducts[];
+/*   public products: ArrayProducts[];
 
   constructor(
     private productService: ProductosService
@@ -21,7 +21,8 @@ export class ProductsListComponent implements OnInit {
       }
     })
   }
-
+  titulo="mili";
+ */
   ngOnInit(): void {
   }
 
