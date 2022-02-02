@@ -5,13 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu/menu.component';
-import { MenuListComponent } from './menu/menu-list/menu-list.component';
-import { DesayunoComponent } from './menu/desayuno/desayuno.component';
+
 import { HeaderComponent } from './layout/header/header.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
-import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
@@ -30,18 +26,11 @@ import { ProductModule } from './modules/product/product.module';
     ],
   declarations: [
     AppComponent,
-   /*  LoginComponent,
-    MenuComponent,
-    MenuListComponent,
-    DesayunoComponent, */
     HeaderComponent,
-   /*  PedidosComponent,
-    BienvenidaComponent, */
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
   ],
-
   providers: [
     {
       provide: LocationStrategy,
