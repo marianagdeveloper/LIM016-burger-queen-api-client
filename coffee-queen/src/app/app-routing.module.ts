@@ -6,6 +6,11 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/product',
+    pathMatch: 'full'
+  },
+  {
     path:'',
   component: SkeletonComponent,
   children: [

@@ -14,7 +14,6 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { ProductModule } from './modules/product/product.module';
 
 @NgModule({
   declarations: [
@@ -25,12 +24,11 @@ import { ProductModule } from './modules/product/product.module';
     SidebarComponent,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     CoreModule,
-    SharedModule,
-    //ProductModule,
     FormsModule,
     AppRoutingModule,
+    SharedModule,
   ],
   providers: [
     {
