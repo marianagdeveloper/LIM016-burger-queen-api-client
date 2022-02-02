@@ -21,26 +21,27 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ProductModule } from './modules/product/product.module';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+      CoreModule,
+      SharedModule,
+      FormsModule,
+      AppRoutingModule,
+    ],
   declarations: [
     AppComponent,
-    LoginComponent,
+   /*  LoginComponent,
     MenuComponent,
     MenuListComponent,
-    DesayunoComponent,
+    DesayunoComponent, */
     HeaderComponent,
-    PedidosComponent,
-    BienvenidaComponent,
+   /*  PedidosComponent,
+    BienvenidaComponent, */
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
   ],
-  imports: [
-  BrowserModule,
-    CoreModule,
-    SharedModule,
-    FormsModule,
-    AppRoutingModule,
-  ],
+
   providers: [
     {
       provide: LocationStrategy,

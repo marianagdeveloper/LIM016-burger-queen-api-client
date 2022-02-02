@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
@@ -12,7 +12,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ProductDetailComponent,
   ],
   imports: [
- /*  CommonModule, */
+  CommonModule, 
     SharedModule,
     ProductRoutingModule
   ]
