@@ -16,14 +16,14 @@ import { TitleH1Component } from './components/title-h1/title-h1.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule,
+    //CommonModule,
     TitleH1Component
   ],
   imports:[
   FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    //CommonModule
   ]
 })
 export class SharedModule { 
