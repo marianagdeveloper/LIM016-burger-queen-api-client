@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-//import { TitleTComponent } from './components/title-t/title-t.component';
-
-//import * as fromComponents from "./components";
-
-//import * as fromComponents from "./components";
 import { CardProductComponent } from './components/card/card-product/card-product.component';
 import { TitleH1Component } from './components/title-h1/title-h1.component';
 
@@ -27,7 +22,7 @@ import { TitleH1Component } from './components/title-h1/title-h1.component';
   FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    //CommonModule
+    CommonModule
   ]
 })
 export class SharedModule { 
