@@ -11,7 +11,6 @@ import { TitleH1Component } from '../../shared/components/title-h1/title-h1.comp
   declarations: [
     ProductsListComponent,
     ProductDetailComponent,
-    //TitleH1Component
   ],
   imports: [
   //CommonModule, 

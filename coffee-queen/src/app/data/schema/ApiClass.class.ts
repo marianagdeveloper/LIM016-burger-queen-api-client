@@ -1,9 +1,10 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { of } from 'rxjs';
+
 export class Apiclass {
   public url = environment.uri;
-  public isProducction = environment.production;
+  public isProduction = environment.production;
 
   constructor(protected http: HttpClient) {}
   error(error: HttpErrorResponse) {

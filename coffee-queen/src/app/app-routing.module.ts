@@ -6,16 +6,31 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 
 const routes: Routes = [
   {
-    path:'',
-  component: SkeletonComponent,
-  children: [
-    {
-    path:'',
-    loadChildren:()=>
-    import ('./modules/product/product.module').then((m)=> m.ProductModule)
-    }
-  ]
-}
+    path: '',
+    redirectTo: '/panel/product',
+    pathMatch: 'full'
+  },
+  {
+    path:'panel',
+    component: SkeletonComponent,
+    children: [
+      {
+        path:'product',
+        loadChildren:()=>
+        import ('./modules/product/product.module').then((m)=> m.ProductModule)
+      },
+      {
+        path: '**',
+        redirectTo: '/panel/product',
+        pathMatch: 'full'
+      }
+      ]
+  },
+  {
+    path: '**',
+    redirectTo: '/panel/product',
+    pathMatch: 'full'
+  }
 ];
 //{useHash:true}
 @NgModule({

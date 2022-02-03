@@ -5,12 +5,12 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 const routes: Routes = [
   { path: '',
- component: ProductsListComponent
+    component: ProductsListComponent
  },
-{
+  {
     path: 'detail',
- component: ProductDetailComponent
-}
+    component: ProductDetailComponent
+  }
 ];
 //{useHash:true}
 @NgModule({
