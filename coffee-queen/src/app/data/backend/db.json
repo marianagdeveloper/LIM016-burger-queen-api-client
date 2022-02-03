@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Cafe americano",
       "price": 8,
-      "image": "../../src/assets/images/cafe_americano.jpg",
+      "image": "../../assets/images/cafe_americano.jpg",
       "type": "desayuno",
       "dateEntry": "21/01/2022 09:24:00"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "name": "Café con leche",
       "price": 15,
-      "image": "../../src/assets/images/cafe_leche.jpg",
+      "image": "../../assets/images/cafe_leche.jpg",
       "type": "desayuno",
       "dateEntry": "21/01/2022 09:24:00"
     },
@@ -20,7 +20,7 @@
       "id": 3,
       "name": "Sandwich de jamón y queso",
       "price": 10,
-      "image": "../../src/assets/images/Sandwich de jamon y queso.jpg",
+      "image": "../../assets/images/Sandwich de jamon y queso.jpg",
       "type": "desayuno",
       "dateEntry": "21/01/2022 09:24:00"
     },
@@ -28,7 +28,7 @@
       "id": 4,
       "name": "Jugo de frutas natural",
       "price": 12,
-      "image": "../../src/assets/images/Jugo de frutas natural.jpg",
+      "image": "../../assets/images/Jugo de frutas natural.jpg",
       "type": "desayuno",
       "dateEntry": "21/01/2022 09:24:00"
     },
@@ -36,7 +36,7 @@
       "id": 5,
       "name": "Hamburguesa simple",
       "price": 18,
-      "image": "../../src/assets/images/Hamburguesas.jpg",
+      "image": "../../assets/images/Hamburguesas.jpg",
       "type": "almuerzo",
       "dateEntry": "21/01/2022 09:24:00"
     },
@@ -44,7 +44,7 @@
       "id": 6,
       "name": "Hamburguesa doble",
       "price": 18,
-      "image": "../../src/assets/images/Hamburguesas doble.jpg",
+      "image": "../../assets/images/Hamburguesas doble.jpg",
       "type": "almuerzo",
       "dateEntry": "21/01/2022 09:24:00"
     }

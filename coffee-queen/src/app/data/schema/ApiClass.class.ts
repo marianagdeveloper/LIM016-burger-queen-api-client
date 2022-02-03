@@ -6,7 +6,7 @@ export class Apiclass {
   public url = environment.uri;
   public isProduction = environment.production;
 
-  constructor(protected http: HttpClient) {}
+  constructor(public http: HttpClient) {}
   error(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
