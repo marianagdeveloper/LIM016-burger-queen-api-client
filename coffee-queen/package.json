@@ -1,4 +1,5 @@
 {
+
     "name": "coffee-queen",
     "version": "0.0.0",
     "scripts": {
@@ -9,7 +10,7 @@
         "build:prod": "ng build --c=prod",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "server": "node src/app/data/backend/server.js"
+        "server": "json-server --watch ./src/app/data/backend/db.json"
     },
     "private": true,
     "dependencies": {
