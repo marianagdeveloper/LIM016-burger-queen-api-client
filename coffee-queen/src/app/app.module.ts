@@ -25,12 +25,12 @@ import { ProductModule } from './modules/product/product.module';
     SidebarComponent,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     CoreModule,
-    SharedModule,
-    //ProductModule,
     FormsModule,
     AppRoutingModule,
+    SharedModule,
+    //ProductModule
   ],
   providers: [
     {

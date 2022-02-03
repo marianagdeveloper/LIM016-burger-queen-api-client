@@ -8,7 +8,7 @@ import { ITitleH1 } from './title-h1.metadata';
 })
 export class TitleH1Component implements OnInit {
   @Input() data: ITitleH1 ={
-    text: '',
+    text: 'Lista de Productos',
     type: 'primary'
   }
   constructor() { }
