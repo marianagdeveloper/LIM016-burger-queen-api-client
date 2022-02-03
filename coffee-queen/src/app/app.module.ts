@@ -17,19 +17,21 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ProductModule } from './modules/product/product.module';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-      CoreModule,
-      SharedModule,
-      FormsModule,
-      AppRoutingModule,
-    ],
+ 
   declarations: [
     AppComponent,
     HeaderComponent,
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
+  ],
+  imports: [
+    BrowserModule,
+    CoreModule,
+    FormsModule,
+    AppRoutingModule,
+    SharedModule,
+    //ProductModule
   ],
   providers: [
     {
