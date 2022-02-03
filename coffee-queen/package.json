@@ -9,7 +9,7 @@
         "build:prod": "ng build --c=prod",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "server": "json-server --watch ./src/app/data/backend/db.json"
+        "server": "node src/app/data/backend/server.js"
     },
     "private": true,
     "dependencies": {
@@ -32,6 +32,7 @@
         "@types/jasmine": "~3.10.0",
         "@types/node": "^12.11.1",
         "jasmine-core": "~3.10.0",
+        "json-server": "^0.17.0",
         "karma": "~6.3.0",
         "karma-chrome-launcher": "~3.1.0",
         "karma-coverage": "~2.1.0",
