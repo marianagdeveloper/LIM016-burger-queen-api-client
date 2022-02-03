@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../data/services/api/product.service';
 import { ICardProduct } from '../../../shared/components/card/card-product/card-product.metadata';
@@ -33,21 +34,12 @@ export class ProductsListComponent implements OnInit {
   ]; */
 
   // public products: ArrayProducts[];
+  constructor(public productService: ProductService) {}
 
-  /* constructor(
-    private productService: ProductService
-  ) {
-    this.productService.getAllProducts().subscribe(r=>{
-      if(!r.error){
-        this.products=r.data;
-      } else{
-        console.log(`Aqui${r.error}`);
-
-      }
-    })
-  } */
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.productService.getAllProducts().subscribe(data => {
+      this.products = data;
+    });
   }
 
 }

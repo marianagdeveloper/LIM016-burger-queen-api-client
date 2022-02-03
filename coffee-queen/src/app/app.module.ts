@@ -15,6 +15,7 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ProductModule } from './modules/product/product.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ProductModule } from './modules/product/product.module';
     FormsModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule
     //ProductModule
   ],
   providers: [
