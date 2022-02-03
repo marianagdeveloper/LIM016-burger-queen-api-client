@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
+import { LoginUserComponent } from './modules/login/login-user/login-user.component';
 
 
 const routes: Routes = [
@@ -9,6 +10,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/panel/product',
     pathMatch: 'full'
+  },
+  {
+    path:'login',
+    component: LoginUserComponent,
   },
   {
     path:'panel',
@@ -19,6 +24,7 @@ const routes: Routes = [
         loadChildren:()=>
         import ('./modules/product/product.module').then((m)=> m.ProductModule)
       },
+     
       {
         path: '**',
         redirectTo: '/panel/product',
@@ -35,6 +41,6 @@ const routes: Routes = [
 //{useHash:true}
 @NgModule({
   imports: [RouterModule.forRoot(routes,/* {useHash:true} */)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }
