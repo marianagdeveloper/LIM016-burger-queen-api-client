@@ -50,13 +50,24 @@
     ],
     "auth": [{
         "email": "maria@gmail.com",
-        "password": "123456"
+        "password": "maria"
 
-    }],
+    },
+    {
+      "email": "paco@gmail.com",
+      "password": "paco"
+
+  },
+  {
+    "email": "manu@gmail.com",
+    "password": "manu"
+
+}
+  ],
     "users": [{
             "id": "1",
             "email": "maria@gmail.com",
-            "password": "111111",
+            "password": "maria",
             "roles": {
                 "admin": true,
                 "cook": false,
@@ -66,7 +77,7 @@
         {
             "id": "2",
             "email": "paco@gmail.com",
-            "password": "222222",
+            "password": "paco",
             "roles": {
                 "admin": false,
                 "cook": true,
@@ -76,7 +87,7 @@
         {
             "id": "3",
             "email": "manu@gmail.com",
-            "password": "333333",
+            "password": "manu",
             "roles": {
                 "admin": false,
                 "cook": false,

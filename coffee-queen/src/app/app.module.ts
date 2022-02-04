@@ -17,15 +17,19 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ProductModule } from './modules/product/product.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './modules/login/login.module';
+import { CafesModule } from './modules/menu/cafes/cafes.module';
+
+
 
 @NgModule({
- 
+
   declarations: [
     AppComponent,
     HeaderComponent,
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
+
   ],
   imports: [
   BrowserModule,
@@ -34,7 +38,8 @@ import { LoginModule } from './modules/login/login.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    // CafesModule
   ],
   providers: [
     {

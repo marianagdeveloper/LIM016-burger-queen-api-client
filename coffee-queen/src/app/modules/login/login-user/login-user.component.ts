@@ -16,23 +16,51 @@ export class LoginUserComponent implements OnInit {
   };
 
   public loginForm!: FormGroup;
-  constructor(private formBuilder : FormBuilder, public loginService: LoginService, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    public loginService: LoginService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group(this.users)
+    this.loginForm = this.formBuilder.group(this.users);
   }
 
   getUserCredentials() {
-    this.loginService.login().subscribe( res => {
-      const credentials = res.find((a:any) => {
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+    this.loginService.login().subscribe((res) => {
+      let userValidate: any;
+      const credentials = res.find((a: any) => {
+        const emailUser =  this.loginForm.value.email;
+        const passwordUser =  this.loginForm.value.password;
+        if (a.email === emailUser && a.password === passwordUser) {
+          userValidate = a.email;
+        }
+        return a.email === emailUser && a.password === passwordUser
       });
-      if (credentials){
-        alert("Login success");
+      if (credentials) {
+        alert('Login success');
         this.loginForm.reset();
-        this.router.navigate(['panel/product']);
-      }else{
-        alert("user not found");
+
+        this.loginService.rolUser().subscribe((res) => {
+          let rol = res.filter((a: any) => {
+            if (a.email == userValidate) {
+              return a.roles;
+            }
+          });
+
+          if (rol[0].roles.admin) {
+            alert('Rol Admin');
+            this.router.navigate(['panel/product']);
+          } else if (rol[0].roles.cook) {
+            alert('Rol Cocinero');
+            this.router.navigate(['panel/product']);
+          } else if (rol[0].roles.waiter) {
+            alert('Rol Mesero');
+            this.router.navigate(['panel/product']);
+          }
+        });
+      } else {
+        alert('Usuario y/o contraseña inválido');
       }
     });
   }
