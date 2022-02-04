@@ -4,7 +4,7 @@
             "name": "Cafe americano",
             "price": 8,
             "image": "../../assets/images/cafe_americano.jpg",
-            "type": "desayuno",
+            "type": "cafes",
             "dateEntry": "21/01/2022 09:24:00"
         },
         {
@@ -12,7 +12,7 @@
             "name": "Café con leche",
             "price": 15,
             "image": "../../assets/images/cafe_leche.jpg",
-            "type": "desayuno",
+            "type": "cafes",
             "dateEntry": "21/01/2022 09:24:00"
         },
         {
@@ -20,7 +20,7 @@
             "name": "Sandwich de jamón y queso",
             "price": 10,
             "image": "../../assets/images/Sandwich de jamon y queso.jpg",
-            "type": "desayuno",
+            "type": "hamburguers",
             "dateEntry": "21/01/2022 09:24:00"
         },
         {
@@ -28,23 +28,55 @@
             "name": "Jugo de frutas natural",
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.jpg",
-            "type": "desayuno",
+            "type": "juices",
             "dateEntry": "21/01/2022 09:24:00"
         },
         {
             "id": 5,
-            "name": "Hamburguesa simple",
-            "price": 18,
-            "image": "../../assets/images/Hamburguesas.jpg",
-            "type": "almuerzo",
+            "name": "Jugo de fresa",
+            "price": 12,
+            "image": "../../assets/images/Jugo de frutas natural.jpg",
+            "type": "juices",
             "dateEntry": "21/01/2022 09:24:00"
         },
         {
             "id": 6,
+            "name": "Hamburguesa simple",
+            "price": 18,
+            "image": "../../assets/images/Hamburguesas.jpg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 7,
             "name": "Hamburguesa doble",
             "price": 18,
             "image": "../../assets/images/Hamburguesas doble.jpg",
-            "type": "almuerzo",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 8,
+            "name": "Agua 500ml",
+            "price": 18,
+            "image": "../../assets/images/Agua 500ml.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 9,
+            "name": "Agua 750ml",
+            "price": 18,
+            "image": "../../assets/images/Agua 750ml.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 10,
+            "name": "Bebida gaseosa 500ml",
+            "price": 18,
+            "image": "../../assets/images/Bebida gaseosa 500ml.jpg",
+            "type": "drinks",
             "dateEntry": "21/01/2022 09:24:00"
         }
     ],

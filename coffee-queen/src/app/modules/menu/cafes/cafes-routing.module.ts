@@ -6,7 +6,7 @@ import { CafesListComponent } from './cafes-list/cafes-list.component';
 const routes: Routes = [
 
   {
-    path: 'cafes',
+    path: '',
     component: CafesListComponent
   }
 ];
