@@ -1,2 +1,13 @@
-<p>cafes-list works!</p>
-
+<div class="row">
+  <div class="col-12">
+    <p>Lista de Cafés/tés</p>
+  </div>
+  <div class="col-12 d-flex flex-wrap">
+    <app-card-product
+      [data]="product"
+      *ngFor="let product of products"
+      class="col-12 col-md-6 col-xl-4"
+    >
+    </app-card-product>
+  </div>
+</div>

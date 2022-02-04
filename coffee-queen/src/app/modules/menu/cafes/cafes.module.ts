@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CafesListComponent } from './cafes-list/cafes-list.component';
 import { CafesRoutingModule } from './cafes-routing.module';
-
+import { ProductService } from 'src/app/data/services/api/product.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
     CafesListComponent
   ],
+  providers: [
+    ProductService
+  ],
   imports: [
-    CommonModule,
+    SharedModule,
     CafesRoutingModule
   ],
   exports: [
