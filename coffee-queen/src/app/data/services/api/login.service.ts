@@ -18,4 +18,9 @@ export class LoginService {
   login(): Observable<any>{
     return this.http.get('http://localhost:3000/auth');
   }
+
+  rolUser(): Observable<any>{
+    return this.http.get('http://localhost:3000/users');
+  }
+
 }
