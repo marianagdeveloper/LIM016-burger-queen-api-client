@@ -83,7 +83,6 @@
     "auth": [{
         "email": "maria@gmail.com",
         "password": "maria"
-
     },
     {
       "email": "paco@gmail.com",

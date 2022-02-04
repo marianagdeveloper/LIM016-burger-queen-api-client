@@ -50,13 +50,13 @@ export class LoginUserComponent implements OnInit {
 
           if (rol[0].roles.admin) {
             alert('Rol Admin');
-            this.router.navigate(['panel/product']);
+            this.router.navigate(['product']);
           } else if (rol[0].roles.cook) {
             alert('Rol Cocinero');
-            this.router.navigate(['panel/product']);
+            this.router.navigate(['product']);
           } else if (rol[0].roles.waiter) {
             alert('Rol Mesero');
-            this.router.navigate(['panel/product']);
+            this.router.navigate(['product']);
           }
         });
       } else {
