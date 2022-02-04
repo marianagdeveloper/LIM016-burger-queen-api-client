@@ -9,7 +9,7 @@ import { LoginUserComponent } from './modules/login/login-user/login-user.compon
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/panel/product',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
 
   {
-    path:'panel',
+    path:'',
     component: SkeletonComponent,
     children: [
       {
@@ -34,14 +34,14 @@ const routes: Routes = [
 
       {
         path: '**',
-        redirectTo: '/panel/product',
+        redirectTo: '/login',
         pathMatch: 'full'
       }
       ]
   },
   {
     path: '**',
-    redirectTo: '/panel/product',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
