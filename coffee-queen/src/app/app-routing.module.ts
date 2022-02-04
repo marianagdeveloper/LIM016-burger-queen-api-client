@@ -5,6 +5,7 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { LoginUserComponent } from './modules/login/login-user/login-user.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -15,6 +16,7 @@ const routes: Routes = [
     path:'login',
     component: LoginUserComponent,
   },
+
   {
     path:'panel',
     component: SkeletonComponent,
@@ -24,7 +26,12 @@ const routes: Routes = [
         loadChildren:()=>
         import ('./modules/product/product.module').then((m)=> m.ProductModule)
       },
-     
+      {
+        path:'cafes',
+        loadChildren:()=>
+        import ('./modules/menu/cafes/cafes.module').then((m)=> m.CafesModule)
+      },
+
       {
         path: '**',
         redirectTo: '/panel/product',

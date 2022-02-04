@@ -32,10 +32,7 @@ export class LoginUserComponent implements OnInit {
       const credentials = res.find((a: any) => {
         const emailUser =  this.loginForm.value.email;
         const passwordUser =  this.loginForm.value.password;
-        if (
-          a.email === emailUser &&
-          a.password === passwordUser
-        ) {
+        if (a.email === emailUser && a.password === passwordUser) {
           userValidate = a.email;
         }
         return a.email === emailUser && a.password === passwordUser
