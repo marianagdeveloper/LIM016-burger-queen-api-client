@@ -31,7 +31,16 @@ const routes: Routes = [
         loadChildren:()=>
         import ('./modules/menu/cafes/cafes.module').then((m)=> m.CafesModule)
       },
-
+      {
+        path:'snacks',
+        loadChildren:()=>
+        import ('./modules/menu/snacks/snacks.module').then((m)=> m.SnacksModule)
+      },
+      {
+        path:'desserts',
+        loadChildren:()=>
+        import ('./modules/menu/desserts/desserts.module').then((m)=> m.DessertsModule)
+      },
       {
         path: '**',
         redirectTo: '/login',
