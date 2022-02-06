@@ -1,7 +1,7 @@
 {
     "products": [{
             "id": 1,
-            "name": "Cafe americano",
+            "name": "Café americano",
             "price": 8,
             "image": "../../assets/images/cafe_americano.jpg",
             "type": "cafes",
@@ -35,7 +35,7 @@
             "id": 5,
             "name": "Jugo de fresa",
             "price": 12,
-            "image": "../../assets/images/Jugo de frutas natural.jpg",
+            "image": "../../assets/images/jugo de fresa.jpg",
             "type": "juices",
             "dateEntry": "21/01/2022 09:24:00"
         },
@@ -49,12 +49,13 @@
         },
         {
             "id": 7,
-            "name": "Hamburguesa doble",
+            "name": "Hamburguesa",
             "price": 18,
-            "image": "../../assets/images/Hamburguesas doble.jpg",
+            "image": "../../assets/images/Hamburguesas.jpg",
             "type": "hamburguers",
             "dateEntry": "21/01/2022 09:24:00"
         },
+
         {
             "id": 8,
             "name": "Agua 500ml",
@@ -81,6 +82,30 @@
         },
         {
           "id": 11,
+          "name": "Té verde",
+          "price": 15,
+          "image": "../../assets/images/te_verde.jpg",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00"
+      },
+      {
+        "id": 12,
+        "name": "Té negro",
+        "price": 15,
+        "image": "../../assets/images/te_negro.jpg",
+        "type": "cafes",
+        "dateEntry": "21/01/2022 09:24:00"
+      },
+      {
+        "id": 13,
+        "name": "Manzanilla",
+        "price": 15,
+        "image": "../../assets/images/manzanilla.jpg",
+        "type": "cafes",
+        "dateEntry": "21/01/2022 09:24:00"
+      },
+        {
+          "id": 14,
           "name": "Brownie(unidad)",
           "price": 6,
           "image": "../../assets/images/brownie.png",
@@ -88,7 +113,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 12,
+          "id": 15,
           "name": "Torta Helada(porción)",
           "price": 7,
           "image": "../../assets/images/tortaHelada.png",
@@ -96,7 +121,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 13,
+          "id": 16,
           "name": "Helado de lúcuma",
           "price": 4,
           "image": "../../assets/images/helado-de-lucuma.jpg",
@@ -104,7 +129,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 14,
+          "id": 17,
           "name": "Helado de vainilla",
           "price": 4,
           "image": "../../assets/images/helado-de-vainilla.png",
@@ -112,7 +137,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 15,
+          "id": 18,
           "name": "Helado de chocolate",
           "price": 4,
           "image": "../../assets/images/helado-de-chocolate.jpg",
@@ -120,7 +145,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 16,
+          "id": 19,
           "name": "Helado de fresa",
           "price": 4,
           "image": "../../assets/images/helado-de-fresa.png",
@@ -128,7 +153,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 17,
+          "id": 20,
           "name": "Keke de zanahoria(porción)",
           "price": 8,
           "image": "../../assets/images/keke-de-zanahoria.png",
@@ -136,7 +161,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 18,
+          "id": 21,
           "name": "Crema volteada(porción)",
           "price": 7,
           "image": "../../assets/images/crema-volteada.png",
@@ -144,7 +169,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 19,
+          "id": 22,
           "name": "Keke de plátano(porción)",
           "price": 8,
           "image": "../../assets/images/keke-de-platano.jpg",
@@ -152,7 +177,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 20,
+          "id": 23,
           "name": "Alfajores(unidad)",
           "price": 3.5,
           "image": "../../assets/images/alfajores.png",
@@ -160,7 +185,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 21,
+          "id": 24,
           "name": "Papas Fritas",
           "price": 12,
           "image": "../../assets/images/Papas fritas.jpg",
@@ -168,7 +193,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 22,
+          "id": 25,
           "name": "Camotes Fritos",
           "price": 15,
           "image": "../../assets/images/camotes-fritos.jpg",
@@ -176,7 +201,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 23,
+          "id": 26,
           "name": "Yucas Fritas",
           "price": 15,
           "image": "../../assets/images/yucas-fritas.png",
@@ -184,7 +209,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 24,
+          "id": 27,
           "name": "Frutos Secos",
           "price": 10,
           "image": "../../assets/images/frutos-secos.jpg",
@@ -192,7 +217,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 25,
+          "id": 28,
           "name": "Maní Salado",
           "price": 4,
           "image": "../../assets/images/mani-salado.jpg",
@@ -200,7 +225,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 26,
+          "id": 29,
           "name": "Maní confitado",
           "price": 4,
           "image": "../../assets/images/mani-confitado.jpg",
@@ -208,7 +233,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 27,
+          "id": 30,
           "name": "Empanada de carne",
           "price": 6,
           "image": "../../assets/images/empanada-de-carne.jpg",
@@ -216,7 +241,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 28,
+          "id": 31,
           "name": "Empanada de pollo",
           "price": 6,
           "image": "../../assets/images/empanada-de-pollo.jpg",
@@ -224,7 +249,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 29,
+          "id": 32,
           "name": "Tequeños",
           "price": 8,
           "image": "../../assets/images/tequeños.jpg",
@@ -232,7 +257,7 @@
           "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 30,
+          "id": 33,
           "name": "Granola",
           "price": 6,
           "image": "../../assets/images/granola.jpg",
@@ -242,20 +267,20 @@
 
     ],
     "auth": [{
-        "email": "maria@gmail.com",
-        "password": "maria"
-    },
-    {
-      "email": "paco@gmail.com",
-      "password": "paco"
+            "email": "maria@gmail.com",
+            "password": "maria"
+        },
+        {
+            "email": "paco@gmail.com",
+            "password": "paco"
 
-  },
-  {
-    "email": "manu@gmail.com",
-    "password": "manu"
+        },
+        {
+            "email": "manu@gmail.com",
+            "password": "manu"
 
-}
-  ],
+        }
+    ],
     "users": [{
             "id": "1",
             "email": "maria@gmail.com",

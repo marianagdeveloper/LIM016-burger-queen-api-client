@@ -54,12 +54,38 @@
       <img src="../../../assets/avatar-mesero.png" alt="" width="32" height="32" class="rounded-circle me-2">
       <strong>Rosita J.</strong>
     </a>
-    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-      <li><a class="dropdown-item" href="#">New project...</a></li>
-      <li><a class="dropdown-item" href="#">Settings</a></li>
-      <li><a class="dropdown-item" href="#">Profile</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Sign out</a></li>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item bg-nav">
+            <a href="#" class="nav-link text-white" aria-current="page">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg> Cafes/Te
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link text-white">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg> Jugos
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link text-white" [routerLink]="['/panel/detail']">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg> Bebidas
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link text-white" [routerLink]="['/panel/product']">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg> Panes
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link text-white" [routerLink]="['/panel/product']">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg> Snacks
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link text-white" [routerLink]="['/panel/product']">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg> Postres
+            </a>
+        </li>
     </ul>
   </div> -->
 </div>

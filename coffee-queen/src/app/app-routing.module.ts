@@ -46,6 +46,22 @@ const routes: Routes = [
         import ('./modules/orders/orders.module').then((m)=> m.OrdersModule)
       },
       {
+        path:'drinks',
+        loadChildren:()=>
+        import ('./modules/menu/drinks/drinks.module').then((m)=> m.DrinksModule)
+      },
+      {
+        path:'burgers',
+        loadChildren:()=>
+        import ('./modules/menu/burgers/burgers.module').then((m)=> m.BurgersModule)
+      },
+      {
+        path:'juices',
+        loadChildren:()=>
+        import ('./modules/menu/juices/juices.module').then((m)=> m.JuicesModule)
+      },
+
+      {
         path: '**',
         redirectTo: '/login',
         pathMatch: 'full'

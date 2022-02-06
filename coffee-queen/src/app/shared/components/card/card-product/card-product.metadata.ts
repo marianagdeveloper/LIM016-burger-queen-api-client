@@ -2,5 +2,5 @@ export interface ICardProduct {
   name: string,
   price: number,
   image: string,
-  type: string
+  type: string,
 }
