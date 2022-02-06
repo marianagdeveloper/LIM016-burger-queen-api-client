@@ -32,6 +32,16 @@ const routes: Routes = [
         import ('./modules/menu/cafes/cafes.module').then((m)=> m.CafesModule)
       },
       {
+        path:'drinks',
+        loadChildren:()=>
+        import ('./modules/menu/drinks/drinks.module').then((m)=> m.DrinksModule)
+      },
+      {
+        path:'burgers',
+        loadChildren:()=>
+        import ('./modules/menu/burgers/burgers.module').then((m)=> m.BurgersModule)
+      },
+      {
         path:'juices',
         loadChildren:()=>
         import ('./modules/menu/juices/juices.module').then((m)=> m.JuicesModule)

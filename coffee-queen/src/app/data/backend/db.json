@@ -49,12 +49,13 @@
         },
         {
             "id": 7,
-            "name": "Hamburguesa doble",
+            "name": "Hamburguesa",
             "price": 18,
-            "image": "../../assets/images/Hamburguesas doble.jpg",
+            "image": "../../assets/images/Hamburguesas.jpg",
             "type": "hamburguers",
             "dateEntry": "21/01/2022 09:24:00"
         },
+
         {
             "id": 8,
             "name": "Agua 500ml",
@@ -106,20 +107,20 @@
 
     ],
     "auth": [{
-        "email": "maria@gmail.com",
-        "password": "maria"
-    },
-    {
-      "email": "paco@gmail.com",
-      "password": "paco"
+            "email": "maria@gmail.com",
+            "password": "maria"
+        },
+        {
+            "email": "paco@gmail.com",
+            "password": "paco"
 
-  },
-  {
-    "email": "manu@gmail.com",
-    "password": "manu"
+        },
+        {
+            "email": "manu@gmail.com",
+            "password": "manu"
 
-}
-  ],
+        }
+    ],
     "users": [{
             "id": "1",
             "email": "maria@gmail.com",

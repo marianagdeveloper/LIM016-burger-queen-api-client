@@ -14,7 +14,6 @@ export class LoginService {
     return this.http.post('http://localhost:3000/auth', credentials);
   } */
   constructor(private http: HttpClient) { }
-
   login(): Observable<any>{
     return this.http.get('http://localhost:3000/auth');
   }
