@@ -5,7 +5,6 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { LoginUserComponent } from './modules/login/login-user/login-user.component';
 
 
-
 const routes: Routes = [
   {
     path: '',
@@ -30,6 +29,21 @@ const routes: Routes = [
         path:'cafes',
         loadChildren:()=>
         import ('./modules/menu/cafes/cafes.module').then((m)=> m.CafesModule)
+      },
+      {
+        path:'snacks',
+        loadChildren:()=>
+        import ('./modules/menu/snacks/snacks.module').then((m)=> m.SnacksModule)
+      },
+      {
+        path:'desserts',
+        loadChildren:()=>
+        import ('./modules/menu/desserts/desserts.module').then((m)=> m.DessertsModule)
+      },
+      {
+        path:'cart',
+        loadChildren:()=>
+        import ('./modules/orders/orders.module').then((m)=> m.OrdersModule)
       },
       {
         path:'drinks',

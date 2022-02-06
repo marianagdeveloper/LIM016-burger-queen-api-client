@@ -1,5 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICardProduct } from './card-product.metadata';
+interface Pedido {
+  item: string,
+  cantidad: number,
+  precio: number,
+  stock: number,
+}
 
 @Component({
   selector: 'app-card-product',
@@ -7,14 +13,16 @@ import { ICardProduct } from './card-product.metadata';
   styleUrls: ['./card-product.component.scss']
 })
 export class CardProductComponent implements OnInit {
-  @Input() data?: ICardProduct; /* = {
-    name: "Cafe Americano",
-    price: 7,
-    image: "../../../../../assets/images/cafe_americano.jpg"
-  } */
+  @Input() data?: ICardProduct;
+
+  pedidos: Pedido[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  getInfoProduct(){
+    const selectProduct = this.data;
+    console.log(selectProduct);
+  }
 }
