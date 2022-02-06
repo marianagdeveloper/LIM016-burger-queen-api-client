@@ -15,7 +15,6 @@ const routes: Routes = [
     path:'login',
     component: LoginUserComponent,
   },
-
   {
     path:'',
     component: SkeletonComponent,

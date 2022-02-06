@@ -1,16 +1,36 @@
-@import '../../../../sass/bootstrap/bootstrap.scss';
+@import "../../../../sass/bootstrap/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=Rosario:wght@400;700&display=swap");
+
 form {
-    img {
-        display: block;
-        margin: auto;
-    }
+  img {
+    display: block;
+    margin: auto;
+  }
 }
 
 .sectionLogin {
-    background-image: url('../../../../assets/fondo1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
+  background-image: url("../../../../assets/fondo1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  .logo {
+    color: white;
+    font-family: Rosario;
+    font-style: normal;
+    font-weight: bold;
+  }
+  .inputs {
+    background: rgba(0, 0, 0, 0.445);
+    border-radius: 20px;
+    flex-direction: column;
+    .btnLogin{
+      height: 42px;
+      font-size: 16px;
+
+    }
+
+  }
+
 }
