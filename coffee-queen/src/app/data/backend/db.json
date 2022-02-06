@@ -35,7 +35,7 @@
             "id": 5,
             "name": "Jugo de fresa",
             "price": 12,
-            "image": "../../assets/images/Jugo de frutas natural.jpg",
+            "image": "../../assets/images/jugo de fresa.jpg",
             "type": "juices",
             "dateEntry": "21/01/2022 09:24:00"
         },
@@ -79,7 +79,32 @@
             "image": "../../assets/images/Bebida gaseosa 500ml.jpg",
             "type": "drinks",
             "dateEntry": "21/01/2022 09:24:00"
-        }
+        },
+        {
+          "id": 11,
+          "name": "Té verde",
+          "price": 15,
+          "image": "../../assets/images/te_verde.jpg",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00"
+      },
+      {
+        "id": 12,
+        "name": "Té negro",
+        "price": 15,
+        "image": "../../assets/images/te_negro.jpg",
+        "type": "cafes",
+        "dateEntry": "21/01/2022 09:24:00"
+    },
+      {
+        "id": 13,
+        "name": "Manzanilla",
+        "price": 15,
+        "image": "../../assets/images/manzanilla.jpg",
+        "type": "cafes",
+        "dateEntry": "21/01/2022 09:24:00"
+    }
+
     ],
     "auth": [{
             "email": "maria@gmail.com",
