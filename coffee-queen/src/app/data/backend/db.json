@@ -1,7 +1,7 @@
 {
     "products": [{
             "id": 1,
-            "name": "Cafe americano",
+            "name": "Café americano",
             "price": 8,
             "image": "../../assets/images/cafe_americano.jpg",
             "type": "cafes",

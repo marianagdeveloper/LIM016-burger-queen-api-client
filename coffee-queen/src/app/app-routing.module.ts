@@ -41,6 +41,11 @@ const routes: Routes = [
         loadChildren:()=>
         import ('./modules/menu/burgers/burgers.module').then((m)=> m.BurgersModule)
       },
+      {
+        path:'juices',
+        loadChildren:()=>
+        import ('./modules/menu/juices/juices.module').then((m)=> m.JuicesModule)
+      },
 
       {
         path: '**',
