@@ -1,4 +1,14 @@
 @import '../../../sass/bootstrap/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Rosario:wght@400;700&display=swap');
+
 .bg-nav {
-    background-color: chocolate;
+    background: rgba(196, 196, 196, 0.5);
+}
+.logo {
+  font-family: Rosario;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #BD6B10;
 }

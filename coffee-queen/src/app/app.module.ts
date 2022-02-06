@@ -14,12 +14,8 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { ProductModule } from './modules/product/product.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './modules/login/login.module';
-import { CafesModule } from './modules/menu/cafes/cafes.module';
-
-
 
 @NgModule({
 
@@ -39,7 +35,6 @@ import { CafesModule } from './modules/menu/cafes/cafes.module';
     SharedModule,
     HttpClientModule,
     LoginModule,
-    // CafesModule
   ],
   providers: [
     {

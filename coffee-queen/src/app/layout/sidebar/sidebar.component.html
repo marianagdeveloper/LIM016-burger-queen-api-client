@@ -1,39 +1,57 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark col-3" style="width: 280px;">
   <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
     <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-    <span class="fs-4">Coffee Queen</span>
+    <span class="fs-4 logo">Coffee Queen</span>
   </a>
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item bg-nav">
-      <a href="#" class="nav-link text-white" aria-current="page">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-        Inicio
+      <a class="nav-link text-white" aria-current="page" [routerLink]="['/cafes']">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#cafes"/></svg>
+        <img src="../../../assets/menu-cafes.png" width="25" height="25">
+        Cafés/Té
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-        Menu
+      <a class="nav-link text-white" [routerLink]="['/juices']">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#jugos"/></svg>
+        <img src="../../../assets/menu-jugos.png" width="25" height="25">
+        Jugos
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white" [routerLink]="['/panel/detail']">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-        Pedidos
+      <a class="nav-link text-white" [routerLink]="['/drinks']">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#bebidas"/></svg>
+        <img src="../../../assets/menu-bebidas.png" width="25" height="25">
+        Bebidas
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white" [routerLink]="['/panel/product']">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-        Productos
+      <a class="nav-link text-white" [routerLink]="['/burgers']">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#panes"/></svg>
+        <img src="../../../assets/menu-panes.png" width="25" height="25">
+        Panes
+      </a>
+    </li>
+    <li>
+      <a class="nav-link text-white" [routerLink]="['/snacks']">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#snacks"/></svg>
+        <img src="../../../assets/menu-snacks.png" width="25" height="25">
+        Snacks
+      </a>
+    </li>
+    <li>
+      <a class="nav-link text-white" [routerLink]="['/desserts']">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#postres"/></svg>
+        <img src="../../../assets/menu-postres.png" width="25" height="25">
+        Postres
       </a>
     </li>
   </ul>
   <hr>
-  <div class="dropdown">
+  <!-- <div class="dropdown">
     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+      <img src="../../../assets/avatar-mesero.png" alt="" width="32" height="32" class="rounded-circle me-2">
       <strong>Rosita J.</strong>
     </a>
     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -43,5 +61,5 @@
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="#">Sign out</a></li>
     </ul>
-  </div>
+  </div> -->
 </div>
