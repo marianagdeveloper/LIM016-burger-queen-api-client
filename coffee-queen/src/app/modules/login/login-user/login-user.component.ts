@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ILoginUser, ILoginUsers } from './login-user.metadata';
 import { LoginService } from './../../../data/services/api/login.service';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
-import { HeaderComponent } from '../../../layout/md-header/header/header.component'
+import { HeaderComponent } from '../../../layout/header/header.component';
 
 @Component({
   selector: 'app-login-user',
@@ -24,16 +29,15 @@ export class LoginUserComponent implements OnInit {
       admin: false,
       cook: false,
       waiter: true,
-    }
+    },
   };
 
   public loginForm!: FormGroup;
-
+  public dataUser: any;
   constructor(
-
     private formBuilder: FormBuilder,
     public loginService: LoginService,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,7 +47,7 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
-  getNameUser (){
+  getNameUser() {
     this.loginService.rolUser().subscribe((res) => {
       let userValidate: any;
       res.filter((a: any) => {
@@ -54,25 +58,24 @@ export class LoginUserComponent implements OnInit {
           // console.log('this.userData into filter', this.userData);
         }
       });
-      console.log('this.userData', this.userData);
+
       return this.userData;
-    })
+    });
 
+    this.loginService.disparador.next(this.userData);
   }
-
 
   getUserCredentials() {
     this.loginService.login().subscribe((res) => {
       let userValidate: any;
       const credentials = res.find((a: any) => {
-        const emailUser =  this.loginForm.value.email;
-        const passwordUser =  this.loginForm.value.password;
+        const emailUser = this.loginForm.value.email;
+        const passwordUser = this.loginForm.value.password;
         if (a.email === emailUser && a.password === passwordUser) {
           userValidate = a.email;
         }
         return a.email === emailUser && a.password === passwordUser;
       });
-
 
       if (credentials) {
         // alert('Login success');
@@ -102,22 +105,25 @@ export class LoginUserComponent implements OnInit {
           }
         });
       } else {
-        this.htmlStr = "*Usuario y/o contraseña inválidos.";
+        this.htmlStr = '*Usuario y/o contraseña inválidos.';
         /* alert('Usuario y/o contraseña inválido'); */
       }
     });
   }
 
-  campoEsValido(inputForm: string){
-    return this.loginForm.controls[inputForm].dirty && this.loginForm.hasError('required', inputForm);
+  campoEsValido(inputForm: string) {
+    return (
+      this.loginForm.controls[inputForm].dirty &&
+      this.loginForm.hasError('required', inputForm)
+    );
   }
 
   get campoEmail(): { [key: string]: AbstractControl } {
     return this.loginForm.controls;
   }
 
-  limpiar(){
-    this.htmlStr = "";
+  limpiar() {
+    this.htmlStr = '';
   }
   /*constructor(public loginService: LoginService) {}
 

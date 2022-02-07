@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output ,EventEmitter} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject} from 'rxjs';
 import { ILoginUser, ILoginUsers } from '../../../modules/login/login-user/login-user.metadata';
 
 @Injectable({
@@ -8,12 +8,9 @@ import { ILoginUser, ILoginUsers } from '../../../modules/login/login-user/login
 })
 export class LoginService {
 
-  /* constructor(private http: HttpClient) {}
+@Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
 
-  login(credentials: ILoginUser): Observable<any> {
-    return this.http.post('http://localhost:3000/auth', credentials);
-  } */
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient ) { }
 
   login(): Observable<ILoginUser[]>{
     return this.http.get<ILoginUser[]>('http://localhost:3000/auth');
@@ -25,3 +22,8 @@ export class LoginService {
   }
 
 }
+  /* constructor(private http: HttpClient) {}
+
+  login(credentials: ILoginUser): Observable<any> {
+    return this.http.post('http://localhost:3000/auth', credentials);
+  } */

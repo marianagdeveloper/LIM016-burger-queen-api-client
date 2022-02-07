@@ -1,58 +1,34 @@
 <section class="sectionLogin">
-  <div class="container d-flex justify-content-center">
-    <main class="form-signin mt-3">
-      <form
-        method="post"
-        [formGroup]="loginForm"
-        (ngSubmit)="getUserCredentials()"
-        (click)="getNameUser()"
-      >
-        <!-- <div > -->
-        <img
-          class="justify-content-center mt-5"
-          src="../../../../assets/logoTaza.png"
-          alt=""
-          width="72"
-        />
-        <h1 class="justify-content-center my-3 logo">Coffee Queen</h1>
-        <!-- </div> -->
-        <div class="p-3 inputs" (click)="limpiar()">
-          <div class="form-group form-floating my-2">
-            <input
-              type="email"
-              formControlName="email"
-              class="form-control"
-              id="floatingInputEmail"
-              placeholder="name@example.com"
-            />
-            <!-- [ngClass]="{ 'is-invalid': campoEmail['email'].errors }" -->
-            <label for="floatingInputEmail">Email</label>
-            <span class="mensaje" *ngIf="campoEsValido('email')">*Email es requerido.</span>
-            <span class="mensaje" *ngIf="campoEmail['email'].errors?.['email']">*Email es inválido.</span>
-          </div>
-          <div class="form-group form-floating mb-3">
-            <input
-              type="password"
-              formControlName="password"
-              class="form-control"
-              id="floatingPassword"
-              placeholder="Password"
-            />
-            <!-- [ngClass]="{ 'is-invalid': validarEmail['password'].errors }" -->
-            <label for="floatingPassword">Contraseña</label>
-            <span class="mensaje" *ngIf="campoEsValido('password')">*Contraseña es requerida.</span>
-          </div>
-          <div class="my-3 mensaje">{{ htmlStr }}</div>
-          <button class="w-100 btn btn-lg btn-warning btnLogin" type="submit" [disabled]="!loginForm.valid">
+    <div class="container d-flex justify-content-center">
+        <main class="form-signin mt-3">
+            <form method="post" [formGroup]="loginForm" (ngSubmit)="getUserCredentials()">
+                <!-- <div > -->
+                <img class="justify-content-center mt-5" src="../../../../assets/logoTaza.png" alt="" width="72" />
+                <h1 class="justify-content-center my-3 logo">Coffee Queen</h1>
+                <!-- </div> -->
+                <div class="p-3 inputs" (click)="limpiar()">
+                    <div class="form-group form-floating my-2">
+                        <input type="email" formControlName="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" />
+                        <!-- [ngClass]="{ 'is-invalid': campoEmail['email'].errors }" -->
+                        <label for="floatingInputEmail">Email</label>
+                        <span class="mensaje" *ngIf="campoEsValido('email')">*Email es requerido.</span>
+                        <span class="mensaje" *ngIf="campoEmail['email'].errors?.['email']">*Email es inválido.</span>
+                    </div>
+                    <div class="form-group form-floating mb-3">
+                        <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                        <!-- [ngClass]="{ 'is-invalid': validarEmail['password'].errors }" -->
+                        <label for="floatingPassword">Contraseña</label>
+                        <span class="mensaje" *ngIf="campoEsValido('password')">*Contraseña es requerida.</span>
+                    </div>
+                    <div class="my-3 mensaje">{{ htmlStr }}</div>
+                    <button (click)="getNameUser()" class="w-100 btn btn-lg btn-warning btnLogin" type="submit" [disabled]="!loginForm.valid">
             Iniciar Sesión
           </button>
-        </div>
+                </div>
 
 
-      </form>
-    </main>
-  </div>
+            </form>
+        </main>
+    </div>
 </section>
 <!-- <app-header [userData]></app-header> -->
-
-
