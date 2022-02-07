@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ILoginUser, ILoginUsers } from './login-user.metadata';
 import { LoginService } from './../../../data/services/api/login.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../../../layout/md-header/header/header.component'
 
@@ -16,6 +16,7 @@ export class LoginUserComponent implements OnInit {
     password: '',
   };
 
+  public htmlStr: string = '';
   public userData: ILoginUsers = {
     name: '',
     email: '',
@@ -32,13 +33,14 @@ export class LoginUserComponent implements OnInit {
 
     private formBuilder: FormBuilder,
     public loginService: LoginService,
-    private router: Router
-  ) {
-    this.getNameUser();
-  }
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group(this.users);
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
   }
 
   getNameUser (){
@@ -68,13 +70,13 @@ export class LoginUserComponent implements OnInit {
         if (a.email === emailUser && a.password === passwordUser) {
           userValidate = a.email;
         }
-        return a.email === emailUser && a.password === passwordUser
+        return a.email === emailUser && a.password === passwordUser;
       });
 
 
       if (credentials) {
-        alert('Login success');
-        this.loginForm.reset();
+        // alert('Login success');
+        // this.loginForm.reset();
 
         this.loginService.rolUser().subscribe((res) => {
           let rol = res.filter((a: any) => {
@@ -89,20 +91,33 @@ export class LoginUserComponent implements OnInit {
           // this.getNameUser(userValidate)
           // console.log('this.userData', this.userData);
           if (rol[0].roles.admin) {
-            alert('Rol Admin');
+            //alert('Rol Admin');
             this.router.navigate(['product']);
           } else if (rol[0].roles.cook) {
-            alert('Rol Cocinero');
+            //alert('Rol Cocinero');
             this.router.navigate(['product']);
           } else if (rol[0].roles.waiter) {
-            alert('Rol Mesero');
+            //alert('Rol Mesero');
             this.router.navigate(['product']);
           }
         });
       } else {
-        alert('Usuario y/o contraseña inválido');
+        this.htmlStr = "*Usuario y/o contraseña inválidos.";
+        /* alert('Usuario y/o contraseña inválido'); */
       }
     });
+  }
+
+  campoEsValido(inputForm: string){
+    return this.loginForm.controls[inputForm].dirty && this.loginForm.hasError('required', inputForm);
+  }
+
+  get campoEmail(): { [key: string]: AbstractControl } {
+    return this.loginForm.controls;
+  }
+
+  limpiar(){
+    this.htmlStr = "";
   }
   /*constructor(public loginService: LoginService) {}
 

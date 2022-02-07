@@ -16,18 +16,21 @@
         />
         <h1 class="justify-content-center my-3 logo">Coffee Queen</h1>
         <!-- </div> -->
-        <div class="p-3 inputs">
-          <div class="form-floating my-2">
+        <div class="p-3 inputs" (click)="limpiar()">
+          <div class="form-group form-floating my-2">
             <input
               type="email"
               formControlName="email"
               class="form-control"
-              id="floatingInput"
+              id="floatingInputEmail"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">Email</label>
+            <!-- [ngClass]="{ 'is-invalid': campoEmail['email'].errors }" -->
+            <label for="floatingInputEmail">Email</label>
+            <span class="mensaje" *ngIf="campoEsValido('email')">*Email es requerido.</span>
+            <span class="mensaje" *ngIf="campoEmail['email'].errors?.['email']">*Email es inválido.</span>
           </div>
-          <div class="form-floating mb-3">
+          <div class="form-group form-floating mb-3">
             <input
               type="password"
               formControlName="password"
@@ -35,9 +38,12 @@
               id="floatingPassword"
               placeholder="Password"
             />
+            <!-- [ngClass]="{ 'is-invalid': validarEmail['password'].errors }" -->
             <label for="floatingPassword">Contraseña</label>
+            <span class="mensaje" *ngIf="campoEsValido('password')">*Contraseña es requerida.</span>
           </div>
-          <button class="w-100 btn btn-lg btn-warning btnLogin" type="submit">
+          <div class="my-3 mensaje">{{ htmlStr }}</div>
+          <button class="w-100 btn btn-lg btn-warning btnLogin" type="submit" [disabled]="!loginForm.valid">
             Iniciar Sesión
           </button>
         </div>

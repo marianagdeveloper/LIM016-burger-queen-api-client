@@ -1,16 +1,16 @@
 <div class="d-flex flex-row justify-content-between align-items-center">
   <div>
-    <h2>Pedido N°</h2>
+    <h2 class="colorNaranjoso">Pedido N° 100</h2>
   </div>
   <div class="d-flex flex-row">
-    <span>Cliente: <input type="text"></span>
-    <span>Mesa: <input type="text"></span>
+    <span class="grosorLetra">Cliente: <input type="text" class="borde"></span>
+    <span class="colorNaranjoso grosorLetra">Mesa: <input type="text" class="borde"></span>
   </div>
 </div>
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th scope="col">Ítem</th>
+    <tr class="colorPedido">
+      <th scope="col">Descripción</th>
       <th scope="col">Precio</th>
       <th scope="col">Cantidad</th>
       <th scope="col">Total</th>
@@ -19,21 +19,27 @@
   </thead>
   <tbody>
     <tr *ngFor="let pedido of pedidos">
-      <th></th>
-      <td></td>
+      <th>{{ pedido.item }}</th>
+      <td>{{ pedido.precio | currency:"S/. " }}</td>
       <td>
         <div class="input-group input-group-sm mb-1">
           <button type="button" class="btn btn-light btn-sm" (click)="disminuirCantidad(pedido)">-</button>
           <input type="text" class="form-control form-control-sm" [(ngModel)]="pedido.cantidad">
           <button type="button" class="btn btn-light btn-sm" (click)="aumentarCantidad(pedido)">+</button>
-          <button type="button" class="btn btn-light btn-sm"><img src="../../../../assets/bxs-trash.png"></button>
         </div>
       </td>
+      <td>{{ pedido.total | currency:"S/. "}}</td>
+      <td class="cursor"><img src="../../../../assets/bxs-trash.png"></td>
     </tr>
   </tbody>
+  <thead>
+    <th scope="col">Total</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col">{{ 90 | currency:"S/. "}}</th>
+  </thead>
 </table>
 <div class="text-end">
-  <a class="btn btn-danger btn-lg" tabindex="-1" role="button" aria-disabled="true"><img src="../../../../assets/x-light.png"></a>
-  <a class="btn btn-success btn-lg" tabindex="-1" role="button" aria-disabled="true"><img src="../../../../assets/check-light.png"></a>
+  <a class="btn btn-danger btn-sm bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/x-light.png"></a>
+  <a class="btn btn-success btn-sm bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/check-light.png"></a>
 </div>
-
