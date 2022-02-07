@@ -23,6 +23,8 @@
             "type": "hamburguers",
             "dateEntry": "21/01/2022 09:24:00"
         },
+
+
         {
             "id": 4,
             "name": "Jugo de frutas natural",
@@ -47,14 +49,7 @@
             "type": "hamburguers",
             "dateEntry": "21/01/2022 09:24:00"
         },
-        {
-            "id": 7,
-            "name": "Hamburguesa",
-            "price": 18,
-            "image": "../../assets/images/Hamburguesas.jpg",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
-        },
+
 
         {
             "id": 8,
@@ -64,14 +59,7 @@
             "type": "drinks",
             "dateEntry": "21/01/2022 09:24:00"
         },
-        {
-            "id": 9,
-            "name": "Agua 750ml",
-            "price": 18,
-            "image": "../../assets/images/Agua 750ml.jpg",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
-        },
+
         {
             "id": 10,
             "name": "Bebida gaseosa 500ml",
@@ -81,189 +69,303 @@
             "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 11,
-          "name": "Té verde",
-          "price": 15,
-          "image": "../../assets/images/te_verde.jpg",
-          "type": "cafes",
-          "dateEntry": "21/01/2022 09:24:00"
-      },
-      {
-        "id": 12,
-        "name": "Té negro",
-        "price": 15,
-        "image": "../../assets/images/te_negro.jpg",
-        "type": "cafes",
-        "dateEntry": "21/01/2022 09:24:00"
-      },
-      {
-        "id": 13,
-        "name": "Manzanilla",
-        "price": 15,
-        "image": "../../assets/images/manzanilla.jpg",
-        "type": "cafes",
-        "dateEntry": "21/01/2022 09:24:00"
-      },
-        {
-          "id": 14,
-          "name": "Brownie(unidad)",
-          "price": 6,
-          "image": "../../assets/images/brownie.png",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 11,
+            "name": "Té verde",
+            "price": 15,
+            "image": "../../assets/images/te_verde.jpg",
+            "type": "cafes",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 15,
-          "name": "Torta Helada(porción)",
-          "price": 7,
-          "image": "../../assets/images/tortaHelada.png",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 12,
+            "name": "Té negro",
+            "price": 15,
+            "image": "../../assets/images/te_negro.jpg",
+            "type": "cafes",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 16,
-          "name": "Helado de lúcuma",
-          "price": 4,
-          "image": "../../assets/images/helado-de-lucuma.jpg",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 13,
+            "name": "Manzanilla",
+            "price": 15,
+            "image": "../../assets/images/manzanilla.jpg",
+            "type": "cafes",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 17,
-          "name": "Helado de vainilla",
-          "price": 4,
-          "image": "../../assets/images/helado-de-vainilla.png",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 14,
+            "name": "Brownie(unidad)",
+            "price": 6,
+            "image": "../../assets/images/brownie.png",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 18,
-          "name": "Helado de chocolate",
-          "price": 4,
-          "image": "../../assets/images/helado-de-chocolate.jpg",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 15,
+            "name": "Torta Helada(porción)",
+            "price": 7,
+            "image": "../../assets/images/tortaHelada.png",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 19,
-          "name": "Helado de fresa",
-          "price": 4,
-          "image": "../../assets/images/helado-de-fresa.png",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 16,
+            "name": "Helado de lúcuma",
+            "price": 4,
+            "image": "../../assets/images/helado-de-lucuma.jpg",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 20,
-          "name": "Keke de zanahoria(porción)",
-          "price": 8,
-          "image": "../../assets/images/keke-de-zanahoria.png",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 17,
+            "name": "Helado de vainilla",
+            "price": 4,
+            "image": "../../assets/images/helado-de-vainilla.png",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 21,
-          "name": "Crema volteada(porción)",
-          "price": 7,
-          "image": "../../assets/images/crema-volteada.png",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 18,
+            "name": "Helado de chocolate",
+            "price": 4,
+            "image": "../../assets/images/helado-de-chocolate.jpg",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 22,
-          "name": "Keke de plátano(porción)",
-          "price": 8,
-          "image": "../../assets/images/keke-de-platano.jpg",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 19,
+            "name": "Helado de fresa",
+            "price": 4,
+            "image": "../../assets/images/helado-de-fresa.png",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 23,
-          "name": "Alfajores(unidad)",
-          "price": 3.5,
-          "image": "../../assets/images/alfajores.png",
-          "type": "desserts",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 20,
+            "name": "Keke de zanahoria(porción)",
+            "price": 8,
+            "image": "../../assets/images/keke-de-zanahoria.png",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 24,
-          "name": "Papas Fritas",
-          "price": 12,
-          "image": "../../assets/images/Papas fritas.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 21,
+            "name": "Crema volteada(porción)",
+            "price": 7,
+            "image": "../../assets/images/crema-volteada.png",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 25,
-          "name": "Camotes Fritos",
-          "price": 15,
-          "image": "../../assets/images/camotes-fritos.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 22,
+            "name": "Keke de plátano(porción)",
+            "price": 8,
+            "image": "../../assets/images/keke-de-platano.jpg",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 26,
-          "name": "Yucas Fritas",
-          "price": 15,
-          "image": "../../assets/images/yucas-fritas.png",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 23,
+            "name": "Alfajores(unidad)",
+            "price": 3.5,
+            "image": "../../assets/images/alfajores.png",
+            "type": "desserts",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 27,
-          "name": "Frutos Secos",
-          "price": 10,
-          "image": "../../assets/images/frutos-secos.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 24,
+            "name": "Papas Fritas",
+            "price": 12,
+            "image": "../../assets/images/Papas fritas.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 28,
-          "name": "Maní Salado",
-          "price": 4,
-          "image": "../../assets/images/mani-salado.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 25,
+            "name": "Camotes Fritos",
+            "price": 15,
+            "image": "../../assets/images/camotes-fritos.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 29,
-          "name": "Maní confitado",
-          "price": 4,
-          "image": "../../assets/images/mani-confitado.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 26,
+            "name": "Yucas Fritas",
+            "price": 15,
+            "image": "../../assets/images/yucas-fritas.png",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 30,
-          "name": "Empanada de carne",
-          "price": 6,
-          "image": "../../assets/images/empanada-de-carne.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 27,
+            "name": "Frutos Secos",
+            "price": 10,
+            "image": "../../assets/images/frutos-secos.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 31,
-          "name": "Empanada de pollo",
-          "price": 6,
-          "image": "../../assets/images/empanada-de-pollo.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 28,
+            "name": "Maní Salado",
+            "price": 4,
+            "image": "../../assets/images/mani-salado.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 32,
-          "name": "Tequeños",
-          "price": 8,
-          "image": "../../assets/images/tequeños.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 29,
+            "name": "Maní confitado",
+            "price": 4,
+            "image": "../../assets/images/mani-confitado.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
         },
         {
-          "id": 33,
-          "name": "Granola",
-          "price": 6,
-          "image": "../../assets/images/granola.jpg",
-          "type": "snacks",
-          "dateEntry": "21/01/2022 09:24:00"
+            "id": 30,
+            "name": "Empanada de carne",
+            "price": 6,
+            "image": "../../assets/images/empanada-de-carne.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 31,
+            "name": "Empanada de pollo",
+            "price": 6,
+            "image": "../../assets/images/empanada-de-pollo.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 32,
+            "name": "Tequeños",
+            "price": 8,
+            "image": "../../assets/images/tequeños.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 33,
+            "name": "Granola",
+            "price": 6,
+            "image": "../../assets/images/granola.jpg",
+            "type": "snacks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 34,
+            "name": "Hamburguesa doble ",
+            "price": 10,
+            "image": "../../assets/images/burger1.jpg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        }, {
+            "id": 35,
+            "name": "Hamburguesa doble con queso",
+            "price": 18,
+            "image": "../../assets/images/burger2.jpg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 36,
+            "name": "Hamburguesa triple carne",
+            "price": 18,
+            "image": "../../assets/images/burger3.jpeg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 37,
+            "name": "Hamburguesa triple con papas",
+            "price": 10,
+            "image": "../../assets/images/burger4.jpg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        }, {
+            "id": 38,
+            "name": "Hamburguesas triple carne y queso ",
+            "price": 18,
+            "image": "../../assets/images/burger5.jpg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 39,
+            "name": "Hamburguesa vegetariana",
+            "price": 18,
+            "image": "../../assets/images/burger6.jpg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 40,
+            "name": "Hamburguesa vegetariana con salsa",
+            "price": 18,
+            "image": "../../assets/images/burger7.jpg",
+            "type": "hamburguers",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 41,
+            "name": "gaseosa inka kola",
+            "price": 18,
+            "image": "../../assets/images/bebi1.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 42,
+            "name": "gaseosa Fanta",
+            "price": 18,
+            "image": "../../assets/images/bebi2.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 43,
+            "name": "gaseosa Sprite",
+            "price": 18,
+            "image": "../../assets/images/bebi3.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 44,
+            "name": "Gatorade sabor fresa",
+            "price": 18,
+            "image": "../../assets/images/bebi4.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 45,
+            "name": "Gatorade sabor azul",
+            "price": 18,
+            "image": "../../assets/images/bebi5.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 46,
+            "name": "Gatorade sabor naranja",
+            "price": 18,
+            "image": "../../assets/images/bebi6.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
+        },
+        {
+            "id": 46,
+            "name": "Frugos de Valle 1L",
+            "price": 18,
+            "image": "../../assets/images/bebi7.jpg",
+            "type": "drinks",
+            "dateEntry": "21/01/2022 09:24:00"
         }
+
+
+
+
 
     ],
     "auth": [{
