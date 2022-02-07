@@ -1,0 +1,11 @@
+@import '../../../../sass/bootstrap/bootstrap.scss';
+@import '../../../../sass/bootstrap/bootstrap-utilities.scss';
+@import '../../../../sass/bootstrap/bootstrap-reboot.scss';
+
+header {
+    background: #BD6B10;
+    color: #fff;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+}

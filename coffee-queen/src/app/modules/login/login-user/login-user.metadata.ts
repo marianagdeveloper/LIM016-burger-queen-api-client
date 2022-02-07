@@ -5,7 +5,7 @@ export interface ILoginUser{
 
 export interface ILoginUsers{
   email: string,
-  password: string,
+  name: string,
   roles: IRoles
 }
 

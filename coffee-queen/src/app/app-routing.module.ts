@@ -15,7 +15,6 @@ const routes: Routes = [
     path:'login',
     component: LoginUserComponent,
   },
-
   {
     path:'',
     component: SkeletonComponent,
@@ -41,11 +40,6 @@ const routes: Routes = [
         import ('./modules/menu/desserts/desserts.module').then((m)=> m.DessertsModule)
       },
       {
-        path:'cart',
-        loadChildren:()=>
-        import ('./modules/orders/orders.module').then((m)=> m.OrdersModule)
-      },
-      {
         path:'drinks',
         loadChildren:()=>
         import ('./modules/menu/drinks/drinks.module').then((m)=> m.DrinksModule)
@@ -60,7 +54,16 @@ const routes: Routes = [
         loadChildren:()=>
         import ('./modules/menu/juices/juices.module').then((m)=> m.JuicesModule)
       },
-
+      {
+        path:'order-control',
+        loadChildren:()=>
+        import ('./modules/order-control/order-control.module').then((m)=> m.OrderControlModule)
+      },
+      {
+        path:'orders',
+        loadChildren:()=>
+        import ('./modules/orders/orders.module').then((m)=> m.OrdersModule)
+      },
       {
         path: '**',
         redirectTo: '/login',

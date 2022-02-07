@@ -3,7 +3,8 @@ interface Pedido {
   item: string,
   cantidad: number,
   precio: number,
-  stock: number,
+  stock: number
+  total: number,
 }
 
 @Component({
@@ -13,7 +14,36 @@ interface Pedido {
 })
 export class CartComponent implements OnInit {
 
-  pedidos: Pedido[] = []
+  pedidos: Pedido[] = [
+    {
+      item: "Cafe americano",
+      cantidad: 1,
+      precio: 8,
+      stock: 20,
+      total: 8
+    },
+    {
+      item: "Café con leche",
+      cantidad: 2,
+      precio: 15,
+      stock: 15,
+      total: 30
+    },
+    {
+      item: "Sandwich de jamón y queso",
+      cantidad: 4,
+      precio: 10,
+      stock: 5,
+      total: 40
+    },
+    {
+      item: "Jugo de frutas natural",
+      cantidad: 1,
+      precio: 12,
+      stock: 15,
+      total: 12
+    }
+  ]
 
   constructor() { }
 
