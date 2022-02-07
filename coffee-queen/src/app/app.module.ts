@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { HeaderComponent } from './layout/md-header/header/header.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
@@ -16,7 +16,6 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './modules/login/login.module';
-import { MdHeaderModule } from './layout/md-header/md-header.module';
 
 @NgModule({
 
@@ -25,17 +24,17 @@ import { MdHeaderModule } from './layout/md-header/md-header.module';
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
+    HeaderComponent
 
   ],
   imports: [
-  BrowserModule,
+BrowserModule,
     CoreModule,
     FormsModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
     LoginModule,
-    MdHeaderModule
   ],
   providers: [
     {

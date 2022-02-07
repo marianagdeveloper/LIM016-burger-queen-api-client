@@ -10,7 +10,7 @@
         "build:prod": "ng build --c=prod",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "server": "json-server --watch ./src/app/data/backend/db.json"
+        "server": "node src/app/data/backend/server.js"
     },
     "private": true,
     "dependencies": {
