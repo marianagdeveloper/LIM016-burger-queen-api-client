@@ -11,5 +11,10 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  flag = false;
+
+  cambiarFlag(){
+    this.flag = !this.flag;
+  }
 
 }
