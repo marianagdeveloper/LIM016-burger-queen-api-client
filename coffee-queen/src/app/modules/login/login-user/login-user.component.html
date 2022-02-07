@@ -5,6 +5,7 @@
         method="post"
         [formGroup]="loginForm"
         (ngSubmit)="getUserCredentials()"
+        (click)="getNameUser()"
       >
         <!-- <div > -->
         <img
@@ -52,3 +53,6 @@
     </main>
   </div>
 </section>
+<!-- <app-header [userData]></app-header> -->
+
+

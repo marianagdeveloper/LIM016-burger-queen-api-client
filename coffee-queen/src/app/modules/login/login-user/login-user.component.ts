@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ILoginUser } from './login-user.metadata';
+import { ILoginUser, ILoginUsers } from './login-user.metadata';
 import { LoginService } from './../../../data/services/api/login.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HeaderComponent } from '../../../layout/md-header/header/header.component'
 
 @Component({
   selector: 'app-login-user',
@@ -16,9 +17,20 @@ export class LoginUserComponent implements OnInit {
   };
 
   public htmlStr: string = '';
+  public userData: ILoginUsers = {
+    name: '',
+    email: '',
+    roles: {
+      admin: false,
+      cook: false,
+      waiter: true,
+    }
+  };
 
   public loginForm!: FormGroup;
+
   constructor(
+
     private formBuilder: FormBuilder,
     public loginService: LoginService,
     private router: Router,
@@ -31,6 +43,24 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
+  getNameUser (){
+    this.loginService.rolUser().subscribe((res) => {
+      let userValidate: any;
+      res.filter((a: any) => {
+        if (a.email == userValidate) {
+          this.userData.name = a.name;
+          this.userData.email = a.email;
+          this.userData.roles = a.roles;
+          // console.log('this.userData into filter', this.userData);
+        }
+      });
+      console.log('this.userData', this.userData);
+      return this.userData;
+    })
+
+  }
+
+
   getUserCredentials() {
     this.loginService.login().subscribe((res) => {
       let userValidate: any;
@@ -42,6 +72,8 @@ export class LoginUserComponent implements OnInit {
         }
         return a.email === emailUser && a.password === passwordUser;
       });
+
+
       if (credentials) {
         // alert('Login success');
         // this.loginForm.reset();
@@ -49,9 +81,15 @@ export class LoginUserComponent implements OnInit {
         this.loginService.rolUser().subscribe((res) => {
           let rol = res.filter((a: any) => {
             if (a.email == userValidate) {
+              this.userData.name = a.name;
+              this.userData.email = a.email;
+              this.userData.roles = a.roles;
+              // console.log('this.userData into filter', this.userData);
               return a.roles;
             }
           });
+          // this.getNameUser(userValidate)
+          // console.log('this.userData', this.userData);
           if (rol[0].roles.admin) {
             //alert('Rol Admin');
             this.router.navigate(['product']);
