@@ -263,7 +263,95 @@
           "image": "../../assets/images/granola.jpg",
           "type": "snacks",
           "dateEntry": "21/01/2022 09:24:00"
-        }
+        },
+        {
+          "id": 34,
+          "name": "Jugo de naranja",
+          "price": 12,
+          "image": "../../assets/images/jugo de naranja.jpg",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00"
+      },
+      {
+        "id": 35,
+        "name": "Limonada",
+        "price": 12,
+        "image": "../../assets/images/jugo de limon.jpg",
+        "type": "juices",
+        "dateEntry": "21/01/2022 09:24:00"
+    },
+    {
+      "id": 36,
+      "name": "Jugo de papaya",
+      "price": 12,
+      "image": "../../assets/images/jugo de papaya.jpg",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00"
+  },
+  {
+    "id": 37,
+    "name": "Jugo de maracuyá",
+    "price": 12,
+    "image": "../../assets/images/jugo de maracuya.jpg",
+    "type": "juices",
+    "dateEntry": "21/01/2022 09:24:00"
+},
+{
+  "id": 38,
+  "name": "Jugo de piña",
+  "price": 12,
+  "image": "../../assets/images/jugo de pina.jpg",
+  "type": "juices",
+  "dateEntry": "21/01/2022 09:24:00"
+},
+{
+  "id": 39,
+  "name": "Jugo de lúcuma",
+  "price": 12,
+  "image": "../../assets/images/jugo de lucuma.jpg",
+  "type": "juices",
+  "dateEntry": "21/01/2022 09:24:00"
+},
+{
+  "id": 40,
+  "name": "Jugo de manzana",
+  "price": 12,
+  "image": "../../assets/images/jugo de manzana.jpg",
+  "type": "juices",
+  "dateEntry": "21/01/2022 09:24:00"
+},
+{
+  "id": 41,
+  "name": "Capuccino",
+  "price": 15,
+  "image": "../../assets/images/capuchino.jpg",
+  "type": "cafes",
+  "dateEntry": "21/01/2022 09:24:00"
+},
+{
+  "id": 42,
+  "name": "Mocaccino",
+  "price": 15,
+  "image": "../../assets/images/mocachino.jpg",
+  "type": "cafes",
+  "dateEntry": "21/01/2022 09:24:00"
+},
+{
+  "id": 43,
+  "name": "Latte",
+  "price": 15,
+  "image": "../../assets/images/late.jpg",
+  "type": "cafes",
+  "dateEntry": "21/01/2022 09:24:00"
+},
+{
+  "id": 42,
+  "name": "Café expreso",
+  "price": 15,
+  "image": "../../assets/images/cafe expreso.jpg",
+  "type": "cafes",
+  "dateEntry": "21/01/2022 09:24:00"
+}
 
     ],
     "auth": [{
@@ -283,6 +371,7 @@
     ],
     "users": [{
             "id": "1",
+            "name": "María Chavez",
             "email": "maria@gmail.com",
             "password": "maria",
             "roles": {
@@ -294,6 +383,7 @@
         {
             "id": "2",
             "email": "paco@gmail.com",
+            "name": "Paco Pérez",
             "password": "paco",
             "roles": {
                 "admin": false,
@@ -303,6 +393,7 @@
         },
         {
             "id": "3",
+            "name": "Manuel Guerrero",
             "email": "manu@gmail.com",
             "password": "manu",
             "roles": {

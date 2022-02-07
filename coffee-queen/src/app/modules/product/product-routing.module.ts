@@ -15,6 +15,6 @@ const routes: Routes = [
 //{useHash:true}
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-exports: [RouterModule],
+  exports: [RouterModule],
 })
 export class ProductRoutingModule {}

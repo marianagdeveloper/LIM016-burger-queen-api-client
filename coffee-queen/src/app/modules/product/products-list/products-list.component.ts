@@ -40,7 +40,6 @@ export class ProductsListComponent implements OnInit {
     this.productService.getAllProducts().subscribe(data => {
       this.products = data;
       console.log(data);
-      
     });
   }
 

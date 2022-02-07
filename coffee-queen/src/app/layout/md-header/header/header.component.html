@@ -19,12 +19,12 @@
           <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="../../../assets/avatar-mesero.png" alt="" width="70" height="70" class="rounded-circle me-2">
-              <strong>Rosita J.</strong>
+              <h1>{{userData}}</h1>
             </a>
           </div>
 
           <div class="text-end">
-              <button type="button" class="btn btn-outline-light ">Cerrar Sesión</button>
+              <button type="button" class="btn btn-outline-light" [routerLink]="['/login']">Cerrar Sesión</button>
           </div>
       </nav>
   </div>
