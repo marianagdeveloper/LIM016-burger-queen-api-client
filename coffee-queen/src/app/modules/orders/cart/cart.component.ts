@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { ICardProduct } from '../../../shared/components/card/card-product/card-product.metadata';
 
 interface orderProducts {
   id: number;
@@ -53,8 +52,11 @@ export class CartComponent implements OnInit {
   };
   public subTotal: number = 0;
   public total: number = 0;
+  public deleteSubtotal: number = 0;
+  public newVariable: number = 0;
   public cant: number = 0;
   public nameProduct: string = '';
+  
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
@@ -62,28 +64,34 @@ export class CartComponent implements OnInit {
 
     this.products.map((ele: any) => {
       this.order.total += ele.price;
-      
     });
-   
-    
-    
   }
 
   aumentarCantidad(product: any) {
-    
     this.cant = product.qty += 1;
     product.subTotal = this.cant * product.price;
-    this.order.total+= product.subTotal
-    this.order.total-= (product.price*(this.cant-1));
-   
-
+    this.order.total += product.subTotal;
+    this.order.total -= product.price * (this.cant - 1);
   }
 
   disminuirCantidad(product: any) {
-    this.cant =product.qty -= 1;
+    this.cant = product.qty -= 1;
     product.subTotal = this.cant * product.price;
-    this.order.total-= product.subTotal
-    this.order.total+= (product.price*(this.cant-1));
-   
+    this.order.total -= product.subTotal;
+    this.order.total += product.price * (this.cant - 1);
+    return  this.order.total;
+  }
+  deleteProduct(product: any){
+    let arrayNew: any[] = [];
+    this.products.filter((item:any) =>{
+      if(item.name !== product.name){
+        arrayNew.push(item)
+      }else{
+        this.deleteSubtotal=product.subTotal-product.price ;
+      }
+    } );
+    this.products = arrayNew;
+    this.order.total=(this.disminuirCantidad(product))-  this.deleteSubtotal;
+
   }
 }

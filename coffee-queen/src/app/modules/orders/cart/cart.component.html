@@ -31,7 +31,7 @@
                     </div>
                 </td>
                 <td>{{ product.subTotal| currency:"S/. "}}</td>
-                <td class="cursor"><img src="../../../../assets/bxs-trash.png"></td>
+                <td class="cursor"><img (click)="deleteProduct(product)" src="../../../../assets/bxs-trash.png"></td>
             </tr>
         </tbody>
         <thead>
