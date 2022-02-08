@@ -14,11 +14,13 @@ export class HeaderComponent implements OnInit {
 
   @Input() userData?: ILoginUsers[];
  public nameUser:any;
+ public avatarUser:any;
   constructor(public loginService: LoginService) {
   }
 
   ngOnInit() {
     this.nameUser=this.loginService.disparador.getValue( ).name;
+    this.avatarUser=this.loginService.disparador.getValue( ).avatar;
 
   }
 }
