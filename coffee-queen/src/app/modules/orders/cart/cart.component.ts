@@ -20,10 +20,9 @@ public  product:any;
   constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
- this.product=this.productService.disparadorProduct.getValue( );
+this.product=this.productService.disparadorProduct.getValue( );
 console.log(this.product);
-
-  }
+}
 
   aumentarCantidad(pedido: Pedido): void{
     if(pedido.stock > pedido.cantidad) {

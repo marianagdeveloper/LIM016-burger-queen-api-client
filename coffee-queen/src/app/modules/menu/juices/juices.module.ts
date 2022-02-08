@@ -11,15 +11,9 @@ import { JuicesRoutingModule } from './juices-routing.module';
   declarations: [
     JuicesListComponent
   ],
- /*  providers: [
-    ProductService
-  ], */
   imports: [
     SharedModule,
     JuicesRoutingModule
   ],
-  /* exports: [
-    JuicesListComponent
-  ] */
 })
 export class JuicesModule { }

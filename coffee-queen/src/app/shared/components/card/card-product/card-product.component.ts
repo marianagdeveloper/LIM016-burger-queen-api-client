@@ -7,6 +7,12 @@ interface Pedido {
   precio: number,
   stock: number,
 }
+interface Pedido1 {
+  name: string,
+  price: number,
+  image: string,
+  type: string,
+}
 
 @Component({
   selector: 'app-card-product',
@@ -17,17 +23,16 @@ export class CardProductComponent implements OnInit {
   @Input() data?: ICardProduct;
 
   pedidos: Pedido[] = [];
-  public selectProduct: any;
+  public selectProduct?: Pedido1[] = [];
   constructor(public productService: ProductService ) { }
 
   ngOnInit(): void {
+
   }
   getInfoProduct(){
-  
-     this.selectProduct = this.data;
-   console.log(this.selectProduct);
-    this.productService.disparadorProduct.next(this.selectProduct);
+    
+    this.productService.disparadorProduct.next(this.data)
 
- 
+   
   }
 }
