@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICardProduct } from './card-product.metadata';
+import { ProductService } from 'src/app/data/services/api/product.service';
 interface Pedido {
   item: string,
   cantidad: number,
@@ -16,13 +17,17 @@ export class CardProductComponent implements OnInit {
   @Input() data?: ICardProduct;
 
   pedidos: Pedido[] = [];
-
-  constructor() { }
+  public selectProduct: any;
+  constructor(public productService: ProductService ) { }
 
   ngOnInit(): void {
   }
   getInfoProduct(){
-    const selectProduct = this.data;
-    console.log(selectProduct);
+  
+     this.selectProduct = this.data;
+   console.log(this.selectProduct);
+    this.productService.disparadorProduct.next(this.selectProduct);
+
+ 
   }
 }

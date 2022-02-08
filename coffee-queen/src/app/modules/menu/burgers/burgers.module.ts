@@ -12,9 +12,9 @@ import { ProductService } from './../../../data/services/api/product.service';
     BurgersListComponent,
     //ProductsListComponent
   ],
-  providers: [
+ /*  providers: [
     ProductService
-  ],
+  ], */
   imports: [
 CommonModule,
     BurgersRoutingModule,

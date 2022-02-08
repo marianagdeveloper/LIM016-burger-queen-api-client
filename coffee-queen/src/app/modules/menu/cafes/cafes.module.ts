@@ -9,15 +9,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     CafesListComponent
   ],
-  providers: [
+/*   providers: [
     ProductService
-  ],
+  ], */
   imports: [
     SharedModule,
     CafesRoutingModule
   ],
-  exports: [
+ /*  exports: [
     CafesListComponent
-  ]
+  ] */
 })
 export class CafesModule { }
