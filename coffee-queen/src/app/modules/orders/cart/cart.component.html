@@ -30,7 +30,7 @@
                         <button type="button" class="btn btn-light btn-sm" (click)="aumentarCantidad(product)">+</button>
                     </div>
                 </td>
-                <td>{{ product.price | currency:"S/. "}}</td>
+                <td>{{ product.subTotal| currency:"S/. "}}</td>
                 <td class="cursor"><img src="../../../../assets/bxs-trash.png"></td>
             </tr>
         </tbody>
@@ -38,7 +38,7 @@
             <th scope="col">Total</th>
             <th scope="col"></th>
             <th scope="col"></th>
-            <th scope="col">{{ subTotal | currency:"S/. "}}</th>
+            <th scope="col">{{ order.total | currency:"S/. "}}</th>
         </thead>
     </table>
     <div class="text-end">

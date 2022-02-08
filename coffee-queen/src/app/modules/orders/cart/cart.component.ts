@@ -53,6 +53,7 @@ export class CartComponent implements OnInit {
   };
   public subTotal: number = 0;
   public total: number = 0;
+  public cant: number = 0;
   public nameProduct: string = '';
   constructor(public productService: ProductService) {}
 
@@ -60,16 +61,29 @@ export class CartComponent implements OnInit {
     this.products = this.productService.arrayProducts;
 
     this.products.map((ele: any) => {
-      this.subTotal += ele.price;
+      this.order.total += ele.price;
+      
     });
-    console.log(this.subTotal);
+   
+    
+    
   }
 
-  aumentarCantidad(product:any) {
-   return product.qty +=1;
+  aumentarCantidad(product: any) {
+    
+    this.cant = product.qty += 1;
+    product.subTotal = this.cant * product.price;
+    this.order.total+= product.subTotal
+    this.order.total-= (product.price*(this.cant-1));
+   
+
   }
 
-  disminuirCantidad(product:any){
-    return product.qty -=1;
+  disminuirCantidad(product: any) {
+    this.cant =product.qty -= 1;
+    product.subTotal = this.cant * product.price;
+    this.order.total-= product.subTotal
+    this.order.total+= (product.price*(this.cant-1));
+   
   }
 }
