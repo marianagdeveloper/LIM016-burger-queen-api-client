@@ -11,14 +11,15 @@ export class ProductService {
   @Output() disparadorProduct: BehaviorSubject<any> = new BehaviorSubject({});
 
   public products: ICardProduct[] = [];
-  get arrayProducts(){
-    return [...this.products]
+  public total: number = 0;
+  get arrayProducts() {
+    return [...this.products];
   }
+  
   constructor(private http: HttpClient) {}
 
   setProducts(products: ICardProduct) {
     this.products.push(products);
-    console.log(this.products);
     
   }
 

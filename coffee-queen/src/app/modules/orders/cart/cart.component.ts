@@ -1,43 +1,75 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { ICardProduct } from '../../../shared/components/card/card-product/card-product.metadata';
-interface Pedido {
-  item: string,
-  cantidad: number,
-  precio: number,
-  stock: number
-  total: number,
-}
 
+interface orderProducts {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  type: string;
+  dateEntry: string;
+  qty: number;
+  subTotal: number;
+}
+interface Order {
+  _id: number;
+  userId: number;
+  client: string;
+  products: orderProducts[];
+  total: number;
+  status: string;
+  dateEntry: string;
+  dateProcessed: string;
+}
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-public  product:any;
-  pedidos: ICardProduct[] = [ ];
-  public total: number=0;
-  constructor(public productService: ProductService) { }
+  public products: any;
+  public order: Order = {
+    _id: 0,
+    userId: 0,
+    client: '',
+    products: [
+      {
+        id: 0,
+        name: '',
+        price: 0,
+        image: '',
+        type: '',
+        dateEntry: '',
+        qty: 0,
+        subTotal: 0,
+      },
+    ],
+    total: 0,
+    status: '',
+    dateEntry: '',
+    dateProcessed: '',
+    //Añadir qties no te olvides!
+  };
+  public subTotal: number = 0;
+  public total: number = 0;
+  public nameProduct: string = '';
+  constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
-    this.product = this.productService.arrayProducts;
-    console.log(this.product);
-    //this.pedidos.push(this.product);
-    this.total = this.product.price;
+    this.products = this.productService.arrayProducts;
+
+    this.products.map((ele: any) => {
+      this.subTotal += ele.price;
+    });
+    console.log(this.subTotal);
   }
 
-  aumentarCantidad(pedido: Pedido): void{
-    if(pedido.stock > pedido.cantidad) {
-      pedido.cantidad += 1;
-    }
-
+  aumentarCantidad(product:any) {
+   return product.qty +=1;
   }
 
-  disminuirCantidad(pedido: Pedido): void{
-    if(pedido.cantidad>0){
-      pedido.cantidad -= 1;
-    }
+  disminuirCantidad(product:any){
+    return product.qty -=1;
   }
-
 }
