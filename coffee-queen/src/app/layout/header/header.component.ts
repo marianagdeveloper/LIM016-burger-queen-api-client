@@ -15,15 +15,10 @@ export class HeaderComponent implements OnInit {
   @Input() userData?: ILoginUsers[];
  public nameUser:any;
   constructor(public loginService: LoginService) {
-
-
-    // console.log('LoginUserComponent', LoginUserComponent.arguments.userData);
   }
 
   ngOnInit() {
     this.nameUser=this.loginService.disparador.getValue( ).name;
-
-
 
   }
 }

@@ -2,10 +2,8 @@
     <div class="container d-flex justify-content-center">
         <main class="form-signin mt-3">
             <form method="post" [formGroup]="loginForm" (ngSubmit)="getUserCredentials()">
-                <!-- <div > -->
                 <img class="justify-content-center mt-5" src="../../../../assets/logoTaza.png" alt="" width="72" />
                 <h1 class="justify-content-center my-3 logo">Coffee Queen</h1>
-                <!-- </div> -->
                 <div class="p-3 inputs" (click)="limpiar()">
                     <div class="form-group form-floating my-2">
                         <input type="email" formControlName="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" />

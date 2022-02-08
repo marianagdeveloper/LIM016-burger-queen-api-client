@@ -13,11 +13,8 @@ import { ProductService } from '../../data/services/api/product.service';
     ProductsListComponent,
     ProductDetailComponent,
   ],
- /*  providers: [
-    ProductService
-  ], */
   imports: [
-  CommonModule, 
+  CommonModule,
     SharedModule,
     ProductRoutingModule
   ]
