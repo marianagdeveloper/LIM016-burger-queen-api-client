@@ -9,7 +9,7 @@ const routes: Routes = [
     component: BurgersListComponent
   }
 ];
-//{useHash:true}
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 exports: [RouterModule],

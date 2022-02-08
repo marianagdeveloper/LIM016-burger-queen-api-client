@@ -8,7 +8,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HeaderComponent } from '../../../layout/header/header.component';
 
 @Component({
   selector: 'app-login-user',
@@ -55,7 +54,6 @@ export class LoginUserComponent implements OnInit {
           this.userData.name = a.name;
           this.userData.email = a.email;
           this.userData.roles = a.roles;
-          // console.log('this.userData into filter', this.userData);
         }
       });
 
@@ -78,8 +76,6 @@ export class LoginUserComponent implements OnInit {
       });
 
       if (credentials) {
-        // alert('Login success');
-        // this.loginForm.reset();
 
         this.loginService.rolUser().subscribe((res) => {
           let rol = res.filter((a: any) => {
@@ -87,26 +83,20 @@ export class LoginUserComponent implements OnInit {
               this.userData.name = a.name;
               this.userData.email = a.email;
               this.userData.roles = a.roles;
-              // console.log('this.userData into filter', this.userData);
               return a.roles;
             }
           });
-          // this.getNameUser(userValidate)
-          // console.log('this.userData', this.userData);
+
           if (rol[0].roles.admin) {
-            //alert('Rol Admin');
             this.router.navigate(['product']);
           } else if (rol[0].roles.cook) {
-            //alert('Rol Cocinero');
             this.router.navigate(['product']);
           } else if (rol[0].roles.waiter) {
-            //alert('Rol Mesero');
             this.router.navigate(['product']);
           }
         });
       } else {
         this.htmlStr = '*Usuario y/o contraseña inválidos.';
-        /* alert('Usuario y/o contraseña inválido'); */
       }
     });
   }

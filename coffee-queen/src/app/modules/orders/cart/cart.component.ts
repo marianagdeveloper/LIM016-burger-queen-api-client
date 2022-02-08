@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
+import { ICardProduct } from '../../../shared/components/card/card-product/card-product.metadata';
 interface Pedido {
   item: string,
   cantidad: number,
@@ -15,14 +16,16 @@ interface Pedido {
 })
 export class CartComponent implements OnInit {
 public  product:any;
-  pedidos: Pedido[] = [ ];
-
+  pedidos: ICardProduct[] = [ ];
+  public total: number=0;
   constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
-this.product=this.productService.disparadorProduct.getValue( );
-console.log(this.product);
-}
+    this.product = this.productService.disparadorProduct.getValue();
+    console.log(this.product);
+    this.pedidos.push(this.product);
+    this.total = this.product.price;
+  }
 
   aumentarCantidad(pedido: Pedido): void{
     if(pedido.stock > pedido.cantidad) {

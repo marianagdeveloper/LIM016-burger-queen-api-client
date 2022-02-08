@@ -20,19 +20,21 @@ interface Pedido1 {
   styleUrls: ['./card-product.component.scss']
 })
 export class CardProductComponent implements OnInit {
-  @Input() data?: ICardProduct;
+  @Input() data!: ICardProduct;
 
-  pedidos: Pedido[] = [];
+  public pedidos: ICardProduct[] = [];
+
   public selectProduct?: Pedido1[] = [];
   constructor(public productService: ProductService ) { }
 
   ngOnInit(): void {
 
   }
+
   getInfoProduct(){
-    
+
     this.productService.disparadorProduct.next(this.data)
 
-   
+
   }
 }
