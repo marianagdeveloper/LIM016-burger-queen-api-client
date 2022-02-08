@@ -19,7 +19,7 @@
                         <span class="mensaje" *ngIf="campoEsValido('password')">*Contraseña es requerida.</span>
                     </div>
                     <div class="my-3 mensaje">{{ htmlStr }}</div>
-                    <button (click)="getNameUser()" class="w-100 btn btn-lg btn-warning btnLogin" type="submit" [disabled]="!loginForm.valid">
+                    <button class="w-100 btn btn-lg btn-warning btnLogin" type="submit" [disabled]="!loginForm.valid">
             Iniciar Sesión
           </button>
                 </div>

@@ -22,9 +22,14 @@ interface Pedido1 {
 export class CardProductComponent implements OnInit {
   @Input() data!: ICardProduct;
 
-  public pedidos: ICardProduct[] = [];
+/*   public pedidos: Pedido1={
+    name: '',
+    price: 0,
+    image: '',
+    type: '',
+  } */
 
-  public selectProduct?: Pedido1[] = [];
+  public selectProduct?:any= [];
   constructor(public productService: ProductService ) { }
 
   ngOnInit(): void {
@@ -33,7 +38,9 @@ export class CardProductComponent implements OnInit {
 
   getInfoProduct(){
 
-    this.productService.disparadorProduct.next(this.data)
+  
+   // this.productService.disparadorProduct.next(this.selectProduct)
+   this.productService.setProducts(this.data);
 
 
   }

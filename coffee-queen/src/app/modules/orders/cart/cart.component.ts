@@ -21,9 +21,9 @@ public  product:any;
   constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
-    this.product = this.productService.disparadorProduct.getValue();
+    this.product = this.productService.arrayProducts;
     console.log(this.product);
-    this.pedidos.push(this.product);
+    //this.pedidos.push(this.product);
     this.total = this.product.price;
   }
 

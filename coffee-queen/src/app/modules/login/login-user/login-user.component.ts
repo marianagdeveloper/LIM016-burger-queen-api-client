@@ -47,22 +47,28 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
-  getNameUser() {
-    /* this.loginService.rolUser().subscribe((res) => {
-      let userValidate: any;
-      res.filter((a: any) => {
+  getDataUser(userValidate:any) {
+    this.loginService.rolUser().subscribe((res) => {
+      let rol = res.filter((a: any) => {
         if (a.email == userValidate) {
           this.userData.name = a.name;
           this.userData.email = a.email;
           this.userData.roles = a.roles;
           this.userData.avatar = a.avatar;
+          return a.roles;
         }
       });
-
-      return this.userData;
-    }); */
-
-    this.loginService.disparador.next(this.userData);
+      if (rol[0].roles.admin) {
+        this.router.navigate(['product']);
+      } else if (rol[0].roles.cook) {
+        this.router.navigate(['product']);
+      } else if (rol[0].roles.waiter) {
+        this.router.navigate(['product']);
+      }
+      this.loginService.disparador.next(this.userData);
+   
+    });
+  
   }
 
   getUserCredentials() {
@@ -78,28 +84,8 @@ export class LoginUserComponent implements OnInit {
       });
 
       if (credentials) {
-
-        this.loginService.rolUser().subscribe((res) => {
-          let rol = res.filter((a: any) => {
-            if (a.email == userValidate) {
-              this.userData.name = a.name;
-              this.userData.email = a.email;
-              this.userData.roles = a.roles;
-              this.userData.avatar = a.avatar;
-              console.log(a.avatar);
-              return a.roles;
-            }
-          });
-
-
-          if (rol[0].roles.admin) {
-            this.router.navigate(['product']);
-          } else if (rol[0].roles.cook) {
-            this.router.navigate(['product']);
-          } else if (rol[0].roles.waiter) {
-            this.router.navigate(['product']);
-          }
-        });
+        this.getDataUser(userValidate);
+      
       } else {
         this.htmlStr = '*Usuario y/o contraseña inválidos.';
       }
