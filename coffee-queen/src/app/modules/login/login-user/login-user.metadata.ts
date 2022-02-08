@@ -6,7 +6,8 @@ export interface ILoginUser{
 export interface ILoginUsers{
   email: string,
   name: string,
-  roles: IRoles
+  roles: IRoles,
+  avatar: string
 }
 
 export interface IRoles{

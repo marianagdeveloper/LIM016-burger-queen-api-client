@@ -29,6 +29,7 @@ export class LoginUserComponent implements OnInit {
       cook: false,
       waiter: true,
     },
+    avatar: ''
   };
 
   public loginForm!: FormGroup;
@@ -47,18 +48,19 @@ export class LoginUserComponent implements OnInit {
   }
 
   getNameUser() {
-    this.loginService.rolUser().subscribe((res) => {
+    /* this.loginService.rolUser().subscribe((res) => {
       let userValidate: any;
       res.filter((a: any) => {
         if (a.email == userValidate) {
           this.userData.name = a.name;
           this.userData.email = a.email;
           this.userData.roles = a.roles;
+          this.userData.avatar = a.avatar;
         }
       });
 
       return this.userData;
-    });
+    }); */
 
     this.loginService.disparador.next(this.userData);
   }
@@ -83,9 +85,12 @@ export class LoginUserComponent implements OnInit {
               this.userData.name = a.name;
               this.userData.email = a.email;
               this.userData.roles = a.roles;
+              this.userData.avatar = a.avatar;
+              console.log(a.avatar);
               return a.roles;
             }
           });
+
 
           if (rol[0].roles.admin) {
             this.router.navigate(['product']);

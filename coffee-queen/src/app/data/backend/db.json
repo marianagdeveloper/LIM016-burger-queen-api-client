@@ -488,7 +488,8 @@
                 "admin": true,
                 "cook": false,
                 "waiter": false
-            }
+            },
+            "avatar": "../../assets/admin.jpg"
         },
         {
             "id": "2",
@@ -499,7 +500,8 @@
                 "admin": false,
                 "cook": true,
                 "waiter": false
-            }
+            },
+            "avatar": "../../assets/chef.jpg"
         },
         {
             "id": "3",
@@ -510,7 +512,8 @@
                 "admin": false,
                 "cook": false,
                 "waiter": true
-            }
+            },
+            "avatar": "../../assets/mesero.png"
         }
     ],
     "order": [{
