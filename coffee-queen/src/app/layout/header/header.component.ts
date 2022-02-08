@@ -24,5 +24,6 @@ export class HeaderComponent implements OnInit {
     this.nameUser=this.loginService.disparador.getValue( ).name;
 
 
+
   }
 }

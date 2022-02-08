@@ -11,15 +11,15 @@ import { JuicesRoutingModule } from './juices-routing.module';
   declarations: [
     JuicesListComponent
   ],
-  providers: [
+ /*  providers: [
     ProductService
-  ],
+  ], */
   imports: [
     SharedModule,
     JuicesRoutingModule
   ],
-  exports: [
+  /* exports: [
     JuicesListComponent
-  ]
+  ] */
 })
 export class JuicesModule { }

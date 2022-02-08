@@ -10,30 +10,7 @@ import { ICardProduct } from '../../../shared/components/card/card-product/card-
 })
 export class ProductsListComponent implements OnInit {
 
-  public products?: ICardProduct[]; /* = [
-    {
-    name: "Cafe Americano",
-    price: 7,
-    image: "../../../../../assets/images/cafe_americano.jpg"
-    },
-    {
-      name: "Cafe Con Leche",
-      price: 15,
-      image: "../../../../../assets/images/cafe_leche.jpg"
-    },
-    {
-      name: "Cafe Con Leche",
-      price: 7,
-      image: "../../../../../assets/images/cafe_leche.jpg"
-    },
-    {
-      name: "Cafe Con Leche",
-      price: 10,
-      image: "../../../../../assets/images/cafe_leche.jpg"
-    },
-  ]; */
-
-  // public products: ArrayProducts[];
+  public products?: ICardProduct[];
   constructor(public productService: ProductService) {}
 
   ngOnInit() {

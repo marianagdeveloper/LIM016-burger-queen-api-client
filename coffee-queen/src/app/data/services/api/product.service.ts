@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable,Output } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { Observable,BehaviorSubject } from 'rxjs'
 import { ICardProduct } from 'src/app/shared/components/card/card-product/card-product.metadata';
 
 @Injectable({
@@ -8,7 +8,13 @@ import { ICardProduct } from 'src/app/shared/components/card/card-product/card-p
 })
 export class ProductService{
 
-  constructor(private http: HttpClient) {}
+  @Output() disparadorProduct:BehaviorSubject<any> = new BehaviorSubject( {});
+
+
+  constructor(private http: HttpClient) {
+   
+    
+  }
 
   // Consume la API de users y devuelve un observable a la respuesta
   getAllProducts(): Observable<ICardProduct[]>{
