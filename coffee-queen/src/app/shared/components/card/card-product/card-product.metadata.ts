@@ -3,4 +3,6 @@ export interface ICardProduct {
   price: number,
   image: string,
   type: string,
+  qty?: number,
+  subTotal?: number
 }

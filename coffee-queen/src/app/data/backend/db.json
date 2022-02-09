@@ -5,7 +5,9 @@
             "price": 8,
             "image": "../../assets/images/cafe_americano.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty": 1,
+            "subTotal": 8
         },
         {
             "id": 2,
@@ -13,7 +15,9 @@
             "price": 15,
             "image": "../../assets/images/cafe_leche.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty": 1,
+            "subTotal": 15
         },
         {
             "id": 3,
@@ -21,7 +25,9 @@
             "price": 10,
             "image": "../../assets/images/Sandwich de jamon y queso.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty": 1,
+            "subTotal": 10
         },
 
 

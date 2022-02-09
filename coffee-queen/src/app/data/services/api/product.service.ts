@@ -11,16 +11,48 @@ export class ProductService {
   @Output() disparadorProduct: BehaviorSubject<any> = new BehaviorSubject({});
 
   public products: ICardProduct[] = [];
-  get arrayProducts(){
-    return [...this.products]
+  public newProducts: ICardProduct[] = [];
+  public newEliminados: ICardProduct[] = [];
+  public total: number = 0;
+  get arrayProducts() {
+    return [...this.products];
   }
-  constructor(private http: HttpClient) {}
 
   setProducts(products: ICardProduct) {
     this.products.push(products);
-    console.log(this.products);
-    
   }
+
+
+
+
+
+
+
+
+
+  
+  //aqui obtenemos el new array Product del componente cart :D
+
+  get newArrayProducts() {
+    return [...this.newProducts];
+  }
+
+  setNewProducts(newProducts: ICardProduct) {
+    this.newProducts.push(newProducts);
+    console.log(newProducts);
+  }
+  //-----------------------------------------------------
+  get eliminadosProducts() {
+    console.log([...this.newEliminados]);
+
+    return [...this.newEliminados];
+  }
+
+  setEliminadosProducts(newEliminados: ICardProduct) {
+    this.newEliminados.push(newEliminados);
+    console.log(newEliminados);
+  }
+  constructor(private http: HttpClient) {}
 
   // Consume la API de users y devuelve un observable a la respuesta
   getAllProducts(): Observable<ICardProduct[]> {
