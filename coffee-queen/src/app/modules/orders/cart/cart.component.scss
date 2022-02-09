@@ -1,30 +1,41 @@
 @import "../../../../sass/bootstrap/bootstrap.scss";
-
 .colorNaranjoso {
-  color: #B85C38;
+    color: #B85C38;
 }
-.grosorLetra{
-  font-weight: 600;
+
+.grosorLetra {
+    font-weight: 600;
 }
-.colorPedido{
-  color: rgba(0, 0, 0, 0.37);
+
+.colorPedido {
+    color: rgba(0, 0, 0, 0.37);
 }
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-  background-color: rgba(230, 223, 154, 0.6);
+
+.table-striped>tbody>tr:nth-child(2n+1)>td,
+.table-striped>tbody>tr:nth-child(2n+1)>th {
+    background-color: rgba(230, 223, 154, 0.6);
 }
-.cursor{
-  cursor: pointer;
+
+.cursor {
+    cursor: pointer;
 }
+
 .borde:focus {
-  outline: none;
+    outline: none;
 }
-.bordes{
-  width: 55px;
-  border-radius: 20px;
-  img{
-    width: 20px;
-  }
+
+.bordes {
+    width: 55px;
+    border-radius: 20px;
+    img {
+        width: 20px;
+    }
 }
-.margen{
-  margin-right: 100px;
+
+.margen {
+    margin-right: 100px;
+}
+
+.inputCant {
+    width: 120px;
 }

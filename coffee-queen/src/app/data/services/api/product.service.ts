@@ -25,6 +25,23 @@ export class ProductService {
       this.products.push(producto);
     }
   }
+//-------------------------------------
+
+/* get filterProducts() {
+  return [...this.products];
+}
+
+setFilterProducts(producto: ICardProduct, flag?: string) {
+  if (flag == 'delete') {
+    const data = this.products.filter(
+      (item: any) => item.name != producto.name
+    );
+    this.products = data
+  } else {
+    this.products.push(producto);
+  }
+}
+ */
 
   constructor(private http: HttpClient) {}
   // Consume la API de users y devuelve un observable a la respuesta
