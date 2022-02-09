@@ -23,10 +23,10 @@
             <tr *ngFor="let product of products">
                 <th>{{ product.name }}</th>
                 <td>{{ product.price | currency:"S/. " }}</td>
-                <td>
+                <td class="inputCant">
                     <div class="input-group input-group-sm mb-1">
                         <button type="button" class="btn btn-light btn-sm" (click)="disminuirCantidad(product)">-</button>
-                        <input type="text" class="form-control form-control-sm" [(ngModel)]="product.qty">
+                        <input [attr.disabled]="true" type="text" class="form-control form-control-sm text-center " [(ngModel)]="product.qty">
                         <button type="button" class="btn btn-light btn-sm" (click)="aumentarCantidad(product)">+</button>
                     </div>
                 </td>

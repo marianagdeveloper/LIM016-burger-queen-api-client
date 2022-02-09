@@ -1,9 +1,20 @@
-<div class="dsc-card mt-3 " *ngIf="data" (click)="getInfoProduct()">
-    <div class="dsc-card__img">
-        <img src="{{ data.image }}" alt="">
+<fieldset class="dsc-card mt-1  mb-2" *ngIf="data" (click)="getInfoProduct()">
+
+    <div>
+        <div class="dsc-card__img">
+            <img src="{{ data.image }}" alt="">
+        </div>
+        <div class="dsc-card__info">
+            <p>{{ data?.name }}</p>
+            <p>{{ data?.price | currency: "S/. "}}</p>
+            <div class=" inputCant mt-2">
+                <button type="button" class="btn btn-light btn-sm">-</button>
+                <input [attr.disabled]="true" type="text" class=" form-control form-control-sm  text-center" [(ngModel)]="data.qty">
+                <button type="button" class="btn btn-light btn-sm">+</button>
+            </div>
+        </div>
     </div>
-    <div class="dsc-card__info">
-        <p>{{ data?.name }}</p>
-        <p>{{ data?.price | currency: "S/. "}}</p>
-    </div>
-</div>
+</fieldset>
+
+<!-- <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>
+<button ng-model="button" ng-disabled="checked">Button</button> -->
