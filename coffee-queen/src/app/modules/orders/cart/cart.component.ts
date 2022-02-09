@@ -60,28 +60,9 @@ export class CartComponent implements OnInit {
 
   constructor(public productService: ProductService) {}
   ngOnInit(): void {
-    this.arrayNew = this.productService.newArrayProducts;
     this.products = this.productService.arrayProducts;
-    this.productsEliminados = this.productService.eliminadosProducts;
-    console.log(this.productsEliminados);
-    if (this.arrayNew.length === 0) {
-      this.products = this.productService.arrayProducts;
-      console.log('product si esta vacio arraynew', this.products);
-    } else {
-      console.log('antes de push', this.products);
-      this.products.filter((productos: any) => {
-        this.productsEliminados.forEach((ele: any) => {
-          if (productos.name !== ele.name) {
-            console.log('entraste', productos.name);
-            this.nuevisimoArray.push(productos);
-          }
-        });
-      });
-      this.products = this.nuevisimoArray;
-      console.log('despues de push', this.products);
-    }
     this.products.map((ele: any) => {
-      this.order.total += ele.price;
+      this.order.total += ele.subTotal;
     });
   }
   aumentarCantidad(product: any) {
@@ -100,26 +81,18 @@ export class CartComponent implements OnInit {
       this.order.total -= product.subTotal;
       this.order.total += product.price * (this.cant - 1);
     }
-
     return this.order.total;
   }
-  public arrayNew: ICardProduct[] = [];
-  public eliminados: ICardProduct[] = [];
-  public productsEliminados: ICardProduct[] = [];
-  public nuevisimoArray: ICardProduct[] = [];
   deleteProduct(product: any) {
     this.products.filter((item: any) => {
-      if (item.name !== product.name) {
-        this.arrayNew.push(item);
+      if (item.name == product.name) {
+        const newLocal = 'delete';
+        this.productService.setProducts(item, newLocal);
       } else {
-        this.eliminados.push(item);
         this.deleteSubtotal = product.subTotal - product.price;
       }
     });
-    this.products = this.arrayNew;
-    this.productService.setProducts(this.arrayNew[0]);
-  /*   this.productService.setNewProducts(this.arrayNew[0]);
-    this.productService.setEliminadosProducts(this.eliminados[0]); */
+    this.products = this.productService.arrayProducts;
     if (product.qty > 1) {
       this.order.total = this.disminuirCantidad(product) - this.deleteSubtotal;
     } else {
