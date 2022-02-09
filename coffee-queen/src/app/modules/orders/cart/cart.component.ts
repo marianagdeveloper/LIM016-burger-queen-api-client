@@ -56,7 +56,7 @@ export class CartComponent implements OnInit {
   public newVariable: number = 0;
   public cant: number = 0;
   public nameProduct: string = '';
-  
+
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
@@ -75,23 +75,32 @@ export class CartComponent implements OnInit {
   }
 
   disminuirCantidad(product: any) {
-    this.cant = product.qty -= 1;
-    product.subTotal = this.cant * product.price;
-    this.order.total -= product.subTotal;
-    this.order.total += product.price * (this.cant - 1);
-    return  this.order.total;
-  }
-  deleteProduct(product: any){
-    let arrayNew: any[] = [];
-    this.products.filter((item:any) =>{
-      if(item.name !== product.name){
-        arrayNew.push(item)
-      }else{
-        this.deleteSubtotal=product.subTotal-product.price ;
-      }
-    } );
-    this.products = arrayNew;
-    this.order.total=(this.disminuirCantidad(product))-  this.deleteSubtotal;
+    if (product.qty < 2) {
+      product.qty = 1;
+      product.subTotal = product.price;
+    } else {
+      this.cant = product.qty -= 1;
+      product.subTotal = this.cant * product.price;
+      this.order.total -= product.subTotal;
+      this.order.total += product.price * (this.cant - 1);
+    }
 
+    return this.order.total;
+  }
+  deleteProduct(product: any) {
+    let arrayNew: any[] = [];
+    this.products.filter((item: any) => {
+      if (item.name !== product.name) {
+        arrayNew.push(item);
+      } else {
+        this.deleteSubtotal = product.subTotal - product.price;
+      }
+    });
+    this.products = arrayNew;
+    if (product.qty > 1) {
+      this.order.total = this.disminuirCantidad(product) - this.deleteSubtotal;
+    } else {
+      this.order.total = this.disminuirCantidad(product) - product.price;
+    }
   }
 }
