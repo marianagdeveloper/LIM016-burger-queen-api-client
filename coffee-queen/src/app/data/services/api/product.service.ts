@@ -21,7 +21,37 @@ export class ProductService {
         (item: any) => item.name != producto.name
       );
       this.products = data
-    } else {
+    } /* if (flag == 'update') {
+      console.log(producto);
+
+      let hash: any;
+      const data = this.products.filter( (o: any) => {
+        console.log('este es el hash',o.name);
+
+        //hash[o.name] ? false : hash[o.name] = true
+      });
+      console.log(data); */
+      /* var array = [
+        {id:1,nombre:'casa'},
+        {id:2,nombre:'fruta'},
+        {id:3,nombre:'mascotas'},
+        {id:1,nombre:'casa'},
+        {id:2,nombre:'fruta'},
+        {id:4,nombre:'cosas'},
+        {id:5,nombre:'otros'}
+      ];
+
+      let hash = {};
+      array = array.filter(o => hash[o.id] ? false : hash[o.id] = true);
+      console.log(JSON.stringify(array));
+
+      //this.products = data
+      console.log(data); */
+
+
+
+    //}
+    else {
       this.products.push(producto);
     }
   }

@@ -8,8 +8,9 @@ import { ICardProduct } from 'src/app/shared/components/card/card-product/card-p
   styleUrls: ['./cafes-list.component.scss'],
 })
 export class CafesListComponent implements OnInit {
-  public products?: ICardProduct[];
-
+  public products!: ICardProduct[];
+  /* public pedidoCafe: any;
+  public prueba: any; */
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
@@ -20,6 +21,15 @@ export class CafesListComponent implements OnInit {
         }
       });
       this.products = cafes;
+      /* this.pedidoCafe =this.productService.arrayProducts;
+      this.products.map( producto => {
+        this.prueba = this.pedidoCafe.filter( (pedido: any) =>{
+          if( pedido.name == producto.name){
+            producto.qty = pedido.qty;
+          }
+        })
+      })
+      console.log(this.prueba); */
     });
   }
 }
