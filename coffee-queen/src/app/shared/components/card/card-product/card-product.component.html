@@ -8,9 +8,9 @@
             <p>{{ data?.name }}</p>
             <p>{{ data?.price | currency: "S/. "}}</p>
             <div class=" inputCant mt-2">
-                <button type="button" class="btn btn-light btn-sm" (click)="disminuirCantidad(data)">-</button>
-                <input [attr.disabled]="true" type="text" class=" form-control form-control-sm  text-center" [(ngModel)]="data.qty">
-                <button type="button" class="btn btn-light btn-sm" (click)="aumentarCantidad(data)">+</button>
+                <button type="button" class="btn btn-light sizeBtn" (click)="disminuirCantidad(data)">-</button>
+                <input [attr.disabled]="true" type="text" class=" form-control  formInput text-center" [(ngModel)]="data.qty">
+                <button type="button" class="btn btn-light sizeBtn" (click)="aumentarCantidad(data)">+</button>
             </div>
             <!-- <button class="btn btn-success" (click)="getInfoProduct()">Añadir</button> -->
         </div>
