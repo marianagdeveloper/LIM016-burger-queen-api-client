@@ -1,4 +1,4 @@
-<fieldset class="dsc-card mt-1  mb-2" *ngIf="data" (click)="getInfoProduct()">
+<fieldset class="dsc-card mt-1  mb-2" *ngIf="data">
 
     <div>
         <div class="dsc-card__img">
@@ -8,9 +8,9 @@
             <p>{{ data?.name }}</p>
             <p>{{ data?.price | currency: "S/. "}}</p>
             <div class=" inputCant mt-2">
-                <button type="button" class="btn btn-light btn-sm">-</button>
+                <button type="button" class="btn btn-light btn-sm" (click)="disminuirCantidad(data)">-</button>
                 <input [attr.disabled]="true" type="text" class=" form-control form-control-sm  text-center" [(ngModel)]="data.qty">
-                <button type="button" class="btn btn-light btn-sm">+</button>
+                <button type="button" class="btn btn-light btn-sm" (click)="aumentarCantidad(data)">+</button>
             </div>
             <!-- <button class="btn btn-success" (click)="getInfoProduct()">Añadir</button> -->
         </div>

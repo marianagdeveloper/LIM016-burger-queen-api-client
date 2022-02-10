@@ -61,6 +61,7 @@ export class CartComponent implements OnInit {
   constructor(public productService: ProductService) {}
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
+
     this.products.map((ele: any) => {
       this.order.total += ele.subTotal;
     });

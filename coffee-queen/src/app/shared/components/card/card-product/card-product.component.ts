@@ -2,18 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ICardProduct } from './card-product.metadata';
 import { ProductService } from 'src/app/data/services/api/product.service';
 
-interface Pedido {
-  item: string;
-  cantidad: number;
-  precio: number;
-  stock: number;
-}
-interface Pedido1 {
-  name: string;
-  price: number;
-  image: string;
-  type: string;
-}
 interface orderProducts {
   id: number;
   name: string;
@@ -43,16 +31,8 @@ interface Order {
 export class CardProductComponent implements OnInit {
   @Input() data!: ICardProduct;
 
-  /*   public pedidos: Pedido1={
-    name: '',
-    price: 0,
-    image: '',
-    type: '',
-  } */
-  public activeDiv: any;
-  public desActiveDiv: any;
-  public selectProduct?: any = [];
-  /* public cant: number = 0;
+  public cant: number = 0;
+  public isRepeat: boolean = false;
   public order: Order = {
     _id: 0,
     userId: 0,
@@ -76,47 +56,53 @@ export class CardProductComponent implements OnInit {
     //Añadir qties no te olvides!
   };
   public products!: ICardProduct[];
-  public updateProducts: any; */
-
 
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
-    //this.activeDiv='
-    //this.products = this.productService.arrayProducts;
+    this.products = this.productService.arrayProducts;
   }
 
-  getInfoProduct() {
-    /* this.products.map( producto => {
-        if( this.data.name == producto.name){
-          producto.qty = this.data.qty;
-          //this.productService.setProducts(this.data, 'update');
-        }
-    }) */
-
-    this.productService.setProducts(this.data);
-
-
-    this.activeDiv = 'true';
-    this.desActiveDiv = 'disableDiv';
+  updateRepeats(productSelected?: any) {
+   this.products.map((producto) => {
+      if (productSelected.name == producto.name) {
+        producto.qty = this.data.qty;
+        this.isRepeat = true;
+      }
+    });
   }
 
-  /* aumentarCantidad(product: any) {
+  aumentarCantidad(product: any) {
     this.cant = product.qty += 1;
     product.subTotal = this.cant * product.price;
     this.order.total += product.subTotal;
     this.order.total -= product.price * (this.cant - 1);
+    this.updateRepeats(product);
+    // add new product
+    if (!(this.isRepeat || product.qty > 1)) {
+      this.productService.setProducts(product)
+    }
   }
+
   disminuirCantidad(product: any) {
+    console.log('en disminuir');
+
     if (product.qty < 2) {
-      product.qty = 1;
+      product.qty = 0;
       product.subTotal = product.price;
     } else {
       this.cant = product.qty -= 1;
       product.subTotal = this.cant * product.price;
       this.order.total -= product.subTotal;
       this.order.total += product.price * (this.cant - 1);
+
+      this.products.map((producto) => {
+        if (product.name == producto.name) {
+          producto.qty = this.cant;
+          producto.subTotal = product.subTotal;
+        }
+      });
     }
-    return this.order.total;
-  } */
+    // return this.order.total;
+  }
 }

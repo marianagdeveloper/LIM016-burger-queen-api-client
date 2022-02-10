@@ -6,7 +6,7 @@
             "image": "../../assets/images/cafe_americano.jpg",
             "type": "cafes",
             "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
+            "qty": 0,
             "subTotal": 8
         },
         {
@@ -16,7 +16,7 @@
             "image": "../../assets/images/cafe_leche.jpg",
             "type": "cafes",
             "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
+            "qty": 0,
             "subTotal": 15
         },
         {
@@ -26,7 +26,7 @@
             "image": "../../assets/images/Sandwich de jamon y queso.jpg",
             "type": "hamburguers",
             "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
+            "qty": 0,
             "subTotal": 10
         },
 
@@ -37,7 +37,9 @@
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 5,
@@ -45,7 +47,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de fresa.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 6,
@@ -53,7 +57,9 @@
             "price": 18,
             "image": "../../assets/images/Hamburguesas.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
 
 
@@ -63,7 +69,9 @@
             "price": 18,
             "image": "../../assets/images/Agua 500ml.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
 
         {
@@ -72,7 +80,9 @@
             "price": 18,
             "image": "../../assets/images/Bebida gaseosa 500ml.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 11,
@@ -80,7 +90,9 @@
             "price": 15,
             "image": "../../assets/images/te_verde.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 12,
@@ -88,7 +100,9 @@
             "price": 15,
             "image": "../../assets/images/te_negro.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 13,
@@ -96,7 +110,9 @@
             "price": 15,
             "image": "../../assets/images/manzanilla.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 14,
@@ -104,7 +120,9 @@
             "price": 6,
             "image": "../../assets/images/brownie.png",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 6
         },
         {
             "id": 15,
@@ -112,7 +130,9 @@
             "price": 7,
             "image": "../../assets/images/tortaHelada.png",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 7
         },
         {
             "id": 16,
@@ -120,7 +140,9 @@
             "price": 4,
             "image": "../../assets/images/helado-de-lucuma.jpg",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 4
         },
         {
             "id": 17,
@@ -128,7 +150,9 @@
             "price": 4,
             "image": "../../assets/images/helado-de-vainilla.png",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 4
         },
         {
             "id": 18,
@@ -136,7 +160,9 @@
             "price": 4,
             "image": "../../assets/images/helado-de-chocolate.jpg",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 4
         },
         {
             "id": 19,
@@ -144,7 +170,9 @@
             "price": 4,
             "image": "../../assets/images/helado-de-fresa.png",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 4
         },
         {
             "id": 20,
@@ -152,7 +180,9 @@
             "price": 8,
             "image": "../../assets/images/keke-de-zanahoria.png",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 8
         },
         {
             "id": 21,
@@ -160,7 +190,9 @@
             "price": 7,
             "image": "../../assets/images/crema-volteada.png",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 7
         },
         {
             "id": 22,
@@ -168,7 +200,9 @@
             "price": 8,
             "image": "../../assets/images/keke-de-platano.jpg",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 8
         },
         {
             "id": 23,
@@ -176,7 +210,9 @@
             "price": 3.5,
             "image": "../../assets/images/alfajores.png",
             "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 3
         },
         {
             "id": 24,
@@ -184,7 +220,9 @@
             "price": 12,
             "image": "../../assets/images/Papas fritas.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 25,
@@ -192,7 +230,9 @@
             "price": 15,
             "image": "../../assets/images/camotes-fritos.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 26,
@@ -200,7 +240,9 @@
             "price": 15,
             "image": "../../assets/images/yucas-fritas.png",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 27,
@@ -208,7 +250,9 @@
             "price": 10,
             "image": "../../assets/images/frutos-secos.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 10
         },
         {
             "id": 28,
@@ -216,7 +260,9 @@
             "price": 4,
             "image": "../../assets/images/mani-salado.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 4
         },
         {
             "id": 29,
@@ -224,7 +270,9 @@
             "price": 4,
             "image": "../../assets/images/mani-confitado.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 4
         },
         {
             "id": 30,
@@ -232,7 +280,9 @@
             "price": 6,
             "image": "../../assets/images/empanada-de-carne.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 6
         },
         {
             "id": 31,
@@ -240,7 +290,9 @@
             "price": 6,
             "image": "../../assets/images/empanada-de-pollo.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 6
         },
         {
             "id": 32,
@@ -248,7 +300,9 @@
             "price": 8,
             "image": "../../assets/images/tequeños.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 8
         },
         {
             "id": 33,
@@ -256,7 +310,9 @@
             "price": 6,
             "image": "../../assets/images/granola.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 6
         },
         {
             "id": 34,
@@ -264,14 +320,18 @@
             "price": 10,
             "image": "../../assets/images/burger1.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 10
         }, {
             "id": 35,
             "name": "Hamburguesa doble con queso",
             "price": 18,
             "image": "../../assets/images/burger2.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 36,
@@ -279,7 +339,9 @@
             "price": 18,
             "image": "../../assets/images/burger3.jpeg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 37,
@@ -287,14 +349,18 @@
             "price": 10,
             "image": "../../assets/images/burger4.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 10
         }, {
             "id": 38,
             "name": "Hamburguesas triple carne y queso ",
             "price": 18,
             "image": "../../assets/images/burger5.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 39,
@@ -302,7 +368,9 @@
             "price": 18,
             "image": "../../assets/images/burger6.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 40,
@@ -310,7 +378,9 @@
             "price": 18,
             "image": "../../assets/images/burger7.jpg",
             "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 41,
@@ -318,7 +388,9 @@
             "price": 18,
             "image": "../../assets/images/bebi1.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 42,
@@ -326,7 +398,9 @@
             "price": 18,
             "image": "../../assets/images/bebi2.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 43,
@@ -334,7 +408,9 @@
             "price": 18,
             "image": "../../assets/images/bebi3.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 44,
@@ -342,7 +418,9 @@
             "price": 18,
             "image": "../../assets/images/bebi4.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 45,
@@ -350,7 +428,9 @@
             "price": 18,
             "image": "../../assets/images/bebi5.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 46,
@@ -358,7 +438,9 @@
             "price": 18,
             "image": "../../assets/images/bebi6.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 46,
@@ -366,7 +448,9 @@
             "price": 18,
             "image": "../../assets/images/bebi7.jpg",
             "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 18
         },
         {
             "id": 33,
@@ -374,7 +458,9 @@
             "price": 6,
             "image": "../../assets/images/granola.jpg",
             "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 6
         },
         {
             "id": 34,
@@ -382,7 +468,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de naranja.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 35,
@@ -390,7 +478,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de limon.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 36,
@@ -398,7 +488,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de papaya.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 37,
@@ -406,7 +498,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de maracuya.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 38,
@@ -414,7 +508,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de pina.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 39,
@@ -422,7 +518,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de lucuma.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 40,
@@ -430,7 +528,9 @@
             "price": 12,
             "image": "../../assets/images/jugo de manzana.jpg",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 12
         },
         {
             "id": 41,
@@ -438,7 +538,9 @@
             "price": 15,
             "image": "../../assets/images/capuchino.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 42,
@@ -446,7 +548,9 @@
             "price": 15,
             "image": "../../assets/images/mocachino.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 43,
@@ -454,7 +558,9 @@
             "price": 15,
             "image": "../../assets/images/late.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         },
         {
             "id": 42,
@@ -462,7 +568,9 @@
             "price": 15,
             "image": "../../assets/images/cafe expreso.jpg",
             "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00"
+            "dateEntry": "21/01/2022 09:24:00",
+            "qty":0,
+            "subTotal": 15
         }
 
 
