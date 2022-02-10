@@ -4,9 +4,15 @@
         <div>
             <h4 class="colorNaranjoso">Pedido N° 100</h4>
         </div>
-        <div class="d-flex flex-row">
-            <span class="grosorLetra">Cliente: <input type="text" class="borde"></span>
-            <span class="colorNaranjoso grosorLetra">Mesa: <input type="text" class="borde"></span>
+        <div class="d-flex flex-row align-items-center">
+            <span class="grosorLetra my-3">Cliente:</span> <input type="text" class="borde ml-3" [(ngModel)]="order.client">
+            <span class="colorNaranjoso grosorLetra ml-3">Mesa:</span>
+            <select class="form-select ml-3" aria-label="Default select example" [(ngModel)]="opcionSeleccionado" (change)="capturar()">
+                <option value="0">Selecciona una opción</option>
+                <option *ngFor="let dato of arrayNumberTable">
+                  {{dato}}
+                </option>
+       </select>
         </div>
     </div>
     <table class="p-5 table table-striped ">
@@ -42,12 +48,15 @@
         </thead>
     </table>
 
-
-
-</div>
-<div class="margen">
-    <div class="text-end">
-        <a class="btn btn-danger btn-sm bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/x-light.png"></a>
-        <a class="btn btn-success btn-sm bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/check-light.png"></a>
+    <div class="mb-3 d-flex justify-content-between">
+        <div class=" col-6">
+            <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="text-end col-6 align-self-end">
+            <a class="btn btn-danger btn-md bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/x-light.png"></a>
+            <a class="btn btn-success btn-md bordes m-3" role="button" aria-disabled="true" (click)="sendOrder()"><img src="../../../../assets/check-light.png"></a>
+        </div>
     </div>
+
 </div>

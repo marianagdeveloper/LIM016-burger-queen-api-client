@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-import { CartComponent } from './cart/cart.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
-    CartComponent
+    OrderListComponent
   ],
   imports: [
     CommonModule,

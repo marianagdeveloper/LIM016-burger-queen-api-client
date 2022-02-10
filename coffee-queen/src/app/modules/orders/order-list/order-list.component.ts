@@ -1,38 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { ICardProduct } from 'src/app/shared/components/card/card-product/card-product.metadata';
+import { LoginService } from 'src/app/data/services/api/login.service';
 
-interface orderProducts {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  type: string;
-  dateEntry: string;
-  qty: number;
-  subTotal: number;
-}
 interface Order {
   _id: number;
-  userId: number;
+  userName: string,
   client: string;
-  products: orderProducts[];
+  products: ICardProduct[];
   total: number;
   totalQty: number,
+  numberTable:string,
   status: string;
   dateEntry: string;
   dateProcessed: string;
 }
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  selector: 'app-order-list',
+  templateUrl: './order-list.component.html',
+  styleUrls: ['./order-list.component.scss'],
 })
-export class CartComponent implements OnInit {
+export class OrderListComponent implements OnInit {
   public products!: ICardProduct[];
   public order: Order = {
     _id: 0,
-    userId: 0,
+    userName: '',
     client: '',
     products: [
       {
@@ -41,13 +33,14 @@ export class CartComponent implements OnInit {
         price: 0,
         image: '',
         type: '',
-        dateEntry: '',
         qty: 0,
         subTotal: 0,
+        dateEntry: '',
       },
     ],
     total: 0,
     totalQty: 0,
+    numberTable:'',
     status: '',
     dateEntry: '',
     dateProcessed: '',
@@ -60,16 +53,33 @@ export class CartComponent implements OnInit {
   public newVariable: number = 0;
   public cant: number = 0;
   public nameProduct: string = '';
-
-  constructor(public productService: ProductService) {}
+  public dateNow:any;
+  public arrayNumberTable: number[] = [];
+  public opcionSeleccionado: string = '0';
+  constructor(public productService: ProductService,public loginService: LoginService) {
+    this.arrayNumberTable=[1,2,3,4,5];
+  }
   ngOnInit(): void {
+    this.order.userName=this.loginService.disparador.getValue( ).name;
     this.products = this.productService.arrayProducts;
-
     this.products.map((ele: any) => {
       this.order.total += ele.subTotal;
       this.order.totalQty += ele.qty;
     });
+    this.order.products= this.products;
   }
+  capturar(){
+    this.order.numberTable=this.opcionSeleccionado;
+  }
+sendOrder(){
+console.log(this.order);
+const tiempoTranscurrido = Date.now();
+const hoy = new Date(tiempoTranscurrido);
+this.order.dateEntry=hoy.toUTCString();
+}
+
+
+
   aumentarCantidad(product: any) {
     this.cant = product.qty += 1;
     product.subTotal = this.cant * product.price;
