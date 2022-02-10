@@ -10,7 +10,7 @@ import { ICardProduct } from 'src/app/shared/components/card/card-product/card-p
 export class JuicesListComponent implements OnInit {
 
   public products?: ICardProduct[];
-
+  public pedidoJuices!: ICardProduct[];
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
@@ -21,6 +21,15 @@ export class JuicesListComponent implements OnInit {
         }
       });
       this.products = juices;
+      this.pedidoJuices = this.productService.arrayProducts;
+
+      this.products.forEach((producto) => {
+        this.pedidoJuices.forEach((pedido: any) => {
+          if (pedido.name == producto.name) {
+            producto.qty = pedido.qty;
+          }
+        });
+      });
     });
   }
 

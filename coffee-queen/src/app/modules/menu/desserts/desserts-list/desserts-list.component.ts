@@ -12,7 +12,7 @@ export class DessertsListComponent implements OnInit {
   public products!: ICardProduct[];
 
   public desserts!: ICardProduct[];
-
+  public pedidoDesserts!: ICardProduct[];
   constructor(public productService: ProductService) {}
 
   ngOnInit() {
@@ -25,6 +25,15 @@ export class DessertsListComponent implements OnInit {
         }
       }
       this.desserts = data.filter(filtrarPorType);
+      this.pedidoDesserts = this.productService.arrayProducts;
+
+      this.desserts.forEach((producto) => {
+        this.pedidoDesserts.forEach((pedido: any) => {
+          if (pedido.name == producto.name) {
+            producto.qty = pedido.qty;
+          }
+        });
+      });
     });
   }
 

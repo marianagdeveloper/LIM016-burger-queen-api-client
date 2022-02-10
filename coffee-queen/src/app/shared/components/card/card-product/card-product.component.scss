@@ -39,13 +39,24 @@
 }
 
 .inputCant {
-    width: 100px;
+    width: 100%;
     display: flex !important;
     justify-content: center !important;
     margin: auto;
+    .sizeBtn {
+        width: 60px;
+        background-color: #e49329;
+        font-size: 24px;
+        font-weight: bold !important;
+        color: white
+    }
+    .formInput {
+        width: 40px
+    }
 }
 
 button {
     display: inline-block !important;
     margin: auto !important;
+    background-color: #B85C38;
 }

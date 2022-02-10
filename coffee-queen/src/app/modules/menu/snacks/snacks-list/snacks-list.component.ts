@@ -12,7 +12,8 @@ export class SnacksListComponent implements OnInit {
   public products!: ICardProduct[];
 
   public snacks!: ICardProduct[];
-
+  public pedidoSnacks!: ICardProduct[];
+  
 
   constructor(public productService: ProductService) {}
 
@@ -25,7 +26,15 @@ export class SnacksListComponent implements OnInit {
         }
       }
       this.snacks = data.filter(filtrarPorType);
+      this.pedidoSnacks = this.productService.arrayProducts;
 
+      this.snacks.forEach((producto) => {
+        this.pedidoSnacks.forEach((pedido: any) => {
+          if (pedido.name == producto.name) {
+            producto.qty = pedido.qty;
+          }
+        });
+      });
     });
   }
 

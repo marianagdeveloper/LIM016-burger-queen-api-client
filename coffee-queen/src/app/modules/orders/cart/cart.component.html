@@ -1,6 +1,6 @@
-<div class="margen">
+<div class="margen tablePedidos p-3">
 
-    <div class="d-flex flex-row justify-content-between align-items-center">
+    <div class="d-flex flex-row justify-content-between align-items-center p-2 ">
         <div>
             <h4 class="colorNaranjoso">Pedido N° 100</h4>
         </div>
@@ -9,7 +9,7 @@
             <span class="colorNaranjoso grosorLetra">Mesa: <input type="text" class="borde"></span>
         </div>
     </div>
-    <table class="table table-striped tablePedidos">
+    <table class="p-5 table table-striped ">
         <thead>
             <tr class="colorPedido">
                 <th scope="col">Descripción</th>
@@ -41,10 +41,13 @@
             <th scope="col">{{ order.total | currency:"S/. "}}</th>
         </thead>
     </table>
+
+
+
+</div>
+<div class="margen">
     <div class="text-end">
         <a class="btn btn-danger btn-sm bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/x-light.png"></a>
         <a class="btn btn-success btn-sm bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/check-light.png"></a>
     </div>
-
-
 </div>
