@@ -18,6 +18,7 @@ interface Order {
   client: string;
   products: orderProducts[];
   total: number;
+  numberTable: string;
   status: string;
   dateEntry: string;
   dateProcessed: string;
@@ -50,14 +51,17 @@ export class CardProductComponent implements OnInit {
       },
     ],
     total: 0,
+    numberTable: '',
     status: '',
     dateEntry: '',
     dateProcessed: '',
     //Añadir qties no te olvides!
   };
   public products!: ICardProduct[];
-
-  constructor(public productService: ProductService) {}
+ 
+  constructor(public productService: ProductService) {
+    
+  }
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
@@ -91,7 +95,6 @@ export class CardProductComponent implements OnInit {
     this.order.total -= productSelected.subTotal;
     this.order.total += productSelected.price * (this.cant - 1);
 
-
     // in the card componet qty never be less than zero
     if (this.cant < 0) {
       productSelected.qty = 0;
@@ -105,7 +108,7 @@ export class CardProductComponent implements OnInit {
         producto.qty = this.cant;
 
         // in the order(cart) componet qty never be less than zero
-        if (producto.qty == 0 || producto.qty < 0) {
+        if (producto.qty <= 0) {
           productSelected.qty = 0;
           const newLocal = 'delete';
           this.productService.setProducts(productSelected, newLocal);
@@ -115,5 +118,11 @@ export class CardProductComponent implements OnInit {
         producto.subTotal = producto.qty * productSelected.price;
       }
     });
+    if (productSelected.qty <= 0) {
+      productSelected.qty = 0;
+      const newLocal = 'delete';
+      this.productService.setProducts(productSelected, newLocal);
+      this.products = this.productService.arrayProducts;
+    }
   }
 }
