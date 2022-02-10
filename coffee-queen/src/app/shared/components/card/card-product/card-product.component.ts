@@ -77,6 +77,7 @@ export class CardProductComponent implements OnInit {
     product.subTotal = this.cant * product.price;
     this.order.total += product.subTotal;
     this.order.total -= product.price * (this.cant - 1);
+
     this.updateRepeats(product);
     // add new product
     if (!(this.isRepeat || product.qty > 1)) {
@@ -99,7 +100,7 @@ export class CardProductComponent implements OnInit {
       this.products.map((producto) => {
         if (product.name == producto.name) {
           producto.qty = this.cant;
-          producto.subTotal = product.subTotal;
+          producto.subTotal = producto.qty * product.price;
         }
       });
     }
