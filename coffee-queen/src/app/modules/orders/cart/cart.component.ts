@@ -18,6 +18,7 @@ interface Order {
   client: string;
   products: orderProducts[];
   total: number;
+  totalQty: number,
   status: string;
   dateEntry: string;
   dateProcessed: string;
@@ -46,6 +47,7 @@ export class CartComponent implements OnInit {
       },
     ],
     total: 0,
+    totalQty: 0,
     status: '',
     dateEntry: '',
     dateProcessed: '',
@@ -53,6 +55,7 @@ export class CartComponent implements OnInit {
   };
   public subTotal: number = 0;
   public total: number = 0;
+  public totalQty: number = 0;
   public deleteSubtotal: number = 0;
   public newVariable: number = 0;
   public cant: number = 0;
@@ -64,6 +67,7 @@ export class CartComponent implements OnInit {
 
     this.products.map((ele: any) => {
       this.order.total += ele.subTotal;
+      this.order.totalQty += ele.qty;
     });
   }
   aumentarCantidad(product: any) {
@@ -71,6 +75,11 @@ export class CartComponent implements OnInit {
     product.subTotal = this.cant * product.price;
     this.order.total += product.subTotal;
     this.order.total -= product.price * (this.cant - 1);
+    // this.order.totalQty = 0;
+    // this.products.map((ele: any) => {
+    //   this.order.totalQty += ele.qty;
+    // });
+    this.order.totalQty += 1
   }
   disminuirCantidad(product: any) {
     if (product.qty < 2) {
@@ -81,6 +90,7 @@ export class CartComponent implements OnInit {
       product.subTotal = this.cant * product.price;
       this.order.total -= product.subTotal;
       this.order.total += product.price * (this.cant - 1);
+      this.order.totalQty -= 1
     }
     return this.order.total;
   }
@@ -95,9 +105,10 @@ export class CartComponent implements OnInit {
     });
     this.products = this.productService.arrayProducts;
     if (product.qty > 1) {
-      this.order.total = this.disminuirCantidad(product) - this.deleteSubtotal;
+      this.order.total = this.disminuirCantidad(product) - product.subTotal;
     } else {
       this.order.total = this.disminuirCantidad(product) - product.price;
     }
+    this.order.totalQty -= product.qty;
   }
 }

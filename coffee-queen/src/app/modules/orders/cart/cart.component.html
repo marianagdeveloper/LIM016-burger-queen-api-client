@@ -9,13 +9,13 @@
             <span class="colorNaranjoso grosorLetra">Mesa: <input type="text" class="borde"></span>
         </div>
     </div>
-    <table class="table table-striped">
+    <table class="table table-striped tablePedidos">
         <thead>
             <tr class="colorPedido">
                 <th scope="col">Descripción</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
-                <th scope="col">Total</th>
+                <th scope="col">Subtotal</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -37,7 +37,7 @@
         <thead>
             <th scope="col">Total</th>
             <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">{{ order.totalQty }}</th>
             <th scope="col">{{ order.total | currency:"S/. "}}</th>
         </thead>
     </table>

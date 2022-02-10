@@ -7,13 +7,19 @@
     font-weight: 600;
 }
 
+.tablePedidos {
+  background: rgba(255, 255, 255, 0.781);
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+
 .colorPedido {
     color: rgba(0, 0, 0, 0.37);
 }
 
 .table-striped>tbody>tr:nth-child(2n+1)>td,
 .table-striped>tbody>tr:nth-child(2n+1)>th {
-    background-color: rgba(230, 223, 154, 0.6);
+    background-color: #f8b12e70;
 }
 
 .cursor {

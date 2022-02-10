@@ -64,7 +64,7 @@ export class CardProductComponent implements OnInit {
   }
 
   updateRepeats(productSelected?: any) {
-   this.products.map((producto) => {
+    this.products.map((producto) => {
       if (productSelected.name == producto.name) {
         producto.qty = this.data.qty;
         this.isRepeat = true;
@@ -81,29 +81,39 @@ export class CardProductComponent implements OnInit {
     this.updateRepeats(product);
     // add new product
     if (!(this.isRepeat || product.qty > 1)) {
-      this.productService.setProducts(product)
+      this.productService.setProducts(product);
     }
   }
 
-  disminuirCantidad(product: any) {
-    console.log('en disminuir');
+  disminuirCantidad(productSelected: any) {
+    this.cant = productSelected.qty -= 1;
+    productSelected.subTotal = this.cant * productSelected.price;
+    this.order.total -= productSelected.subTotal;
+    this.order.total += productSelected.price * (this.cant - 1);
 
-    if (product.qty < 2) {
-      product.qty = 0;
-      product.subTotal = product.price;
-    } else {
-      this.cant = product.qty -= 1;
-      product.subTotal = this.cant * product.price;
-      this.order.total -= product.subTotal;
-      this.order.total += product.price * (this.cant - 1);
 
-      this.products.map((producto) => {
-        if (product.name == producto.name) {
-          producto.qty = this.cant;
-          producto.subTotal = producto.qty * product.price;
-        }
-      });
+    // in the card componet qty never be less than zero
+    if (this.cant < 0) {
+      productSelected.qty = 0;
+      const newLocal = 'delete';
+      this.productService.setProducts(productSelected, newLocal);
+      this.products = this.productService.arrayProducts;
     }
-    // return this.order.total;
+
+    this.products.map((producto) => {
+      if (productSelected.name == producto.name) {
+        producto.qty = this.cant;
+
+        // in the order(cart) componet qty never be less than zero
+        if (producto.qty == 0 || producto.qty < 0) {
+          productSelected.qty = 0;
+          const newLocal = 'delete';
+          this.productService.setProducts(productSelected, newLocal);
+        }
+
+        this.products = this.productService.arrayProducts;
+        producto.subTotal = producto.qty * productSelected.price;
+      }
+    });
   }
 }
