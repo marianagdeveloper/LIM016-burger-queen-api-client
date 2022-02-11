@@ -1,9 +1,19 @@
 <div class="row">
     <div class="col-12">
         <app-title-h1></app-title-h1>
+
+
+        <div class="d-flex justify-content-end px-3 pb-4 ">
+            <div class="input-group w-25">
+                <input class="form-control  w-25" placeholder="Producto" aria-label="Search" [(ngModel)]="getProduct">
+                <span class="input-group-text bgwhite" (click)="cleanSearch()">x</span>
+
+            </div>
+            <button class=" btn btnSearch mx-2" (click)="searchProduct()">Buscar</button>
+        </div>
     </div>
     <div class="col-md-9 justify-content-between  d-flex flex-wrap">
-        <app-card-product [data]="product" *ngFor="let product of products;" class="m-3 "></app-card-product>
+        <app-card-product [data]="product" *ngFor="let product of products " class="m-3 "></app-card-product>
     </div>
 
 
