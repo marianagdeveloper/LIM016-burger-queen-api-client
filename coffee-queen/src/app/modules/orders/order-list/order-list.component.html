@@ -8,7 +8,7 @@
             <span class="grosorLetra my-3">Cliente:</span> <input type="text" class="borde ml-3" [(ngModel)]="order.client">
             <span class="colorNaranjoso grosorLetra ml-3">Mesa:</span>
             <select class="form-select ml-3" aria-label="Default select example" [(ngModel)]="opcionSeleccionado" (change)="capturar()">
-                <option value="0">Selecciona una opción</option>
+                <option value="0">N°</option>
                 <option *ngFor="let dato of arrayNumberTable">
                   {{dato}}
                 </option>
