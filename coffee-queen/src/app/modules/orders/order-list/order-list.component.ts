@@ -12,8 +12,9 @@ interface Order {
   totalQty: number,
   numberTable:string,
   status: string;
-  dateEntry: string;
+  dateEntry: any;
   dateProcessed: string;
+  additional:string ,
 }
 @Component({
   selector: 'app-order-list',
@@ -42,8 +43,9 @@ export class OrderListComponent implements OnInit {
     totalQty: 0,
     numberTable:'',
     status: '',
-    dateEntry: '',
+    dateEntry:Date,
     dateProcessed: '',
+    additional:'' ,
     //Añadir qties no te olvides!
   };
   public subTotal: number = 0;
@@ -73,9 +75,8 @@ export class OrderListComponent implements OnInit {
   }
 sendOrder(){
 console.log(this.order);
-const tiempoTranscurrido = Date.now();
-const hoy = new Date(tiempoTranscurrido);
-this.order.dateEntry=hoy.toUTCString();
+this.order.status='Pendiente'
+this.order.dateEntry=new Date();
 }
 
 
@@ -85,10 +86,6 @@ this.order.dateEntry=hoy.toUTCString();
     product.subTotal = this.cant * product.price;
     this.order.total += product.subTotal;
     this.order.total -= product.price * (this.cant - 1);
-    // this.order.totalQty = 0;
-    // this.products.map((ele: any) => {
-    //   this.order.totalQty += ele.qty;
-    // });
     this.order.totalQty += 1
   }
   disminuirCantidad(product: any) {
