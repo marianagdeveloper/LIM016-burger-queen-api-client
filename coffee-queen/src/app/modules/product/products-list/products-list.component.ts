@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../data/services/api/product.service';
-import { ICardProduct } from '../../../shared/components/card/card-product/card-product.metadata';
+import { Product } from '../../../shared/components/card/card-product/card-product.metadata';
 
 @Component({
   selector: 'app-products-list',
@@ -10,7 +9,7 @@ import { ICardProduct } from '../../../shared/components/card/card-product/card-
 })
 export class ProductsListComponent implements OnInit {
 
-  public products?: ICardProduct[];
+  public products?: Product[];
   constructor(public productService: ProductService) {}
 
   ngOnInit() {

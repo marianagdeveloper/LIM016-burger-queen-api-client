@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ILoginUser, ILoginUsers } from './login-user.metadata';
+import { ILoginUsers } from './login-user.metadata';
 import { LoginService } from './../../../data/services/api/login.service';
 import {
   AbstractControl,
@@ -15,10 +15,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-user.component.scss'],
 })
 export class LoginUserComponent implements OnInit {
-  public users: ILoginUser = {
-    email: '',
-    password: '',
-  };
 
   public htmlStr: string = '';
   public userData: ILoginUsers = {
@@ -31,9 +27,9 @@ export class LoginUserComponent implements OnInit {
     },
     avatar: ''
   };
-
   public loginForm!: FormGroup;
   public dataUser: any;
+
   constructor(
     private formBuilder: FormBuilder,
     public loginService: LoginService,
@@ -66,9 +62,9 @@ export class LoginUserComponent implements OnInit {
         this.router.navigate(['product']);
       }
       this.loginService.disparador.next(this.userData);
-   
+
     });
-  
+
   }
 
   getUserCredentials() {
@@ -85,7 +81,7 @@ export class LoginUserComponent implements OnInit {
 
       if (credentials) {
         this.getDataUser(userValidate);
-      
+
       } else {
         this.htmlStr = '*Usuario y/o contraseña inválidos.';
       }
@@ -106,7 +102,12 @@ export class LoginUserComponent implements OnInit {
   limpiar() {
     this.htmlStr = '';
   }
-  /*constructor(public loginService: LoginService) {}
+
+  /*public users: ILoginUser = {
+    email: '',
+    password: '',
+  };
+  constructor(public loginService: LoginService) {}
 
   login() {
     const user = { email: this.users?.email, password: this.users?.password };

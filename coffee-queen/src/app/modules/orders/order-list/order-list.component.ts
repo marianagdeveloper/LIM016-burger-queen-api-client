@@ -1,28 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { ICardProduct } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { LoginService } from 'src/app/data/services/api/login.service';
 
-interface Order {
-  _id: number;
-  userName: string,
-  client: string;
-  products: ICardProduct[];
-  total: number;
-  totalQty: number,
-  numberTable:string,
-  status: string;
-  dateEntry: any;
-  dateProcessed: string;
-  additional:string ,
-}
+import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
+import { Order } from './order-list.metadata';
+
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.scss'],
 })
 export class OrderListComponent implements OnInit {
-  public products!: ICardProduct[];
+
+  public products!: Product[];
   public order: Order = {
     _id: 0,
     userName: '',
@@ -43,26 +33,22 @@ export class OrderListComponent implements OnInit {
     totalQty: 0,
     numberTable:'',
     status: '',
-    dateEntry:Date,
+    dateEntry: Date,
     dateProcessed: '',
     additional:'' ,
-    //Añadir qties no te olvides!
   };
-  public subTotal: number = 0;
-  public total: number = 0;
-  public totalQty: number = 0;
+
   public deleteSubtotal: number = 0;
-  public newVariable: number = 0;
-  public cant: number = 0;
-  public nameProduct: string = '';
-  public dateNow:any;
+  public quantity: number = 0;
   public arrayNumberTable: number[] = [];
-  public opcionSeleccionado: string = '0';
+  public optionSelected: string = '0';
+
   constructor(public productService: ProductService,public loginService: LoginService) {
     this.arrayNumberTable=[1,2,3,4,5];
   }
+
   ngOnInit(): void {
-    this.order.userName=this.loginService.disparador.getValue( ).name;
+    this.order.userName=this.loginService.disparador.getValue().name;
     this.products = this.productService.arrayProducts;
     this.products.map((ele: any) => {
       this.order.total += ele.subTotal;
@@ -70,37 +56,39 @@ export class OrderListComponent implements OnInit {
     });
     this.order.products= this.products;
   }
-  capturar(){
-    this.order.numberTable=this.opcionSeleccionado;
+
+  captureNumberTable(){
+    this.order.numberTable=this.optionSelected;
   }
-sendOrder(){
-console.log(this.order);
-this.order.status='Pendiente'
-this.order.dateEntry=new Date();
-}
 
+  sendOrder(){
+    console.log(this.order);
+    this.order.status='Pendiente'
+    this.order.dateEntry=new Date();
+  }
 
-
-  aumentarCantidad(product: any) {
-    this.cant = product.qty += 1;
-    product.subTotal = this.cant * product.price;
+  increaseQuantity(product: any) {
+    this.quantity = product.qty += 1;
+    product.subTotal = this.quantity * product.price;
     this.order.total += product.subTotal;
-    this.order.total -= product.price * (this.cant - 1);
+    this.order.total -= product.price * (this.quantity - 1);
     this.order.totalQty += 1
   }
-  disminuirCantidad(product: any) {
+
+  decreaseQuantity(product: any) {
     if (product.qty < 2) {
       product.qty = 1;
       product.subTotal = product.price;
     } else {
-      this.cant = product.qty -= 1;
-      product.subTotal = this.cant * product.price;
+      this.quantity = product.qty -= 1;
+      product.subTotal = this.quantity * product.price;
       this.order.total -= product.subTotal;
-      this.order.total += product.price * (this.cant - 1);
+      this.order.total += product.price * (this.quantity - 1);
       this.order.totalQty -= 1
     }
     return this.order.total;
   }
+
   deleteProduct(product: any) {
     this.products.filter((item: any) => {
       if (item.name == product.name) {
@@ -112,9 +100,9 @@ this.order.dateEntry=new Date();
     });
     this.products = this.productService.arrayProducts;
     if (product.qty > 1) {
-      this.order.total = this.disminuirCantidad(product) - product.subTotal;
+      this.order.total = this.decreaseQuantity(product) - product.subTotal;
     } else {
-      this.order.total = this.disminuirCantidad(product) - product.price;
+      this.order.total = this.decreaseQuantity(product) - product.price;
     }
     this.order.totalQty -= product.qty;
   }

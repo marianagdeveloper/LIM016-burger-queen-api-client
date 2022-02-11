@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-
-import { AppComponent } from './app.component';
-
-
-import { HeaderComponent } from './layout/header/header.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LoginModule } from './modules/login/login.module';
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './layout/header/header.component';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { HttpClientModule } from '@angular/common/http';
-import { LoginModule } from './modules/login/login.module';
+
+
 
 @NgModule({
 
@@ -28,7 +29,7 @@ import { LoginModule } from './modules/login/login.module';
 
   ],
   imports: [
-BrowserModule,
+    BrowserModule,
     CoreModule,
     FormsModule,
     AppRoutingModule,

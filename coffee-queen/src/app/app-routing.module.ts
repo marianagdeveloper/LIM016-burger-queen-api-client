@@ -77,7 +77,6 @@ const routes: Routes = [
     pathMatch: 'full'
   }
 ];
-//{useHash:true}
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
 exports: [RouterModule]
