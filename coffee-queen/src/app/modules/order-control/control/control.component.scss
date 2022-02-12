@@ -1,27 +1,51 @@
 @import "../../../../sass/bootstrap/bootstrap.scss";
-.card{
-  width: 30%;
-  .btnPedido{
-    background-color: #E73434;
-    border-radius: 10px;
-    color: white;
-  }
-  img{
-    width: 30px;
-  }
-  .btnEnPreparacion{
-    background-color: #F1EA33;
-    border-radius: 10px;
-    color: white;
-  }
-  .btnPreparado{
-    background-color: #6980CF;
-    border-radius: 10px;
-    color: white;
-  }
-  .btnListo{
-    background-color: #69CF80;
-    border-radius: 10px;
-    color: white;
-  }
+.groupLegend {
+    max-width: 750px;
+    margin: auto;
+    position: sticky;
+    z-index: 200;
+    background-color: white;
+    padding: 15px;
+    margin-top: -24px;
+    top: 110px;
+}
+
+.scrollOrders {
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
+.classNew {
+    top: 210px;
+}
+
+
+/* .topSection {
+    top: 200px;
+} */
+
+.card {
+    .btnPedido {
+        background-color: #E73434;
+        border-radius: 10px;
+        color: white;
+    }
+    img {
+        width: 30px;
+    }
+    .btnEnPreparacion {
+        background-color: #F1EA33;
+        border-radius: 10px;
+        color: white;
+    }
+    .btnPreparado {
+        background-color: #6980CF;
+        border-radius: 10px;
+        color: white;
+    }
+    .btnListo {
+        background-color: #69CF80;
+        border-radius: 10px;
+        color: white;
+    }
 }
