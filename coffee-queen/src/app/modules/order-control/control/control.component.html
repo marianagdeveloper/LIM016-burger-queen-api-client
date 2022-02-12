@@ -1,47 +1,51 @@
 <div class="d-flex justify-content-between groupLegend mb-3 ">
-    <div>
+    <div class="pointerLegend">
         <img src="../../../../assets/bell.png" alt="" width="25" height="25">
         <a fragment="pending" (click)="navigateToSection('pending')">Pendiente</a>
     </div>
-    <div>
+    <div class="pointerLegend">
         <img src="../../../../assets/enpreparacion.png" alt="" width="25" height="25">
         <a fragment="delivering " (click)="navigateToSection('delivering')">En Preparación</a>
     </div>
-    <div>
+    <div class="pointerLegend">
         <img src="../../../../assets/preparado.png" alt="" width="25" height="25">
         <a fragment="done" (click)="navigateToSection('done')">Preparado</a>
     </div>
-    <div>
+    <div class="pointerLegend">
         <img src="../../../../assets/listo.png" alt="" width="25" height="25">
         <a fragment="delivered " (click)="navigateToSection('delivered')">Entregado</a>
     </div>
-    <div>
+    <div class="pointerLegend">
         <img src="../../../../assets/cancel.png" width="20" height="20">
         <a fragment="canceled" (click)="navigateToSection('canceled')">Cancelado</a>
     </div>
 </div>
 <div class="scrollOrders">
-    <div class="d-flex flex-direction-column mt-3">
+    <section id="pending" class="d-flex flex-wrap justify-content-between">
+      <div class="d-flex flex-direction-column mt-3">
 
 
         <div class="card text-center m-3">
-            <div class="card-header">
-                <img src="../../../../assets/bell.png" alt=""> Pedido N° 96
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Cliente Pablo</h5>
-                <p class="card-text">Mesa N° 5</p>
-                <a href="#" class="btn btnPedido">Ver Detalles</a>
-            </div>
-            <div class="card-footer text-muted">
-                16:59pm 06/02/2022
-            </div>
+          <div class="card-header">
+              <img src="../../../../assets/bell.png" alt=""> Pedido N° 96
+          </div>
+          <div class="card-body">
+              <h5 class="card-title">Cliente Pablo</h5>
+              <p class="card-text">Mesa N° 5</p>
+              <a href="#" class="btn btnPedido">Ver Detalles</a>
+          </div>
+          <div class="card-footer text-muted">
+              16:59pm 06/02/2022
+          </div>
         </div>
 
 
-    </div>
+      </div>
+
+    </section>
+
     <hr>
-    <section id="delivering" class="d-flex flex-wrap justify-content-between topSection {{claseNew}}">
+    <section id="delivering" class="d-flex flex-wrap justify-content-between">
         <div class="d-flex flex-direction-column">
             <div class="card text-center m-3">
                 <div class="card-header">
@@ -89,7 +93,8 @@
         </div>
     </section>
     <hr>
-    <div class="d-flex flex-direction-column" id="pending">
+    <section id="done" class="d-flex flex-wrap justify-content-between">
+      <div class="d-flex flex-direction-column" id="pending">
         <div class="card text-center m-3">
             <div class="card-header">
                 <img src="../../../../assets/preparado.png" alt=""> Pedido N° 92
@@ -104,8 +109,11 @@
             </div>
         </div>
     </div>
+    </section>
+
     <hr>
-    <div class="d-flex flex-direction-column">
+    <section id="delivered" class="d-flex flex-wrap justify-content-between">
+      <div class="d-flex flex-direction-column">
         <div class="card text-center m-3">
             <div class="card-header">
                 <img src="../../../../assets/listo.png" alt=""> Pedido N° 92
@@ -120,4 +128,6 @@
             </div>
         </div>
     </div>
-</div>
+
+    </section>
+  </div>
