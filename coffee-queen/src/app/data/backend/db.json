@@ -454,9 +454,9 @@
         },
         {
             "id": 33,
-            "name": "Granola",
+            "name": "Aros de Cebolla",
             "price": 6,
-            "image": "../../assets/images/granola.jpg",
+            "image": "../../assets/images/Aros de cebolla.jpg",
             "type": "snacks",
             "dateEntry": "21/01/2022 09:24:00",
             "qty":0,

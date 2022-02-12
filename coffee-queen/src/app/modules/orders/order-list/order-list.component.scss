@@ -1,54 +1,35 @@
 @import "../../../../sass/bootstrap/bootstrap.scss";
-.colorNaranjoso {
-    color: #B85C38;
-}
-
-.grosorLetra {
-    font-weight: 600;
-    margin: 10px;
-}
 
 .tablePedidos {
-    background: rgba(255, 255, 255, 0.781);
-    border-radius: 20px;
-    padding: 0.5rem;
-}
-
-.colorPedido {
-    color: rgba(0, 0, 0, 0.37);
-}
-
-.table-striped>tbody>tr:nth-child(2n+1)>td,
-.table-striped>tbody>tr:nth-child(2n+1)>th {
-    background-color: #f8b12e70;
-}
-
-.cursor {
-    cursor: pointer;
-}
-
-.borde:focus {
+  background: rgba(255, 255, 255, 0.781);
+  border-radius: 20px;
+  padding: 0.5rem;
+  .colorLetra {
+    color: #B85C38;
+    font-weight: 600;
+    margin: 10px;
+  }
+  .grosorLetra {
+    font-weight: 600;
+    margin: 10px;
+  }
+  .borde:focus {
     outline: none;
-}
-
-.bordes {
-    width: 85px;
-    height: 45px;
-    border-radius: 20px;
-    padding: 0.5rem;
-    img {
-        width: 20px;
+  }
+  .table {
+    .colorPedido {
+      color: rgba(0, 0, 0, 0.37);
     }
+    .inputCant {
+      width: 120px;
+    }
+  }
+  .table-striped>tbody>tr:nth-child(2n+1)>td,
+  .table-striped>tbody>tr:nth-child(2n+1)>th {
+    background-color: #f8b12e70;
+    .cursor {
+      cursor: pointer;
+    }
+  }
 }
 
-.margen {
-    /* margin: 0px 40px 0px 60px; */
-    /*  margin: 0 20px 0 20px; */
-}
-
-.inputCant {
-    width: 120px;
-}
-
-
-/* @media screen min: {} */

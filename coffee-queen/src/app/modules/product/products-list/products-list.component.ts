@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../data/services/api/product.service';
-import { ICardProduct } from '../../../shared/components/card/card-product/card-product.metadata';
+import { Product } from '../../../shared/components/card/card-product/card-product.metadata';
 
 //@Pipe({filter:'filter'})
 
@@ -11,7 +10,8 @@ import { ICardProduct } from '../../../shared/components/card/card-product/card-
   styleUrls: ['./products-list.component.scss'],
 })
 export class ProductsListComponent implements OnInit {
-  public products?: ICardProduct[];
+
+  public products?: Product[];
   public getProduct: string = '';
   public array: any;
 

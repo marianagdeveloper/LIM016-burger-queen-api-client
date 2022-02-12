@@ -1,28 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICardProduct } from './card-product.metadata';
+import { Product } from './card-product.metadata';
 import { ProductService } from 'src/app/data/services/api/product.service';
-
-interface orderProducts {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  type: string;
-  dateEntry: string;
-  qty: number;
-  subTotal: number;
-}
-interface Order {
-  _id: number;
-  userId: number;
-  client: string;
-  products: orderProducts[];
-  total: number;
-  numberTable: string;
-  status: string;
-  dateEntry: string;
-  dateProcessed: string;
-}
+import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
 
 @Component({
   selector: 'app-card-product',
@@ -30,13 +9,13 @@ interface Order {
   styleUrls: ['./card-product.component.scss'],
 })
 export class CardProductComponent implements OnInit {
-  @Input() data!: ICardProduct;
+  @Input() data!: Product;
 
-  public cant: number = 0;
+  public quantity: number = 0;
   public isRepeat: boolean = false;
   public order: Order = {
     _id: 0,
-    userId: 0,
+    userName: '',
     client: '',
     products: [
       {
@@ -51,16 +30,17 @@ export class CardProductComponent implements OnInit {
       },
     ],
     total: 0,
+    totalQty: 0,
     numberTable: '',
     status: '',
     dateEntry: '',
     dateProcessed: '',
-    //Añadir qties no te olvides!
+    additional: ''
   };
-  public products!: ICardProduct[];
- 
+  public products!: Product[];
+
   constructor(public productService: ProductService) {
-    
+
   }
 
   ngOnInit(): void {
@@ -76,11 +56,11 @@ export class CardProductComponent implements OnInit {
     });
   }
 
-  aumentarCantidad(product: any) {
-    this.cant = product.qty += 1;
-    product.subTotal = this.cant * product.price;
+  increaseQuantity(product: any) {
+    this.quantity = product.qty += 1;
+    product.subTotal = this.quantity * product.price;
     this.order.total += product.subTotal;
-    this.order.total -= product.price * (this.cant - 1);
+    this.order.total -= product.price * (this.quantity - 1);
 
     this.updateRepeats(product);
     // add new product
@@ -89,14 +69,14 @@ export class CardProductComponent implements OnInit {
     }
   }
 
-  disminuirCantidad(productSelected: any) {
-    this.cant = productSelected.qty -= 1;
-    productSelected.subTotal = this.cant * productSelected.price;
+  decreaseQuantity(productSelected: any) {
+    this.quantity = productSelected.qty -= 1;
+    productSelected.subTotal = this.quantity * productSelected.price;
     this.order.total -= productSelected.subTotal;
-    this.order.total += productSelected.price * (this.cant - 1);
+    this.order.total += productSelected.price * (this.quantity - 1);
 
     // in the card componet qty never be less than zero
-    if (this.cant < 0) {
+    if (this.quantity < 0) {
       productSelected.qty = 0;
       const newLocal = 'delete';
       this.productService.setProducts(productSelected, newLocal);
@@ -105,7 +85,7 @@ export class CardProductComponent implements OnInit {
 
     this.products.map((producto) => {
       if (productSelected.name == producto.name) {
-        producto.qty = this.cant;
+        producto.qty = this.quantity;
 
         // in the order(cart) componet qty never be less than zero
         if (producto.qty <= 0) {

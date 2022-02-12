@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { ICardProduct } from '../../../../shared/components/card/card-product/card-product.metadata';
+import { Product } from '../../../../shared/components/card/card-product/card-product.metadata';
 
 @Component({
   selector: 'app-snacks-list',
@@ -9,27 +9,27 @@ import { ICardProduct } from '../../../../shared/components/card/card-product/ca
 })
 export class SnacksListComponent implements OnInit {
 
-  public products!: ICardProduct[];
+  public products!: Product[];
 
-  public snacks!: ICardProduct[];
-  public pedidoSnacks!: ICardProduct[];
-  
+  public snacks!: Product[];
+  public orderSnacks!: Product[];
+
 
   constructor(public productService: ProductService) {}
 
   ngOnInit() {
     this.productService.getAllProducts().subscribe(data => {
       this.products = data;
-      function filtrarPorType(obj:ICardProduct): any {
+      function filtrarPorType(obj: Product): any {
         if (obj.type === "snacks") {
           return obj;
         }
       }
       this.snacks = data.filter(filtrarPorType);
-      this.pedidoSnacks = this.productService.arrayProducts;
+      this.orderSnacks = this.productService.arrayProducts;
 
       this.snacks.forEach((producto) => {
-        this.pedidoSnacks.forEach((pedido: any) => {
+        this.orderSnacks.forEach((pedido: Product) => {
           if (pedido.name == producto.name) {
             producto.qty = pedido.qty;
           }

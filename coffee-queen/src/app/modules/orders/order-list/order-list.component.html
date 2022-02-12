@@ -2,12 +2,12 @@
 
     <div class="d-flex flex-row justify-content-between align-items-center p-2 ">
         <div>
-            <h4 class="colorNaranjoso">Pedido N° 100</h4>
+            <h4 class="colorLetra">Pedido N° 100</h4>
         </div>
         <div class="d-flex flex-row align-items-center">
             <span class="grosorLetra my-3">Cliente:</span> <input type="text" class="borde ml-3" [(ngModel)]="order.client">
-            <span class="colorNaranjoso grosorLetra ml-3">Mesa:</span>
-            <select class="form-select ml-3" aria-label="Default select example" [(ngModel)]="opcionSeleccionado" (change)="capturar()">
+            <span class="colorLetra grosorLetra ml-3">Mesa:</span>
+            <select class="form-select ml-3" aria-label="Default select example" [(ngModel)]="optionSelected" (change)="captureNumberTable()">
                 <option value="0">N°</option>
                 <option *ngFor="let dato of arrayNumberTable">
                   {{dato}}
@@ -31,9 +31,9 @@
                 <td>{{ product.price | currency:"S/. " }}</td>
                 <td class="inputCant">
                     <div class="input-group input-group-sm mb-1">
-                        <button type="button" class="btn btn-light btn-sm" (click)="disminuirCantidad(product)">-</button>
+                        <button type="button" class="btn btn-light btn-sm" (click)="decreaseQuantity(product)">-</button>
                         <input [attr.disabled]="true" type="text" class="form-control form-control-sm text-center " [(ngModel)]="product.qty">
-                        <button type="button" class="btn btn-light btn-sm" (click)="aumentarCantidad(product)">+</button>
+                        <button type="button" class="btn btn-light btn-sm" (click)="increaseQuantity(product)">+</button>
                     </div>
                 </td>
                 <td>{{ product.subTotal| currency:"S/. "}}</td>

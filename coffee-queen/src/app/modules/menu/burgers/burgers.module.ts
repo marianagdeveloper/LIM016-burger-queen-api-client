@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BurgersRoutingModule } from './burgers-routing.modules';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { BurgersRoutingModule } from './burgers-routing.modules';
 
 import { BurgersListComponent } from './burgers-list/burgers-list.component';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './../../../../data/services/api/product.service';
-import { ICardProduct } from './../../../../shared/components/card/card-product/card-product.metadata';
+import { Product } from './../../../../shared/components/card/card-product/card-product.metadata';
 
 @Component({
   selector: 'app-drinks-list',
@@ -8,23 +8,24 @@ import { ICardProduct } from './../../../../shared/components/card/card-product/
   styleUrls: ['./drinks-list.component.scss']
 })
 export class DrinksListComponent implements OnInit {
-  public products?: ICardProduct[];
-  public pedidoDrinks!: ICardProduct[];
+
+  public products?: Product[];
+  public orderDrinks!: Product[];
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((res) => {
-      let arrayNew: any[] = [];
-      res.filter((data: any) => {
+      let arrayNew: Product[] = [];
+      res.filter((data: Product) => {
         if (data.type === 'drinks') {
           arrayNew.push(data);
         }
       });
       this.products = arrayNew;
-      this.pedidoDrinks = this.productService.arrayProducts;
+      this.orderDrinks = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
-        this.pedidoDrinks.forEach((pedido: any) => {
+        this.orderDrinks.forEach((pedido: Product) => {
           if (pedido.name == producto.name) {
             producto.qty = pedido.qty;
           }
