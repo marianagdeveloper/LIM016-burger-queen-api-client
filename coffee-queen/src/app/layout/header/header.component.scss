@@ -8,4 +8,18 @@ header {
     position: sticky;
     top: 0;
     z-index: 100 !important;
+    .borderButton {
+        border: 3px solid white;
+        padding: 0px !important;
+        background-color: white;
+    }
+}
+
+.container {
+    max-width: 1020px !important;
+}
+
+.typeText {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 20px
 }
