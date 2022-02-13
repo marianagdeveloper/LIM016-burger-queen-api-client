@@ -14,7 +14,7 @@ export class CardProductComponent implements OnInit {
   public quantity: number = 0;
   public isRepeat: boolean = false;
   public order: Order = {
-    _id: 0,
+    id: 0,
     userName: '',
     client: '',
     products: [
