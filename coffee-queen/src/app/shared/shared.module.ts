@@ -4,11 +4,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CardProductComponent } from './components/card/card-product/card-product.component';
-import { TitleH1Component } from './components/title-h1/title-h1.component';
 
 @NgModule({
   declarations: [
-    TitleH1Component,
     CardProductComponent
   ],
   exports:[
@@ -16,7 +14,6 @@ import { TitleH1Component } from './components/title-h1/title-h1.component';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    TitleH1Component,
     CardProductComponent
   ],
   imports:[

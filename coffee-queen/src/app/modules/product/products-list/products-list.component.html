@@ -12,7 +12,7 @@
             <button class=" btn btnSearch mx-2" (click)="searchProduct()">Buscar</button>
         </div>
     </div>
-    <div class="col-md-9 justify-content-between  d-flex flex-wrap">
+    <div class="col-md-12 justify-content-between  d-flex flex-wrap mx-auto">
         <app-card-product [data]="product" *ngFor="let product of products " class="m-3 "></app-card-product>
     </div>
 
