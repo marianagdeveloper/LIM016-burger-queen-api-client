@@ -1,0 +1,33 @@
+<div class="mb-4">
+    <button class="btn btnAgregar">Agregar Producto</button>
+</div>
+
+
+<div class="margen tablePedidos p-3">
+
+    <table class="p-5 table table-striped ">
+        <thead>
+            <tr class="colorPedido">
+                <th scope="col">Id</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">imagen</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">fecha de Ingreso</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <th>{{ product.id}}</th>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td><img width="60" src="{{product.image}}" alt=""></td>
+                <td>{{ product.type }}</td>
+                <td>{{ product.dateEntry }}</td>
+                <td class="cursor"><img src="../../../../assets/editar.png"></td>
+                <td class="cursor"><img src="../../../../assets/bxs-trash.png"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -65,6 +65,16 @@ const routes: Routes = [
         import ('./modules/orders/orders.module').then((m)=> m.OrdersModule)
       },
       {
+        path:'products-control',
+        loadChildren:()=>
+        import ('./modules/products-control/products-control.module').then((m)=> m.ProductsControlModule)
+      },
+      {
+        path:'users-control',
+        loadChildren:()=>
+        import ('./modules/users-control/users-control.module').then((m)=> m.UsersControlModule)
+      },
+      {
         path: '**',
         redirectTo: '/login',
         pathMatch: 'full'

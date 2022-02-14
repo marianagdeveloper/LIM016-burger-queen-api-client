@@ -1,0 +1,29 @@
+<div class="margen tablePedidos p-3">
+
+    <table class="p-5 table table-striped ">
+        <thead>
+            <tr class="colorPedido">
+                <th scope="col">Id</th>
+                <th scope="col">Nombres y Apellidos</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Roles</th>
+                <th scope="col">Acciones</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th>{{ user.id}}</th>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td *ngIf="user.roles.admin==true">Admin</td>
+                <td *ngIf="user.roles.waiter==true">Mesero</td>
+                <td *ngIf="user.roles.cook==true">Jefe de cocina</td>
+                <td class="cursor"><img src="../../../../assets/editar.png"></td>
+                <td class="cursor"><img src="../../../../assets/bxs-trash.png"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

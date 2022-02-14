@@ -4,7 +4,7 @@ export interface Product {
   price: number;
   image: string;
   type: string;
-  qty: number;
+  qty?: number;
   subTotal?: number;
   dateEntry: string;
 }
