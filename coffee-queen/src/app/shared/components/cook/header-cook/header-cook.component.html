@@ -1,0 +1,37 @@
+<header class="p-3">
+  <div class="container">
+      <nav class=" navbar-expand-md d-flex flex-wrap align-items-center  ">
+
+          <button class="navbar-toggler mt-3 text-white btn-outline-light  borderButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="" width="30" src="../../assets/menu.png">
+            </button>
+
+          <a class="d-flex align-items-center   mb-lg-0 text-white text-decoration-none mx-auto">
+              <img class="" width="60" src="../../assets/logoTaza.png">
+              <span class="fs-5 logo d-md-none px-3">Coffee Queen</span>
+          </a>
+
+          <div class="collapse navbar-collapse " id="navbarText">
+              <ul class="nav navbar-nav col-lg-auto me-lg-auto mb-2 justify-content-center align-items-center mb-md-0 w-100">
+                  <li><a class="nav-link px-3 text-white typeText" [routerLink]="['/cook']">Control de Pedidos</a></li>
+                  <li class="d-md-none"><a class="nav-link px-3 text-white typeText " [routerLink]="['/login']">Cerrar Sesión</a></li>
+              </ul>
+          </div>
+
+          <li class=" dropdown text-white d-flex align-items-center d-none d-lg-inline-block">
+              <h6 class="px-3 pt-2 d-md-inline-block typeText">{{nameUser}}</h6>
+              <a class="nav-link dropdown-toggle d-flex text-white d-md-inline-block" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                  <img src="{{avatarUser}}" alt="" width="60" height="60" class="rounded-circle ">
+              </a>
+              <ul class="dropdown-menu dropdown-menu-white typeText" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item typeText" [routerLink]="['/login']">Cerrar Sesión</a></li>
+
+              </ul>
+          </li>
+
+
+
+      </nav>
+  </div>
+</header>

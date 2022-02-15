@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { LoginUserComponent } from './modules/login/login-user/login-user.component';
+import { CookControlComponent } from './modules/cook-control/cook-control/cook-control.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginUserComponent,
+  },
+  {
+    path:'cook',
+    component: CookControlComponent,
   },
   {
     path:'',
@@ -89,6 +94,6 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

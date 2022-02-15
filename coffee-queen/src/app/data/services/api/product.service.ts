@@ -41,7 +41,7 @@ export class ProductService {
     });
   }
 
-  getOrder(){
+  getOrder(): Observable<Order[]>{
     return this.http.get<Order[]>('http://localhost:3000/order');
   }
 }

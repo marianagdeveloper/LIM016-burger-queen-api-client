@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./control.component.scss']
 })
 export class ControlComponent implements OnInit {
-public claseNew?:string;
+  public claseNew?:string;
   constructor() { }
 
   ngOnInit(): void {
@@ -15,6 +15,6 @@ public claseNew?:string;
     window.location.hash = '';
     window.location.hash = section;
     this.claseNew='classNew';
-}
+  }
 
 }

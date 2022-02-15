@@ -1,0 +1,63 @@
+<app-header-cook></app-header-cook>
+<div class="bg-skeleton">
+  <!-- Legend -->
+  <div class="d-flex groupLegend mb-3 ">
+    <div class="pointerLegend">
+        <img src="../../../../assets/bell.png" alt="" width="25" height="25">
+        <a fragment="pending" (click)="navigateToSection('pending')">Pendiente</a>
+    </div>
+    <div class="pointerLegend">
+        <img src="../../../../assets/enpreparacion.png" alt="" width="25" height="25">
+        <a fragment="delivering " (click)="navigateToSection('delivering')">En Preparación</a>
+    </div>
+  </div>
+
+<!-- Section CardsOrder pending -->
+  <section id="pending" class="d-flex flex-wrap justify-content-between">
+    <div class="d-flex flex-wrap mt-3">
+
+    <app-card-order [data]="order" *ngFor="let order of orders "></app-card-order>
+
+    </div>
+
+  </section><!-- Section CardsOrder pending -->
+
+  <hr>
+
+<!-- Section CardsOrder delivering -->
+  <section id="delivering" class="d-flex flex-wrap justify-content-between">
+    <div class="d-flex flex-direction-column">
+      <div class="card text-center m-3">
+          <div class="card-header">
+            <img src="../../../../assets/enpreparacion.png" alt=""> Pedido N° 95
+          </div>
+          <div class="card-body">
+            <p class="card-text">1 Hambuguesa</p>
+            <p class="card-text">2 Jugos de Fresa</p>
+            <p class="card-text">1 Brownie</p>
+            <p class="card-text">1 Helado de lúcuma</p>
+            <p class="card-text">1 Cafe Americano</p>
+            <p class="card-text" *ngIf=""></p>
+            <p class="card-text" *ngIf="">Más...</p>
+            <div class="d-flex flex-column">
+              <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                Más...
+              </button>
+              <a href="#" class="btn btnEnPreparacion">Listo</a>
+            </div>
+
+          </div>
+            <div class="card-footer text-muted">
+              16:30pm 06/02/2022
+            </div>
+          </div>
+        </div>
+  </section><!-- Section CardsOrder delivering -->
+
+</div>
+
+<app-modal></app-modal>
+
+<div class="col-12 footer">
+  <app-footer-cook></app-footer-cook>
+</div>
