@@ -8,6 +8,7 @@ import { Order } from '../../orders/order-list/order-list.metadata';
   styleUrls: ['./control.component.scss'],
 })
 export class ControlComponent implements OnInit {
+  public claseNew?:string;
   public orders: Order[] = [];
   public order: Order = {
     id: 0,
@@ -34,7 +35,6 @@ export class ControlComponent implements OnInit {
     additional: '',
   };
 
-  public claseNew?: string;
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {

@@ -1,0 +1,24 @@
+.card {
+  width: 270px;
+  .btnPedido {
+      background-color: #E73434;
+      border-radius: 10px;
+      color: white;
+  }
+  img {
+      width: 30px;
+  }
+  .btnEnPreparacion {
+      background-color: #F1EA33;
+      border-radius: 10px;
+      color: white;
+  }
+  .btnListo {
+    background-color: #69CF80;
+    border-radius: 10px;
+    color: white;
+  }
+}
+.hide{
+  display: none;
+}

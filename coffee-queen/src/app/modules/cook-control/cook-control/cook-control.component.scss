@@ -1,0 +1,36 @@
+.bg-skeleton {
+  background-image: url('../../../../assets/bg-3 1.png');
+  min-height: 448px;
+  .groupLegend {
+    max-width: 280px;
+    margin: auto;
+    position: sticky;
+    z-index: 10;
+    background-color: white;
+    padding: 15px;
+    margin-top: -24px;
+    top: 110px;
+    .pointerLegend {
+        cursor: pointer;
+    }
+  }
+}
+.card {
+  width: 270px;
+  img {
+      width: 30px;
+  }
+  .btnEnPreparacion {
+    background-color: #F1EA33;
+    border-radius: 10px;
+    color: white;
+  }
+}
+.footer {
+  padding: 10px;
+  background: #dd8017;
+  color: #fff;
+}
+
+
+
