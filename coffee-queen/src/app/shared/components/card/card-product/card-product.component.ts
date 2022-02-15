@@ -39,9 +39,7 @@ export class CardProductComponent implements OnInit {
   };
   public products!: Product[];
 
-  constructor(public productService: ProductService) {
-
-  }
+  constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
@@ -98,6 +96,7 @@ export class CardProductComponent implements OnInit {
         producto.subTotal = producto.qty * productSelected.price;
       }
     });
+
     if (productSelected.qty <= 0) {
       productSelected.qty = 0;
       const newLocal = 'delete';

@@ -4,17 +4,20 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CardProductComponent } from './components/card/card-product/card-product.component';
+import { CardOrderComponent } from './components/card/card-order/card-order.component';
 
 @NgModule({
   declarations: [
-    CardProductComponent
+    CardProductComponent,
+    CardOrderComponent
   ],
   exports:[
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    CardProductComponent
+    CardProductComponent,
+    CardOrderComponent
   ],
   imports:[
     FormsModule,
