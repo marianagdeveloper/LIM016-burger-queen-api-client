@@ -626,51 +626,18 @@
   "order": [
     {
       "id": 1,
-      "client": "",
+      "userName": "María Chavez",
+      "client": "Maria",
       "products": [
         {
-          "id": 4,
-          "name": "Jugo de frutas natural",
-          "price": 12,
-          "image": "../../assets/images/Jugo de frutas natural.png",
-          "type": "juices",
-          "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 12
-        },
-        {
-          "id": 5,
-          "name": "Jugo de fresa",
-          "price": 12,
-          "image": "../../assets/images/jugo de fresa.png",
-          "type": "juices",
-          "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 12
-        }
-      ],
-      "total": 24,
-      "totalQty": 2,
-      "numberTable": "",
-      "status": "Pendiente",
-      "dateEntry": "Sun Feb 13 2022 18:49:04 GMT-0500 (hora estándar de Perú)",
-      "dateProcessed": "",
-      "additional": ""
-    },
-    {
-      "id": 2,
-      "userName": "Manuel Guerrero",
-      "client": "mili",
-      "products": [
-        {
-          "id": 1,
-          "name": "Café americano",
-          "price": 8,
-          "image": "../../assets/images/cafe_americano.png",
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
           "type": "cafes",
           "dateEntry": "21/01/2022 09:24:00",
           "qty": 1,
-          "subTotal": 8
+          "subTotal": 15
         },
         {
           "id": 3,
@@ -683,11 +650,68 @@
           "subTotal": 10
         }
       ],
+      "total": 25,
+      "totalQty": 2,
+      "numberTable": "1",
+      "status": "Pendiente",
+      "dateEntry": "Mon Feb 14 2022 11:18:53 GMT-0500 (hora estándar de Colombia)",
+      "dateProcessed": "",
+      "additional": ""
+    },
+    {
+      "id": 2,
+      "userName": "Manuel Guerrero",
+      "client": "Manuel",
+      "products": [
+        {
+          "id": 34,
+          "name": "Jugo de naranja",
+          "price": 12,
+          "image": "../../assets/images/jugo de naranja.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        },
+        {
+          "id": 30,
+          "name": "Empanada de carne",
+          "price": 6,
+          "image": "../../assets/images/empanada-de-carne.png",
+          "type": "snacks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 6
+        }
+      ],
       "total": 18,
       "totalQty": 2,
-      "numberTable": "3",
+      "numberTable": "2",
       "status": "Pendiente",
-      "dateEntry": "Mon Feb 14 2022 20:06:00 GMT-0500 (hora estándar de Perú)",
+      "dateEntry": "Mon Feb 14 2022 11:19:46 GMT-0500 (hora estándar de Colombia)",
+      "dateProcessed": "",
+      "additional": "jugo sin azucar"
+    },
+    {
+      "id": 3,
+      "client": "",
+      "products": [
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        }
+      ],
+      "total": 15,
+      "totalQty": 1,
+      "numberTable": "",
+      "status": "Pendiente",
+      "dateEntry": "Mon Feb 14 2022 15:54:11 GMT-0500 (hora estándar de Colombia)",
       "dateProcessed": "",
       "additional": ""
     }

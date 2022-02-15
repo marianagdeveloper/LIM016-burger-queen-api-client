@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { LoginService } from 'src/app/data/services/api/login.service';
-
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { Order } from './order-list.metadata';
 import { Router } from '@angular/router';
@@ -38,7 +37,6 @@ export class OrderListComponent implements OnInit {
     dateProcessed: '',
     additional:'' ,
   };
-
   public deleteSubtotal: number = 0;
   public quantity: number = 0;
   public arrayNumberTable: number[] = [];

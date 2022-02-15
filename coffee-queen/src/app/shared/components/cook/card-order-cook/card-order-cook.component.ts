@@ -3,11 +3,11 @@ import { Order } from '../../../../modules/orders/order-list/order-list.metadata
 import { ProductService } from '../../../../data/services/api/product.service';
 
 @Component({
-  selector: 'app-card-order',
-  templateUrl: './card-order.component.html',
-  styleUrls: ['./card-order.component.scss']
+  selector: 'app-card-order-cook',
+  templateUrl: './card-order-cook.component.html',
+  styleUrls: ['./card-order-cook.component.scss']
 })
-export class CardOrderComponent implements OnInit {
+export class CardOrderCookComponent implements OnInit {
   @Input() data!: Order;
   public dateOrder: string = '';
   public classNew: string = '';

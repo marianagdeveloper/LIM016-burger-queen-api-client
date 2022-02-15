@@ -1,0 +1,70 @@
+<div class="d-flex flex-direction-column">
+  <div class="card text-center m-3">
+    <div class="card-header">
+      <img src="../../../../assets/cancel.png" alt="" /> Pedido N°
+      {{ data?.id }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Cliente {{ data?.client }}</h5>
+      <p class="card-text">Mesa N° {{ data?.numberTable }}</p>
+      <ul *ngFor="let product of data.products">
+        <li style="text-align: left; list-style-type: none">
+          {{ product.qty }} {{ product.name }}
+        </li>
+      </ul>
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btnCancel"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        (click)="showDetails(data)"
+      >
+        Ver Detalles
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" name="detailOrder.id" [(ngModel)]="detailOrder.id" ngDefaultControl
+              >Pedido N° {{detailOrder.id}}</h5>
+              <!-- <input [attr.disabled]="true" type="text" [(ngModel)]="detailOrder.id"> -->
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <!-- <div class="modal-body" [(ngModel)]="detailOrder.client" [ngModelOptions]="{standalone: true}"
+            >...
+              Cliente: {{ detailOrder.client }}
+              Cliente: {{ data.client }}
+
+            </div> -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">16:30pm 06/02/2022</div>
+  </div>
+</div>

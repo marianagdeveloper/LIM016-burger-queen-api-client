@@ -10,8 +10,8 @@ import { HeaderCookComponent } from './components/cook/header-cook/header-cook.c
 import { FooterCookComponent } from './components/cook/footer-cook/footer-cook.component';
 import { RouterModule } from '@angular/router';
 import { ModalComponent } from './components/cook/modal/modal.component';
-import { CardOrderComponent } from './components/cook/card-order/card-order.component';
-
+import { CardOrderComponent } from './components/card/card-order/card-order.component';
+import { CardOrderCookComponent } from './components/cook/card-order-cook/card-order-cook.component';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { CardOrderComponent } from './components/cook/card-order/card-order.comp
     HeaderCookComponent,
     FooterCookComponent,
     ModalComponent,
-    CardOrderComponent
+    CardOrderComponent,
+    CardOrderCookComponent
   ],
   exports:[
     FormsModule,
@@ -31,7 +32,8 @@ import { CardOrderComponent } from './components/cook/card-order/card-order.comp
     HeaderCookComponent,
     FooterCookComponent,
     ModalComponent,
-    CardOrderComponent
+    CardOrderComponent,
+    CardOrderCookComponent
   ],
   imports:[
     FormsModule,
