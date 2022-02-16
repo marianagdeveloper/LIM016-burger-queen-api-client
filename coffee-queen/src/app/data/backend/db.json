@@ -864,6 +864,39 @@
       "dateEntry": "Wed Feb 16 2022 11:06:10 GMT-0500 (hora estándar de Colombia)",
       "dateProcessed": "",
       "additional": ""
+    },
+    {
+      "id": 7,
+      "client": "Miguel",
+      "products": [
+        {
+          "id": 38,
+          "name": "Hamburguesas triple carne y queso ",
+          "price": 18,
+          "image": "../../assets/images/burger5.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 36
+        },
+        {
+          "id": 40,
+          "name": "Hamburguesa vegetariana con salsa",
+          "price": 18,
+          "image": "../../assets/images/burger7.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 36
+        }
+      ],
+      "total": 72,
+      "totalQty": 4,
+      "numberTable": "2",
+      "status": "pending",
+      "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
+      "dateProcessed": "",
+      "additional": ""
     }
   ]
 }
