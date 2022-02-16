@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { Order } from 'src/app/modules/orders/order-list/order-list.metadata';
+import { OrdersService } from '../../../../data/services/api/orders.service';
 
 @Component({
   selector: 'app-card-order',
@@ -36,10 +37,10 @@ export class CardOrderComponent implements OnInit {
 
   public orders!: Order[];
 
-  constructor(public productService: ProductService) {}
+  constructor(public ordersService: OrdersService) {}
 
   ngOnInit(): void {
-    this.productService.getOrder().subscribe((res: any) => {
+    this.ordersService.getOrder().subscribe((res: any) => {
       // res.forEach((element:any) => {
       //   element.dateEntry = element.dateEntry.split(' ').splice(0, 4).toString().replace(/,+/g, ' ');
       // });
