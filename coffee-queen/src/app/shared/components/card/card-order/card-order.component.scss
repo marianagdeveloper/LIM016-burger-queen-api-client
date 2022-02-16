@@ -1,13 +1,15 @@
 .test{
-  background: #6980cf;
+  // background: #6980cf;
+  background-image: url("../../../../../assets/mantel.png");
 }
 
 .card {
   list-style: none;
+  width: 260px;
+  height: 265px;
 
-
-  img {
-    width: 30px;
+  li{
+    font-size:small;
   }
 
   .btn-pending {

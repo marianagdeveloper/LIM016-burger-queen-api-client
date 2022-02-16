@@ -5,8 +5,9 @@
       Mesa N° {{ data?.numberTable }} : {{ data?.client }}
     </div>
     <div class="card-body">
-      <ul *ngFor="let product of data.products">
-        <li style="text-align: left; list-style-type: none">
+      <p>Total productos: {{data.totalQty}}</p>
+      <ul class="mx-0 p-0">
+        <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
           {{ product.qty }} {{ product.name }}
         </li>
       </ul>
@@ -31,13 +32,12 @@
             </div>
           </form> -->
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer test">
           <button type="button" class="btn btn-outline-dark" (click)="modal.close('cancel')">Cancelar pedido</button>
           <button type="button" class="btn btn-outline-dark" (click)="modal.close('return')">Volver</button>
         </div>
       </ng-template>
-
-      <button class="btn btn-lg btn-{{data.status}}" (click)="open(content)">Ver detalle</button>
+      <button class="btn btn-sm btn-{{data.status}}" (click)="open(content)">Ver detalle</button>
 
       <!-- <hr>
 
