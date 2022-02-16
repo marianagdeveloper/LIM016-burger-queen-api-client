@@ -41,41 +41,17 @@
   </section>
   <hr />
   <section id="done" class="d-flex flex-wrap justify-content-between">
-    <div class="d-flex flex-direction-column" id="pending">
-      <div class="card text-center m-3">
-        <div class="card-header">
-          <img src="../../../../assets/preparado.png" alt="" /> Pedido N° 92
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Cliente Jose</h5>
-          <p class="card-text">Mesa N° 12</p>
-          <a href="#" class="btn btnPreparado">Ver Detalles</a>
-        </div>
-        <div class="card-footer text-muted">16:30pm 06/02/2022</div>
-      </div>
-    </div>
+    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'done'"></app-card-order>
   </section>
 
   <hr />
   <section id="delivered" class="d-flex flex-wrap justify-content-between">
-    <div class="d-flex flex-direction-column">
-      <div class="card text-center m-3">
-        <div class="card-header">
-          <img src="../../../../assets/listo.png" alt="" /> Pedido N° 92
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Cliente Jose</h5>
-          <p class="card-text">Mesa N° 12</p>
-          <a href="#" class="btn btnListo">Ver Detalles</a>
-        </div>
-        <div class="card-footer text-muted">16:25pm 06/02/2022</div>
-      </div>
-    </div>
+    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivered'"></app-card-order>
   </section>
 
   <hr />
   <section id="canceled" class="d-flex flex-wrap justify-content-between">
-      <app-card-order [data]="order" *ngFor="let order of orders" ></app-card-order>
+    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order>
   </section>
 
 </div>
