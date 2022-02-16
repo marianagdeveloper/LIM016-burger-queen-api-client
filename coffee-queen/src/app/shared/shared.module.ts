@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 import { ModalComponent } from './components/cook/modal/modal.component';
 import { CardOrderComponent } from './components/card/card-order/card-order.component';
 import { CardOrderCookComponent } from './components/cook/card-order-cook/card-order-cook.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { CardOrderCookComponent } from './components/cook/card-order-cook/card-o
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ]
 })
 export class SharedModule {

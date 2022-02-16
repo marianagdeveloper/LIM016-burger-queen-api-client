@@ -691,63 +691,6 @@
       "dateEntry": "Mon Feb 14 2022 11:19:46 GMT-0500 (hora estándar de Colombia)",
       "dateProcessed": "",
       "additional": "jugo sin azucar"
-    },
-    {
-      "id": 3,
-      "client": "",
-      "products": [
-        {
-          "id": 2,
-          "name": "Café con leche",
-          "price": 15,
-          "image": "../../assets/images/cafe_leche.png",
-          "type": "cafes",
-          "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 15
-        }
-      ],
-      "total": 15,
-      "totalQty": 1,
-      "numberTable": "",
-      "status": "Pendiente",
-      "dateEntry": "Mon Feb 14 2022 15:54:11 GMT-0500 (hora estándar de Colombia)",
-      "dateProcessed": "",
-      "additional": ""
-    },
-    {
-      "id": 4,
-      "userName": "María Chavez",
-      "client": "",
-      "products": [
-        {
-          "id": 1,
-          "name": "Café americano",
-          "price": 8,
-          "image": "../../assets/images/cafe_americano.png",
-          "type": "cafes",
-          "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 8
-        },
-        {
-          "id": 2,
-          "name": "Café con leche",
-          "price": 15,
-          "image": "../../assets/images/cafe_leche.png",
-          "type": "cafes",
-          "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 15
-        }
-      ],
-      "total": 23,
-      "totalQty": 2,
-      "numberTable": "",
-      "status": "Pendiente",
-      "dateEntry": "Tue Feb 15 2022 11:19:05 GMT-0500 (hora estándar de Perú)",
-      "dateProcessed": "",
-      "additional": ""
     }
   ]
 }

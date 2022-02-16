@@ -13,57 +13,38 @@
         </li>
       </ul>
 
-      <!-- Button trigger modal -->
-      <button
-        type="button"
-        class="btn btnCancel"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        (click)="showDetails(data)"
-      >
-        Ver Detalles
-      </button>
-
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel" name="detailOrder.id" [(ngModel)]="detailOrder.id" ngDefaultControl
-              >Pedido N° {{detailOrder.id}}</h5>
-              <!-- <input [attr.disabled]="true" type="text" [(ngModel)]="detailOrder.id"> -->
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <!-- <div class="modal-body" [(ngModel)]="detailOrder.client" [ngModelOptions]="{standalone: true}"
-            >...
-              Cliente: {{ detailOrder.client }}
-              Cliente: {{ data.client }}
-
-            </div> -->
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-
-            </div>
-          </div>
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Cliente {{ data?.client }}</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
         </div>
-      </div>
+        <div class="modal-body">
+          <ul *ngFor="let product of data.products">
+            <li style="text-align: left; list-style-type: none">
+              {{ product.qty }} {{ product.name }}
+            </li>
+          </ul>
+          <!-- <form>
+            <div class="mb-3">
+              <label for="dateOfBirth">Date of birth</label>
+              <div class="input-group">
+                <input type="text" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}" class="form-control">
+              </div>
+            </div>
+          </form> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+        </div>
+      </ng-template>
+
+      <button class="btn btn-lg btn-outline-danger" (click)="open(content)">Ver detalle</button>
+
+      <!-- <hr>
+
+      <pre>{{ closeResult }}</pre>
+      <pre>{{ setcomment }}</pre> -->
+
     </div>
     <div class="card-footer text-muted">16:30pm 06/02/2022</div>
   </div>
