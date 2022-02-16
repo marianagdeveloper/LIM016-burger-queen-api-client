@@ -10,7 +10,7 @@ import { Order } from '../../orders/order-list/order-list.metadata';
 })
 export class CookControlComponent implements OnInit {
 
-  public orders?: Order[];
+  public orders: Order[] = [];
   public orderDelivering?: Order[];
 
   constructor(public ordersService: OrdersService) { }
