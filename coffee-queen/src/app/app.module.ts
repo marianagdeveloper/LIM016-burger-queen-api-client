@@ -16,6 +16,8 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { CookControlModule } from './modules/cook-control/cook-control.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -37,7 +39,8 @@ import { CookControlModule } from './modules/cook-control/cook-control.module';
     SharedModule,
     HttpClientModule,
     LoginModule,
-    CookControlModule
+    CookControlModule,
+    NgbModule
   ],
   providers: [
     {
