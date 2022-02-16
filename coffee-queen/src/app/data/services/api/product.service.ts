@@ -11,13 +11,12 @@ export class ProductService {
   @Output() disparadorProduct: BehaviorSubject<any> = new BehaviorSubject({});
 
   public products: Product[] = [];
-  public orders: Order[] = [];
 
   get arrayProducts() {
     return [...this.products];
   }
 
-   setProducts(producto: Product, flag?: string) {
+  setProducts(producto: Product, flag?: string) {
     if (flag == 'delete') {
       const data = this.products.filter(
         (item: any) => item.name != producto.name
@@ -34,18 +33,5 @@ export class ProductService {
   getAllProducts(): Observable<Product[]> {
     // fetch('url', {method: GET})
     return this.http.get<Product[]>('http://localhost:3000/products');
-  }
-
-  postOrder(newOrder: Order){
-    this.http.post<Order[]>('http://localhost:3000/order', newOrder)
-    .subscribe( (res:any) => {
-      // console.log('postorder', res);
-
-      return res;
-    });
-  }
-
-  getOrder(): Observable<Order[]>{
-    return this.http.get<Order[]>('http://localhost:3000/order');
   }
 }

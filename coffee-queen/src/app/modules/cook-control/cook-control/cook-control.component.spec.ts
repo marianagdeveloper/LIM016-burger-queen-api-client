@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewCookComponent } from './view-cook.component';
+import { CookControlComponent } from './cook-control.component';
 
-describe('ViewCookComponent', () => {
-  let component: ViewCookComponent;
-  let fixture: ComponentFixture<ViewCookComponent>;
+describe('CookControlComponent', () => {
+  let component: CookControlComponent;
+  let fixture: ComponentFixture<CookControlComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewCookComponent ]
+      declarations: [ CookControlComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewCookComponent);
+    fixture = TestBed.createComponent(CookControlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

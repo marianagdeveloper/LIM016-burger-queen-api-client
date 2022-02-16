@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductService } from '../../../data/services/api/product.service';
+import { OrdersService } from '../../../data/services/api/orders.service';
+
 import { Order } from '../../orders/order-list/order-list.metadata';
 
 @Component({
@@ -10,16 +11,17 @@ import { Order } from '../../orders/order-list/order-list.metadata';
 export class CookControlComponent implements OnInit {
 
   public orders?: Order[];
+  public orderDelivering?: Order[];
 
-  constructor(public productService: ProductService) { }
+  constructor(public ordersService: OrdersService) { }
 
   ngOnInit(): void {
-    this.productService.getOrder().subscribe((data) => {
+    this.ordersService.getOrder().subscribe((data) => {
       this.orders = data;
-      //console.log(data);
-
-
     });
+    this.orderDelivering = this.ordersService.arrayOrders;
+    console.log(this.orderDelivering);
+
   }
   navigateToSection(section: string) {
     window.location.hash = '';
