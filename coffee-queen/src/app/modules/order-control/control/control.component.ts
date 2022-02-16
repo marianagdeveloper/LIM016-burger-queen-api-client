@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { Order } from '../../orders/order-list/order-list.metadata';
+import { OrdersService } from '../../../data/services/api/orders.service';
 
 @Component({
   selector: 'app-control',
@@ -35,10 +36,10 @@ export class ControlComponent implements OnInit {
     additional: '',
   };
 
-  constructor(public productService: ProductService) {}
+  constructor(public productService: ProductService, public ordersService: OrdersService) {}
 
   ngOnInit(): void {
-    this.productService.getOrder().subscribe((res: any) => {
+    this.ordersService.getOrder().subscribe((res: any) => {
       this.orders = res;
       return res;
     });
