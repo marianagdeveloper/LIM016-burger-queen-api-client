@@ -14,38 +14,17 @@ export class CardOrderComponent implements OnInit {
   closeResult = '';
   comment = '';
   setcomment = '';
+  dateOrder = "";
 
   @Input() data!: Order;
-  public detailOrder: Order = {
-    id: 0,
-    userName: '',
-    client: '',
-    products: [
-      {
-        id: 0,
-        name: '',
-        price: 0,
-        image: '',
-        type: '',
-        dateEntry: '',
-        qty: 0,
-        subTotal: 0,
-      },
-    ],
-    total: 0,
-    totalQty: 0,
-    numberTable: '',
-    status: '',
-    dateEntry: '',
-    dateProcessed: '',
-    additional: '',
-  };
+
 
   public orders!: Order[];
 
   constructor(public ordersService: OrdersService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
+    this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
     this.ordersService.getOrder().subscribe((res: any) => {
       // res.forEach((element:any) => {
       //   element.dateEntry = element.dateEntry.split(' ').splice(0, 4).toString().replace(/,+/g, ' ');
@@ -54,6 +33,7 @@ export class CardOrderComponent implements OnInit {
       console.log('this.orders', this.orders);
       return res;
     });
+
   }
 
   open(content: any) {

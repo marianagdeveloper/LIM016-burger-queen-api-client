@@ -1,10 +1,39 @@
+.test{
+  background: #6980cf;
+}
+
 .card {
-  list-style:none;
+  list-style: none;
+
 
   img {
     width: 30px;
   }
-  .btnCancel {
+
+  .btn-pending {
+    background-color: #e73434;
+    border-radius: 10px;
+    color: white;
+  }
+  img {
+    width: 30px;
+  }
+  .btn-delivering {
+    background-color: #f1ea33;
+    border-radius: 10px;
+    color: white;
+  }
+  .btn-done {
+    background-color: #6980cf;
+    border-radius: 10px;
+    color: white;
+  }
+  .btn-delivered {
+    background-color: #69cf80;
+    border-radius: 10px;
+    color: white;
+  }
+  .btn-canceled {
     background-color: #e73434;
     border-radius: 10px;
     color: white;

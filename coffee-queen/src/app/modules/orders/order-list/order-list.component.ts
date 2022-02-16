@@ -65,7 +65,7 @@ export class OrderListComponent implements OnInit {
 
   sendOrder(){
     this.order.products = this.productService.arrayProducts;
-    this.order.status = 'Pendiente'
+    this.order.status = 'pending'
     this.order.dateEntry = new Date().toString();
     console.log(this.order);
 

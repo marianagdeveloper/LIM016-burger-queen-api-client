@@ -1,20 +1,18 @@
 <div class="d-flex flex-direction-column">
   <div class="card text-center m-3">
     <div class="card-header">
-      <img src="../../../../assets/cancel.png" alt="" /> Pedido N°
-      {{ data?.id }}
+      <img src="../../../../assets/{{data.status}}.png" alt="" />
+      Mesa N° {{ data?.numberTable }} : {{ data?.client }}
     </div>
     <div class="card-body">
-      <h5 class="card-title">Cliente {{ data?.client }}</h5>
-      <p class="card-text">Mesa N° {{ data?.numberTable }}</p>
       <ul *ngFor="let product of data.products">
         <li style="text-align: left; list-style-type: none">
           {{ product.qty }} {{ product.name }}
         </li>
       </ul>
 
-      <ng-template #content let-modal>
-        <div class="modal-header">
+      <ng-template #content let-modal >
+        <div class="modal-header test">
           <h4 class="modal-title" id="modal-basic-title">Cliente {{ data?.client }}</h4>
           <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
         </div>
@@ -39,7 +37,7 @@
         </div>
       </ng-template>
 
-      <button class="btn btn-lg btn-outline-danger" (click)="open(content)">Ver detalle</button>
+      <button class="btn btn-lg btn-{{data.status}}" (click)="open(content)">Ver detalle</button>
 
       <!-- <hr>
 
@@ -47,6 +45,6 @@
       <pre>{{ setcomment }}</pre> -->
 
     </div>
-    <div class="card-footer text-muted">16:30pm 06/02/2022</div>
+    <div class="card-footer text-muted"> Pedido N° {{ data?.id }} - {{dateOrder}}</div>
   </div>
 </div>
