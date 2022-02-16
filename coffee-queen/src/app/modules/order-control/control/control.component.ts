@@ -9,7 +9,7 @@ import { OrdersService } from '../../../data/services/api/orders.service';
   styleUrls: ['./control.component.scss'],
 })
 export class ControlComponent implements OnInit {
-  public claseNew?:string;
+  public activebutton?:string;
   public orders: Order[] = [];
   public order: Order = {
     id: 0,
@@ -48,6 +48,6 @@ export class ControlComponent implements OnInit {
   navigateToSection(section: string) {
     window.location.hash = '';
     window.location.hash = section;
-    this.claseNew = 'classNew';
+    this.activebutton = 'activebutton';
   }
 }
