@@ -34,6 +34,8 @@ export class CardProductComponent implements OnInit {
     numberTable: '',
     status: '',
     dateEntry: '',
+    dateDelivering: '',
+    dateDone: '',
     dateProcessed: '',
     additional: ''
   };

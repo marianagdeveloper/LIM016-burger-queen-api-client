@@ -35,6 +35,8 @@ export class OrderListComponent implements OnInit {
     numberTable:'',
     status: '',
     dateEntry: Date,
+    dateDelivering: '',
+    dateDone: '',
     dateProcessed: '',
     additional:'' ,
   };

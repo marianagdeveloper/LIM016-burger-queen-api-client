@@ -32,6 +32,8 @@ export class ControlComponent implements OnInit {
     numberTable: '',
     status: '',
     dateEntry: Date,
+    dateDelivering: '',
+    dateDone: '',
     dateProcessed: '',
     additional: '',
   };

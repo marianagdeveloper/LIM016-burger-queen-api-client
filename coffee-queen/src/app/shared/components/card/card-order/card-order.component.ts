@@ -15,6 +15,10 @@ export class CardOrderComponent implements OnInit {
   comment = '';
   setcomment = '';
   dateOrder = "";
+  dateOrderCreate = "";
+  dateOrderDelivering = "";
+  dateOrderDone = "";
+  dateOrderProcessed = "";
 
   @Input() data!: Order;
 
@@ -24,6 +28,15 @@ export class CardOrderComponent implements OnInit {
   constructor(public ordersService: OrdersService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
+    // date delivered of modal
+    this.dateOrderProcessed = this.data.dateProcessed.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // date done of modal
+    this.dateOrderDone = this.data.dateDone.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // date delivering of modal
+    this.dateOrderDelivering = this.data.dateDelivering.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // date pending of modal
+    this.dateOrderCreate = this.data.dateEntry.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // footer card
     this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
     this.ordersService.getOrder().subscribe((res: any) => {
       // res.forEach((element:any) => {
@@ -61,6 +74,10 @@ export class CardOrderComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  updateStatus(){
+    this.data.status = 'delivered'
   }
 
 }
