@@ -10,7 +10,7 @@
         <img src="../../../../assets/delivering.png" alt="" width="25" height="25">
         <a fragment="delivering " (click)="navigateToSection('delivering')">En Preparación</a>
     </div>
-  </div>
+  </div><!-- Legend -->
 
 <!-- Section CardsOrder pending -->
   <section id="pending" class="d-flex flex-wrap justify-content-between">
@@ -27,34 +27,15 @@
 <!-- Section CardsOrder delivering -->
   <section id="delivering" class="d-flex flex-wrap justify-content-between">
     <div class="d-flex flex-direction-column">
-      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order-cook>
-      <!-- <div class="card text-center m-3">
-          <div class="card-header">
-            <img src="../../../../assets/enpreparacion.png" alt=""> Pedido N° 1
-          </div>
-          <div class="card-body">
-            <p class="card-text">2 Jugos de Fresa</p>
-            <p class="card-text">1 Brownie</p>
-            <p class="card-text">1 Helado de lúcuma</p>
-            <p class="card-text">1 Cafe Americano</p>
-            <div class="d-flex flex-column">
-              <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                Más...
-              </button>
-              <a href="#" class="btn btnEnPreparacion">Listo</a>
-            </div>
 
-          </div>
-            <div class="card-footer text-muted">
-              16:30pm 06/02/2022
-            </div>
-      </div> -->
+      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order-cook>
+
     </div>
   </section><!-- Section CardsOrder delivering -->
 
 </div>
 
-<app-modal></app-modal>
+<!-- <app-modal [data]="order" *ngFor="let order of orders"></app-modal> -->
 
 <div class="col-12 footer">
   <app-footer-cook></app-footer-cook>

@@ -8,10 +8,12 @@ import { Order } from '../../../../modules/orders/order-list/order-list.metadata
 })
 export class ModalComponent implements OnInit {
   @Input() data!: Order;
+
   constructor() { }
 
   ngOnInit(): void {
-
   }
-
+  cutNameProduct(item: string ){
+    return item.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+  }
 }

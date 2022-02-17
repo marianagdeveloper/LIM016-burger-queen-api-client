@@ -1,6 +1,36 @@
+.test{
+  // background: #6980cf;
+  background-image: url("../../../../../assets/mantel.png");
+  .modal-title {
+    margin-right: 76px;
+  }
+}
+.modal-dialog{
+  margin: 0;
+}
+.custom-class {
+  transform: translateX(62%);
+  margin: 0;
+}
+.text-beige{
+  color: #BD6B10;
+}
+.backdrop-none{
+  background-color: #008000;
+  opacity: 0;
+}
 .card {
-  width: 270px;
-  .btnpending {
+  width: 260px;
+  height: 265px;
+  border-radius: 10px;
+  box-shadow:  0px 0px 6px 1px rgb(0 0 0 / 15%);
+  ul{
+    margin-bottom: 0;
+  }
+  li{
+    font-size:small;
+  }
+  .btn-pending {
       background-color: #E73434;
       border-radius: 10px;
       color: white;
@@ -8,12 +38,12 @@
   img {
       width: 30px;
   }
-  .btndelivering {
+  .btn-delivering {
       background-color: #F1EA33;
       border-radius: 10px;
       color: white;
   }
-  .btndone {
+  .btn-done {
     background-color: #69CF80;
     border-radius: 10px;
     color: white;

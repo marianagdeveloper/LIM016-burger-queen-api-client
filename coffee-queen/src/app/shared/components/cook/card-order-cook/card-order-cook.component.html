@@ -1,22 +1,54 @@
 <!-- CardsOrder -->
-<div class="card text-center m-3 {{ classNew }}" *ngIf="data">
+<div class="card text-center m-3" *ngIf="data">
   <div class="card-header">
-      <img src="../../../../assets/{{data.status}}.png" alt="" width="30"> Pedido N° {{ data?.id }}
+      <img src="../../../../assets/{{data.status}}.png" alt="" width="30"> Pedido N° {{ data.id }}
   </div>
   <div class="card-body">
-    <ul *ngFor="let order of data.products">
-      <li class="text-center" style="list-style-type: none;">
+    <ul class="mx-1 p-0">
+      <li *ngFor="let order of data.products | slice:0:2" class="text-center" style="list-style-type: none;">
         {{ order.qty }} {{ order.name }}
       </li>
-
     </ul>
-      <div class="d-flex flex-column">
-        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-          Más...
-        </button>
-        <a (click)="changeStatus()" class="btn btn{{data.status}}">{{ valueBtn }}</a>
-      </div>
+      <li class="btn list-unstyled" type="button" (click)="open(content)">Más..</li>
+      <br>
+      <button class="btn btn-{{data.status}}" type="button" (click)="changeStatus()" *ngIf="data.status =='pending'">
+        Recibido
+      </button>
+      <button class="btn btn-{{data.status}}" type="button" (click)="changeStatus()" *ngIf="data.status =='delivering'">
+        Preparado
+      </button>
+      <ng-template #content let-modal class="custom-class">
 
+          <div class="modal-header test">
+            <h5 class="modal-title" id="modal-basic-title">Pedido N° {{ data.id }} : {{ data?.client }}</h5>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body">
+            <p>Total productos: {{data.totalQty}}</p>
+            <ul *ngFor="let product of data.products">
+              <li style="text-align: left; list-style-type: none">
+                {{ product.qty }}  {{ product.name }}
+              </li>
+            </ul>
+            <hr>
+            <p>Adicionales: {{data.additional}}</p>
+            <hr>
+            <div class="mt-2 mx-4 text-left text-beige">
+              <p>Mesero: {{ data?.userName }}</p>
+              <p>Mesa N°: {{ data.numberTable }}</p>
+              <p>Fecha de Creación: <span>{{cutNameProduct(data.dateEntry)}}</span></p>
+              <p>Fecha inicio preparación: {{cutNameProduct(data.dateDelivering)}}</p>
+              <p>Fecha fin preparación: {{cutNameProduct(data.dateDone)}}</p>
+              <p>Tiempo de preparación: 00:32:18</p>
+              <p>Fecha de Entrega: {{cutNameProduct(data.dateProcessed)}}</p>
+            </div>
+          </div>
+          <div class="modal-footer test d-flex justify-content-center">
+            <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
+          </div>
+
+
+      </ng-template>
   </div>
   <div class="card-footer text-muted">
     {{ dateOrder }}
