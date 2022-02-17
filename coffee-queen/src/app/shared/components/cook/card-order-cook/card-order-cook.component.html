@@ -1,7 +1,7 @@
 <!-- CardsOrder -->
 <div class="card text-center m-3 {{ classNew }}" *ngIf="data">
   <div class="card-header">
-      <img src="{{imgStatus}}" alt="" width="30"> Pedido N° {{ data?.id }}
+      <img src="../../../../assets/{{data.status}}.png" alt="" width="30"> Pedido N° {{ data?.id }}
   </div>
   <div class="card-body">
     <ul *ngFor="let order of data.products">
@@ -14,7 +14,7 @@
         <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           Más...
         </button>
-        <a (click)="changeStatus()" class="btn {{btnStatus}}">{{ valueBtn }}</a>
+        <a (click)="changeStatus()" class="btn btn{{data.status}}">{{ valueBtn }}</a>
       </div>
 
   </div>

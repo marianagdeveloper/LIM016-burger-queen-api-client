@@ -3,11 +3,11 @@
   <!-- Legend -->
   <div class="d-flex groupLegend mb-3 ">
     <div class="pointerLegend">
-        <img src="../../../../assets/bell.png" alt="" width="25" height="25">
+        <img src="../../../../assets/pending.png" alt="" width="25" height="25">
         <a fragment="pending" (click)="navigateToSection('pending')">Pendiente</a>
     </div>
     <div class="pointerLegend">
-        <img src="../../../../assets/enpreparacion.png" alt="" width="25" height="25">
+        <img src="../../../../assets/delivering.png" alt="" width="25" height="25">
         <a fragment="delivering " (click)="navigateToSection('delivering')">En Preparación</a>
     </div>
   </div>
@@ -16,7 +16,7 @@
   <section id="pending" class="d-flex flex-wrap justify-content-between">
     <div class="d-flex flex-wrap mt-3">
 
-    <app-card-order-cook [data]="order" *ngFor="let order of orders "></app-card-order-cook>
+    <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'pending'"></app-card-order-cook>
 
     </div>
 
@@ -27,7 +27,7 @@
 <!-- Section CardsOrder delivering -->
   <section id="delivering" class="d-flex flex-wrap justify-content-between">
     <div class="d-flex flex-direction-column">
-      <app-card-order-cook [data]="order" *ngFor="let order of orderDelivering "></app-card-order-cook>
+      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order-cook>
       <!-- <div class="card text-center m-3">
           <div class="card-header">
             <img src="../../../../assets/enpreparacion.png" alt=""> Pedido N° 1
