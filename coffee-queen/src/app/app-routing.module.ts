@@ -5,6 +5,7 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { LoginUserComponent } from './modules/login/login-user/login-user.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -15,10 +16,6 @@ const routes: Routes = [
     path:'login',
     component: LoginUserComponent,
   },
-  /* {
-    path:'cook',
-    component: CookControlComponent,
-  }, */
   {
     path:'',
     component: SkeletonComponent,

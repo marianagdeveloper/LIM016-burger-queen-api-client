@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardProductComponent } from './components/card/card-product/card-product.component';
 
 import { RouterModule } from '@angular/router';
-import { ModalComponent } from './components/cook/modal/modal.component';
 import { CardOrderComponent } from './components/card/card-order/card-order.component';
 import { CardOrderCookComponent } from './components/cook/card-order-cook/card-order-cook.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,7 +13,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     CardProductComponent,
-    ModalComponent,
     CardOrderComponent,
     CardOrderCookComponent
   ],
@@ -24,7 +22,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     CommonModule,
     CardProductComponent,
-    ModalComponent,
     CardOrderComponent,
     CardOrderCookComponent
   ],

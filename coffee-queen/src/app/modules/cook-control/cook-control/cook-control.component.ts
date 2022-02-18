@@ -19,13 +19,12 @@ export class CookControlComponent implements OnInit {
     this.ordersService.getOrder().subscribe((data) => {
       this.orders = data;
     });
-    this.orderDelivering = this.ordersService.arrayOrders;
-    console.log(this.orderDelivering);
 
   }
   navigateToSection(section: string) {
     window.location.hash = '';
     window.location.hash = section;
   }
+
 
 }

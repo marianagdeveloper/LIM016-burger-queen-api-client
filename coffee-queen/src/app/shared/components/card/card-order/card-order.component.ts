@@ -25,9 +25,16 @@ export class CardOrderComponent implements OnInit {
 
   public orders!: Order[];
 
-  constructor(public ordersService: OrdersService, private modalService: NgbModal) {}
+  constructor(public ordersService: OrdersService ,private modalService: NgbModal) {}
 
   ngOnInit(): void {
+
+
+    this.ordersService.getOrder().subscribe((res: any) => {
+      this.orders = res;
+      console.log('this.orders en get', this.orders);
+      return res;
+    });
     // date delivered of modal
     this.dateOrderProcessed = this.data.dateProcessed.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
     // date done of modal
@@ -38,15 +45,6 @@ export class CardOrderComponent implements OnInit {
     this.dateOrderCreate = this.data.dateEntry.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
     // footer card
     this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
-    this.ordersService.getOrder().subscribe((res: any) => {
-      // res.forEach((element:any) => {
-      //   element.dateEntry = element.dateEntry.split(' ').splice(0, 4).toString().replace(/,+/g, ' ');
-      // });
-      this.orders = res;
-      console.log('this.orders', this.orders);
-      return res;
-    });
-
   }
 
   open(content: any) {
@@ -78,6 +76,10 @@ export class CardOrderComponent implements OnInit {
 
   updateStatus(){
     this.data.status = 'delivered'
+    this.ordersService.putOrder(this.data, this.data.id);
+    // this.ordersService.dispatchStatusOrder.emit({
+    //   data:this.data
+    // })
   }
 
 }

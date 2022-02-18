@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { Order } from '../../orders/order-list/order-list.metadata';
 import { OrdersService } from '../../../data/services/api/orders.service';
@@ -9,6 +9,7 @@ import { OrdersService } from '../../../data/services/api/orders.service';
   styleUrls: ['./control.component.scss'],
 })
 export class ControlComponent implements OnInit {
+
   public activebutton?:string;
   public orders: Order[] = [];
   public order: Order = {
@@ -41,6 +42,12 @@ export class ControlComponent implements OnInit {
   constructor(public productService: ProductService, public ordersService: OrdersService) {}
 
   ngOnInit(): void {
+
+    this.ordersService.dispatchStatusOrder.subscribe(res => {
+      console.log('recibiendo data', res);
+
+    })
+
     this.ordersService.getOrder().subscribe((res: any) => {
       this.orders = res;
       return res;
@@ -52,4 +59,6 @@ export class ControlComponent implements OnInit {
     window.location.hash = section;
     this.activebutton = 'activebutton';
   }
+
+
 }
