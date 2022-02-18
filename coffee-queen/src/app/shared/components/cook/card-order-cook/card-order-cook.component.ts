@@ -25,10 +25,12 @@ export class CardOrderCookComponent implements OnInit {
   } */
   changeStatus(){
     this.data.status='delivering';
+    this.data.dateDelivering = new Date().toString();
     this.ordersService.putOrder(this.data, this.data.id);
-    this.ordersService.dispatchStatusOrder.emit({
+    /* this.ordersService.dispatchStatusOrder.emit({
       data:this.data
-    })
+    }) */
+
   }
 
   changeStatusDone(){

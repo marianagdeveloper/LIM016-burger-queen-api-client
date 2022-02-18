@@ -9,17 +9,17 @@
         {{ order.qty }} {{ order.name }}
       </li>
     </ul>
-      <li class="btn list-unstyled" type="button" (click)="open(content)">Más..</li>
+      <button class="btn btn-sm btn-more mt-2" (click)="open(content)">Ver Más</button>
       <br>
-      <button class="btn btn-{{data.status}}" type="button" (click)="changeStatus()" *ngIf="data.status =='pending'">
+      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatus()" *ngIf="data.status =='pending'">
         Recibido
       </button>
-      <button class="btn btn-{{data.status}}" type="button" (click)="changeStatusDone()" *ngIf="data.status =='delivering'">
+      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusDone()" *ngIf="data.status =='delivering'">
         Preparado
       </button>
       <ng-template #content let-modal class="custom-class">
 
-          <div class="modal-header test">
+          <div class="modal-header">
             <h5 class="modal-title" id="modal-basic-title">Pedido N° {{ data.id }} : {{ data?.client }}</h5>
             <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
           </div>
@@ -43,7 +43,7 @@
               <p>Fecha de Entrega: {{cutNameProduct(data.dateProcessed)}}</p>
             </div>
           </div>
-          <div class="modal-footer test d-flex justify-content-center">
+          <div class="modal-footer d-flex justify-content-center">
             <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
           </div>
 
