@@ -9,11 +9,15 @@
     background-color: white;
     padding: 15px;
     margin-top: -24px;
-    top: 110px;
+    top: 0px;
     .pointerLegend {
         cursor: pointer;
     }
   }
+}
+.scrollOrders {
+  overflow-y: scroll;
+  max-height: 300px;
 }
 .card {
   width: 270px;
