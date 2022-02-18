@@ -40,7 +40,7 @@ export class ProductService {
     });
   }
   putProduct(newProduct: any,idProduct:number){
-    this.http.post<any[]>('http://localhost:3000/products/${idProduct }', newProduct).subscribe( (res:any) => {
+    this.http.post<any[]>(`http://localhost:3000/products/${idProduct }`, newProduct).subscribe( (res:any) => {
       return res;
     });
   }
