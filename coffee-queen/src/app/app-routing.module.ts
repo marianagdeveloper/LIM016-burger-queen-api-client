@@ -15,6 +15,10 @@ const routes: Routes = [
     path:'login',
     component: LoginUserComponent,
   },
+  /* {
+    path:'cook',
+    component: CookControlComponent,
+  }, */
   {
     path:'',
     component: SkeletonComponent,
@@ -75,6 +79,11 @@ const routes: Routes = [
         import ('./modules/users-control/users-control.module').then((m)=> m.UsersControlModule)
       },
       {
+        path:'cook',
+        loadChildren:()=>
+        import ('./modules/cook-control/cook-control.module').then((m)=> m.CookControlModule)
+      },
+      {
         path: '**',
         redirectTo: '/login',
         pathMatch: 'full'
@@ -89,6 +98,6 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

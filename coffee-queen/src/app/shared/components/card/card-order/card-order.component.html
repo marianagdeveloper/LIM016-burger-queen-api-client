@@ -1,0 +1,65 @@
+<div class="d-flex flex-direction-column">
+  <div class="card text-center m-3">
+    <div class="card-header">
+      <img src="../../../../assets/{{data.status}}.png" alt="" />
+      Mesa N° {{ data?.numberTable }} : {{ data?.client }}
+    </div>
+    <div class="card-body">
+      <p>Total productos: {{data.totalQty}}</p>
+      <ul class="mx-0 p-0">
+        <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
+          {{ product.qty }} {{ product.name }}
+        </li>
+      </ul>
+
+      <ng-template #content let-modal >
+        <div class="modal-header test">
+          <h5 class="modal-title" id="modal-basic-title">Mesa N° {{ data?.numberTable }} : {{ data?.client }}</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <p>Total productos: {{data.totalQty}}</p>
+          <ul *ngFor="let product of data.products">
+            <li style="text-align: left; list-style-type: none">
+              {{ product.qty }}  {{ product.name }}
+            </li>
+          </ul>
+          <hr>
+          <p>Adicionales: {{data.additional}}</p>
+          <hr>
+          <div class="mt-2 mx-4 text-left text-beige">
+            <p>Mesero: {{ data?.userName }}</p>
+            <p>Fecha de Creación: <span>{{dateOrderCreate}}</span></p>
+            <p>Fecha inicio preparación: {{dateOrderDelivering}}</p>
+            <p>Fecha fin preparación: {{dateOrderDone}}</p>
+            <p>Tiempo de preparación: 00:32:18</p>
+            <p>Fecha de Entrega: {{dateOrderProcessed}}</p>
+          </div>
+          <!-- <form>
+            <div class="mb-3">
+              <label for="dateOfBirth">Date of birth</label>
+              <div class="input-group">
+                <input type="text" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}" class="form-control">
+              </div>
+            </div>
+          </form> -->
+        </div>
+        <div class="modal-footer test d-flex justify-content-around">
+          <button type="button" class="btn btn-danger" (click)="modal.close('cancel')">Cancelar pedido</button>
+          <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
+        </div>
+      </ng-template>
+      <div>
+        <button class="btn btn-sm btn-{{data.status}} " (click)="open(content)">Ver detalle</button>
+        <button class="btn btn-sm btn-delivered m-2 " (click)="updateStatus()" *ngIf="data.status == 'done'">Entregado</button>
+      </div>
+
+      <!-- <hr>
+
+      <pre>{{ closeResult }}</pre>
+      <pre>{{ setcomment }}</pre> -->
+
+    </div>
+    <div class="card-footer text-muted"> Pedido N° {{ data?.id }} - {{dateOrder}}</div>
+  </div>
+</div>
