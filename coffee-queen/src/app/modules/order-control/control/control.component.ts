@@ -35,6 +35,7 @@ export class ControlComponent implements OnInit {
     dateEntry: Date,
     dateDelivering: '',
     dateDone: '',
+    timeResult: '',
     dateProcessed: '',
     additional: '',
   };
@@ -43,10 +44,10 @@ export class ControlComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.ordersService.dispatchStatusOrder.subscribe(res => {
+    /* this.ordersService.dispatchStatusOrder.subscribe(res => {
       console.log('recibiendo data', res);
 
-    })
+    }) */
 
     this.ordersService.getOrder().subscribe((res: any) => {
       this.orders = res;

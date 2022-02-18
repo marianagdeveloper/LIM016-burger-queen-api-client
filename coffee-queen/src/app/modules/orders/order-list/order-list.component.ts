@@ -37,6 +37,7 @@ export class OrderListComponent implements OnInit {
     dateEntry: Date,
     dateDelivering: '',
     dateDone: '',
+    timeResult: '',
     dateProcessed: '',
     additional:'' ,
   };

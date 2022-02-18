@@ -11,10 +11,10 @@
     </ul>
       <button class="btn btn-sm btn-more mt-2" (click)="open(content)">Ver Más</button>
       <br>
-      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatus()" *ngIf="data.status =='pending'">
+      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDelivering()" *ngIf="data.status =='pending'">
         Recibido
       </button>
-      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusDone()" *ngIf="data.status =='delivering'">
+      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDone()" *ngIf="data.status =='delivering'">
         Preparado
       </button>
       <ng-template #content let-modal class="custom-class">
@@ -39,7 +39,7 @@
               <p>Fecha de Creación: <span>{{cutNameProduct(data.dateEntry)}}</span></p>
               <p>Fecha inicio preparación: {{cutNameProduct(data.dateDelivering)}}</p>
               <p>Fecha fin preparación: {{cutNameProduct(data.dateDone)}}</p>
-              <p>Tiempo de preparación: 00:32:18</p>
+              <p>Tiempo de preparación: {{data.timeResult}}</p>
               <p>Fecha de Entrega: {{cutNameProduct(data.dateProcessed)}}</p>
             </div>
           </div>

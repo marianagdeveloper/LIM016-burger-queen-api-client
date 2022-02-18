@@ -28,8 +28,6 @@ export class OrdersService {
   putOrder(newOrder: Order, _idOrder:number){
     this.http.put<Order[]>(`http://localhost:3000/order/${_idOrder}`, newOrder)
     .subscribe( (res:any) => {
-      console.log('res put', res);
-
       return res;
     });
   }

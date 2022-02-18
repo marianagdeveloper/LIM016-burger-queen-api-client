@@ -10,8 +10,9 @@ export interface Order {
   numberTable: string;
   status: string;
   dateEntry: any;
-  dateDelivering: string;
-  dateDone: string;
-  dateProcessed: string;
+  dateDelivering: any;
+  dateDone: any;
+  timeResult: any;
+  dateProcessed: any;
   additional: string;
 }
