@@ -13,5 +13,10 @@ export class UsersService {
     // fetch('url', {method: GET})
     return this.http.get<User[]>('http://localhost:3000/users');
   }
+  postUser(newUser: User){
+    this.http.post<User[]>('http://localhost:3000/users', newUser).subscribe( (res:any) => {
+      return res;
+    });
+  }
 }
 
