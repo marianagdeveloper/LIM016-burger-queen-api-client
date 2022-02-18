@@ -39,14 +39,9 @@ export class ProductService {
       return res;
     });
   }
-
-  postOrder(newOrder: Order){
-    this.http.post<Order[]>('http://localhost:3000/order', newOrder).subscribe( (res:any) => {
+  putProduct(newProduct: any,idProduct:number){
+    this.http.post<any[]>('http://localhost:3000/products/${idProduct }', newProduct).subscribe( (res:any) => {
       return res;
     });
-  }
-
-  getOrder(){
-    return this.http.get<Order[]>('http://localhost:3000/order');
   }
 }
