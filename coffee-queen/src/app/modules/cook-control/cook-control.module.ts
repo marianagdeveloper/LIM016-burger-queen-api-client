@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import { CookControlComponent } from './cook-control/cook-control.component';
 import { FilterStatusPipe } from './pipes/FilterStatusPipe';
+import { CookControlRoutingModule } from './cook-control-routing.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { FilterStatusPipe } from './pipes/FilterStatusPipe';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    CookControlRoutingModule
   ]
 })
 export class CookControlModule { }

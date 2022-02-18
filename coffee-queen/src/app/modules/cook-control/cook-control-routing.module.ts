@@ -4,7 +4,7 @@ import { CookControlComponent } from './cook-control/cook-control.component';
 
 
 const routes: Routes = [
-  { path: 'cook',
+  { path: '',
     component: CookControlComponent
   },
 

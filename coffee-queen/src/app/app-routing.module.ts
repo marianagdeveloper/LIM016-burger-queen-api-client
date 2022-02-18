@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { LoginUserComponent } from './modules/login/login-user/login-user.component';
-import { CookControlComponent } from './modules/cook-control/cook-control/cook-control.component';
 
 
 const routes: Routes = [
@@ -16,10 +15,10 @@ const routes: Routes = [
     path:'login',
     component: LoginUserComponent,
   },
-  {
+  /* {
     path:'cook',
     component: CookControlComponent,
-  },
+  }, */
   {
     path:'',
     component: SkeletonComponent,
@@ -78,6 +77,11 @@ const routes: Routes = [
         path:'users-control',
         loadChildren:()=>
         import ('./modules/users-control/users-control.module').then((m)=> m.UsersControlModule)
+      },
+      {
+        path:'cook',
+        loadChildren:()=>
+        import ('./modules/cook-control/cook-control.module').then((m)=> m.CookControlModule)
       },
       {
         path: '**',
