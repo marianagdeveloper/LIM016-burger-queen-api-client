@@ -34,6 +34,11 @@ export class ProductService {
     // fetch('url', {method: GET})
     return this.http.get<Product[]>('http://localhost:3000/products');
   }
+  postProduct(newProduct: any){
+    this.http.post<any[]>('http://localhost:3000/products', newProduct).subscribe( (res:any) => {
+      return res;
+    });
+  }
 
   postOrder(newOrder: Order){
     this.http.post<Order[]>('http://localhost:3000/order', newOrder).subscribe( (res:any) => {
