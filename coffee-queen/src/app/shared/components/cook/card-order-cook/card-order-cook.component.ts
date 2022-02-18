@@ -25,12 +25,21 @@ export class CardOrderCookComponent implements OnInit {
   } */
   changeStatus(){
     this.data.status='delivering';
-
-    console.log(this.data);
+    this.ordersService.putOrder(this.data, this.data.id);
+    this.ordersService.dispatchStatusOrder.emit({
+      data:this.data
+    })
   }
+
+  changeStatusDone(){
+    this.data.status='done';
+    this.ordersService.putOrder(this.data, this.data.id);
+  }
+
   cutNameProduct(item: string ){
     return item.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
   }
+
   open(content: any) {
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-class', scrollable: true, backdrop: false, keyboard:false})

@@ -14,7 +14,7 @@
       <button class="btn btn-{{data.status}}" type="button" (click)="changeStatus()" *ngIf="data.status =='pending'">
         Recibido
       </button>
-      <button class="btn btn-{{data.status}}" type="button" (click)="changeStatus()" *ngIf="data.status =='delivering'">
+      <button class="btn btn-{{data.status}}" type="button" (click)="changeStatusDone()" *ngIf="data.status =='delivering'">
         Preparado
       </button>
       <ng-template #content let-modal class="custom-class">

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Order } from '../../../modules/orders/order-list/order-list.metadata';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,20 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrdersService {
+  @Output() dispatchStatusOrder : EventEmitter<any> = new EventEmitter()
+
   public orders: Order[] = [];
   public ordersDelivering: Order[] = [];
 
   constructor(private http: HttpClient) { }
 
-  get arrayOrders() {
-    return [...this.orders];
-  }
-
-  setOrders(order: Order) {
-    if (order.status == 'delivering') {
-      this.ordersDelivering.push(order);
-      console.log(this.ordersDelivering);
-    }
+  getOrder(): Observable<Order[]>{
+    return this.http.get<Order[]>('http://localhost:3000/order');
   }
 
   postOrder(newOrder: Order){
@@ -30,7 +25,13 @@ export class OrdersService {
     });
   }
 
-  getOrder(): Observable<Order[]>{
-    return this.http.get<Order[]>('http://localhost:3000/order');
+  putOrder(newOrder: Order, _idOrder:number){
+    this.http.put<Order[]>(`http://localhost:3000/order/${_idOrder}`, newOrder)
+    .subscribe( (res:any) => {
+      console.log('res put', res);
+
+      return res;
+    });
   }
+
 }
