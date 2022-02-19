@@ -661,372 +661,139 @@
       "additional": ""
     },
     {
+      "id": 2,
+      "userName": "Manuel Guerrero",
+      "client": "Manuel",
+      "products": [
+        {
+          "id": 34,
+          "name": "Jugo de naranja",
+          "price": 12,
+          "image": "../../assets/images/jugo de naranja.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        },
+        {
+          "id": 30,
+          "name": "Empanada de carne",
+          "price": 6,
+          "image": "../../assets/images/empanada-de-carne.png",
+          "type": "snacks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 6
+        }
+      ],
+      "total": 18,
+      "totalQty": 2,
+      "numberTable": "2",
+      "status": "delivered",
+      "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
+      "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
+      "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
+      "additional": "jugo sin azucar"
+    },
+    {
+      "id": 3,
+      "client": "Fio",
+      "products": [
+        {
+          "id": 34,
+          "name": "Jugo de naranja",
+          "price": 12,
+          "image": "../../assets/images/jugo de naranja.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        },
+        {
+          "id": 37,
+          "name": "Jugo de maracuyá",
+          "price": 12,
+          "image": "../../assets/images/jugo de maracuya.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        },
+        {
+          "id": 40,
+          "name": "Jugo de manzana",
+          "price": 12,
+          "image": "../../assets/images/jugo de manzana.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        },
+        {
+          "id": 38,
+          "name": "Hamburguesas triple carne y queso ",
+          "price": 18,
+          "image": "../../assets/images/burger5.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 36
+        },
+        {
+          "id": 21,
+          "name": "Crema volteada",
+          "price": 7,
+          "image": "../../assets/images/crema-volteada.png",
+          "type": "desserts",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 7
+        },
+        {
+          "id": 22,
+          "name": "Keke de plátano",
+          "price": 8,
+          "image": "../../assets/images/keke-de-platano.png",
+          "type": "desserts",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 8
+        },
+        {
+          "id": 15,
+          "name": "Torta Helada",
+          "price": 7,
+          "image": "../../assets/images/tortaHelada.png",
+          "type": "desserts",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 7
+        }
+      ],
+      "total": 94,
+      "totalQty": 8,
+      "numberTable": "4",
+      "status": "delivered",
+      "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
+      "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
+      "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
+      "additional": ""
+    },
+    {
       "id": 4,
       "client": "Karen",
       "products": [
         {
-          "id": 2,
-          "userName": "Manuel Guerrero",
-          "client": "Manuel",
-          "products": [
-            {
-              "id": 34,
-              "name": "Jugo de naranja",
-              "price": 12,
-              "image": "../../assets/images/jugo de naranja.png",
-              "type": "juices",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 12
-            },
-            {
-              "id": 30,
-              "name": "Empanada de carne",
-              "price": 6,
-              "image": "../../assets/images/empanada-de-carne.png",
-              "type": "snacks",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 6
-            }
-          ],
-          "total": 18,
-          "totalQty": 2,
-          "numberTable": "2",
-          "status": "delivered",
-          "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
-          "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
-          "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
-          "additional": "jugo sin azucar"
-        },
-        {
-          "id": 3,
-          "client": "Fio",
-          "products": [
-            {
-              "id": 34,
-              "name": "Jugo de naranja",
-              "price": 12,
-              "image": "../../assets/images/jugo de naranja.png",
-              "type": "juices",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 12
-            },
-            {
-              "id": 37,
-              "name": "Jugo de maracuyá",
-              "price": 12,
-              "image": "../../assets/images/jugo de maracuya.png",
-              "type": "juices",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 12
-            },
-            {
-              "id": 40,
-              "name": "Jugo de manzana",
-              "price": 12,
-              "image": "../../assets/images/jugo de manzana.png",
-              "type": "juices",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 12
-            },
-            {
-              "id": 38,
-              "name": "Hamburguesas triple carne y queso ",
-              "price": 18,
-              "image": "../../assets/images/burger5.png",
-              "type": "hamburguers",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 2,
-              "subTotal": 36
-            },
-            {
-              "id": 21,
-              "name": "Crema volteada",
-              "price": 7,
-              "image": "../../assets/images/crema-volteada.png",
-              "type": "desserts",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 7
-            },
-            {
-              "id": 22,
-              "name": "Keke de plátano",
-              "price": 8,
-              "image": "../../assets/images/keke-de-platano.png",
-              "type": "desserts",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 8
-            },
-            {
-              "id": 15,
-              "name": "Torta Helada",
-              "price": 7,
-              "image": "../../assets/images/tortaHelada.png",
-              "type": "desserts",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 7
-            }
-          ],
-          "total": 94,
-          "totalQty": 8,
-          "numberTable": "4",
-          "status": "done",
-          "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
-          "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
-          "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
-          "additional": ""
-        },
-        {
-          "id": 4,
-          "client": "Karen",
-          "products": [
-            {
-              "id": 16,
-              "name": "Helado de lúcuma",
-              "price": 4,
-              "image": "../../assets/images/helado-de-lucuma.png",
-              "type": "desserts",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 2,
-              "subTotal": 8
-            }
-          ],
-          "total": 8,
-          "totalQty": 2,
-          "numberTable": "5",
-          "status": "delivering",
-          "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
-          "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
-          "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
-          "additional": ""
-        },
-        {
-          "id": 5,
-          "userName": "María Chavez",
-          "client": "Paquita",
-          "products": [
-            {
-              "id": 2,
-              "name": "Café con leche",
-              "price": 15,
-              "image": "../../assets/images/cafe_leche.png",
-              "type": "cafes",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 15
-            },
-            {
-              "id": 3,
-              "name": "Sandwich de jamón y queso",
-              "price": 10,
-              "image": "../../assets/images/Sandwich de jamon y queso.png",
-              "type": "hamburguers",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 10
-            }
-          ],
-          "total": 25,
-          "totalQty": 2,
-          "numberTable": "6",
-          "status": "pending",
-          "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
-          "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
-          "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
-          "additional": ""
-        },
-        {
-          "id": 6,
-          "client": "Mario",
-          "products": [
-            {
-              "id": 31,
-              "name": "Empanada de pollo",
-              "price": 6,
-              "image": "../../assets/images/empanada-de-pollo.png",
-              "type": "snacks",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 6
-            },
-            {
-              "id": 38,
-              "name": "Jugo de piña",
-              "price": 12,
-              "image": "../../assets/images/jugo de pina.png",
-              "type": "juices",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 12
-            }
-          ],
-          "total": 18,
-          "totalQty": 2,
-          "numberTable": "1",
-          "status": "pending",
-          "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
-          "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
-          "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
-          "additional": ""
-        },
-        {
-          "id": 7,
-          "client": "Miguel",
-          "products": [
-            {
-              "id": 38,
-              "name": "Hamburguesas triple carne y queso ",
-              "price": 18,
-              "image": "../../assets/images/burger5.png",
-              "type": "hamburguers",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 2,
-              "subTotal": 36
-            },
-            {
-              "id": 40,
-              "name": "Hamburguesa vegetariana con salsa",
-              "price": 18,
-              "image": "../../assets/images/burger7.png",
-              "type": "hamburguers",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 2,
-              "subTotal": 36
-            }
-          ],
-          "total": 72,
-          "totalQty": 4,
-          "numberTable": "2",
-          "status": "pending",
-          "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
-          "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
-          "dateProcessed": "Wed Feb 16 2022 17:05:48 GMT-0500 (hora estándar de Colombia)",
-          "additional": ""
-        },
-        {
-          "id": 8,
-          "userName": "Manuel Guerrero",
-          "client": "Mili",
-          "products": [
-            {
-              "id": 5,
-              "name": "Jugo de fresa",
-              "price": 12,
-              "image": "../../assets/images/jugo de fresa.png",
-              "type": "juices",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 12
-            },
-            {
-              "id": 34,
-              "name": "Jugo de naranja",
-              "price": 12,
-              "image": "../../assets/images/jugo de naranja.png",
-              "type": "juices",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 12
-            },
-            {
-              "id": 18,
-              "name": "Helado de chocolate",
-              "price": 4,
-              "image": "../../assets/images/helado-de-chocolate.png",
-              "type": "desserts",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 2,
-              "subTotal": 8
-            },
-            {
-              "id": 16,
-              "name": "Helado de lúcuma",
-              "price": 4,
-              "image": "../../assets/images/helado-de-lucuma.png",
-              "type": "desserts",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 2,
-              "subTotal": 8
-            },
-            {
-              "id": 37,
-              "name": "Hamburguesa triple con papas",
-              "price": 10,
-              "image": "../../assets/images/burger4.png",
-              "type": "hamburguers",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 10
-            }
-          ],
-          "total": 50,
-          "totalQty": 7,
-          "numberTable": "3",
-          "status": "pending",
-          "dateEntry": "Thu Feb 17 2022 20:25:44 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "",
-          "dateDone": "",
-          "dateProcessed": "",
-          "additional": "bastante mayonesa"
-        },
-        {
-          "id": 9,
-          "userName": "Manuel Guerrero",
-          "client": "Melissa Espinoza",
-          "products": [
-            {
-              "id": 42,
-              "name": "Mocaccino",
-              "price": 15,
-              "image": "../../assets/images/mocachino.png",
-              "type": "cafes",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 15
-            },
-            {
-              "id": 42,
-              "name": "Café expreso",
-              "price": 15,
-              "image": "../../assets/images/cafe expreso.png",
-              "type": "cafes",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 15
-            },
-            {
-              "id": 11,
-              "name": "Té verde",
-              "price": 15,
-              "image": "../../assets/images/te_verde.png",
-              "type": "cafes",
-              "dateEntry": "21/01/2022 09:24:00",
-              "qty": 1,
-              "subTotal": 15
-            }
-          ],
-          "total": 45,
-          "totalQty": 3,
-          "numberTable": "2",
-          "status": "pending",
-          "dateEntry": "Thu Feb 17 2022 20:27:47 GMT-0500 (hora estándar de Colombia)",
-          "dateDelivering": "",
-          "dateDone": "",
-          "dateProcessed": "",
-          "additional": ""
+          "id": 16,
+          "name": "Helado de lúcuma",
+          "price": 4,
+          "image": "../../assets/images/helado-de-lucuma.png",
+          "type": "desserts",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 8
         }
       ],
       "total": 8,
@@ -1138,7 +905,7 @@
       "total": 72,
       "totalQty": 4,
       "numberTable": "2",
-      "status": "done",
+      "status": "canceled",
       "dateEntry": "Wed Feb 16 2022 16:27:15 GMT-0500 (hora estándar de Colombia)",
       "dateDelivering": "Wed Feb 16 2022 16:30:10 GMT-0500 (hora estándar de Colombia)",
       "dateDone": "Wed Feb 16 2022 17:02:28 GMT-0500 (hora estándar de Colombia)",
@@ -1286,13 +1053,103 @@
       "total": 60,
       "totalQty": 4,
       "numberTable": "1",
-      "status": "delivered",
+      "status": "pending",
       "dateEntry": "Thu Feb 17 2022 22:07:13 GMT-0500 (hora estándar de Colombia)",
-      "dateDelivering": "Fri Feb 18 2022 18:13:24 GMT-0500 (hora estándar de Perú)",
-      "dateDone": "Fri Feb 18 2022 18:13:59 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
       "dateProcessed": "",
-      "additional": "",
-      "timeResult": "00:00:35"
+      "additional": ""
+    },
+    {
+      "id": 11,
+      "userName": "Manuel Guerrero",
+      "client": "Mariana",
+      "products": [
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 30
+        }
+      ],
+      "total": 30,
+      "totalQty": 2,
+      "numberTable": "1",
+      "status": "canceled",
+      "dateEntry": "Fri Feb 18 2022 19:15:40 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "dateProcessed": "",
+      "dateCanceled": "Fri Feb 18 2022 19:32:33 GMT-0500 (hora estándar de Colombia)",
+      "additional": ""
+    },
+    {
+      "id": 12,
+      "userName": "Manuel Guerrero",
+      "client": "Lucuma",
+      "products": [
+        {
+          "id": 16,
+          "name": "Helado de lúcuma",
+          "price": 4,
+          "image": "../../assets/images/helado-de-lucuma.png",
+          "type": "desserts",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 8
+        }
+      ],
+      "total": 8,
+      "totalQty": 2,
+      "numberTable": "5",
+      "status": "canceled",
+      "dateEntry": "Fri Feb 18 2022 19:46:09 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "dateProcessed": "",
+      "dateCanceled": "Fri Feb 18 2022 19:47:19 GMT-0500 (hora estándar de Colombia)",
+      "additional": ""
+    },
+    {
+      "id": 13,
+      "userName": "Manuel Guerrero",
+      "client": "zx",
+      "products": [
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        },
+        {
+          "id": 24,
+          "name": "Papas Fritas",
+          "price": 12,
+          "image": "../../assets/images/Papas fritas.png",
+          "type": "snacks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        }
+      ],
+      "total": 27,
+      "totalQty": 2,
+      "numberTable": "2",
+      "status": "pending",
+      "dateEntry": "Fri Feb 18 2022 19:50:15 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
     }
   ]
 }

@@ -39,6 +39,7 @@ export class OrderListComponent implements OnInit {
     dateDone: '',
     timeResult: '',
     dateProcessed: '',
+    dateCanceled: '',
     additional:'' ,
   };
   public deleteSubtotal: number = 0;
