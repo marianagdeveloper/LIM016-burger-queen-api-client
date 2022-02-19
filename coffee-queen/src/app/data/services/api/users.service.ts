@@ -18,5 +18,16 @@ export class UsersService {
       return res;
     });
   }
-}
+  putUser(updateUser: User, _idUser:string){
+    this.http.put<User[]>(`http://localhost:3000/users/${_idUser}`, updateUser)
+    .subscribe( (res:any) => {
+      return res;
+    });
+  }
+  deleteUser(idUser: string){
+    this.http.delete<User[]>(`http://localhost:3000/users/${idUser}`).subscribe( (res:any) => {
 
+    });
+
+  }
+}

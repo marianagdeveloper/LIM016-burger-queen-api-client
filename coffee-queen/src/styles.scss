@@ -1,14 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import "~@ng-select/ng-select/themes/default.theme.css";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 * {
     margin: 0px;
     padding: 0px;
     font-family: 'Raleway', sans-serif;
 }
+
+
 /* Importing Bootstrap SCSS file. */
+
 @import '~bootstrap/scss/bootstrap';
 
 /* Importing Bootstrap SCSS file. */
+
 @import '~bootstrap/scss/bootstrap';

@@ -35,7 +35,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -80,3 +80,52 @@
         </div>
     </div>
 </div>
+
+
+<!-- 
+<div class="modal fade" id="modalFormEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Descripción:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="description" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Imagen:</label>
+                        <input type="file" (change)="capturarImage($event)" class="form-control" id="recipient-name">
+                    </div>
+                    <div *ngIf="previsualizacion">
+                        <img width="100" [src]="previsualizacion" alt="">
+                    </div>
+                    <div class="mb-3 d-flex">
+                        <div>
+                            <label for="recipient-name" class="col-form-label w-50">Precio:</label>
+                            <input type="text" class="form-control w-50" id="recipient-name" [(ngModel)]="priceProduct" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div>
+                            <label for="recipient-name" class="col-form-label w-75">Categoria:</label>
+                            <select class="form-select ml-3" aria-label="Default select example" [(ngModel)]="optionSelected" [ngModelOptions]="{standalone: true}">
+                                <option value="0">Seleccione</option>
+                                <option *ngFor="let dato of arrayCategory">
+                                  {{dato}}
+                                </option>
+                       </select>
+                        </div>
+                    </div>
+
+                   
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                <button type="button" class="btn btn-primary" [disabled]="loading" (click)="addProduct()">{{(loading)?'Cargando...':'Agregar'}}</button>
+            </div>
+        </div>
+    </div>
+</div> -->
