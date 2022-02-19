@@ -12,6 +12,8 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class CardOrderCookComponent implements OnInit {
   @Input() data!: Order;
   public dateOrder: string = '';
+  public dateDelivering: any;
+  public dateDone: any;
   closeResult = '';
   comment = '';
   setcomment = '';
@@ -20,26 +22,50 @@ export class CardOrderCookComponent implements OnInit {
   ngOnInit(): void {
     this.dateOrder = this.data.dateEntry.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
   }
-  /* cutNameProducto(item: string ){
-    return item.split(' ').splice(0, 3).toString().replace(/,+/g, ' ')
-  } */
-  changeStatus(){
+
+  changeStatusToDelivering(){
     this.data.status='delivering';
     this.data.dateDelivering = new Date().toString();
     this.ordersService.putOrder(this.data, this.data.id);
-    /* this.ordersService.dispatchStatusOrder.emit({
-      data:this.data
-    }) */
-
   }
 
-  changeStatusDone(){
+  changeStatusToDone(){
     this.data.status='done';
+    this.dateDelivering = new Date(this.data.dateDelivering);
+    this.dateDone = new Date();
+    this.data.timeResult = this.getDiffDate(this.dateDelivering, this.dateDone)
+    this.data.dateDone = this.dateDone.toString();
     this.ordersService.putOrder(this.data, this.data.id);
   }
 
   cutNameProduct(item: string ){
     return item.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+  }
+
+  getTimeInSeconds(time: Date){
+    let hours = time.getHours();
+    hours = hours > 12 ? (hours - 12)*60*60 : hours*60;
+    let minutes = time.getMinutes();
+    minutes = minutes*60;
+    let seconds = time.getSeconds();
+    return hours + minutes + seconds;
+  }
+
+  secondsToString(seconds:number) {
+    let hour: any = Math.floor(seconds / 3600);
+    hour = (hour < 10)? '0' + hour : hour;
+    let minute: any = Math.floor((seconds / 60) % 60);
+    minute = (minute < 10)? '0' + minute : minute;
+    let second: any = seconds % 60;
+    second = (second < 10)? '0' + second : second;
+    return hour + ':' + minute + ':' + second;
+  }
+
+  getDiffDate(startTime: Date, endTime: Date){
+    let start = this.getTimeInSeconds(startTime);
+    let end = this.getTimeInSeconds(endTime);
+    let diff = end - start;
+    return this.secondsToString(diff);
   }
 
   open(content: any) {
@@ -48,9 +74,6 @@ export class CardOrderCookComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
-          console.log('this.closeResult', this.closeResult);
-          console.log('result', result);
-
           this.setcomment = this.comment;
         },
         (reason) => {

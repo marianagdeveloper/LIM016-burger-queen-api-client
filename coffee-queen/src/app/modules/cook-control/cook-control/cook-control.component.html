@@ -1,6 +1,6 @@
 <div class="bg-skeleton scrollOrders">
   <!-- Legend -->
-  <div class="d-flex groupLegend mb-3 ">
+  <div class="d-flex justify-content-between groupLegend mb-3 ">
     <div class="pointerLegend">
         <img src="../../../../assets/pending.png" alt="" width="25" height="25">
         <a fragment="pending" (click)="navigateToSection('pending')">Pendiente</a>
@@ -8,6 +8,10 @@
     <div class="pointerLegend">
         <img src="../../../../assets/delivering.png" alt="" width="25" height="25">
         <a fragment="delivering " (click)="navigateToSection('delivering')">En Preparación</a>
+    </div>
+    <div class="pointerLegend">
+      <img src="../../../../assets/canceled.png" width="20" height="20" />
+      <a fragment="canceled" (click)="navigateToSection('canceled')" >Cancelado</a>
     </div>
   </div><!-- Legend -->
 
@@ -31,5 +35,16 @@
 
     </div>
   </section><!-- Section CardsOrder delivering -->
+
+  <hr>
+
+  <!-- Section CardsOrder canceled -->
+  <section id="canceled" class="d-flex flex-wrap justify-content-between">
+    <div class="d-flex flex-direction-column">
+
+      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order-cook>
+
+    </div>
+  </section><!-- Section CardsOrder canceled -->
 
 </div>

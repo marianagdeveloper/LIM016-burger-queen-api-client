@@ -36,6 +36,7 @@ export class CardProductComponent implements OnInit {
     dateEntry: '',
     dateDelivering: '',
     dateDone: '',
+    timeResult:'',
     dateProcessed: '',
     dateCanceled: '',
     additional: ''
