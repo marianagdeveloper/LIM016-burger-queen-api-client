@@ -13,5 +13,6 @@ export interface Order {
   dateDelivering: string;
   dateDone: string;
   dateProcessed: string;
+  dateCanceled:string;
   additional: string;
 }

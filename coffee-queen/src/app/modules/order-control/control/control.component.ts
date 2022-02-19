@@ -36,6 +36,7 @@ export class ControlComponent implements OnInit {
     dateDelivering: '',
     dateDone: '',
     dateProcessed: '',
+    dateCanceled: '',
     additional: '',
   };
 

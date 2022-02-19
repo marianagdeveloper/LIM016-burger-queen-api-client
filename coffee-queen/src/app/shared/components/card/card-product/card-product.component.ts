@@ -37,6 +37,7 @@ export class CardProductComponent implements OnInit {
     dateDelivering: '',
     dateDone: '',
     dateProcessed: '',
+    dateCanceled: '',
     additional: ''
   };
   public products!: Product[];

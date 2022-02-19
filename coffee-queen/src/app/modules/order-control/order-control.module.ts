@@ -15,8 +15,7 @@ import { FilterStatusPipe } from './pipes/FilterStatusPipe';
   imports: [
     CommonModule,
     SharedModule,
-    OrderControlRoutingModule,
-
+    OrderControlRoutingModule
   ]
 })
 export class OrderControlModule { }

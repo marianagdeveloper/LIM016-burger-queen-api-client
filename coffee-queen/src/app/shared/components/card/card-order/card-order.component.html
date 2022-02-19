@@ -29,35 +29,42 @@
           <hr>
           <div class="mt-2 mx-4 text-left text-beige">
             <p>Mesero: {{ data?.userName }}</p>
-            <p>Fecha de Creación: <span>{{dateOrderCreate}}</span></p>
-            <p>Fecha inicio preparación: {{dateOrderDelivering}}</p>
-            <p>Fecha fin preparación: {{dateOrderDone}}</p>
+            <p>Creación de pedido: <span>{{dateOrderCreate}}</span></p>
+            <p>Inicio de preparación: {{dateOrderDelivering}}</p>
+            <p>Fin de preparación: {{dateOrderDone}}</p>
             <p>Tiempo de preparación: 00:32:18</p>
-            <p>Fecha de Entrega: {{dateOrderProcessed}}</p>
+            <p>Entrega de pedido: {{dateOrderProcessed}}</p>
+            <p *ngIf="dateCanceledModal">Pedido Cancelado: {{dateOrderCanceled}}</p>
           </div>
-          <!-- <form>
-            <div class="mb-3">
-              <label for="dateOfBirth">Date of birth</label>
-              <div class="input-group">
-                <input type="text" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}" class="form-control">
-              </div>
-            </div>
-          </form> -->
         </div>
         <div class="modal-footer test d-flex justify-content-around">
-          <button type="button" class="btn btn-danger" (click)="modal.close('cancel')">Cancelar pedido</button>
-          <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
+          <button type="button" class="btn btn-danger" style="border-radius: 10px" (click)="open(confirm);modal.close('return')" *ngIf="btnCanceled" >Cancelar pedido</button>
+          <button type="button" class="btn btn-warning" style="border-radius: 10px" (click)="modal.close('return')">Volver a pedidos</button>
         </div>
       </ng-template>
+
+      <ng-template #confirm let-modal >
+        <div class="modal-body">
+          <h5>¿Desea cancelar el pedido de la Mesa N° {{ data?.numberTable }} ?</h5>
+          <hr>
+          <p>Cliente: {{ data?.client }}</p>
+          <p>Total productos: {{data.totalQty}}</p>
+          <ul *ngFor="let product of data.products">
+            <li style="text-align: left; list-style-type: none">
+              {{ product.qty }}  {{ product.name }}
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer d-flex justify-content-around">
+          <button type="button" class="btn btn-danger" style="width: 120px; border-radius: 10px" (click)="modal.close('cancel')" >Si</button>
+          <button type="button" class="btn btn-warning" style="width: 120px; border-radius: 10px" (click)="modal.close('return')">No</button>
+        </div>
+      </ng-template>
+
       <div>
         <button class="btn btn-sm btn-{{data.status}} " (click)="open(content)">Ver detalle</button>
         <button class="btn btn-sm btn-delivered m-2 " (click)="updateStatus()" *ngIf="data.status == 'done'">Entregado</button>
       </div>
-
-      <!-- <hr>
-
-      <pre>{{ closeResult }}</pre>
-      <pre>{{ setcomment }}</pre> -->
 
     </div>
     <div class="card-footer text-muted"> Pedido N° {{ data?.id }} - {{dateOrder}}</div>
