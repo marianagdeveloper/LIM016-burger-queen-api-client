@@ -13,7 +13,7 @@
       <button class="btn btn-sm btn-more mt-2" (click)="open(content)">Ver Más</button>
       <br>
       <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDelivering()" *ngIf="data.status =='pending'">
-        Recibido
+        Recibir pedido
       </button>
       <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDone()" *ngIf="data.status =='delivering'">
         Preparado

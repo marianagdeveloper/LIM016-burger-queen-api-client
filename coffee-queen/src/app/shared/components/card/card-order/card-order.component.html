@@ -32,7 +32,7 @@
             <p>Creación de pedido: <span>{{dateOrderCreate}}</span></p>
             <p>Inicio de preparación: {{dateOrderDelivering}}</p>
             <p>Fin de preparación: {{dateOrderDone}}</p>
-            <p>Tiempo de preparación: 00:32:18</p>
+            <p>Tiempo de preparación: {{data.timeResult}}</p>
             <p>Entrega de pedido: {{dateOrderProcessed}}</p>
             <p *ngIf="dateCanceledModal">Pedido Cancelado: {{dateOrderCanceled}}</p>
           </div>

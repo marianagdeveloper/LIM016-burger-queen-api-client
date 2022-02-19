@@ -1150,6 +1150,90 @@
       "dateProcessed": "",
       "dateCanceled": "",
       "additional": ""
+    },
+    {
+      "id": 14,
+      "userName": "Manuel Guerrero",
+      "client": "dfghjk",
+      "products": [
+        {
+          "id": 8,
+          "name": "Agua 500ml",
+          "price": 18,
+          "image": "../../assets/images/Agua 500ml.png",
+          "type": "drinks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 18
+        }
+      ],
+      "total": 18,
+      "totalQty": 1,
+      "numberTable": "1",
+      "status": "delivered",
+      "dateEntry": "Fri Feb 18 2022 21:28:02 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "Fri Feb 18 2022 21:29:05 GMT-0500 (hora estándar de Colombia)",
+      "dateDone": "Fri Feb 18 2022 21:29:53 GMT-0500 (hora estándar de Colombia)",
+      "timeResult": "00:00:48",
+      "dateProcessed": "Fri Feb 18 2022 21:36:42 GMT-0500 (hora estándar de Colombia)",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 15,
+      "userName": "Manuel Guerrero",
+      "client": "ertyui",
+      "products": [
+        {
+          "id": 14,
+          "name": "Brownie",
+          "price": 6,
+          "image": "../../assets/images/brownie.png",
+          "type": "desserts",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 6,
+          "subTotal": 36
+        }
+      ],
+      "total": 36,
+      "totalQty": 6,
+      "numberTable": "1",
+      "status": "delivered",
+      "dateEntry": "Fri Feb 18 2022 21:37:38 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "Fri Feb 18 2022 21:38:56 GMT-0500 (hora estándar de Colombia)",
+      "dateDone": "Fri Feb 18 2022 21:44:18 GMT-0500 (hora estándar de Colombia)",
+      "timeResult": "00:05:22",
+      "dateProcessed": "Fri Feb 18 2022 21:46:26 GMT-0500 (hora estándar de Colombia)",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 16,
+      "userName": "Manuel Guerrero",
+      "client": "koko",
+      "products": [
+        {
+          "id": 25,
+          "name": "Camotes Fritos",
+          "price": 15,
+          "image": "../../assets/images/camotes-fritos.png",
+          "type": "snacks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 30
+        }
+      ],
+      "total": 30,
+      "totalQty": 2,
+      "numberTable": "1",
+      "status": "canceled",
+      "dateEntry": "Fri Feb 18 2022 21:47:34 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "Fri Feb 18 2022 21:48:23 GMT-0500 (hora estándar de Colombia)",
+      "dateDone": "Fri Feb 18 2022 21:49:40 GMT-0500 (hora estándar de Colombia)",
+      "timeResult": "00:01:17",
+      "dateProcessed": "",
+      "dateCanceled": "Fri Feb 18 2022 21:50:17 GMT-0500 (hora estándar de Colombia)",
+      "additional": ""
     }
   ]
 }
