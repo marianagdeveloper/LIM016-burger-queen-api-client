@@ -5,26 +5,44 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu/menu.component';
-import { MenuListComponent } from './menu/menu-list/menu-list.component';
-import { DesayunoComponent } from './menu/desayuno/desayuno.component';
 
+import { HeaderComponent } from './layout/header/header.component';
+
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { SkeletonComponent } from './layout/skeleton/skeleton.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { ProductModule } from './modules/product/product.module';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginModule } from './modules/login/login.module';
 
 @NgModule({
+ 
   declarations: [
     AppComponent,
-    LoginComponent,
-    MenuComponent,
-    MenuListComponent,
-    DesayunoComponent
+    HeaderComponent,
+    SkeletonComponent,
+    FooterComponent,
+    SidebarComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
+    CoreModule,
     FormsModule,
     AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    LoginModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy,
+    },
+  ],
+
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

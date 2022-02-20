@@ -1,0 +1,9 @@
+<div class="dsc-card mt-3" *ngIf="data">
+    <div class="dsc-card__img">
+        <img src="{{ data?.image }}" alt="">
+    </div>
+    <div class="dsc-card__info">
+        <p>{{ data?.name }}</p>
+        <p>{{ data?.price}}</p>
+    </div>
+</div>
