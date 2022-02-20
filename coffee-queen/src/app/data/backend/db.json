@@ -569,6 +569,16 @@
       "dateEntry": "21/01/2022 09:24:00",
       "qty": 0,
       "subTotal": 15
+    },
+    {
+      "id": 47,
+      "name": "gaseosa",
+      "price": "12",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Sun Feb 20 2022"
     }
   ],
   "auth": [

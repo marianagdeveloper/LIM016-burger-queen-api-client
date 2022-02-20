@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Sanitizer } from '@angular/core';
 import { Product } from './card-product.metadata';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
+
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-card-product',
@@ -41,10 +43,11 @@ export class CardProductComponent implements OnInit {
   };
   public products!: Product[];
 
-  constructor(public productService: ProductService) { }
+  constructor(public productService: ProductService, private sanitizer: DomSanitizer,) { }
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
+    
   }
 
   updateRepeats(productSelected?: any) {
