@@ -13,7 +13,7 @@ export class LoginService {
   constructor(private http: HttpClient ) { }
 
   login(): Observable<ILoginUser[]>{
-    return this.http.get<ILoginUser[]>('http://localhost:3000/auth');
+    return this.http.get<ILoginUser[]>('http://localhost:3000/users');
   }
   // Consume la API de users y devuelve un observable a la respuesta
   rolUser(): Observable<ILoginUsers[]>{

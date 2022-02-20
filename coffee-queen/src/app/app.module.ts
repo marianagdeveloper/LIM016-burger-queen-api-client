@@ -17,7 +17,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { CookControlModule } from './modules/cook-control/cook-control.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -40,7 +40,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     LoginModule,
     CookControlModule,
-    NgbModule
+    NgbModule,
+    NgSelectModule
   ],
   providers: [
     {

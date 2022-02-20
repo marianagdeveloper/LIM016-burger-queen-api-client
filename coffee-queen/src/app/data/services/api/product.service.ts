@@ -34,14 +34,24 @@ export class ProductService {
     // fetch('url', {method: GET})
     return this.http.get<Product[]>('http://localhost:3000/products');
   }
-  postProduct(newProduct: any){
+ /*  postProduct(newProduct: any){
     this.http.post<any[]>('http://localhost:3000/products', newProduct).subscribe( (res:any) => {
       return res;
     });
+  } */
+  public post(url:string, body:any){
+    return this.http.post(url,body); // POST  
   }
   putProduct(newProduct: any,idProduct:number){
-    this.http.post<any[]>('http://localhost:3000/products/${idProduct }', newProduct).subscribe( (res:any) => {
+    this.http.post<any[]>(`http://localhost:3000/products/${idProduct }`, newProduct).subscribe( (res:any) => {
       return res;
     });
+  }
+  
+  deleteProduct(idProduct: number){
+    this.http.delete<Product[]>(`http://localhost:3000/products/${idProduct}`).subscribe( (res:any) => {
+
+    });
+
   }
 }

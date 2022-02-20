@@ -80,18 +80,18 @@ const routes: Routes = [
         loadChildren:()=>
         import ('./modules/cook-control/cook-control.module').then((m)=> m.CookControlModule)
       },
-      {
+    /*   {
         path: '**',
         redirectTo: '/login',
         pathMatch: 'full'
-      }
+      } */
       ]
   },
-  {
+ /*  {
     path: '**',
     redirectTo: '/login',
     pathMatch: 'full'
-  }
+  } */
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
