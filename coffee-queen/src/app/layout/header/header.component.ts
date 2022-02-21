@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit {
  public nameUser:any;
  public avatarUser:any;
  public rolesUser:any;
+ roleCook = false;
+ roleWaiter = false;
+ roleAdmin = false;
+
   constructor(public loginService: LoginService,  private router: Router) {
   }
 
@@ -25,8 +29,13 @@ export class HeaderComponent implements OnInit {
     this.avatarUser=this.loginService.disparador.getValue( ).avatar;
     this.rolesUser=this.loginService.disparador.getValue( ).roles;
 
-    if (this.rolesUser == undefined) {
+   if (this.rolesUser == undefined) {
       this.router.navigate(['login']);
+    } else {
+      this.roleCook = this.rolesUser.cook;
+      this.roleWaiter = this.rolesUser.waiter;
+      this.roleAdmin = this.rolesUser.admin;
     }
+
   }
 }
