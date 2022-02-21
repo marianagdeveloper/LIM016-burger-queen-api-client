@@ -45,12 +45,13 @@ export class CardProductComponent implements OnInit {
   };
   public products!: Product[];
 
-  constructor(public productService: ProductService, private sanitizer: DomSanitizer,) { }
+  constructor(public productService: ProductService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
     
   }
+  public get safeUrlPic() { return this.sanitizer.bypassSecurityTrustResourceUrl(this.data.image); }
 
   updateRepeats(productSelected?: any) {
     this.products.map((producto) => {

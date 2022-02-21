@@ -65,7 +65,7 @@ export class ProductControlComponent implements OnInit {
       console.log('Si es una imagen');
       this.files.push(imagen)
       this.blobFile(imagen).then((res: any) => {
-        this.imagenPrevia = res.base;
+       // this.imagenPrevia = res.base;
 
       })
     } else {
@@ -107,8 +107,10 @@ export class ProductControlComponent implements OnInit {
             break;
         }
         this.productsAdd.price = this.priceProduct;
-        this.productsAdd.image =  "../../assets/images/default.png";
-     this.productsService.post(`http://localhost:3000/products`,  this.productsAdd)
+        this.productsAdd.image =  "https://i.imgur.com/EeTtHPl.png";
+        var headers = new Headers({'authorization': 'Client-ID clientid'});
+
+     this.productsService.post(`http://localhost:3000/products`,  this.productsAdd, {headers: headers})
      .subscribe(res => {
        this.loading = false;
        console.log('Carga exitosa', res);
