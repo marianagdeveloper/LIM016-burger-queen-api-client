@@ -28,7 +28,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    
 
   ],
   imports: [

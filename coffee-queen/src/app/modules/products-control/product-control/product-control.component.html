@@ -52,61 +52,56 @@
 <div class="modal fade" id="modalFormUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+            <form action="" method="post" name="formProduct" (ngSubmit)="loadImages()">
 
-                <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Descripción:</label>
-                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="description" [ngModelOptions]="{standalone: true}">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
-                <!--  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Imagen:</label>
-                    <input type="file" (change)="capturarImage($event)" class="" name="inputFile" id="recipient-name" [(ngModel)]="prueba">
-                </div>
-                <div *ngIf="previsualizacion">
-                    <img width="100" [src]="previsualizacion" alt="">
-                </div> -->
-                <input type="file" id="file" class="input-file" (change)="onFileSelected($event)">
-
-                <div>
-                    <label for="">Preview</label>
-                    <div>
-                        <img width="100px" [src]="imagenPrevia" alt="">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Descripción:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="description" [ngModelOptions]="{standalone: true}">
                     </div>
-                </div>
+                    <input type="file" id="file" class="input-file" (change)="onFileSelected($event)">
 
-
-
-                <div class="mb-3 d-flex">
                     <div>
-                        <label for="recipient-name" class="col-form-label w-50">Precio:</label>
-                        <input type="text" class="form-control w-50" id="recipient-name" [(ngModel)]="priceProduct" [ngModelOptions]="{standalone: true}">
+                        <label for="">Preview</label>
+                        <div>
+                            <img width="100px" [src]="imagenPrevia" alt="">
+                        </div>
                     </div>
-                    <div>
-                        <label for="recipient-name" class="col-form-label w-75">Categoria:</label>
 
-                        <ng-select [items]="arrayCategory" [(ngModel)]="optionSelected" name="selectCategory">
-                        </ng-select>
+
+
+                    <div class="mb-3 d-flex">
+                        <div>
+                            <label for="recipient-name" class="col-form-label w-50">Precio:</label>
+                            <input type="text" class="form-control w-50" id="recipient-name" [(ngModel)]="priceProduct" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div>
+                            <label for="recipient-name" class="col-form-label w-75">Categoria:</label>
+
+                            <ng-select [items]="arrayCategory" [(ngModel)]="optionSelected" name="selectCategory">
+                            </ng-select>
+                        </div>
                     </div>
+
+
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
 
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-
-                <div class="wrapper-button">
-                    <button class="w-100 btn btn-warning" [disabled]="loading" data-bs-dismiss="modal" (click)="loadImages()">
+                    <div class="wrapper-button">
+                        <button class="w-100 btn btn-warning" type="submit" [disabled]="loading" data-bs-dismiss="modal">
 
                              {{(loading) ? 'Cargando...' : 'Agregar'}}
                 </button>
-                </div>
+                    </div>
 
-            </div>
+                </div>
+            </form>
+            <!--  termina el form -->
         </div>
     </div>
 </div>

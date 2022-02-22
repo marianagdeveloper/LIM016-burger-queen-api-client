@@ -578,7 +578,7 @@
       "type": "drinks",
       "qty": 0,
       "subTotal": 0,
-      "dateEntry": "Sun Feb 20 2022"
+      "dateEntry": "Mon Feb 21 2022"
     }
   ],
   "auth": [
@@ -703,18 +703,6 @@
         "cook": false
       },
       "avatar": "../../assets/admin-avatar.png"
-    },
-    {
-      "id": "wiYPXPA",
-      "name": "aaaaaaa",
-      "email": "aaaaaaa",
-      "password": "aaaaaaaa",
-      "roles": {
-        "admin": false,
-        "waiter": false,
-        "cook": true
-      },
-      "avatar": "../../assets/cook-avatar.png"
     }
   ],
   "order": [
@@ -743,6 +731,44 @@
       "dateDone": "Sun Feb 20 2022 18:01:14 GMT-0500 (hora estándar de Colombia)",
       "timeResult": "00:00:47",
       "dateProcessed": "Sun Feb 20 2022 18:01:50 GMT-0500 (hora estándar de Colombia)",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 2,
+      "userName": "Maria",
+      "client": "",
+      "products": [
+        {
+          "id": 1,
+          "name": "Café americano",
+          "price": 8,
+          "image": "../../assets/images/cafe_americano.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 8
+        },
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        }
+      ],
+      "total": 23,
+      "totalQty": 2,
+      "numberTable": "",
+      "status": "pending",
+      "dateEntry": "Mon Feb 21 2022 22:40:03 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
       "dateCanceled": "",
       "additional": ""
     }

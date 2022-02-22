@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/data/services/api/product.service';
 import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
 
 import { DomSanitizer } from '@angular/platform-browser';
+import { ImageService } from './../../../../data/services/api/image.service';
 
 @Component({
   selector: 'app-card-product',
@@ -45,12 +46,13 @@ export class CardProductComponent implements OnInit {
   };
   public products!: Product[];
 
-  constructor(public productService: ProductService, private sanitizer: DomSanitizer,) { }
+  constructor(public productService: ProductService, private sanitizer: DomSanitizer,private imageService:ImageService) { }
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
-    
+    //this.data.image = this.imageService.getImages();
   }
+  public get safeUrlPic() { return this.sanitizer.bypassSecurityTrustResourceUrl(this.data.image)}
 
   updateRepeats(productSelected?: any) {
     this.products.map((producto) => {

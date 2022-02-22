@@ -39,6 +39,7 @@ export class ProductService {
       return res;
     });
   } */
+  
   public post(url:string, body:any){
     return this.http.post(url,body); // POST  
   }
