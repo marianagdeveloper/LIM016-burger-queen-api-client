@@ -15,14 +15,14 @@
       <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDelivering()" *ngIf="data.status =='pending'">
         Recibir pedido
       </button>
-      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDone()" *ngIf="data.status =='delivering'">
+      <!-- <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDone()" *ngIf="data.status =='delivering'">
         Preparado
-      </button>
+      </button> -->
       <ng-template #content let-modal class="custom-class">
 
           <div class="modal-header">
             <h5 class="modal-title" id="modal-basic-title">Pedido N° {{ data.id }} : {{ data?.client }}</h5>
-
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
           </div>
           <div class="modal-body">
             <p>Total productos: {{data.totalQty}}</p>
@@ -38,19 +38,28 @@
               <p>Mesero: {{ data?.userName }}</p>
               <p>Mesa N°: {{ data.numberTable }}</p>
               <p>Creación de pedido: <span>{{cutNameProduct(data.dateEntry)}}</span></p>
-              <p>Inicio de preparación:: {{cutNameProduct(data.dateDelivering)}}</p>
+              <p>Inicio de preparación: {{cutNameProduct(data.dateDelivering)}}</p>
               <p>Fin de preparación: {{cutNameProduct(data.dateDone)}}</p>
               <p>Tiempo de preparación: {{data.timeResult}}</p>
               <p>Entrega de pedido: {{cutNameProduct(data.dateProcessed)}}</p>
             </div>
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
-          </div>
-
-
+            <button type="button" class="btn btn-warning" (click)="open(content2)" (click)="modal.close('return')" *ngIf="data.status == 'delivering'">Preparado</button>
+<!--             <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
+ -->          </div>
       </ng-template>
   </div>
+  <ng-template #content2 let-modal class="custom-class">
+    <div class="modal-body">
+      <h5 class="modal-title" id="modal-basic-title" *ngIf="data.status =='pending'">¿Seguro de cambiar el estado a 'En Preparación'?</h5>
+      <h5 class="modal-title" id="modal-basic-title" *ngIf="data.status =='delivering'">¿Seguro de cambiar el estado a 'Preparado'?</h5>
+    </div>
+    <div class="d-flex justify-content-center mx-3">
+        <button type="button" class="btn btn-sm btn-danger" (click)="modal.close('return')">Cancelar</button>
+        <button type="button" class="btn btn-sm btn-warning" (click)="changeStatusToDone()" (click)="modal.close('return')">Enviar</button>
+    </div>
+  </ng-template>
   <div class="card-footer text-muted">
     {{ dateOrder }}
   </div>

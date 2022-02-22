@@ -18,9 +18,7 @@
 <!-- Section CardsOrder pending -->
   <section id="pending" class="d-flex flex-wrap justify-content-between">
     <div class="d-flex flex-wrap mt-3">
-
-    <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'pending'"></app-card-order-cook>
-
+      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'pending'"></app-card-order-cook>
     </div>
 
   </section><!-- Section CardsOrder pending -->
