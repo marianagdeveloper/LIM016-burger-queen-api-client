@@ -22,8 +22,8 @@
                 <td *ngIf="user.roles.admin==true">Admin</td>
                 <td *ngIf="user.roles.waiter==true">Mesero</td>
                 <td *ngIf="user.roles.cook==true">Jefe de cocina</td>
-                <td class="cursor"><img (click)="open(contentEdit)" (click)="capturar(user)" src="../../../../assets/editar.png"></td>
-                <td class="cursor"><img (click)="open(content)" src="../../../../assets/bxs-trash.png"></td>
+                <td class="cursor"><img (click)="open(contentEdit)" (click)="capturar(user)" src="../../../../assets/editar.png" style="cursor: pointer"></td>
+                <td class="cursor"><img (click)="open(content)" src="../../../../assets/bxs-trash.png" style="cursor: pointer"></td>
                 <ng-template #content let-modal class="custom-class">
                     <div class="modal-body">
                         <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar a {{ user.name }} ?</h5>
@@ -34,7 +34,6 @@
                     </div>
                 </ng-template>
                 <ng-template #contentEdit let-modal class="custom-class">
-
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Nombre:</label>
@@ -56,8 +55,6 @@
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="button" class="btn btn-warning" (click)="modal.close('return')" (click)="updateUser(user)"> Modificar</button>
                     </div>
-
-
                 </ng-template>
             </tr>
         </tbody>

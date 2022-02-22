@@ -745,6 +745,51 @@
       "dateProcessed": "Sun Feb 20 2022 18:01:50 GMT-0500 (hora estándar de Colombia)",
       "dateCanceled": "",
       "additional": ""
+    },
+    {
+      "id": 2,
+      "userName": "Maria",
+      "client": "Mariana",
+      "products": [
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 30
+        }
+      ],
+      "total": 30,
+      "totalQty": 2,
+      "numberTable": "1",
+      "status": "pending",
+      "dateEntry": "Mon Feb 21 2022 17:58:52 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": "sin azucar"
+    },
+    {
+      "id": 3,
+      "userName": "Manuel Guerrero",
+      "client": "",
+      "products": [],
+      "total": 0,
+      "totalQty": 0,
+      "numberTable": "",
+      "status": "pending",
+      "dateEntry": "Tue Feb 22 2022 11:22:27 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
     }
   ]
 }
