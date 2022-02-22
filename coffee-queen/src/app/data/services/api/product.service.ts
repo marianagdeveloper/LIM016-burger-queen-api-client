@@ -40,8 +40,8 @@ export class ProductService {
     });
   } */
   
-  public post(url:string, body:any,header:any){
-    return this.http.post(url,body,header); // POST  
+  public post(url:string, body:any){
+    return this.http.post(url,body); // POST  
   }
   putProduct(newProduct: any,idProduct:number){
     this.http.post<any[]>(`http://localhost:3000/products/${idProduct }`, newProduct).subscribe( (res:any) => {
