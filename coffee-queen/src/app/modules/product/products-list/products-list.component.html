@@ -1,10 +1,10 @@
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 col-sm-9 col-md-9 mt-4 col-lg-6 mlSearch">
 
 
 
         <div class="d-flex justify-content-end px-3 pb-4 ">
-            <div class="input-group w-25">
+            <div class="input-group ">
                 <input class="form-control  w-25" placeholder="Producto" aria-label="Search" [(ngModel)]="getProduct">
                 <span class="input-group-text bgwhite" (click)="cleanSearch()">x</span>
 
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="col-md-12 justify-content-between  d-flex flex-wrap mx-auto">
-        <app-card-product [data]="product" *ngFor="let product of products " class="m-3 "></app-card-product>
+        <app-card-product [data]="product" *ngFor="let product of products " class="m-sm-3 mx-auto"></app-card-product>
     </div>
 
 </div>
