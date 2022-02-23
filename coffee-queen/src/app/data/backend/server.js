@@ -30,7 +30,7 @@ server.post('/auth', (req, res) => {
     // Use default router
 server.use(router)
 server.listen(3000, () => {
-    console.log('JSON Server is running')
+        console.log('JSON Server is running')
     })
     //esto va en el package
     /* "server": "node src/app/data/backend/server.js" */
