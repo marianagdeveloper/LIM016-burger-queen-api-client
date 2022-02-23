@@ -33,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    
 
   ],
   imports: [

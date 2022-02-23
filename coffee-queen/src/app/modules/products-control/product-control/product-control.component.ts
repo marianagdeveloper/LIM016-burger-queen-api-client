@@ -4,6 +4,7 @@ import { Product } from 'src/app/shared/components/card/card-product/card-produc
 import { ProductService } from './../../../data/services/api/product.service';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ImageService } from './../../../data/services/api/image.service';
 
 
 @Component({
@@ -34,6 +35,7 @@ export class ProductControlComponent implements OnInit {
   public fileCaptured: any;
   public loading: boolean=false;
   public prueba:any;
+  public imagen:any;
   closeResult = '';
   comment = '';
   setcomment = '';
@@ -43,6 +45,7 @@ export class ProductControlComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     public productsService: ProductService,
+    public imageService: ImageService,
     private http: HttpClient,
     private modalService: NgbModal,
   ) {
@@ -59,13 +62,13 @@ export class ProductControlComponent implements OnInit {
 
   public onFileSelected(event: any) {
 
-    const imagen = event.target.files[0];
-    console.log(imagen);
-    if ('image/png'.includes(imagen.type)) {
+    this.imagen = event.target.files[0];
+    console.log(this.imagen);
+    if ('image/png'.includes(this.imagen.type)) {
       console.log('Si es una imagen');
-      this.files.push(imagen)
-      this.blobFile(imagen).then((res: any) => {
-        this.imagenPrevia = res.base;
+      this.files.push(this.imagen)
+      this.blobFile(this.imagen).then((res: any) => {
+       this.imagenPrevia = res.base;
 
       })
     } else {
@@ -73,7 +76,13 @@ export class ProductControlComponent implements OnInit {
 
     }
   }
-
+/* addImage(){
+  
+  const urlimage=this.imageService.uploadImage(this.imagen);
+  console.log("esta es la url",urlimage);
+  
+ 
+} */
 
   loadImages = () => {
     try {
@@ -107,7 +116,8 @@ export class ProductControlComponent implements OnInit {
             break;
         }
         this.productsAdd.price = this.priceProduct;
-        this.productsAdd.image =  "../../assets/images/default.png";
+        //this.addImage();
+        this.productsAdd.image= "../../assets/images/default.png"
      this.productsService.post(`http://localhost:3000/products`,  this.productsAdd)
      .subscribe(res => {
        this.loading = false;

@@ -108,7 +108,7 @@
 
 <hr>
 
-<div class="alertMessage">
+
   <ngb-alert
 #selfClosingAlert
 *ngIf="successMessage"
@@ -116,7 +116,7 @@ type="success"
 (closed)="successMessage = ''"
 >{{ successMessage }}
 </ngb-alert>
-</div>
+
 
 <!-- <ng-template #confirm let-modal >
   <div class="modal-body">

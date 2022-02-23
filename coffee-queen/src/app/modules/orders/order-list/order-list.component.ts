@@ -149,7 +149,7 @@ export class OrderListComponent implements OnInit {
   }
 
   //alert
-  public changeSuccessMessage() { this._success.next(`Pedido enviado!!`); }
+  public changeSuccessMessage() { this._success.next(`Pedido registrado y enviado exitosamente!!`); }
 }
 
 
