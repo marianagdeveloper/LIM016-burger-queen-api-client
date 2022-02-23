@@ -58,5 +58,7 @@
             <a class="btn btn-success btn-md bordes m-3" role="button" aria-disabled="true" (click)="sendOrder()"><img src="../../../../assets/check-light.png"></a>
         </div>
     </div>
-
+    <ngb-alert #selfClosingAlert class="alertProduct" *ngIf="successMessage" type="danger" (closed)="successMessage = ''">
+      <img src="../../../../assets/warning-circle.png" class="mx-2" alt="">{{ successMessage }}
+    </ngb-alert>
 </div>

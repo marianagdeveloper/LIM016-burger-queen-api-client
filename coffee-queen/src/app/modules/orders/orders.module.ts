@@ -5,6 +5,7 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { OrderListComponent } from './order-list/order-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OrderListComponent } from './order-list/order-list.component';
     CommonModule,
     FormsModule,
     OrdersRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ]
 })
 export class OrdersModule { }

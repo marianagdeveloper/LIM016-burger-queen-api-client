@@ -57,7 +57,7 @@ export class LoginUserComponent implements OnInit {
       if (rol[0].roles.admin) {
         this.router.navigate(['product']);
       } else if (rol[0].roles.cook) {
-        this.router.navigate(['cook']);
+        this.router.navigate(['cook-control']);
       } else if (rol[0].roles.waiter) {
         this.router.navigate(['product']);
       }

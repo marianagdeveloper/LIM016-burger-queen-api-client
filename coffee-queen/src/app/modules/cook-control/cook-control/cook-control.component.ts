@@ -11,15 +11,17 @@ import { Order } from '../../orders/order-list/order-list.metadata';
 export class CookControlComponent implements OnInit {
 
   public orders: Order[] = [];
+  public reversedList: Order[] = [];
 
   constructor(public ordersService: OrdersService) { }
 
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((data) => {
       this.orders = data;
+      this.reversedList = data.slice().reverse();
     });
-
   }
+
   navigateToSection(section: string) {
     window.location.hash = '';
     window.location.hash = section;

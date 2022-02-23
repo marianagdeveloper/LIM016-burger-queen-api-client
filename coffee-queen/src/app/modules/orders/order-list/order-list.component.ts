@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { LoginService } from 'src/app/data/services/api/login.service';
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { Order } from './order-list.metadata';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../../data/services/api/orders.service';
+import {Subject} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
+import {NgbAlert, NgbAlertConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-order-list',
@@ -46,12 +49,17 @@ export class OrderListComponent implements OnInit {
   public quantity: number = 0;
   public arrayNumberTable: number[] = [];
   public optionSelected: string = '0';
-
+  private _success = new Subject<string>();
+  successMessage = '';
   constructor(public productService: ProductService,public loginService: LoginService,
     private router: Router,
-    public ordersService: OrdersService) {
+    public ordersService: OrdersService,
+    alertConfig: NgbAlertConfig) {
     this.arrayNumberTable=[1,2,3,4,5];
+    alertConfig.dismissible = false;
   }
+
+  @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
   ngOnInit(): void {
     this.order.userName=this.loginService.disparador.getValue().name;
@@ -61,6 +69,14 @@ export class OrderListComponent implements OnInit {
       this.order.totalQty += ele.qty;
     });
     this.order.products= this.products;
+
+    //successful modal setup
+    this._success.subscribe(message => this.successMessage = message);
+    this._success.pipe(debounceTime(3000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+      }
+    });
   }
 
   captureNumberTable(){
@@ -71,13 +87,17 @@ export class OrderListComponent implements OnInit {
     this.order.products = this.productService.arrayProducts;
     this.order.status = 'pending'
     this.order.dateEntry = new Date().toString();
-    console.log(this.order);
-
-    this.ordersService.postOrder(this.order);
-    this.order.products.forEach(product => {
+    if(this.order.client == '' || this.order.numberTable == '' || this.order.total == 0){
+      this._success.next(`Hay campos vacíos. Verifique antes de enviar por favor.`);
+    }
+    else{
+      this.ordersService.postOrder(this.order);
+      this.order.products.forEach(product => {
       this.productService.setProducts(product, 'delete');
-    })
-    this.router.navigate(['product']);
+      })
+      this.router.navigate(['product']);
+    }
+
   }
 
   increaseQuantity(product: any) {

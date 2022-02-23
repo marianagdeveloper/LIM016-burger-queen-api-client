@@ -17,8 +17,9 @@
             </div>
             <!-- <button class="btn btn-success" (click)="getInfoProduct()">Añadir</button> -->
         </div>
-
     </div>
+    <ngb-alert #selfClosingAlert class="alertProduct" *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+    </ngb-alert>
 </fieldset>
 
 <!-- <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>
