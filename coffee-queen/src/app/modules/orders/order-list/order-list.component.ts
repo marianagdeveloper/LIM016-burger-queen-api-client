@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { LoginService } from 'src/app/data/services/api/login.service';
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
@@ -6,12 +6,25 @@ import { Order } from './order-list.metadata';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../../data/services/api/orders.service';
 
+import {Subject} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
+import {NgbAlert} from '@ng-bootstrap/ng-bootstrap';
+
+
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.scss'],
 })
 export class OrderListComponent implements OnInit {
+
+  private _success = new Subject<string>();
+
+  staticAlertClosed = false;
+  successMessage = '';
+
+  @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
+  @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
   public products!: Product[];
   public order: Order = {
@@ -47,9 +60,14 @@ export class OrderListComponent implements OnInit {
   public arrayNumberTable: number[] = [];
   public optionSelected: string = '0';
 
-  constructor(public productService: ProductService,public loginService: LoginService,
+
+  constructor(
+
+    public productService: ProductService,
+    public loginService: LoginService,
     private router: Router,
-    public ordersService: OrdersService) {
+    public ordersService: OrdersService,
+    ) {
     this.arrayNumberTable=[1,2,3,4,5];
   }
 
@@ -61,7 +79,17 @@ export class OrderListComponent implements OnInit {
       this.order.totalQty += ele.qty;
     });
     this.order.products= this.products;
+
+    //alert
+    this._success.subscribe(message => this.successMessage = message);
+    this._success.pipe(debounceTime(5000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+        this.router.navigate(['product']);
+      }
+    });
   }
+
 
   captureNumberTable(){
     this.order.numberTable=this.optionSelected;
@@ -77,7 +105,7 @@ export class OrderListComponent implements OnInit {
     this.order.products.forEach(product => {
       this.productService.setProducts(product, 'delete');
     })
-    this.router.navigate(['product']);
+    // this.router.navigate(['product']);
   }
 
   increaseQuantity(product: any) {
@@ -119,4 +147,9 @@ export class OrderListComponent implements OnInit {
     }
     this.order.totalQty -= product.qty;
   }
+
+  //alert
+  public changeSuccessMessage() { this._success.next(`Pedido enviado!!`); }
 }
+
+

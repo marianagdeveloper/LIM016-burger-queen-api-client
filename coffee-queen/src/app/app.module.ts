@@ -21,6 +21,11 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
+// Importing forms module
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
 
   declarations: [
@@ -41,7 +46,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     LoginModule,
     CookControlModule,
     NgbModule,
-    NgSelectModule
+    NgSelectModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
@@ -53,3 +60,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+
+
