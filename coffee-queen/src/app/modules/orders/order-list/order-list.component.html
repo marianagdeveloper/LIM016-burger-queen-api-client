@@ -2,7 +2,7 @@
 
     <div class="d-flex flex-row justify-content-between align-items-center p-2 ">
         <div>
-            <h4 class="colorLetra">Pedido N° 100</h4>
+            <h4 class="colorLetra">Agregar Pedido</h4>
         </div>
         <div class="d-flex flex-row align-items-center">
             <span class="grosorLetra my-3">Cliente:</span> <input type="text" class="borde ml-3" [(ngModel)]="order.client">
@@ -15,7 +15,11 @@
        </select>
         </div>
     </div>
-    <table class="p-5 table table-striped ">
+
+
+
+
+    <table class="p-5 table table-striped">
         <thead>
             <tr class="colorPedido">
                 <th scope="col">Descripción</th>
@@ -28,35 +32,82 @@
         <tbody>
             <tr *ngFor="let product of products">
                 <th>{{ product.name }}</th>
-                <td>{{ product.price | currency:"S/. " }}</td>
+                <td>{{ product.price | currency: "S/. " }}</td>
                 <td class="inputCant">
                     <div class="input-group input-group-sm mb-1">
-                        <button type="button" class="btn btn-light btn-sm" (click)="decreaseQuantity(product)">-</button>
-                        <input [attr.disabled]="true" type="text" class="form-control form-control-sm text-center " [(ngModel)]="product.qty">
-                        <button type="button" class="btn btn-light btn-sm" (click)="increaseQuantity(product)">+</button>
+                        <button type="button" class="btn btn-light btn-sm" (click)="decreaseQuantity(product)">
+              -
+            </button>
+                        <input [attr.disabled]="true" type="text" class="form-control form-control-sm text-center" [(ngModel)]="product.qty" />
+                        <button type="button" class="btn btn-light btn-sm" (click)="increaseQuantity(product)">
+              +
+            </button>
                     </div>
                 </td>
-                <td>{{ product.subTotal| currency:"S/. "}}</td>
-                <td class="cursor"><img (click)="deleteProduct(product)" src="../../../../assets/bxs-trash.png"></td>
+                <td>{{ product.subTotal | currency: "S/. " }}</td>
+                <td class="cursor">
+                    <img (click)="deleteProduct(product)" src="../../../../assets/bxs-trash.png" />
+                </td>
             </tr>
         </tbody>
         <thead>
             <th scope="col">Total</th>
             <th scope="col"></th>
             <th scope="col">{{ order.totalQty }}</th>
-            <th scope="col">{{ order.total | currency:"S/. "}}</th>
+            <th scope="col">{{ order.total | currency: "S/. " }}</th>
         </thead>
     </table>
 
-    <div class="mb-3 d-flex justify-content-between">
-        <div class=" col-6">
-            <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="order.additional"></textarea>
-        </div>
-        <div class="text-end col-6 align-self-end">
-            <a class="btn btn-danger btn-md bordes m-3" role="button" aria-disabled="true"><img src="../../../../assets/x-light.png"></a>
-            <a class="btn btn-success btn-md bordes m-3" role="button" aria-disabled="true" (click)="sendOrder()"><img src="../../../../assets/check-light.png"></a>
-        </div>
-    </div>
-
 </div>
+<div class="mb-3 d-flex justify-content-between">
+    <div class="col-6">
+        <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label
+      >
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        [(ngModel)]="order.additional"
+      ></textarea>
+    </div>
+    <div class="text-end col-6 align-self-end">
+
+      <a
+        class="btn btn-danger btn-md bordes m-3"
+        role="button"
+        aria-disabled="true"
+        ><img src="../../../../assets/x-light.png"
+      /></a>
+      <a
+        class="btn btn-success btn-md bordes m-3"
+        role="button"
+        aria-disabled="true"
+        (click)="sendOrder(); changeSuccessMessage()"
+        ><img src="../../../../assets/check-light.png"
+      /></a>
+    </div>
+  </div>
+
+
+<hr>
+
+
+  <ngb-alert
+#selfClosingAlert
+*ngIf="successMessage"
+type="success"
+(closed)="successMessage = ''"
+>{{ successMessage }}
+</ngb-alert>
+
+
+<!-- <ng-template #confirm let-modal >
+  <div class="modal-body">
+    <h5>¿ Desea cancelar el pedido ?</h5>
+    <hr>
+  </div>
+  <div class="modal-footer d-flex justify-content-around">
+    <button type="button" class="btn btn-danger" style="width: 120px; border-radius: 10px" (click)="modal.close('cancel')" >Si</button>
+    <button type="button" class="btn btn-warning" style="width: 120px; border-radius: 10px" (click)="modal.close('return')">No</button>
+  </div>
+</ng-template> -->

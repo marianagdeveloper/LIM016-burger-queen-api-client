@@ -216,34 +216,34 @@ export class ProductControlComponent implements OnInit {
   /*  addProduct() {
     const dateEntryInt = new Date().toString();
     const dateProduct = dateEntryInt.split(' ').splice(0, 4).toString().replace(/,+/g, ' ');
-  
-   
+
+
 
     try {
 
       const formProductAdd = new FormData();
-     
+
       this.filesImage.forEach(fileImage=>{
         console.log(fileImage);
         formProduct.append('image',fileImage);
         console.log(formProduct);
-        
+
       })
       formProduct.append('name',this.description)
       formProduct.append('type',this.optionSelected)
       formProduct.append('price',this.priceProduct)
       formProduct.append('dateEntry',dateProduct)
       console.log("contenido de formproduct",formProductAdd);
-      
+
       this.http.post<Product[]>('http://localhost:3000/products',  formProductAdd)
       .subscribe( (res:any) => {
       console.log("respuesta del post",res);
       return res;
-      
+
     });
-      
+
     } catch (error) {
-      
+
     }
 
   } */
@@ -254,7 +254,7 @@ export class ProductControlComponent implements OnInit {
       this.previsualizacion = imagen.base;
     });
     this.filesImage.push( this.fileCaptured)
-    
+
   }
   extraerBase64 = async ($event: any) =>
     new Promise((resolve, reject) => {
