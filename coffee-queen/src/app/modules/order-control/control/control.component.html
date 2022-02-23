@@ -1,58 +1,50 @@
 <div class="d-flex justify-content-between groupLegend mb-3">
-  <div class="pointerLegend {{activebutton}}">
-    <img src="../../../../assets/pending.png" alt="" width="25" height="25" />
-    <a fragment="pending" (click)="navigateToSection('pending')">Pendiente</a>
-  </div>
-  <div class="pointerLegend {{activebutton}}" >
-    <img
-      src="../../../../assets/delivering.png"
-      alt=""
-      width="25"
-      height="25"
-    />
-    <a fragment="delivering " (click)="navigateToSection('delivering')"
-      >En Preparación</a
+    <div class="pointerLegend " (click)="navigateToSection('pending')">
+        <img src="../../../../assets/pending.png" alt="" width="25" height="25" />
+        <a fragment="pending" class="button d-none d-sm-inline-block" routerLinkActive="activebutton">Pendiente</a>
+    </div>
+    <div class="pointerLegend" (click)="navigateToSection('delivering')">
+        <img src="../../../../assets/delivering.png" alt="" width="25" height="25" />
+        <a fragment="delivering " class="button d-none d-sm-inline-block" routerLinkActive="activebutton">En Preparación</a
     >
   </div>
-  <div class="pointerLegend {{activebutton}}">
+  <div class="pointerLegend " (click)="navigateToSection('done')">
     <img src="../../../../assets/done.png" alt="" width="25" height="25" />
-    <a fragment="done" (click)="navigateToSection('done')" >Preparado</a>
-  </div>
-  <div class="pointerLegend {{activebutton}}">
-    <img src="../../../../assets/delivered.png" alt="" width="25" height="25" />
-    <a fragment="delivered " (click)="navigateToSection('delivered')"
-      >Entregado</a
+    <a fragment="done"  class="button d-none d-sm-inline-block" routerLinkActive="activebutton"  >Preparado</a>
+    </div>
+    <div class="pointerLegend" (click)="navigateToSection('delivered')">
+        <img src="../../../../assets/delivered.png" alt="" width="25" height="25" />
+        <a fragment="delivered " class="button d-none d-sm-inline-block" routerLinkActive="activebutton">Entregado</a
     >
   </div>
-  <div class="pointerLegend {{activebutton}}">
+  <div class="pointerLegend "  (click)="navigateToSection('canceled')">
     <img src="../../../../assets/canceled.png" width="20" height="20" />
-    <a fragment="canceled" (click)="navigateToSection('canceled')" >Cancelado</a>
-  </div>
+    <a fragment="canceled"  class="button d-none d-sm-inline-block" routerLinkActive="activebutton" >Cancelado</a>
+    </div>
 </div>
 <div class="scrollOrders">
 
-  <section id="pending" class="d-flex flex-wrap justify-content-between">
-    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'pending'"></app-card-order>
-  </section>
+    <section id="pending" class="d-flex flex-wrap justify-content-between">
+        <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'pending'"></app-card-order>
+    </section>
 
-  <hr />
-  <section id="delivering" class="d-flex flex-wrap justify-content-between">
-    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order>
-  </section>
-  <hr />
-  <section id="done" class="d-flex flex-wrap justify-content-between">
-    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'done'"></app-card-order>
-  </section>
+    <hr />
+    <section id="delivering" class="d-flex flex-wrap justify-content-between">
+        <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order>
+    </section>
+    <hr />
+    <section id="done" class="d-flex flex-wrap justify-content-between">
+        <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'done'"></app-card-order>
+    </section>
 
-  <hr />
-  <section id="delivered" class="d-flex flex-wrap justify-content-between">
-    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivered'"></app-card-order>
-  </section>
+    <hr />
+    <section id="delivered" class="d-flex flex-wrap justify-content-between">
+        <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivered'"></app-card-order>
+    </section>
 
-  <hr />
-  <section id="canceled" class="d-flex flex-wrap justify-content-between">
-    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order>
-  </section>
+    <hr />
+    <section id="canceled" class="d-flex flex-wrap justify-content-between">
+        <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order>
+    </section>
 
 </div>
-

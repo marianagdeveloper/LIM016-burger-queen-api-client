@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../../data/services/api/login.service';
+import { UsersService } from 'src/app/data/services/api/users.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,10 +10,10 @@ import { LoginService } from '../../data/services/api/login.service';
 export class SidebarComponent implements OnInit {
   public rolesUser:any;
   invalidRoleCook=false;
-  constructor(public loginService: LoginService, private router: Router) { }
+  constructor(public usersServices: UsersService, private router: Router) { }
 
   ngOnInit(): void {
-    this.rolesUser=this.loginService.disparador.getValue( ).roles;
+    this.rolesUser=this.usersServices.disparador.getValue( ).roles;
     if (this.rolesUser == undefined) {
       this.router.navigate(['login']);
     } else {

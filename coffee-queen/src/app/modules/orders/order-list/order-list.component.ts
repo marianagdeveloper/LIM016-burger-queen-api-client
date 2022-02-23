@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { LoginService } from 'src/app/data/services/api/login.service';
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { Order } from './order-list.metadata';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../../data/services/api/orders.service';
+import { UsersService } from './../../../data/services/api/users.service';
 
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
@@ -60,11 +60,7 @@ export class OrderListComponent implements OnInit {
   public arrayNumberTable: number[] = [];
   public optionSelected: string = '0';
 
-
-  constructor(
-
-    public productService: ProductService,
-    public loginService: LoginService,
+  constructor(public productService: ProductService,public usersService: UsersService,
     private router: Router,
     public ordersService: OrdersService,
     ) {
@@ -72,7 +68,7 @@ export class OrderListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.order.userName=this.loginService.disparador.getValue().name;
+    this.order.userName=this.usersService.disparador.getValue().name;
     this.products = this.productService.arrayProducts;
     this.products.map((ele: any) => {
       this.order.total += ele.subTotal;

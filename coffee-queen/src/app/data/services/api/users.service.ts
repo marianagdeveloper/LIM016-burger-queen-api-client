@@ -1,12 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from './../../../modules/users-control/user-control/user-control.metadata';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
+
+  @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
 
   constructor(private http: HttpClient ) { }
   getAllUsers(): Observable<User[]>{
