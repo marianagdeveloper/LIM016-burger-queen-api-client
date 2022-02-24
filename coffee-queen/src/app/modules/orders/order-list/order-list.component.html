@@ -66,17 +66,20 @@
     </div>
 
     <div class="text-end col-6 align-self-end">
-
       <a
         class="btn btn-danger btn-md bordes m-3"
         role="button"
         aria-disabled="true"
-        ><img src="../../../../assets/x-light.png"/></a>
+        (click)="open(confirm)"
+        ><img src="../../../../assets/x-light.png"
+      /></a>
       <a
         class="btn btn-success btn-md bordes m-3"
         role="button"
         aria-disabled="true"
-        (click)="sendOrder(); changeSuccessMessage()"><img src="../../../../assets/check-light.png"/></a>
+        (click)="sendOrder()"
+        ><img src="../../../../assets/check-light.png"
+      /></a>
     </div>
   </div>
   <ngb-alert #selfClosingAlert2 class="alertProduct" *ngIf="successMessage2" type="danger" (closed)="successMessage2 = ''">
@@ -84,25 +87,22 @@
   </ngb-alert>
 </div>
 
-<hr>
+<hr />
 
-
-  <ngb-alert
-#selfClosingAlert
-*ngIf="successMessage"
-type="success"
-(closed)="successMessage = ''"
->{{ successMessage }}
+<ngb-alert
+  #selfClosingAlert
+  *ngIf="successMessageOrder"
+  type="success"
+  (closed)="successMessageOrder = ''"
+  >{{ successMessageOrder }}
 </ngb-alert>
 
-
-<!-- <ng-template #confirm let-modal >
+<ng-template #confirm let-modal >
   <div class="modal-body">
     <h5>¿ Desea cancelar el pedido ?</h5>
-    <hr>
   </div>
   <div class="modal-footer d-flex justify-content-around">
     <button type="button" class="btn btn-danger" style="width: 120px; border-radius: 10px" (click)="modal.close('cancel')" >Si</button>
     <button type="button" class="btn btn-warning" style="width: 120px; border-radius: 10px" (click)="modal.close('return')">No</button>
   </div>
-</ng-template> -->
+</ng-template>

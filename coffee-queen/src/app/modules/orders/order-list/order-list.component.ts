@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { Order } from './order-list.metadata';
@@ -10,6 +10,8 @@ import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import { NgbAlert, NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
 
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-order-list',
@@ -18,11 +20,9 @@ import { NgbAlert, NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class OrderListComponent implements OnInit {
 
-  private _success = new Subject<string>();
-
-  staticAlertClosed = false;
-  successMessage = '';
-
+  //alert
+  private _successOrder = new Subject<string>();
+  successMessageOrder = '';
   @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
   @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
@@ -63,10 +63,17 @@ export class OrderListComponent implements OnInit {
   successMessage2 = '';
 
 
-  constructor(public productService: ProductService,public usersService: UsersService,
+  closeResult = '';
+  comment = '';
+  setcomment = '';
+  @Input() data!: Order;
+
+  constructor(
+    public productService: ProductService,public usersService: UsersService,
     private router: Router,
     public ordersService: OrdersService,
-    alertConfig: NgbAlertConfig
+    alertConfig: NgbAlertConfig,
+    private modalService: NgbModal
     ) {
     this.arrayNumberTable=[1,2,3,4,5];
     alertConfig.dismissible = false;
@@ -91,8 +98,8 @@ export class OrderListComponent implements OnInit {
       }
     })
     //alert
-    this._success.subscribe(message => this.successMessage = message);
-    this._success.pipe(debounceTime(5000)).subscribe(() => {
+    this._successOrder.subscribe(message => this.successMessageOrder = message);
+    this._successOrder.pipe(debounceTime(5000)).subscribe(() => {
       if (this.selfClosingAlert) {
         this.selfClosingAlert.close();
         this.router.navigate(['product']);
@@ -116,7 +123,7 @@ export class OrderListComponent implements OnInit {
       this.order.products.forEach(product => {
       this.productService.setProducts(product, 'delete');
       })
-    // this.router.navigate(['product']);
+      this.changeSuccessMessageOrder();
     }
   }
 
@@ -161,7 +168,49 @@ export class OrderListComponent implements OnInit {
   }
 
   //alert
-  public changeSuccessMessage() { this._success.next(`Pedido registrado y enviado exitosamente!!`); }
+  public changeSuccessMessageOrder() { this._successOrder.next(`Pedido registrado y enviado exitosamente!!`); }
+
+  //modal
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title', scrollable: true })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+          if (result == 'cancel') {
+            this.canceledOrder();
+          }
+          this.setcomment = this.comment;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  canceledOrder(){
+    this.products.map((item: any) => {
+        const newLocal = 'delete';
+        this.productService.setProducts(item, newLocal);
+    });
+    this.products = this.productService.arrayProducts;
+
+    this.order.total = 0;
+    this.order.totalQty = 0;
+    this.optionSelected= '0';
+    this.order.client = '';
+    this.order.additional= '';
+  }
 }
 
 

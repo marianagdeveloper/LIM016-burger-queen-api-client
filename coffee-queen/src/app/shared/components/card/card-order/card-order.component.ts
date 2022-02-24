@@ -57,7 +57,6 @@ export class CardOrderComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
-          console.log('this.closeResult', this.closeResult);
           if (result == 'cancel') {
             this.canceledOrder();
           }
