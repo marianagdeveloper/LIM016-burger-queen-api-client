@@ -41,7 +41,7 @@ describe('(1) Test of component LoginUserComponent', () => {
     expect(component.loginForm.invalid).toBeTrue();
   });
 
-  it('If LoginForm is valid', () => {
+  it('If LoginForm is Valid', () => {
     const email = component.loginForm.controls['email']
     email.setValue('maria@gmail.com')
     const password = component.loginForm.controls['password']
@@ -54,15 +54,24 @@ describe('(1) Test of component LoginUserComponent', () => {
     email.setValue('maria@gmail.com')
     const password = component.loginForm.controls['password']
     password.setValue('maria')
-    const btnElement = fixture.debugElement.query(By.css('button'))
-
+    const btnElement = fixture.debugElement.query(By.css('button.btnLogin'))
     // disable
     btnElement.nativeElement.disabled = false
     // click
     btnElement.nativeElement.click()
+    const testData = { user: 'checked'}
+    expect(component.isCheck).toEqual(testData);
+  });
 
-    const testData = {user:1}
-
+  it('If button in LoginForm is not click for disable', () => {
+    const email = component.loginForm.controls['email']
+    email.setValue('maria@gmail.com')
+    const password = component.loginForm.controls['password']
+    password.setValue('maria')
+    const btnElement = fixture.debugElement.query(By.css('button.btnLogin'))
+    // click
+    btnElement.nativeElement.click()
+    const testData = undefined
     expect(component.isCheck).toEqual(testData);
   });
 

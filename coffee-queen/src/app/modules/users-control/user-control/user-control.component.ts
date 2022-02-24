@@ -90,7 +90,7 @@ export class UserControlComponent implements OnInit {
         break;
     }
     console.log(updateUser);
-    this.userService.putUser(updateUser, updateUser.id);
+    this.userService.putUser(updateUser, updateUser.id).subscribe();
   }
 
   addUser() {
@@ -121,12 +121,12 @@ export class UserControlComponent implements OnInit {
         this.newUser.avatar = '../../assets/admin-avatar.png';
         break;
     }
-    this.userService.postUser(this.newUser);
+    this.userService.postUser(this.newUser).subscribe()
     this.users.push(this.newUser);
     this.cleanUserForm();
   }
   deleteUser(idUser: string) {
-    this.userService.deleteUser(idUser);
+    this.userService.deleteUser(idUser).subscribe();
     const data = this.users.filter((item: any) => item.id != idUser);
     this.users = data;
   }
@@ -148,9 +148,6 @@ export class UserControlComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
-          console.log('this.closeResult', this.closeResult);
-          console.log('result', result);
-
           this.setcomment = this.comment;
         },
         (reason) => {

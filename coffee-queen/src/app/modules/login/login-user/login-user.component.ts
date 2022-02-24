@@ -45,33 +45,8 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
-  getDataUser(userValidate:any) {
-    this.userService.getAllUsers().subscribe((res) => {
-      let rol = res.filter((a: any) => {
-        if (a.email == userValidate) {
-          this.userData.name = a.name;
-          this.userData.email = a.email;
-          this.userData.roles = a.roles;
-          this.userData.avatar = a.avatar;
-          return a.roles;
-        }
-      });
-      if (rol[0].roles.admin) {
-        this.router.navigate(['product']);
-      } else if (rol[0].roles.cook) {
-        this.router.navigate(['cook-control']);
-      } else if (rol[0].roles.waiter) {
-        this.router.navigate(['product']);
-      }
-      this.userService.disparador.next(this.userData);
-
-    });
-
-  }
-
   getUserCredentials(): void {
-    this.isCheck = { user: 1}
-   console.log("🚀 ~ file: login-user.component.ts ~ line 95 ~ LoginUserComponent ~ this.userService.getAllUsers ~ isCheck", this.isCheck)
+    this.isCheck = { user: 'checked'}
 
     this.userService.getAllUsers().subscribe((res) => {
       let userValidate: any;
@@ -85,7 +60,6 @@ export class LoginUserComponent implements OnInit {
       });
 
       if (credentials) {
-
           let rol = res.filter((a: any) => {
             if (a.email == userValidate) {
               this.userData.name = a.name;
@@ -95,9 +69,6 @@ export class LoginUserComponent implements OnInit {
               return a.roles;
             }
           });
-
-
-
             if (rol[0].roles.admin) {
               this.router.navigate(['product']);
             } else if (rol[0].roles.cook) {
@@ -107,16 +78,10 @@ export class LoginUserComponent implements OnInit {
             }
             this.userService.disparador.next(this.userData);
 
-
-
       } else {
         this.htmlStr = '*Usuario y/o contraseña inválidos.';
       }
-      console.log('this.isValid', this.isCheck);
-
-
-    });
-
+   });
   }
 
   campoEsValido(inputForm: string) {
@@ -134,16 +99,4 @@ export class LoginUserComponent implements OnInit {
     this.htmlStr = '';
   }
 
-  /*public users: ILoginUser = {
-    email: '',
-    password: '',
-  };
-  constructor(public loginService: LoginService) {}
-
-  login() {
-    const user = { email: this.users?.email, password: this.users?.password };
-    this.loginService.login(user).subscribe((data) => {
-      console.log(data);
-    });
-  } */
 }

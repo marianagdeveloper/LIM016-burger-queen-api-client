@@ -1,1140 +1,1181 @@
 {
-    "products": [{
-            "id": 1,
-            "name": "Café americano",
-            "price": 8,
-            "image": "../../assets/images/cafe_americano.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 8
-        },
-        {
-            "id": 2,
-            "name": "Café con leche",
-            "price": 15,
-            "image": "../../assets/images/cafe_leche.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 3,
-            "name": "Sandwich de jamón y queso",
-            "price": 10,
-            "image": "../../assets/images/Sandwich de jamon y queso.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 10
-        },
-        {
-            "id": 4,
-            "name": "Jugo de frutas natural",
-            "price": 12,
-            "image": "../../assets/images/Jugo de frutas natural.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 5,
-            "name": "Jugo de fresa",
-            "price": 12,
-            "image": "../../assets/images/jugo de fresa.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 6,
-            "name": "Hamburguesa simple",
-            "price": 18,
-            "image": "../../assets/images/Hamburguesas.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 8,
-            "name": "Agua 500ml",
-            "price": 18,
-            "image": "../../assets/images/Agua 500ml.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 10,
-            "name": "Bebida gaseosa 500ml",
-            "price": 18,
-            "image": "../../assets/images/Bebida gaseosa 500ml.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 11,
-            "name": "Té verde",
-            "price": 15,
-            "image": "../../assets/images/te_verde.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 12,
-            "name": "Té negro",
-            "price": 15,
-            "image": "../../assets/images/te_negro.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 13,
-            "name": "Manzanilla",
-            "price": 15,
-            "image": "../../assets/images/manzanilla.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 14,
-            "name": "Brownie",
-            "price": 6,
-            "image": "../../assets/images/brownie.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 6
-        },
-        {
-            "id": 15,
-            "name": "Torta Helada",
-            "price": 7,
-            "image": "../../assets/images/tortaHelada.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 7
-        },
-        {
-            "id": 16,
-            "name": "Helado de lúcuma",
-            "price": 4,
-            "image": "../../assets/images/helado-de-lucuma.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 4
-        },
-        {
-            "id": 17,
-            "name": "Helado de vainilla",
-            "price": 4,
-            "image": "../../assets/images/helado-de-vainilla.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 4
-        },
-        {
-            "id": 18,
-            "name": "Helado de chocolate",
-            "price": 4,
-            "image": "../../assets/images/helado-de-chocolate.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 4
-        },
-        {
-            "id": 19,
-            "name": "Helado de fresa",
-            "price": 4,
-            "image": "../../assets/images/helado-de-fresa.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 4
-        },
-        {
-            "id": 20,
-            "name": "Keke de zanahoria",
-            "price": 8,
-            "image": "../../assets/images/keke-de-zanahoria.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 8
-        },
-        {
-            "id": 21,
-            "name": "Crema volteada",
-            "price": 7,
-            "image": "../../assets/images/crema-volteada.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 7
-        },
-        {
-            "id": 22,
-            "name": "Keke de plátano",
-            "price": 8,
-            "image": "../../assets/images/keke-de-platano.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 8
-        },
-        {
-            "id": 23,
-            "name": "Alfajores",
-            "price": 3.5,
-            "image": "../../assets/images/alfajores.png",
-            "type": "desserts",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 3
-        },
-        {
-            "id": 24,
-            "name": "Papas Fritas",
-            "price": 12,
-            "image": "../../assets/images/Papas fritas.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 25,
-            "name": "Camotes Fritos",
-            "price": 15,
-            "image": "../../assets/images/camotes-fritos.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 26,
-            "name": "Yucas Fritas",
-            "price": 15,
-            "image": "../../assets/images/yucas-fritas.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 27,
-            "name": "Frutos Secos",
-            "price": 10,
-            "image": "../../assets/images/frutos-secos.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 10
-        },
-        {
-            "id": 28,
-            "name": "Maní Salado",
-            "price": 4,
-            "image": "../../assets/images/mani-salado.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 4
-        },
-        {
-            "id": 29,
-            "name": "Maní confitado",
-            "price": 4,
-            "image": "../../assets/images/mani-confitado.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 4
-        },
-        {
-            "id": 30,
-            "name": "Empanada de carne",
-            "price": 6,
-            "image": "../../assets/images/empanada-de-carne.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 6
-        },
-        {
-            "id": 31,
-            "name": "Empanada de pollo",
-            "price": 6,
-            "image": "../../assets/images/empanada-de-pollo.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 6
-        },
-        {
-            "id": 32,
-            "name": "Tequeños",
-            "price": 8,
-            "image": "../../assets/images/tequeños.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 8
-        },
-        {
-            "id": 33,
-            "name": "Granola",
-            "price": 6,
-            "image": "../../assets/images/granola.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 6
-        },
-        {
-            "id": 34,
-            "name": "Hamburguesa doble ",
-            "price": 10,
-            "image": "../../assets/images/burger1.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 10
-        },
-        {
-            "id": 35,
-            "name": "Hamburguesa doble con queso",
-            "price": 18,
-            "image": "../../assets/images/burger2.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 36,
-            "name": "Hamburguesa triple carne",
-            "price": 18,
-            "image": "../../assets/images/burger3.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 37,
-            "name": "Hamburguesa triple con papas",
-            "price": 10,
-            "image": "../../assets/images/burger4.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 10
-        },
-        {
-            "id": 38,
-            "name": "Hamburguesas triple carne y queso ",
-            "price": 18,
-            "image": "../../assets/images/burger5.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 39,
-            "name": "Hamburguesa vegetariana",
-            "price": 18,
-            "image": "../../assets/images/burger6.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 40,
-            "name": "Hamburguesa vegetariana con salsa",
-            "price": 18,
-            "image": "../../assets/images/burger7.png",
-            "type": "hamburguers",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 41,
-            "name": "Gaseosa inka kola",
-            "price": 18,
-            "image": "../../assets/images/bebi1.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 42,
-            "name": "Gaseosa Fanta",
-            "price": 18,
-            "image": "../../assets/images/bebi2.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 43,
-            "name": "Gaseosa Sprite",
-            "price": 18,
-            "image": "../../assets/images/bebi3.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 44,
-            "name": "Gatorade sabor fresa",
-            "price": 18,
-            "image": "../../assets/images/bebi4.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 45,
-            "name": "Gatorade sabor azul",
-            "price": 18,
-            "image": "../../assets/images/bebi5.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 46,
-            "name": "Gatorade sabor naranja",
-            "price": 18,
-            "image": "../../assets/images/bebi6.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 46,
-            "name": "Frugos de Valle 1L",
-            "price": 18,
-            "image": "../../assets/images/bebi7.png",
-            "type": "drinks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 18
-        },
-        {
-            "id": 33,
-            "name": "Aros de Cebolla",
-            "price": 6,
-            "image": "../../assets/images/Aros de cebolla.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 6
-        },
-        {
-            "id": 34,
-            "name": "Jugo de naranja",
-            "price": 12,
-            "image": "../../assets/images/jugo de naranja.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 35,
-            "name": "Limonada",
-            "price": 12,
-            "image": "../../assets/images/jugo de limon.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 36,
-            "name": "Jugo de papaya",
-            "price": 12,
-            "image": "../../assets/images/jugo de papaya.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 37,
-            "name": "Jugo de maracuyá",
-            "price": 12,
-            "image": "../../assets/images/jugo de maracuya.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 38,
-            "name": "Jugo de piña",
-            "price": 12,
-            "image": "../../assets/images/jugo de pina.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 39,
-            "name": "Jugo de lúcuma",
-            "price": 12,
-            "image": "../../assets/images/jugo de lucuma.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 40,
-            "name": "Jugo de manzana",
-            "price": 12,
-            "image": "../../assets/images/jugo de manzana.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 12
-        },
-        {
-            "id": 41,
-            "name": "Capuccino",
-            "price": 15,
-            "image": "../../assets/images/capuchino.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 42,
-            "name": "Mocaccino",
-            "price": 15,
-            "image": "../../assets/images/mocachino.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 43,
-            "name": "Latte",
-            "price": 15,
-            "image": "../../assets/images/late.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 42,
-            "name": "Café expreso",
-            "price": 15,
-            "image": "../../assets/images/cafe expreso.png",
-            "type": "cafes",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 0,
-            "subTotal": 15
-        },
-        {
-            "id": 47,
-            "name": "queque de higo",
-            "price": "145",
-            "image": "../../assets/images/default.png",
-            "type": "desserts",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Mon Feb 21 2022"
-        },
-        {
-            "id": 54,
-            "name": "gaseosa 1 litro",
-            "price": "12",
-            "image": "../../assets/images/default.png",
-            "type": "drinks",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Wed Feb 23 2022"
-        },
-        {
-            "id": 55,
-            "name": "gaseosa 3 litros",
-            "price": "10",
-            "image": "../../assets/images/default.png",
-            "type": "drinks",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Wed Feb 23 2022"
-        },
-        {
-            "id": 56,
-            "name": "gaseosa",
-            "price": "55",
-            "image": "../../assets/images/default.png",
-            "type": "drinks",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Wed Feb 23 2022"
-        },
-        {
-            "id": 58,
-            "name": "aros de cebolla",
-            "price": "11",
-            "image": "../../assets/images/default.png",
-            "type": "snacks",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Wed Feb 23 2022"
-        },
-        {
-            "id": 59,
-            "name": "Mani azucarado",
-            "price": "8",
-            "image": "../../assets/images/default.png",
-            "type": "snacks",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Wed Feb 23 2022"
-        },
-        {
-            "id": 60,
-            "name": "Jugo surtido",
-            "price": "9",
-            "image": "../../assets/images/default.png",
-            "type": "juices",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Wed Feb 23 2022"
-        },
-        {
-            "id": 61,
-            "name": "Mani salado",
-            "price": "19",
-            "image": "../../assets/images/default.png",
-            "type": "snacks",
-            "qty": 0,
-            "subTotal": 0,
-            "dateEntry": "Wed Feb 23 2022"
+  "products": [
+    {
+      "id": 1,
+      "name": "Café americano",
+      "price": 8,
+      "image": "../../assets/images/cafe_americano.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 8
+    },
+    {
+      "id": 2,
+      "name": "Café con leche",
+      "price": 15,
+      "image": "../../assets/images/cafe_leche.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 3,
+      "name": "Sandwich de jamón y queso",
+      "price": 10,
+      "image": "../../assets/images/Sandwich de jamon y queso.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 10
+    },
+    {
+      "id": 4,
+      "name": "Jugo de frutas natural",
+      "price": 12,
+      "image": "../../assets/images/Jugo de frutas natural.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 5,
+      "name": "Jugo de fresa",
+      "price": 12,
+      "image": "../../assets/images/jugo de fresa.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 6,
+      "name": "Hamburguesa simple",
+      "price": 18,
+      "image": "../../assets/images/Hamburguesas.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 8,
+      "name": "Agua 500ml",
+      "price": 18,
+      "image": "../../assets/images/Agua 500ml.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 10,
+      "name": "Bebida gaseosa 500ml",
+      "price": 18,
+      "image": "../../assets/images/Bebida gaseosa 500ml.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 11,
+      "name": "Té verde",
+      "price": 15,
+      "image": "../../assets/images/te_verde.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 12,
+      "name": "Té negro",
+      "price": 15,
+      "image": "../../assets/images/te_negro.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 13,
+      "name": "Manzanilla",
+      "price": 15,
+      "image": "../../assets/images/manzanilla.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 14,
+      "name": "Brownie",
+      "price": 6,
+      "image": "../../assets/images/brownie.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 6
+    },
+    {
+      "id": 15,
+      "name": "Torta Helada",
+      "price": 7,
+      "image": "../../assets/images/tortaHelada.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 7
+    },
+    {
+      "id": 16,
+      "name": "Helado de lúcuma",
+      "price": 4,
+      "image": "../../assets/images/helado-de-lucuma.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 4
+    },
+    {
+      "id": 17,
+      "name": "Helado de vainilla",
+      "price": 4,
+      "image": "../../assets/images/helado-de-vainilla.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 4
+    },
+    {
+      "id": 18,
+      "name": "Helado de chocolate",
+      "price": 4,
+      "image": "../../assets/images/helado-de-chocolate.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 4
+    },
+    {
+      "id": 19,
+      "name": "Helado de fresa",
+      "price": 4,
+      "image": "../../assets/images/helado-de-fresa.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 4
+    },
+    {
+      "id": 20,
+      "name": "Keke de zanahoria",
+      "price": 8,
+      "image": "../../assets/images/keke-de-zanahoria.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 8
+    },
+    {
+      "id": 21,
+      "name": "Crema volteada",
+      "price": 7,
+      "image": "../../assets/images/crema-volteada.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 7
+    },
+    {
+      "id": 22,
+      "name": "Keke de plátano",
+      "price": 8,
+      "image": "../../assets/images/keke-de-platano.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 8
+    },
+    {
+      "id": 23,
+      "name": "Alfajores",
+      "price": 3.5,
+      "image": "../../assets/images/alfajores.png",
+      "type": "desserts",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 3
+    },
+    {
+      "id": 24,
+      "name": "Papas Fritas",
+      "price": 12,
+      "image": "../../assets/images/Papas fritas.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 25,
+      "name": "Camotes Fritos",
+      "price": 15,
+      "image": "../../assets/images/camotes-fritos.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 26,
+      "name": "Yucas Fritas",
+      "price": 15,
+      "image": "../../assets/images/yucas-fritas.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 27,
+      "name": "Frutos Secos",
+      "price": 10,
+      "image": "../../assets/images/frutos-secos.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 10
+    },
+    {
+      "id": 28,
+      "name": "Maní Salado",
+      "price": 4,
+      "image": "../../assets/images/mani-salado.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 4
+    },
+    {
+      "id": 29,
+      "name": "Maní confitado",
+      "price": 4,
+      "image": "../../assets/images/mani-confitado.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 4
+    },
+    {
+      "id": 30,
+      "name": "Empanada de carne",
+      "price": 6,
+      "image": "../../assets/images/empanada-de-carne.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 6
+    },
+    {
+      "id": 31,
+      "name": "Empanada de pollo",
+      "price": 6,
+      "image": "../../assets/images/empanada-de-pollo.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 6
+    },
+    {
+      "id": 32,
+      "name": "Tequeños",
+      "price": 8,
+      "image": "../../assets/images/tequeños.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 8
+    },
+    {
+      "id": 33,
+      "name": "Granola",
+      "price": 6,
+      "image": "../../assets/images/granola.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 6
+    },
+    {
+      "id": 34,
+      "name": "Hamburguesa doble ",
+      "price": 10,
+      "image": "../../assets/images/burger1.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 10
+    },
+    {
+      "id": 35,
+      "name": "Hamburguesa doble con queso",
+      "price": 18,
+      "image": "../../assets/images/burger2.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 36,
+      "name": "Hamburguesa triple carne",
+      "price": 18,
+      "image": "../../assets/images/burger3.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 37,
+      "name": "Hamburguesa triple con papas",
+      "price": 10,
+      "image": "../../assets/images/burger4.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 10
+    },
+    {
+      "id": 38,
+      "name": "Hamburguesas triple carne y queso ",
+      "price": 18,
+      "image": "../../assets/images/burger5.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 39,
+      "name": "Hamburguesa vegetariana",
+      "price": 18,
+      "image": "../../assets/images/burger6.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 40,
+      "name": "Hamburguesa vegetariana con salsa",
+      "price": 18,
+      "image": "../../assets/images/burger7.png",
+      "type": "hamburguers",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 41,
+      "name": "Gaseosa inka kola",
+      "price": 18,
+      "image": "../../assets/images/bebi1.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 42,
+      "name": "Gaseosa Fanta",
+      "price": 18,
+      "image": "../../assets/images/bebi2.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 43,
+      "name": "Gaseosa Sprite",
+      "price": 18,
+      "image": "../../assets/images/bebi3.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 44,
+      "name": "Gatorade sabor fresa",
+      "price": 18,
+      "image": "../../assets/images/bebi4.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 45,
+      "name": "Gatorade sabor azul",
+      "price": 18,
+      "image": "../../assets/images/bebi5.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 46,
+      "name": "Gatorade sabor naranja",
+      "price": 18,
+      "image": "../../assets/images/bebi6.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 46,
+      "name": "Frugos de Valle 1L",
+      "price": 18,
+      "image": "../../assets/images/bebi7.png",
+      "type": "drinks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 18
+    },
+    {
+      "id": 33,
+      "name": "Aros de Cebolla",
+      "price": 6,
+      "image": "../../assets/images/Aros de cebolla.png",
+      "type": "snacks",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 6
+    },
+    {
+      "id": 34,
+      "name": "Jugo de naranja",
+      "price": 12,
+      "image": "../../assets/images/jugo de naranja.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 35,
+      "name": "Limonada",
+      "price": 12,
+      "image": "../../assets/images/jugo de limon.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 36,
+      "name": "Jugo de papaya",
+      "price": 12,
+      "image": "../../assets/images/jugo de papaya.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 37,
+      "name": "Jugo de maracuyá",
+      "price": 12,
+      "image": "../../assets/images/jugo de maracuya.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 38,
+      "name": "Jugo de piña",
+      "price": 12,
+      "image": "../../assets/images/jugo de pina.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 39,
+      "name": "Jugo de lúcuma",
+      "price": 12,
+      "image": "../../assets/images/jugo de lucuma.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 40,
+      "name": "Jugo de manzana",
+      "price": 12,
+      "image": "../../assets/images/jugo de manzana.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 12
+    },
+    {
+      "id": 41,
+      "name": "Capuccino",
+      "price": 15,
+      "image": "../../assets/images/capuchino.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 42,
+      "name": "Mocaccino",
+      "price": 15,
+      "image": "../../assets/images/mocachino.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 43,
+      "name": "Latte",
+      "price": 15,
+      "image": "../../assets/images/late.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 42,
+      "name": "Café expreso",
+      "price": 15,
+      "image": "../../assets/images/cafe expreso.png",
+      "type": "cafes",
+      "dateEntry": "21/01/2022 09:24:00",
+      "qty": 0,
+      "subTotal": 15
+    },
+    {
+      "id": 47,
+      "name": "queque de higo",
+      "price": "145",
+      "image": "../../assets/images/default.png",
+      "type": "desserts",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Mon Feb 21 2022"
+    },
+    {
+      "id": 54,
+      "name": "gaseosa 1 litro",
+      "price": "12",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 55,
+      "name": "gaseosa 3 litros",
+      "price": "10",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 56,
+      "name": "gaseosa",
+      "price": "55",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 58,
+      "name": "aros de cebolla",
+      "price": "11",
+      "image": "../../assets/images/default.png",
+      "type": "snacks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 59,
+      "name": "Mani azucarado",
+      "price": "8",
+      "image": "../../assets/images/default.png",
+      "type": "snacks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 60,
+      "name": "Jugo surtido",
+      "price": "9",
+      "image": "../../assets/images/default.png",
+      "type": "juices",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 61,
+      "name": "Mani salado",
+      "price": "19",
+      "image": "../../assets/images/default.png",
+      "type": "snacks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    }
+  ],
+  "auth": [
+    {
+      "email": "maria@gmail.com",
+      "password": "maria"
+    },
+    {
+      "email": "paco@gmail.com",
+      "password": "paco"
+    },
+    {
+      "email": "manu@gmail.com",
+      "password": "manu"
+    }
+  ],
+  "users": [
+    {
+      "id": "XEqVhWe",
+      "name": "Maria",
+      "email": "maria@gmail.com",
+      "password": "maria",
+      "roles": {
+        "admin": true,
+        "waiter": false,
+        "cook": false
+      },
+      "avatar": "../../assets/admin-avatar.png"
+    },
+    {
+      "id": "e7ZVuOS",
+      "name": "PacoPerez ",
+      "email": "paco@gmail.com",
+      "password": "paco",
+      "roles": {
+        "admin": false,
+        "waiter": false,
+        "cook": true
+      },
+      "avatar": "../../assets/cook-avatar.png"
+    },
+    {
+      "id": "EkbfnhB",
+      "name": "Manuel Guerrero",
+      "email": "manu@gmail.com",
+      "password": "manu",
+      "roles": {
+        "admin": false,
+        "waiter": true,
+        "cook": false
+      },
+      "avatar": "../../assets/mesero-avatar.png"
+    },
+    {
+      "id": "t9x6htk",
+      "name": "Fiorela",
+      "email": "dfsdsfsdf",
+      "password": "sdfsdfsf",
+      "roles": {
+        "admin": false,
+        "waiter": true,
+        "cook": false
+      },
+      "avatar": "../../assets/mesero-avatar.png"
+    },
+    {
+      "id": "uINznn0",
+      "name": "mari",
+      "email": "ewtwetw",
+      "password": "wetwetw",
+      "roles": {
+        "admin": false,
+        "waiter": true,
+        "cook": false
+      },
+      "avatar": "../../assets/mesero-avatar.png"
+    },
+    {
+      "id": "QJYzMbL",
+      "name": "mili",
+      "email": "mili@gmail.com",
+      "password": "mili",
+      "roles": {
+        "admin": false,
+        "waiter": false,
+        "cook": true
+      },
+      "avatar": "../../assets/cook-avatar.png"
+    },
+    {
+      "id": "PFkCM1m",
+      "name": "monica",
+      "email": "hblhjblj",
+      "password": "lbhlhblh",
+      "roles": {
+        "admin": false,
+        "waiter": true,
+        "cook": false
+      },
+      "avatar": "../../assets/mesero-avatar.png"
+    },
+    {
+      "id": "VsHG9Zq",
+      "name": "mili",
+      "email": "twerter",
+      "password": "wertwert",
+      "roles": {
+        "admin": false,
+        "waiter": true,
+        "cook": false
+      },
+      "avatar": "../../assets/mesero-avatar.png"
+    },
+    {
+      "id": "b4NiAWn",
+      "name": "ertert",
+      "email": "ertertre",
+      "password": "ertertert",
+      "roles": {
+        "admin": true,
+        "waiter": false,
+        "cook": false
+      },
+      "avatar": "../../assets/admin-avatar.png"
+    },
+    {
+      "id": "Ic2O4Ip",
+      "name": "ruben",
+      "email": "ruben@gmail.com",
+      "password": "ruben",
+      "roles": {
+        "admin": true,
+        "waiter": false,
+        "cook": false
+      },
+      "avatar": "../../assets/admin-avatar.png"
+    },
+    {
+      "id": "daIVOtD",
+      "name": "Lili",
+      "email": "lili@gmail.com",
+      "password": "123",
+      "roles": {
+        "admin": false,
+        "waiter": false,
+        "cook": true
+      },
+      "avatar": "../../assets/cook-avatar.png"
+    }
+  ],
+  "order": [
+    {
+      "id": 1,
+      "userName": "Maria",
+      "client": "Juanita",
+      "products": [
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 2,
+          "subTotal": 30
         }
-    ],
-    "auth": [{
-            "email": "maria@gmail.com",
-            "password": "maria"
+      ],
+      "total": 30,
+      "totalQty": 2,
+      "numberTable": "1",
+      "status": "delivered",
+      "dateEntry": "Sun Feb 20 2022 17:59:36 GMT-0500 (hora estándar de Colombia)",
+      "dateDelivering": "Sun Feb 20 2022 18:00:27 GMT-0500 (hora estándar de Colombia)",
+      "dateDone": "Sun Feb 20 2022 18:01:14 GMT-0500 (hora estándar de Colombia)",
+      "timeResult": "00:00:47",
+      "dateProcessed": "Sun Feb 20 2022 18:01:50 GMT-0500 (hora estándar de Colombia)",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 2,
+      "userName": "Maria",
+      "client": "",
+      "products": [
+        {
+          "id": 1,
+          "name": "Café americano",
+          "price": 8,
+          "image": "../../assets/images/cafe_americano.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 8
         },
         {
-            "email": "paco@gmail.com",
-            "password": "paco"
-        },
-        {
-            "email": "manu@gmail.com",
-            "password": "manu"
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
         }
-    ],
-    "users": [{
-            "id": "XEqVhWe",
-            "name": "Maria",
-            "email": "maria@gmail.com",
-            "password": "maria",
-            "roles": {
-                "admin": true,
-                "waiter": false,
-                "cook": false
-            },
-            "avatar": "../../assets/admin-avatar.png"
+      ],
+      "total": 23,
+      "totalQty": 2,
+      "numberTable": "",
+      "status": "delivered",
+      "dateEntry": "Mon Feb 21 2022 22:40:03 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Wed Feb 23 2022 10:05:14 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "Wed Feb 23 2022 10:05:24 GMT-0500 (hora estándar de Perú)",
+      "timeResult": "00:00:10",
+      "dateProcessed": "Wed Feb 23 2022 10:07:46 GMT-0500 (hora estándar de Perú)",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 3,
+      "userName": "Manuel Guerrero",
+      "client": "Dina",
+      "products": [
+        {
+          "id": 1,
+          "name": "Café americano",
+          "price": 8,
+          "image": "../../assets/images/cafe_americano.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 8
         },
         {
-            "id": "e7ZVuOS",
-            "name": "PacoPerez ",
-            "email": "paco@gmail.com",
-            "password": "paco",
-            "roles": {
-                "admin": false,
-                "waiter": false,
-                "cook": true
-            },
-            "avatar": "../../assets/cook-avatar.png"
-        },
-        {
-            "id": "EkbfnhB",
-            "name": "Manuel Guerrero",
-            "email": "manu@gmail.com",
-            "password": "manu",
-            "roles": {
-                "admin": false,
-                "waiter": true,
-                "cook": false
-            },
-            "avatar": "../../assets/mesero-avatar.png"
-        },
-        {
-            "id": "t9x6htk",
-            "name": "Fiorela",
-            "email": "dfsdsfsdf",
-            "password": "sdfsdfsf",
-            "roles": {
-                "admin": false,
-                "waiter": true,
-                "cook": false
-            },
-            "avatar": "../../assets/mesero-avatar.png"
-        },
-        {
-            "id": "uINznn0",
-            "name": "mari",
-            "email": "ewtwetw",
-            "password": "wetwetw",
-            "roles": {
-                "admin": false,
-                "waiter": true,
-                "cook": false
-            },
-            "avatar": "../../assets/mesero-avatar.png"
-        },
-        {
-            "id": "QJYzMbL",
-            "name": "mili",
-            "email": "mili@gmail.com",
-            "password": "mili",
-            "roles": {
-                "admin": false,
-                "waiter": false,
-                "cook": true
-            },
-            "avatar": "../../assets/cook-avatar.png"
-        },
-        {
-            "id": "PFkCM1m",
-            "name": "monica",
-            "email": "hblhjblj",
-            "password": "lbhlhblh",
-            "roles": {
-                "admin": false,
-                "waiter": true,
-                "cook": false
-            },
-            "avatar": "../../assets/mesero-avatar.png"
-        },
-        {
-            "id": "VsHG9Zq",
-            "name": "mili",
-            "email": "twerter",
-            "password": "wertwert",
-            "roles": {
-                "admin": false,
-                "waiter": true,
-                "cook": false
-            },
-            "avatar": "../../assets/mesero-avatar.png"
-        },
-        {
-            "id": "b4NiAWn",
-            "name": "ertert",
-            "email": "ertertre",
-            "password": "ertertert",
-            "roles": {
-                "admin": true,
-                "waiter": false,
-                "cook": false
-            },
-            "avatar": "../../assets/admin-avatar.png"
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
         }
-    ],
-    "order": [{
-            "id": 1,
-            "userName": "Maria",
-            "client": "Juanita",
-            "products": [{
-                "id": 2,
-                "name": "Café con leche",
-                "price": 15,
-                "image": "../../assets/images/cafe_leche.png",
-                "type": "cafes",
-                "dateEntry": "21/01/2022 09:24:00",
-                "qty": 2,
-                "subTotal": 30
-            }],
-            "total": 30,
-            "totalQty": 2,
-            "numberTable": "1",
-            "status": "delivered",
-            "dateEntry": "Sun Feb 20 2022 17:59:36 GMT-0500 (hora estándar de Colombia)",
-            "dateDelivering": "Sun Feb 20 2022 18:00:27 GMT-0500 (hora estándar de Colombia)",
-            "dateDone": "Sun Feb 20 2022 18:01:14 GMT-0500 (hora estándar de Colombia)",
-            "timeResult": "00:00:47",
-            "dateProcessed": "Sun Feb 20 2022 18:01:50 GMT-0500 (hora estándar de Colombia)",
-            "dateCanceled": "",
-            "additional": ""
+      ],
+      "total": 23,
+      "totalQty": 2,
+      "numberTable": "3",
+      "status": "delivered",
+      "dateEntry": "Wed Feb 23 2022 10:05:52 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Wed Feb 23 2022 10:06:14 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "Wed Feb 23 2022 10:07:10 GMT-0500 (hora estándar de Perú)",
+      "timeResult": "00:00:56",
+      "dateProcessed": "Wed Feb 23 2022 10:07:53 GMT-0500 (hora estándar de Perú)",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 4,
+      "userName": "Manuel Guerrero",
+      "client": "Pablo",
+      "products": [
+        {
+          "id": 4,
+          "name": "Jugo de frutas natural",
+          "price": 12,
+          "image": "../../assets/images/Jugo de frutas natural.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
         },
         {
-            "id": 2,
-            "userName": "Maria",
-            "client": "",
-            "products": [{
-                    "id": 1,
-                    "name": "Café americano",
-                    "price": 8,
-                    "image": "../../assets/images/cafe_americano.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 8
-                },
-                {
-                    "id": 2,
-                    "name": "Café con leche",
-                    "price": 15,
-                    "image": "../../assets/images/cafe_leche.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 15
-                }
-            ],
-            "total": 23,
-            "totalQty": 2,
-            "numberTable": "",
-            "status": "delivered",
-            "dateEntry": "Mon Feb 21 2022 22:40:03 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "Wed Feb 23 2022 10:05:14 GMT-0500 (hora estándar de Perú)",
-            "dateDone": "Wed Feb 23 2022 10:05:24 GMT-0500 (hora estándar de Perú)",
-            "timeResult": "00:00:10",
-            "dateProcessed": "Wed Feb 23 2022 10:07:46 GMT-0500 (hora estándar de Perú)",
-            "dateCanceled": "",
-            "additional": ""
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
         },
         {
-            "id": 3,
-            "userName": "Manuel Guerrero",
-            "client": "Dina",
-            "products": [{
-                    "id": 1,
-                    "name": "Café americano",
-                    "price": 8,
-                    "image": "../../assets/images/cafe_americano.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 8
-                },
-                {
-                    "id": 2,
-                    "name": "Café con leche",
-                    "price": 15,
-                    "image": "../../assets/images/cafe_leche.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 15
-                }
-            ],
-            "total": 23,
-            "totalQty": 2,
-            "numberTable": "3",
-            "status": "delivered",
-            "dateEntry": "Wed Feb 23 2022 10:05:52 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "Wed Feb 23 2022 10:06:14 GMT-0500 (hora estándar de Perú)",
-            "dateDone": "Wed Feb 23 2022 10:07:10 GMT-0500 (hora estándar de Perú)",
-            "timeResult": "00:00:56",
-            "dateProcessed": "Wed Feb 23 2022 10:07:53 GMT-0500 (hora estándar de Perú)",
-            "dateCanceled": "",
-            "additional": ""
-        },
-        {
-            "id": 4,
-            "userName": "Manuel Guerrero",
-            "client": "Pablo",
-            "products": [{
-                    "id": 4,
-                    "name": "Jugo de frutas natural",
-                    "price": 12,
-                    "image": "../../assets/images/Jugo de frutas natural.png",
-                    "type": "juices",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 12
-                },
-                {
-                    "id": 2,
-                    "name": "Café con leche",
-                    "price": 15,
-                    "image": "../../assets/images/cafe_leche.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 15
-                },
-                {
-                    "id": 1,
-                    "name": "Café americano",
-                    "price": 8,
-                    "image": "../../assets/images/cafe_americano.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 3,
-                    "subTotal": 24
-                }
-            ],
-            "total": 51,
-            "totalQty": 5,
-            "numberTable": "3",
-            "status": "canceled",
-            "dateEntry": "Wed Feb 23 2022 10:08:35 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "",
-            "dateDone": "",
-            "timeResult": "",
-            "dateProcessed": "",
-            "dateCanceled": "Wed Feb 23 2022 10:43:36 GMT-0500 (hora estándar de Perú)",
-            "additional": ""
-        },
-        {
-            "id": 5,
-            "userName": "Manuel Guerrero",
-            "client": "koko",
-            "products": [],
-            "total": 0,
-            "totalQty": 0,
-            "numberTable": "3",
-            "status": "canceled",
-            "dateEntry": "Wed Feb 23 2022 10:42:05 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "Wed Feb 23 2022 11:02:30 GMT-0500 (hora estándar de Perú)",
-            "dateDone": "Wed Feb 23 2022 11:14:53 GMT-0500 (hora estándar de Perú)",
-            "timeResult": "00:12:23",
-            "dateProcessed": "",
-            "dateCanceled": "Wed Feb 23 2022 11:20:05 GMT-0500 (hora estándar de Perú)",
-            "additional": ""
-        },
-        {
-            "id": 6,
-            "userName": "Manuel Guerrero",
-            "client": "nono",
-            "products": [{
-                    "id": 4,
-                    "name": "Jugo de frutas natural",
-                    "price": 12,
-                    "image": "../../assets/images/Jugo de frutas natural.png",
-                    "type": "juices",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 12
-                },
-                {
-                    "id": 5,
-                    "name": "Jugo de fresa",
-                    "price": 12,
-                    "image": "../../assets/images/jugo de fresa.png",
-                    "type": "juices",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 12
-                }
-            ],
-            "total": 24,
-            "totalQty": 2,
-            "numberTable": "2",
-            "status": "canceled",
-            "dateEntry": "Wed Feb 23 2022 11:14:36 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "Wed Feb 23 2022 11:14:46 GMT-0500 (hora estándar de Perú)",
-            "dateDone": "",
-            "timeResult": "",
-            "dateProcessed": "",
-            "dateCanceled": "Wed Feb 23 2022 11:19:41 GMT-0500 (hora estándar de Perú)",
-            "additional": ""
-        },
-        {
-            "id": 7,
-            "userName": "Manuel Guerrero",
-            "client": "prueba2",
-            "products": [{
-                    "id": 41,
-                    "name": "Gaseosa inka kola",
-                    "price": 18,
-                    "image": "../../assets/images/bebi1.png",
-                    "type": "drinks",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 18
-                },
-                {
-                    "id": 10,
-                    "name": "Bebida gaseosa 500ml",
-                    "price": 18,
-                    "image": "../../assets/images/Bebida gaseosa 500ml.png",
-                    "type": "drinks",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 18
-                }
-            ],
-            "total": 36,
-            "totalQty": 2,
-            "numberTable": "2",
-            "status": "done",
-            "dateEntry": "Wed Feb 23 2022 11:19:24 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "Wed Feb 23 2022 11:32:58 GMT-0500 (hora estándar de Perú)",
-            "dateDone": "Wed Feb 23 2022 15:13:48 GMT-0500 (hora estándar de Perú)",
-            "timeResult": "02:29:50",
-            "dateProcessed": "",
-            "dateCanceled": "",
-            "additional": ""
-        },
-        {
-            "id": 8,
-            "userName": "Manuel Guerrero",
-            "client": "lolo",
-            "products": [{
-                    "id": 8,
-                    "name": "Agua 500ml",
-                    "price": 18,
-                    "image": "../../assets/images/Agua 500ml.png",
-                    "type": "drinks",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 18
-                },
-                {
-                    "id": 10,
-                    "name": "Bebida gaseosa 500ml",
-                    "price": 18,
-                    "image": "../../assets/images/Bebida gaseosa 500ml.png",
-                    "type": "drinks",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 18
-                }
-            ],
-            "total": 36,
-            "totalQty": 2,
-            "numberTable": "2",
-            "status": "delivering",
-            "dateEntry": "Wed Feb 23 2022 11:25:37 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "Wed Feb 23 2022 14:19:29 GMT-0500 (hora estándar de Perú)",
-            "dateDone": "",
-            "timeResult": "",
-            "dateProcessed": "",
-            "dateCanceled": "",
-            "additional": ""
-        },
-        {
-            "id": 9,
-            "userName": "Manuel Guerrero",
-            "client": "koko",
-            "products": [{
-                    "id": 2,
-                    "name": "Café con leche",
-                    "price": 15,
-                    "image": "../../assets/images/cafe_leche.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 15
-                },
-                {
-                    "id": 11,
-                    "name": "Té verde",
-                    "price": 15,
-                    "image": "../../assets/images/te_verde.png",
-                    "type": "cafes",
-                    "dateEntry": "21/01/2022 09:24:00",
-                    "qty": 1,
-                    "subTotal": 15
-                }
-            ],
-            "total": 30,
-            "totalQty": 2,
-            "numberTable": "3",
-            "status": "pending",
-            "dateEntry": "Wed Feb 23 2022 13:12:27 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "",
-            "dateDone": "",
-            "timeResult": "",
-            "dateProcessed": "",
-            "dateCanceled": "",
-            "additional": ""
-        },
-        {
-            "id": 10,
-            "userName": "Manuel Guerrero",
-            "client": "fio",
-            "products": [{
-                "id": 39,
-                "name": "Jugo de lúcuma",
-                "price": 12,
-                "image": "../../assets/images/jugo de lucuma.png",
-                "type": "juices",
-                "dateEntry": "21/01/2022 09:24:00",
-                "qty": 1,
-                "subTotal": 12
-            }],
-            "total": 12,
-            "totalQty": 1,
-            "numberTable": "4",
-            "status": "pending",
-            "dateEntry": "Wed Feb 23 2022 14:19:05 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "",
-            "dateDone": "",
-            "timeResult": "",
-            "dateProcessed": "",
-            "dateCanceled": "",
-            "additional": ""
-        },
-        {
-            "id": 11,
-            "userName": "Manuel Guerrero",
-            "client": "koko",
-            "products": [{
-                "id": 5,
-                "name": "Jugo de fresa",
-                "price": 12,
-                "image": "../../assets/images/jugo de fresa.png",
-                "type": "juices",
-                "dateEntry": "21/01/2022 09:24:00",
-                "qty": 1,
-                "subTotal": 12
-            }],
-            "total": 12,
-            "totalQty": 1,
-            "numberTable": "3",
-            "status": "pending",
-            "dateEntry": "Wed Feb 23 2022 20:26:53 GMT-0500 (hora estándar de Perú)",
-            "dateDelivering": "",
-            "dateDone": "",
-            "timeResult": "",
-            "dateProcessed": "",
-            "dateCanceled": "",
-            "additional": ""
+          "id": 1,
+          "name": "Café americano",
+          "price": 8,
+          "image": "../../assets/images/cafe_americano.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 3,
+          "subTotal": 24
         }
-    ]
+      ],
+      "total": 51,
+      "totalQty": 5,
+      "numberTable": "3",
+      "status": "canceled",
+      "dateEntry": "Wed Feb 23 2022 10:08:35 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "Wed Feb 23 2022 10:43:36 GMT-0500 (hora estándar de Perú)",
+      "additional": ""
+    },
+    {
+      "id": 5,
+      "userName": "Manuel Guerrero",
+      "client": "koko",
+      "products": [],
+      "total": 0,
+      "totalQty": 0,
+      "numberTable": "3",
+      "status": "canceled",
+      "dateEntry": "Wed Feb 23 2022 10:42:05 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Wed Feb 23 2022 11:02:30 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "Wed Feb 23 2022 11:14:53 GMT-0500 (hora estándar de Perú)",
+      "timeResult": "00:12:23",
+      "dateProcessed": "",
+      "dateCanceled": "Wed Feb 23 2022 11:20:05 GMT-0500 (hora estándar de Perú)",
+      "additional": ""
+    },
+    {
+      "id": 6,
+      "userName": "Manuel Guerrero",
+      "client": "nono",
+      "products": [
+        {
+          "id": 4,
+          "name": "Jugo de frutas natural",
+          "price": 12,
+          "image": "../../assets/images/Jugo de frutas natural.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        },
+        {
+          "id": 5,
+          "name": "Jugo de fresa",
+          "price": 12,
+          "image": "../../assets/images/jugo de fresa.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        }
+      ],
+      "total": 24,
+      "totalQty": 2,
+      "numberTable": "2",
+      "status": "canceled",
+      "dateEntry": "Wed Feb 23 2022 11:14:36 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Wed Feb 23 2022 11:14:46 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "Wed Feb 23 2022 11:19:41 GMT-0500 (hora estándar de Perú)",
+      "additional": ""
+    },
+    {
+      "id": 7,
+      "userName": "Manuel Guerrero",
+      "client": "prueba2",
+      "products": [
+        {
+          "id": 41,
+          "name": "Gaseosa inka kola",
+          "price": 18,
+          "image": "../../assets/images/bebi1.png",
+          "type": "drinks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 18
+        },
+        {
+          "id": 10,
+          "name": "Bebida gaseosa 500ml",
+          "price": 18,
+          "image": "../../assets/images/Bebida gaseosa 500ml.png",
+          "type": "drinks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 18
+        }
+      ],
+      "total": 36,
+      "totalQty": 2,
+      "numberTable": "2",
+      "status": "done",
+      "dateEntry": "Wed Feb 23 2022 11:19:24 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Wed Feb 23 2022 11:32:58 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "Wed Feb 23 2022 15:13:48 GMT-0500 (hora estándar de Perú)",
+      "timeResult": "02:29:50",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 8,
+      "userName": "Manuel Guerrero",
+      "client": "lolo",
+      "products": [
+        {
+          "id": 8,
+          "name": "Agua 500ml",
+          "price": 18,
+          "image": "../../assets/images/Agua 500ml.png",
+          "type": "drinks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 18
+        },
+        {
+          "id": 10,
+          "name": "Bebida gaseosa 500ml",
+          "price": 18,
+          "image": "../../assets/images/Bebida gaseosa 500ml.png",
+          "type": "drinks",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 18
+        }
+      ],
+      "total": 36,
+      "totalQty": 2,
+      "numberTable": "2",
+      "status": "delivering",
+      "dateEntry": "Wed Feb 23 2022 11:25:37 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Wed Feb 23 2022 14:19:29 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 9,
+      "userName": "Manuel Guerrero",
+      "client": "koko",
+      "products": [
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        },
+        {
+          "id": 11,
+          "name": "Té verde",
+          "price": 15,
+          "image": "../../assets/images/te_verde.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        }
+      ],
+      "total": 30,
+      "totalQty": 2,
+      "numberTable": "3",
+      "status": "pending",
+      "dateEntry": "Wed Feb 23 2022 13:12:27 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 10,
+      "userName": "Manuel Guerrero",
+      "client": "fio",
+      "products": [
+        {
+          "id": 39,
+          "name": "Jugo de lúcuma",
+          "price": 12,
+          "image": "../../assets/images/jugo de lucuma.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        }
+      ],
+      "total": 12,
+      "totalQty": 1,
+      "numberTable": "4",
+      "status": "pending",
+      "dateEntry": "Wed Feb 23 2022 14:19:05 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 11,
+      "userName": "Manuel Guerrero",
+      "client": "koko",
+      "products": [
+        {
+          "id": 5,
+          "name": "Jugo de fresa",
+          "price": 12,
+          "image": "../../assets/images/jugo de fresa.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        }
+      ],
+      "total": 12,
+      "totalQty": 1,
+      "numberTable": "3",
+      "status": "pending",
+      "dateEntry": "Wed Feb 23 2022 20:26:53 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    }
+  ]
 }
