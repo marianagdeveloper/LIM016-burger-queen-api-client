@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/data/services/api/login.service';
 import { ILoginUsers } from 'src/app/modules/login/login-user/login-user.metadata';
 import {LoginUserComponent } from '../../modules/login/login-user/login-user.component'
+import { UsersService } from 'src/app/data/services/api/users.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -21,13 +21,13 @@ export class HeaderComponent implements OnInit {
  roleWaiter = false;
  roleAdmin = false;
 
-  constructor(public loginService: LoginService,  private router: Router) {
+  constructor(public usersServices: UsersService,  private router: Router) {
   }
 
   ngOnInit() {
-    this.nameUser=this.loginService.disparador.getValue( ).name;
-    this.avatarUser=this.loginService.disparador.getValue( ).avatar;
-    this.rolesUser=this.loginService.disparador.getValue( ).roles;
+    this.nameUser=this.usersServices.disparador.getValue( ).name;
+    this.avatarUser=this.usersServices.disparador.getValue( ).avatar;
+    this.rolesUser=this.usersServices.disparador.getValue( ).roles;
 
    if (this.rolesUser == undefined) {
       this.router.navigate(['login']);

@@ -7,6 +7,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { OrderListComponent } from './order-list/order-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// import { BrowserModule } from '@angular/platform-browser';
+
+// Importing forms module
+import { ReactiveFormsModule } from '@angular/forms';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     OrderListComponent
@@ -16,7 +22,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     OrdersRoutingModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+
+    ReactiveFormsModule,
+
   ]
 })
 export class OrdersModule { }

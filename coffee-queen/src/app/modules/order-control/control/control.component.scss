@@ -1,65 +1,87 @@
-.groupLegend {
-  max-width: 750px;
-  margin: auto;
-  position: sticky;
-  z-index: 10;
-  background-color: white;
-  padding: 15px;
-  margin-top: -24px;
-  top: 110px;
-  .pointerLegend {
-    cursor: pointer;
-  }
-
-  .activebutton:hover
-  {
-    background: #8b878336 !important;
-    border-radius: 6px;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    text-decoration: none;
-    outline: 0;
-  }
-}
-
-.scrollOrders {
-  overflow-y: scroll;
-  max-height: 300px;
-}
-
-.classNew {
-  top: 210px;
-}
-
-/* .topSection {
+     .groupLegend {
+         max-width: 750px;
+         margin: auto;
+         position: sticky;
+         z-index: 10;
+         color: #0f0e0e;
+         background-color: white;
+         padding: 15px;
+         margin-top: -24px;
+         top: 1px;
+         .pointerLegend {
+             cursor: pointer;
+         }
+         /*
+    .activebutton:hover {
+        background: #8b878336 !important;
+        border-radius: 6px;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 15px;
+        text-decoration: none;
+        outline: 0;
+    }*/
+     }
+     
+     .scrollOrders {
+         overflow-y: scroll;
+         max-height: 300px;
+     }
+     
+     .classNew {
+         top: 210px;
+     }
+     /* .topSection {
     top: 200px;
 } */
-
-.card {
-  .btnPedido {
-    background-color: #e73434;
-    border-radius: 10px;
-    color: white;
-  }
-  img {
-    width: 30px;
-  }
-  .btnEnPreparacion {
-    background-color: #f1ea33;
-    border-radius: 10px;
-    color: white;
-  }
-  .btnPreparado {
-    background-color: #6980cf;
-    border-radius: 10px;
-    color: white;
-  }
-  .btnListo {
-    background-color: #69cf80;
-    border-radius: 10px;
-    color: white;
-  }
-}
+     
+     .card {
+         .btnPedido {
+             background-color: #e73434;
+             border-radius: 10px;
+             color: white;
+         }
+         img {
+             width: 30px;
+         }
+         .btnEnPreparacion {
+             background-color: #f1ea33;
+             border-radius: 10px;
+             color: white;
+         }
+         .btnPreparado {
+             background-color: #6980cf;
+             border-radius: 10px;
+             color: white;
+         }
+         .btnListo {
+             background-color: #69cf80;
+             border-radius: 10px;
+             color: white;
+         }
+     }
+     
+     .button {
+         border-radius: 6px;
+         display: inline-block;
+         cursor: pointer;
+         color: #111010;
+         font-family: Arial;
+         font-size: 15px;
+         text-decoration: none;
+         outline: 0;
+     }
+     
+     .activebutton {
+         background: #f38c5d77 !important;
+         border-radius: 6px;
+         display: inline-block;
+         cursor: pointer;
+         color: #111010;
+         font-family: Arial;
+         font-size: 16px;
+         text-decoration: none;
+         outline: 0;
+     }

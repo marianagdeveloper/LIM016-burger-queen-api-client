@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ILoginUsers } from './login-user.metadata';
-import { LoginService } from './../../../data/services/api/login.service';
 import {
   AbstractControl,
   FormBuilder,
@@ -8,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersService } from 'src/app/data/services/api/users.service';
 
 @Component({
   selector: 'app-login-user',
@@ -32,7 +32,7 @@ export class LoginUserComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public loginService: LoginService,
+    public userService: UsersService,
     private router: Router
   ) {}
 
@@ -44,7 +44,7 @@ export class LoginUserComponent implements OnInit {
   }
 
   getDataUser(userValidate:any) {
-    this.loginService.rolUser().subscribe((res) => {
+    this.userService.getAllUsers().subscribe((res) => {
       let rol = res.filter((a: any) => {
         if (a.email == userValidate) {
           this.userData.name = a.name;
@@ -61,14 +61,14 @@ export class LoginUserComponent implements OnInit {
       } else if (rol[0].roles.waiter) {
         this.router.navigate(['product']);
       }
-      this.loginService.disparador.next(this.userData);
+      this.userService.disparador.next(this.userData);
 
     });
 
   }
 
   getUserCredentials() {
-    this.loginService.login().subscribe((res) => {
+    this.userService.getAllUsers().subscribe((res) => {
       let userValidate: any;
       const credentials = res.find((a: any) => {
         const emailUser = this.loginForm.value.email;

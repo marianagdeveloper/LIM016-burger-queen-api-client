@@ -579,6 +579,56 @@
       "qty": 0,
       "subTotal": 0,
       "dateEntry": "Mon Feb 21 2022"
+    },
+    {
+      "id": 54,
+      "name": "gaseosa",
+      "price": "12",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 55,
+      "name": "gaseosa",
+      "price": "12",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 56,
+      "name": "gaseosa",
+      "price": "34",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 57,
+      "name": "gaseosa",
+      "price": "34",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 58,
+      "name": "aros de cebolla",
+      "price": "11",
+      "image": "../../assets/images/default.png",
+      "type": "snacks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
     }
   ],
   "auth": [
@@ -703,6 +753,18 @@
         "cook": false
       },
       "avatar": "../../assets/admin-avatar.png"
+    },
+    {
+      "id": "zfgSdM5",
+      "name": "merly",
+      "email": "merly@gmai.com",
+      "password": "merly",
+      "roles": {
+        "admin": false,
+        "waiter": false,
+        "cook": true
+      },
+      "avatar": "../../assets/cook-avatar.png"
     }
   ],
   "order": [
@@ -765,6 +827,92 @@
       "numberTable": "",
       "status": "pending",
       "dateEntry": "Mon Feb 21 2022 22:40:03 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 3,
+      "userName": "Maria",
+      "client": "",
+      "products": [
+        {
+          "id": 1,
+          "name": "Café americano",
+          "price": 8,
+          "image": "../../assets/images/cafe_americano.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 8
+        },
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        },
+        {
+          "id": 3,
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "../../assets/images/Sandwich de jamon y queso.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 10
+        }
+      ],
+      "total": 33,
+      "totalQty": 3,
+      "numberTable": "",
+      "status": "pending",
+      "dateEntry": "Wed Feb 23 2022 15:51:42 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 4,
+      "userName": "Maria",
+      "client": "",
+      "products": [
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        },
+        {
+          "id": 3,
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "../../assets/images/Sandwich de jamon y queso.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 10
+        }
+      ],
+      "total": 25,
+      "totalQty": 2,
+      "numberTable": "",
+      "status": "pending",
+      "dateEntry": "Wed Feb 23 2022 15:52:03 GMT-0500 (hora estándar de Perú)",
       "dateDelivering": "",
       "dateDone": "",
       "timeResult": "",

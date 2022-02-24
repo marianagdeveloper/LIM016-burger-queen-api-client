@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { LoginService } from 'src/app/data/services/api/login.service';
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { Order } from './order-list.metadata';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../../data/services/api/orders.service';
+import { UsersService } from './../../../data/services/api/users.service';
+
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
-import {NgbAlert, NgbAlertConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlert, NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-order-list',
@@ -15,6 +17,14 @@ import {NgbAlert, NgbAlertConfig} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./order-list.component.scss'],
 })
 export class OrderListComponent implements OnInit {
+
+  private _success = new Subject<string>();
+
+  staticAlertClosed = false;
+  successMessage = '';
+
+  @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
+  @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
   public products!: Product[];
   public order: Order = {
@@ -49,20 +59,23 @@ export class OrderListComponent implements OnInit {
   public quantity: number = 0;
   public arrayNumberTable: number[] = [];
   public optionSelected: string = '0';
-  private _success = new Subject<string>();
-  successMessage = '';
-  constructor(public productService: ProductService,public loginService: LoginService,
+  private _success2 = new Subject<string>();
+  successMessage2 = '';
+
+
+  constructor(public productService: ProductService,public usersService: UsersService,
     private router: Router,
     public ordersService: OrdersService,
-    alertConfig: NgbAlertConfig) {
+    alertConfig: NgbAlertConfig
+    ) {
     this.arrayNumberTable=[1,2,3,4,5];
     alertConfig.dismissible = false;
   }
 
-  @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
+  @ViewChild('selfClosingAlert2', {static: false}) selfClosingAlert2!: NgbAlert;
 
   ngOnInit(): void {
-    this.order.userName=this.loginService.disparador.getValue().name;
+    this.order.userName=this.usersService.disparador.getValue().name;
     this.products = this.productService.arrayProducts;
     this.products.map((ele: any) => {
       this.order.total += ele.subTotal;
@@ -71,13 +84,22 @@ export class OrderListComponent implements OnInit {
     this.order.products= this.products;
 
     //successful modal setup
+    this._success2.subscribe(message => this.successMessage2 = message);
+    this._success2.pipe(debounceTime(3000)).subscribe(() => {
+      if (this.selfClosingAlert2) {
+        this.selfClosingAlert2.close();
+      }
+    })
+    //alert
     this._success.subscribe(message => this.successMessage = message);
-    this._success.pipe(debounceTime(3000)).subscribe(() => {
+    this._success.pipe(debounceTime(5000)).subscribe(() => {
       if (this.selfClosingAlert) {
         this.selfClosingAlert.close();
+        this.router.navigate(['product']);
       }
     });
   }
+
 
   captureNumberTable(){
     this.order.numberTable=this.optionSelected;
@@ -88,16 +110,14 @@ export class OrderListComponent implements OnInit {
     this.order.status = 'pending'
     this.order.dateEntry = new Date().toString();
     if(this.order.client == '' || this.order.numberTable == '' || this.order.total == 0){
-      this._success.next(`Hay campos vacíos. Verifique antes de enviar por favor.`);
-    }
-    else{
+      this._success2.next(`Hay campos vacíos. Verifique antes de enviar por favor.`);
+    } else{
       this.ordersService.postOrder(this.order);
       this.order.products.forEach(product => {
       this.productService.setProducts(product, 'delete');
       })
-      this.router.navigate(['product']);
+    // this.router.navigate(['product']);
     }
-
   }
 
   increaseQuantity(product: any) {
@@ -139,4 +159,9 @@ export class OrderListComponent implements OnInit {
     }
     this.order.totalQty -= product.qty;
   }
+
+  //alert
+  public changeSuccessMessage() { this._success.next(`Pedido registrado y enviado exitosamente!!`); }
 }
+
+
