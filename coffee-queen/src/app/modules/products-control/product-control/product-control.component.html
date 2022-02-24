@@ -13,12 +13,10 @@
                 <th scope="col">imagen</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">fecha de Ingreso</th>
-
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let product of products">
-
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}.00</td>
                 <td><img width="60" src="{{product.image}}" alt=""></td>
@@ -31,7 +29,6 @@
                 <td>{{ product.dateEntry }}</td>
                 <td><img class="cursor" (click)="open(contentEditProduct)" (click)="capturar(product)" src="../../../../assets/editar.png"></td>
                 <td><img class="cursor" (click)="open(content)" src="../../../../assets/bxs-trash.png"></td>
-
                 <ng-template #contentEditProduct let-modal class="custom-class">
                     <div class="modal-body">
                         <div class="mb-3">
@@ -53,8 +50,6 @@
                         <button type="button" class="btn btn-warning" (click)="modal.close('return')" (click)="updateProduct(product)"> Modificar</button>
                     </div>
                 </ng-template>
-
-
                 <ng-template #content let-modal class="custom-class">
                     <div class="modal-body">
                         <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar {{ product.name }} ?</h5>
@@ -64,10 +59,6 @@
                         <button type="button" class="btn btn-warning" (click)="modal.close('return')" (click)="deleteUser( product.id)">Eliminar</button>
                     </div>
                 </ng-template>
-
-
-
-
             </tr>
         </tbody>
     </table>
