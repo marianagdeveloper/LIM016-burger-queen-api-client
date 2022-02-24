@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { LoginService } from 'src/app/data/services/api/login.service';
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
@@ -8,7 +8,10 @@ import { OrdersService } from '../../../data/services/api/orders.service';
 
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
+
 import {NgbAlert} from '@ng-bootstrap/ng-bootstrap';
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -18,11 +21,9 @@ import {NgbAlert} from '@ng-bootstrap/ng-bootstrap';
 })
 export class OrderListComponent implements OnInit {
 
-  private _success = new Subject<string>();
-
-  staticAlertClosed = false;
-  successMessage = '';
-
+  //alert
+  private _successOrder = new Subject<string>();
+  successMessageOrder = '';
   @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
   @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
@@ -60,6 +61,10 @@ export class OrderListComponent implements OnInit {
   public arrayNumberTable: number[] = [];
   public optionSelected: string = '0';
 
+  closeResult = '';
+  comment = '';
+  setcomment = '';
+  @Input() data!: Order;
 
   constructor(
 
@@ -67,11 +72,13 @@ export class OrderListComponent implements OnInit {
     public loginService: LoginService,
     private router: Router,
     public ordersService: OrdersService,
+    private modalService: NgbModal
     ) {
     this.arrayNumberTable=[1,2,3,4,5];
   }
 
   ngOnInit(): void {
+
     this.order.userName=this.loginService.disparador.getValue().name;
     this.products = this.productService.arrayProducts;
     this.products.map((ele: any) => {
@@ -81,8 +88,8 @@ export class OrderListComponent implements OnInit {
     this.order.products= this.products;
 
     //alert
-    this._success.subscribe(message => this.successMessage = message);
-    this._success.pipe(debounceTime(5000)).subscribe(() => {
+    this._successOrder.subscribe(message => this.successMessageOrder = message);
+    this._successOrder.pipe(debounceTime(2000)).subscribe(() => {
       if (this.selfClosingAlert) {
         this.selfClosingAlert.close();
         this.router.navigate(['product']);
@@ -99,7 +106,7 @@ export class OrderListComponent implements OnInit {
     this.order.products = this.productService.arrayProducts;
     this.order.status = 'pending'
     this.order.dateEntry = new Date().toString();
-    console.log(this.order);
+    // console.log(this.order);
 
     this.ordersService.postOrder(this.order);
     this.order.products.forEach(product => {
@@ -149,7 +156,49 @@ export class OrderListComponent implements OnInit {
   }
 
   //alert
-  public changeSuccessMessage() { this._success.next(`Pedido registrado y enviado exitosamente!!`); }
+  public changeSuccessMessageOrder() { this._successOrder.next(`Pedido registrado y enviado exitosamente!!`); }
+
+  //modal
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title', scrollable: true })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+          if (result == 'cancel') {
+            this.canceledOrder();
+          }
+          this.setcomment = this.comment;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  canceledOrder(){
+    this.products.map((item: any) => {
+        const newLocal = 'delete';
+        this.productService.setProducts(item, newLocal);
+    });
+    this.products = this.productService.arrayProducts;
+
+    this.order.total = 0;
+    this.order.totalQty = 0;
+    this.optionSelected= '0';
+    this.order.client = '';
+    this.order.additional= '';
+  }
 }
 
 
