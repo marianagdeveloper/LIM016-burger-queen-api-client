@@ -1,4 +1,3 @@
-import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
 import { UsersService } from './users.service';
@@ -22,8 +21,6 @@ describe('(2) Test of Service UsersService', () => {
     servicePut = new UsersService(httpClientSpyPut as any);
     serviceDelete = new UsersService(httpClientSpyDelete as any);
     serviceGet = new UsersService(httpClientSpyGet as any);
-    // TestBed.configureTestingModule({});
-    // service = TestBed.inject(UsersService);
   });
 
   it('Should be created service', () => {

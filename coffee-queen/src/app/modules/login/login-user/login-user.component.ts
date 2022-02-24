@@ -31,6 +31,7 @@ export class LoginUserComponent implements OnInit {
   public loginForm!: FormGroup;
 
   public isCheck: any;
+  public isGetUser: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,7 +46,7 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
-  getUserCredentials(): void {
+  getUserCredentials():any {
     this.isCheck = { user: 'checked'}
 
     this.userService.getAllUsers().subscribe((res) => {
@@ -69,6 +70,7 @@ export class LoginUserComponent implements OnInit {
               return a.roles;
             }
           });
+
             if (rol[0].roles.admin) {
               this.router.navigate(['product']);
             } else if (rol[0].roles.cook) {
@@ -81,7 +83,15 @@ export class LoginUserComponent implements OnInit {
       } else {
         this.htmlStr = '*Usuario y/o contraseña inválidos.';
       }
+
+      this.isGetUser = this.userData;
+      console.log('return this.isGetUser', this.isGetUser);
+      return this.isGetUser
+
+
    });
+
+
   }
 
   campoEsValido(inputForm: string) {
