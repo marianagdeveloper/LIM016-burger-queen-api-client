@@ -572,17 +572,17 @@
     },
     {
       "id": 47,
-      "name": "gaseosa",
-      "price": "12",
+      "name": "queque de higo",
+      "price": "145",
       "image": "../../assets/images/default.png",
-      "type": "drinks",
+      "type": "desserts",
       "qty": 0,
       "subTotal": 0,
       "dateEntry": "Mon Feb 21 2022"
     },
     {
       "id": 54,
-      "name": "gaseosa",
+      "name": "gaseosa 1 litro",
       "price": "12",
       "image": "../../assets/images/default.png",
       "type": "drinks",
@@ -592,8 +592,8 @@
     },
     {
       "id": 55,
-      "name": "gaseosa",
-      "price": "12",
+      "name": "gaseosa 3 litros",
+      "price": "10",
       "image": "../../assets/images/default.png",
       "type": "drinks",
       "qty": 0,
@@ -603,17 +603,7 @@
     {
       "id": 56,
       "name": "gaseosa",
-      "price": "34",
-      "image": "../../assets/images/default.png",
-      "type": "drinks",
-      "qty": 0,
-      "subTotal": 0,
-      "dateEntry": "Wed Feb 23 2022"
-    },
-    {
-      "id": 57,
-      "name": "gaseosa",
-      "price": "34",
+      "price": "55",
       "image": "../../assets/images/default.png",
       "type": "drinks",
       "qty": 0,
@@ -624,6 +614,36 @@
       "id": 58,
       "name": "aros de cebolla",
       "price": "11",
+      "image": "../../assets/images/default.png",
+      "type": "snacks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 59,
+      "name": "Mani azucarado",
+      "price": "8",
+      "image": "../../assets/images/default.png",
+      "type": "snacks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 60,
+      "name": "Jugo surtido",
+      "price": "9",
+      "image": "../../assets/images/default.png",
+      "type": "juices",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 61,
+      "name": "Mani salado",
+      "price": "19",
       "image": "../../assets/images/default.png",
       "type": "snacks",
       "qty": 0,
