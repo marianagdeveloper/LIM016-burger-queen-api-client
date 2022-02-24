@@ -579,6 +579,16 @@
       "qty": 0,
       "subTotal": 0,
       "dateEntry": "Sun Feb 20 2022"
+    },
+    {
+      "id": 48,
+      "name": "super jugo de lucuma",
+      "price": "12",
+      "image": "../../assets/images/default.png",
+      "type": "juices",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Wed Feb 23 2022"
     }
   ],
   "auth": [
@@ -703,18 +713,6 @@
         "cook": false
       },
       "avatar": "../../assets/admin-avatar.png"
-    },
-    {
-      "id": "wiYPXPA",
-      "name": "aaaaaaa",
-      "email": "aaaaaaa",
-      "password": "aaaaaaaa",
-      "roles": {
-        "admin": false,
-        "waiter": false,
-        "cook": true
-      },
-      "avatar": "../../assets/cook-avatar.png"
     }
   ],
   "order": [

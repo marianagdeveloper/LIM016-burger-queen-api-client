@@ -10,6 +10,7 @@ export class ImageService {
   private clientId: string = 'b8ef643ed81d18b';
   public imageData!:any;
   public headers!:any;
+  private accessToken:string = "88b8d7d5ae0ef1439a22eeed2db560e1297a8447";
   imageLink:any;
   constructor(private http:HttpClient) { }
   uploadImage(imageFile:File){
@@ -18,19 +19,18 @@ export class ImageService {
     console.log("🚀nombre del file", imageFile.name)
    
 
-    //let formData = new FormData();
-    //formData.append('image', imageFile, imageFile.name);
+    let formData = new FormData();
+    formData.append('image', imageFile, imageFile.name);
     
-    //console.log("form data malito",formData);
+    console.log("form data malito",formData);
     
  
   /*   let header = new HttpHeaders({
       "authorization": 'Client-ID '+this.clientId
       
     }); */
-    this.headers = new Headers({'authorization': 'Client-ID '+this.clientId});
-
-    this.imageLink = this.http.post(this.url, imageFile,{headers: this.headers}).subscribe((res:any)=>{
+    this.headers = new Headers({'authorization': 'Bearer'+this.accessToken});
+    this.imageLink = this.http.post(this.url, formData,{headers: this.headers}).subscribe((res:any)=>{
       console.log("este es el result del post",res);
       return res;
       
