@@ -8,7 +8,7 @@
     "build:dev": "ng build --c=dev",
     "build:prod": "ng build --c=prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "server": "node src/app/data/backend/server.js"
   },
   "private": true,

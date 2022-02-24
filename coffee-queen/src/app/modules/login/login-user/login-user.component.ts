@@ -9,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/data/services/api/users.service';
 
+
 @Component({
   selector: 'app-login-user',
   templateUrl: './login-user.component.html',
@@ -28,7 +29,8 @@ export class LoginUserComponent implements OnInit {
     avatar: ''
   };
   public loginForm!: FormGroup;
-  public dataUser: any;
+
+  public isCheck: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -67,7 +69,10 @@ export class LoginUserComponent implements OnInit {
 
   }
 
-  getUserCredentials() {
+  getUserCredentials(): void {
+    this.isCheck = { user: 1}
+   console.log("🚀 ~ file: login-user.component.ts ~ line 95 ~ LoginUserComponent ~ this.userService.getAllUsers ~ isCheck", this.isCheck)
+
     this.userService.getAllUsers().subscribe((res) => {
       let userValidate: any;
       const credentials = res.find((a: any) => {
@@ -80,12 +85,38 @@ export class LoginUserComponent implements OnInit {
       });
 
       if (credentials) {
-        this.getDataUser(userValidate);
+
+          let rol = res.filter((a: any) => {
+            if (a.email == userValidate) {
+              this.userData.name = a.name;
+              this.userData.email = a.email;
+              this.userData.roles = a.roles;
+              this.userData.avatar = a.avatar;
+              return a.roles;
+            }
+          });
+
+
+
+            if (rol[0].roles.admin) {
+              this.router.navigate(['product']);
+            } else if (rol[0].roles.cook) {
+              this.router.navigate(['cook-control']);
+            } else if (rol[0].roles.waiter) {
+              this.router.navigate(['product']);
+            }
+            this.userService.disparador.next(this.userData);
+
+
 
       } else {
         this.htmlStr = '*Usuario y/o contraseña inválidos.';
       }
+      console.log('this.isValid', this.isCheck);
+
+
     });
+
   }
 
   campoEsValido(inputForm: string) {
