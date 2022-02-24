@@ -53,6 +53,8 @@
                         </ng-select>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-warning" (click)="modal.close('return')">Cancelar</button>
+
                         <button type="button" class="btn btn-warning" (click)="modal.close('return')" (click)="updateUser(user)"> Modificar</button>
                     </div>
                 </ng-template>
@@ -98,7 +100,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
 
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addUser()">Agregar</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="addUser()">Agregar</button>
                 </div>
             </div>
         </div>
