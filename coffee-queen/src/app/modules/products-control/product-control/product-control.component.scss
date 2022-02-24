@@ -35,8 +35,9 @@
     .table-striped>tbody>tr:nth-child(2n+1)>td,
     .table-striped>tbody>tr:nth-child(2n+1)>th {
         background-color: #f8b12e70;
-        .cursor {
-            cursor: pointer;
-        }
     }
+}
+
+.cursor {
+    cursor: pointer;
 }

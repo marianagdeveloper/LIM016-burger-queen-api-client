@@ -22,8 +22,8 @@
                 <td *ngIf="user.roles.admin==true">Admin</td>
                 <td *ngIf="user.roles.waiter==true">Mesero</td>
                 <td *ngIf="user.roles.cook==true">Jefe de cocina</td>
-                <td class="cursor"><img (click)="open(contentEdit)" (click)="capturar(user)" src="../../../../assets/editar.png" style="cursor: pointer"></td>
-                <td class="cursor"><img (click)="open(content)" src="../../../../assets/bxs-trash.png" style="cursor: pointer"></td>
+                <td><img class="cursor" (click)="open(contentEdit)" (click)="capturar(user)" src="../../../../assets/editar.png"></td>
+                <td><img class="cursor" (click)="open(content)" src="../../../../assets/bxs-trash.png"></td>
                 <ng-template #content let-modal class="custom-class">
                     <div class="modal-body">
                         <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar a {{ user.name }} ?</h5>
@@ -53,6 +53,8 @@
                         </ng-select>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-warning" (click)="modal.close('return')">Cancelar</button>
+
                         <button type="button" class="btn btn-warning" (click)="modal.close('return')" (click)="updateUser(user)"> Modificar</button>
                     </div>
                 </ng-template>
@@ -96,7 +98,9 @@
                     </div>
                 </form>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addUser()">Agregar</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="addUser()">Agregar</button>
                 </div>
             </div>
         </div>

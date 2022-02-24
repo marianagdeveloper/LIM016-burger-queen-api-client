@@ -44,7 +44,7 @@ export class ProductService {
     return this.http.post(url,body); // POST  
   }
   putProduct(newProduct: any,idProduct:number){
-    this.http.post<any[]>(`http://localhost:3000/products/${idProduct }`, newProduct).subscribe( (res:any) => {
+    this.http.put<any[]>(`http://localhost:3000/products/${idProduct}`, newProduct).subscribe( (res:any) => {
       return res;
     });
   }

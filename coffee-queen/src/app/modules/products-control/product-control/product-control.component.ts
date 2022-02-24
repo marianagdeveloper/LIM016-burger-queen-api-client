@@ -45,6 +45,9 @@ export class ProductControlComponent implements OnInit {
   setcomment = '';
   imagenPrevia: any;
   files: any = [];
+  public optionSelectedCategory: string = '';
+  public nameProductUpdate: string = '';
+  public priceProductUpdate: number = 0;
   //loading: boolean;
   constructor(
     private sanitizer: DomSanitizer,
@@ -69,7 +72,57 @@ export class ProductControlComponent implements OnInit {
     });
     this.optionSelected = 'Seleccione categoria';
   }
-
+  capturar(product: any) {
+  switch (product.type) {
+    case 'cafes':
+      this.optionSelectedCategory = 'cafés/tés';
+      break;
+    case  'juices':
+      this.optionSelectedCategory = 'jugos';
+      break;
+    case 'drinks':
+      this.optionSelectedCategory = 'bebidas';
+      break;
+    case 'snacks':
+      this.optionSelectedCategory = 'snacks';
+      break;
+    case 'desserts':
+      this.optionSelectedCategory = 'postres';
+      break;
+    case 'hamburguers':
+      this.optionSelectedCategory = 'hamburguesas';
+      break;
+  }
+  this.nameProductUpdate = product.name;
+  this.priceProductUpdate = product.price;
+  }
+  updateProduct(updateProduct:any){
+    updateProduct.name = this.nameProductUpdate;
+    updateProduct.price = this.priceProductUpdate;
+    
+    switch (this.optionSelectedCategory) {
+      case 'cafés/tés':
+        updateProduct.type = 'cafes';
+        break;
+      case  'jugos':
+        updateProduct.type = 'juices';
+        break;
+      case 'bebidas':
+        updateProduct.type = 'drinks';
+        break;
+      case 'snacks':
+        updateProduct.type = 'snacks';
+        break;
+      case 'postres':
+        updateProduct.type = 'desserts';
+        break;
+      case 'hamburguesas':
+        updateProduct.type = 'hamburguers';
+        break;
+    }
+    console.log(updateProduct);
+    this.productsService.putProduct(updateProduct, updateProduct.id);
+  }
   public onFileSelected(event: any) {
     this.imagen = event.target.files[0];
     console.log(this.imagen);
@@ -129,10 +182,19 @@ export class ProductControlComponent implements OnInit {
           this.loading = false;
           console.log('Carga exitosa', res);
         });
+
+
+        this.products.push(this.productsAdd);
+        this.cleanProductForm();
     } catch (e) {
       console.log('ERROR', e);
     }
   };
+  cleanProductForm() {
+    this.description = '';
+    this.priceProduct = '';
+    this.optionSelected = 'Seleccione Rol';
+  }
 
   blobFile = async ($event: any) =>
     new Promise((resolve, reject) => {
