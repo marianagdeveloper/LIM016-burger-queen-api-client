@@ -76,10 +76,15 @@ const routes: Routes = [
         import ('./modules/users-control/users-control.module').then((m)=> m.UsersControlModule)
       },
       {
-        path:'cook',
+        path:'cook-control',
         loadChildren:()=>
         import ('./modules/cook-control/cook-control.module').then((m)=> m.CookControlModule)
       },
+      {
+        path:'cook-history',
+        loadChildren:()=>
+        import ('./modules/cook-history/cook-history.module').then((m)=> m.CookHistoryModule)
+      }
     /*   {
         path: '**',
         redirectTo: '/login',

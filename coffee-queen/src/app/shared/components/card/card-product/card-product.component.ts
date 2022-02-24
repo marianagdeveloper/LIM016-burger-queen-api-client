@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, Sanitizer } from '@angular/core';
-import { Product } from './card-product.metadata';
-import { ProductService } from 'src/app/data/services/api/product.service';
-import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
-
+import { Component, Input, OnInit, Sanitizer, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ProductService } from 'src/app/data/services/api/product.service';
 import { ImageService } from './../../../../data/services/api/image.service';
+import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
+import { Product } from './card-product.metadata';
 
 @Component({
   selector: 'app-card-product',
@@ -45,13 +44,16 @@ export class CardProductComponent implements OnInit {
     additional: ''
   };
   public products!: Product[];
+  messageProduct = '';
 
-  constructor(public productService: ProductService, private sanitizer: DomSanitizer,private imageService:ImageService) { }
+  constructor(public productService: ProductService, private sanitizer: DomSanitizer,private imageService:ImageService) {
+  }
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
     //this.data.image = this.imageService.getImages();
   }
+
   public get safeUrlPic() { return this.sanitizer.bypassSecurityTrustResourceUrl(this.data.image)}
 
   updateRepeats(productSelected?: any) {
@@ -74,6 +76,7 @@ export class CardProductComponent implements OnInit {
     if (!(this.isRepeat || product.qty > 1)) {
       this.productService.setProducts(product);
     }
+    this.messageProduct = 'Producto agregado.';
   }
 
   decreaseQuantity(productSelected: any) {

@@ -17,8 +17,10 @@
             </div>
             <!-- <button class="btn btn-success" (click)="getInfoProduct()">Añadir</button> -->
         </div>
-
     </div>
+    <p *ngIf="data.qty != 0" class="msgCard text-success">{{ messageProduct }}</p>
+    <!-- <ngb-alert #selfClosingAlert class="alertProduct" *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+    </ngb-alert> -->
 </fieldset>
 
 <!-- <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>

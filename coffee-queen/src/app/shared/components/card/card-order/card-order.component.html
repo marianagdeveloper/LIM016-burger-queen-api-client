@@ -30,10 +30,10 @@
           <div class="mt-2 mx-4 text-left text-beige">
             <p>Mesero: {{ data?.userName }}</p>
             <p>Creación de pedido: <span>{{dateOrderCreate}}</span></p>
-            <p>Inicio de preparación: {{dateOrderDelivering}}</p>
-            <p>Fin de preparación: {{dateOrderDone}}</p>
-            <p>Tiempo de preparación: {{data.timeResult}}</p>
-            <p>Entrega de pedido: {{dateOrderProcessed}}</p>
+            <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{dateOrderDelivering}}</p>
+            <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{dateOrderDone}}</p>
+            <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Tiempo de preparación: {{data.timeResult}}</p>
+            <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'done'&& data.status != 'canceled'">Entrega de pedido: {{dateOrderProcessed}}</p>
             <p *ngIf="dateCanceledModal">Pedido Cancelado: {{dateOrderCanceled}}</p>
           </div>
         </div>

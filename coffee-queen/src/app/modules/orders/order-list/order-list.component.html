@@ -58,18 +58,13 @@
         </thead>
     </table>
 
-</div>
-<div class="mb-3 d-flex justify-content-between">
+<!-- </div> -->
+  <div class="mb-3 d-flex justify-content-between">
     <div class="col-6">
-        <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label
-      >
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-        [(ngModel)]="order.additional"
-      ></textarea>
+      <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="order.additional"></textarea>
     </div>
+
     <div class="text-end col-6 align-self-end">
       <a
         class="btn btn-danger btn-md bordes m-3"
@@ -82,12 +77,15 @@
         class="btn btn-success btn-md bordes m-3"
         role="button"
         aria-disabled="true"
-        (click)="changeSuccessMessageOrder()"
+        (click)="sendOrder()"
         ><img src="../../../../assets/check-light.png"
       /></a>
     </div>
   </div>
-
+  <ngb-alert #selfClosingAlert2 class="alertProduct" *ngIf="successMessage2" type="danger" (closed)="successMessage2 = ''">
+    <img src="../../../../assets/warning-circle.png" class="mx-2" alt="">{{ successMessage2 }}
+  </ngb-alert>
+</div>
 
 <hr />
 
