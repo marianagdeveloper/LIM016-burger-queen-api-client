@@ -649,6 +649,16 @@
       "qty": 0,
       "subTotal": 0,
       "dateEntry": "Wed Feb 23 2022"
+    },
+    {
+      "id": 62,
+      "name": "gaseosa",
+      "price": "7",
+      "image": "../../assets/images/default.png",
+      "type": "drinks",
+      "qty": 0,
+      "subTotal": 0,
+      "dateEntry": "Fri Feb 25 2022"
     }
   ],
   "auth": [
@@ -1036,12 +1046,12 @@
       "total": 36,
       "totalQty": 2,
       "numberTable": "2",
-      "status": "done",
+      "status": "delivered",
       "dateEntry": "Wed Feb 23 2022 11:19:24 GMT-0500 (hora estándar de Perú)",
       "dateDelivering": "Wed Feb 23 2022 11:32:58 GMT-0500 (hora estándar de Perú)",
       "dateDone": "Wed Feb 23 2022 15:13:48 GMT-0500 (hora estándar de Perú)",
       "timeResult": "02:29:50",
-      "dateProcessed": "",
+      "dateProcessed": "Fri Feb 25 2022 11:32:40 GMT-0500 (hora estándar de Perú)",
       "dateCanceled": "",
       "additional": ""
     },
@@ -1112,13 +1122,13 @@
       "total": 30,
       "totalQty": 2,
       "numberTable": "3",
-      "status": "delivering",
+      "status": "canceled",
       "dateEntry": "Wed Feb 23 2022 13:12:27 GMT-0500 (hora estándar de Perú)",
-      "dateDelivering": "Thu Feb 24 2022 22:28:23 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
       "dateDone": "",
       "timeResult": "",
       "dateProcessed": "",
-      "dateCanceled": "",
+      "dateCanceled": "Fri Feb 25 2022 11:31:49 GMT-0500 (hora estándar de Perú)",
       "additional": ""
     },
     {
@@ -1140,9 +1150,9 @@
       "total": 12,
       "totalQty": 1,
       "numberTable": "4",
-      "status": "pending",
+      "status": "delivering",
       "dateEntry": "Wed Feb 23 2022 14:19:05 GMT-0500 (hora estándar de Perú)",
-      "dateDelivering": "",
+      "dateDelivering": "Fri Feb 25 2022 15:31:42 GMT-0500 (hora estándar de Perú)",
       "dateDone": "",
       "timeResult": "",
       "dateProcessed": "",
@@ -1170,6 +1180,150 @@
       "numberTable": "3",
       "status": "pending",
       "dateEntry": "Wed Feb 23 2022 20:26:53 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 12,
+      "userName": "Manuel Guerrero",
+      "client": "Jenyfer",
+      "products": [
+        {
+          "id": 5,
+          "name": "Jugo de fresa",
+          "price": 12,
+          "image": "../../assets/images/jugo de fresa.png",
+          "type": "juices",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 12
+        },
+        {
+          "id": 6,
+          "name": "Hamburguesa simple",
+          "price": 18,
+          "image": "../../assets/images/Hamburguesas.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 18
+        },
+        {
+          "id": 18,
+          "name": "Helado de chocolate",
+          "price": 4,
+          "image": "../../assets/images/helado-de-chocolate.png",
+          "type": "desserts",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 4
+        }
+      ],
+      "total": 34,
+      "totalQty": 3,
+      "numberTable": "1",
+      "status": "delivered",
+      "dateEntry": "Fri Feb 25 2022 11:23:58 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Fri Feb 25 2022 11:26:31 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "Fri Feb 25 2022 11:27:23 GMT-0500 (hora estándar de Perú)",
+      "timeResult": "00:00:52",
+      "dateProcessed": "Fri Feb 25 2022 11:30:55 GMT-0500 (hora estándar de Perú)",
+      "dateCanceled": "",
+      "additional": "helado con m&m"
+    },
+    {
+      "id": 13,
+      "userName": "Manuel Guerrero",
+      "client": "mili",
+      "products": [
+        {
+          "id": 1,
+          "name": "Café americano",
+          "price": 8,
+          "image": "../../assets/images/cafe_americano.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 8
+        },
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        },
+        {
+          "id": 3,
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "../../assets/images/Sandwich de jamon y queso.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 10
+        }
+      ],
+      "total": 33,
+      "totalQty": 3,
+      "numberTable": "2",
+      "status": "delivering",
+      "dateEntry": "Fri Feb 25 2022 11:55:32 GMT-0500 (hora estándar de Perú)",
+      "dateDelivering": "Fri Feb 25 2022 15:31:43 GMT-0500 (hora estándar de Perú)",
+      "dateDone": "",
+      "timeResult": "",
+      "dateProcessed": "",
+      "dateCanceled": "",
+      "additional": ""
+    },
+    {
+      "id": 14,
+      "userName": "Maria",
+      "client": "monica",
+      "products": [
+        {
+          "id": 1,
+          "name": "Café americano",
+          "price": 8,
+          "image": "../../assets/images/cafe_americano.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 8
+        },
+        {
+          "id": 2,
+          "name": "Café con leche",
+          "price": 15,
+          "image": "../../assets/images/cafe_leche.png",
+          "type": "cafes",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 15
+        },
+        {
+          "id": 3,
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "../../assets/images/Sandwich de jamon y queso.png",
+          "type": "hamburguers",
+          "dateEntry": "21/01/2022 09:24:00",
+          "qty": 1,
+          "subTotal": 10
+        }
+      ],
+      "total": 33,
+      "totalQty": 3,
+      "numberTable": "3",
+      "status": "pending",
+      "dateEntry": "Fri Feb 25 2022 15:21:24 GMT-0500 (hora estándar de Perú)",
       "dateDelivering": "",
       "dateDone": "",
       "timeResult": "",
