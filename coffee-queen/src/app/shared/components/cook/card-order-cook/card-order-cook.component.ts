@@ -26,7 +26,7 @@ export class CardOrderCookComponent implements OnInit {
   changeStatusToDelivering(){
     this.data.status='delivering';
     this.data.dateDelivering = new Date().toString();
-    this.ordersService.putOrder(this.data, this.data.id);
+    this.ordersService.putOrder(this.data, this.data.id).subscribe();
   }
 
   changeStatusToDone(){
@@ -35,7 +35,7 @@ export class CardOrderCookComponent implements OnInit {
     this.dateDone = new Date();
     this.data.timeResult = this.getDiffDate(this.dateDelivering, this.dateDone)
     this.data.dateDone = this.dateDone.toString();
-    this.ordersService.putOrder(this.data, this.data.id);
+    this.ordersService.putOrder(this.data, this.data.id).subscribe();
   }
 
   cutNameProduct(item: string ){

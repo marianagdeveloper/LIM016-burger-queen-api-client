@@ -18,18 +18,12 @@ export class OrdersService {
     return this.http.get<Order[]>('http://localhost:3000/order');
   }
 
-  postOrder(newOrder: Order){
-    this.http.post<Order[]>('http://localhost:3000/order', newOrder)
-    .subscribe( (res:any) => {
-      return res;
-    });
+  postOrder(newOrder: Order): Observable<Order[]>{
+    return this.http.post<Order[]>('http://localhost:3000/order', newOrder);
   }
 
-  putOrder(newOrder: Order, _idOrder:number){
-    this.http.put<Order[]>(`http://localhost:3000/order/${_idOrder}`, newOrder)
-    .subscribe( (res:any) => {
-      return res;
-    });
+  putOrder(newOrder: Order, _idOrder:number): Observable<Order[]>{
+    return this.http.put<Order[]>(`http://localhost:3000/order/${_idOrder}`, newOrder);
   }
 
 }

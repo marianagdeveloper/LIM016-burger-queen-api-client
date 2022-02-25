@@ -81,13 +81,13 @@ export class CardOrderComponent implements OnInit {
   updateStatus(){
     this.data.status = 'delivered'
     this.data.dateProcessed = new Date().toString();
-    this.ordersService.putOrder(this.data, this.data.id);
+    this.ordersService.putOrder(this.data, this.data.id).subscribe();
   }
 
   canceledOrder(){
     this.data.status = 'canceled'
     this.data.dateCanceled = new Date().toString();
-    this.ordersService.putOrder(this.data, this.data.id);
+    this.ordersService.putOrder(this.data, this.data.id).subscribe();
   }
 
 }
