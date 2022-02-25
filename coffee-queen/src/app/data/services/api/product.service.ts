@@ -29,28 +29,23 @@ export class ProductService {
   }
 
   constructor(private http: HttpClient) {}
-  // Consume la API de users y devuelve un observable a la respuesta
   getAllProducts(): Observable<Product[]> {
-    // fetch('url', {method: GET})
     return this.http.get<Product[]>('http://localhost:3000/products');
   }
+
+  public post(url:string, body:any): Observable<Product[]> {
+    return this.http.post<Product[]>(url,body); // POST  
+  }
+  putProduct(newProduct: any,idProduct:number): Observable<Product[]>{
+    return this.http.put<any[]>(`http://localhost:3000/products/${idProduct}`, newProduct);
+    
+  }
+  deleteProduct(idProduct: number): Observable<Product[]>{
+   return this.http.delete<Product[]>(`http://localhost:3000/products/${idProduct}`);
+  }
+}
 /*  postProduct(newProduct: any){
     this.http.post<any[]>('http://localhost:3000/products', newProduct).subscribe( (res:any) => {
       return res;
     });
   } */
-  public post(url:string, body:any){
-    return this.http.post(url,body); // POST  
-  }
-  putProduct(newProduct: any,idProduct:number){
-    this.http.put<any[]>(`http://localhost:3000/products/${idProduct}`, newProduct).subscribe( (res:any) => {
-      return res;
-    });
-  }
-  deleteProduct(idProduct: number){
-    this.http.delete<Product[]>(`http://localhost:3000/products/${idProduct}`).subscribe( (res:any) => {
-
-    });
-
-  }
-}
