@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, Sanitizer, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { ImageService } from './../../../../data/services/api/image.service';
 import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
 import { Product } from './card-product.metadata';
 
@@ -46,7 +45,7 @@ export class CardProductComponent implements OnInit {
   public products!: Product[];
   messageProduct = '';
 
-  constructor(public productService: ProductService, private sanitizer: DomSanitizer,private imageService:ImageService) {
+  constructor(public productService: ProductService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {

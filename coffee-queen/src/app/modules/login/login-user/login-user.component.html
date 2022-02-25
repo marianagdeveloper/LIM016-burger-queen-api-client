@@ -1,7 +1,7 @@
 <section class="sectionLogin">
     <div class="container d-flex justify-content-center pt-4 ">
         <main class="form-signin mt-5">
-            <form method="post" [formGroup]="loginForm" class="mt-5" (ngSubmit)="getUserCredentials()">
+            <form method="post" [formGroup]="loginForm" class="mt-5" >
                 <img class="justify-content-center mt-5" src="../../../../assets/logoTaza.png" alt="" width="72" />
                 <h1 class="justify-content-center my-3 mx-auto logo">Coffee Queen</h1>
                 <div class="p-4 inputs" (click)="limpiar()">
@@ -19,7 +19,7 @@
                         <span class="mensaje" *ngIf="campoEsValido('password')">*Contraseña es requerida.</span>
                     </div>
                     <div class="my-3 mensaje">{{ htmlStr }}</div>
-                    <button class="w-100 btn btn-lg btn-warning btnLogin" type="submit" [disabled]="!loginForm.valid">
+                    <button class="w-100 btn btn-lg btn-warning btnLogin" (click)="getUserCredentials()" [disabled]="!loginForm.valid">
             Iniciar Sesión
           </button>
                 </div>

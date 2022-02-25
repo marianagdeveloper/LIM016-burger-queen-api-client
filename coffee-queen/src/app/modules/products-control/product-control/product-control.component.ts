@@ -4,7 +4,7 @@ import { Product } from 'src/app/shared/components/card/card-product/card-produc
 import { ProductService } from './../../../data/services/api/product.service';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { ImageService } from './../../../data/services/api/image.service';
+
 /* import {
   storage,
   ref,
@@ -52,7 +52,6 @@ export class ProductControlComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     public productsService: ProductService,
-    public imageService: ImageService,
     private http: HttpClient,
     private modalService: NgbModal
   ) {
@@ -99,7 +98,7 @@ export class ProductControlComponent implements OnInit {
   updateProduct(updateProduct:any){
     updateProduct.name = this.nameProductUpdate;
     updateProduct.price = this.priceProductUpdate;
-    
+
     switch (this.optionSelectedCategory) {
       case 'cafés/tés':
         updateProduct.type = 'cafes';
@@ -136,7 +135,7 @@ export class ProductControlComponent implements OnInit {
       console.log('No es imagen');
     }
   }
-  
+
 
   loadImages = () => {
     try {
@@ -231,7 +230,7 @@ export class ProductControlComponent implements OnInit {
 
 
 /*  uploadFiles ( imagen:any)  {
-    
+
         let storageRef = ref(storage, 'Images_Posts/' + imagen.name)
         let uploadTask = uploadBytesResumable(storageRef, imagen);
         uploadTask.on('state_changed', (snapshot:any) => {
@@ -262,13 +261,13 @@ export class ProductControlComponent implements OnInit {
                         //urlDescarga = downloadURL;
                         console.log('subio');
                         console.log(downloadURL);
-                        
+
                        // getUrl(urlDescarga);
                        // getFileAdd = '';
                     });
             }
         )
-    
+
 }; */
 
 
