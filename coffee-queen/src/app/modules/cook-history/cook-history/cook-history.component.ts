@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../../data/services/api/orders.service';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 import { Order } from '../../orders/order-list/order-list.metadata';
 
@@ -13,7 +12,7 @@ export class CookHistoryComponent implements OnInit {
   public orders: Order[] = [];
   public reversedListOrder: Order[] = [];
   public getOrder: string = '';
-  public model!: NgbDateStruct;
+
   constructor(public ordersService: OrdersService) { }
 
   ngOnInit(): void {
@@ -44,12 +43,14 @@ export class CookHistoryComponent implements OnInit {
   cutNameProduct(item: string ){
     return item.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
   }
-  /* searchOrder() {
+  searchStatus() {
     this.ordersService.getOrder().subscribe((data) => {
       if(this.getOrder===""){
         this.orders = data;
+        this.translateStatus();
       }else{
       this.orders = data;
+      this.translateStatus();
       this.orders = this.orders?.filter(
         (elem) => elem.status.toLowerCase().indexOf(this.getOrder) > -1
       );
@@ -62,5 +63,5 @@ export class CookHistoryComponent implements OnInit {
       this.translateStatus();
     });
     this.getOrder='';
-  } */
+  }
 }
