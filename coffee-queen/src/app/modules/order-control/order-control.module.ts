@@ -4,8 +4,7 @@ import { OrderControlRoutingModule } from './order-control-routing.module';
 
 import { ControlComponent } from './control/control.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { CardOrderComponent } from 'src/app/shared/components/card/card-order/card-order.component';
-import { FilterStatusPipe } from './pipes/FilterStatusPipe';
+import { FilterStatusPipe } from './pipes/filter-status.pipe';
 
 @NgModule({
   declarations: [
