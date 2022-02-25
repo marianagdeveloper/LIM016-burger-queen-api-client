@@ -119,7 +119,7 @@ export class OrderListComponent implements OnInit {
     if(this.order.client == '' || this.order.numberTable == '' || this.order.total == 0){
       this._success2.next(`Hay campos vacíos. Verifique antes de enviar por favor.`);
     } else{
-      this.ordersService.postOrder(this.order);
+      this.ordersService.postOrder(this.order).subscribe();
       this.order.products.forEach(product => {
       this.productService.setProducts(product, 'delete');
       })
