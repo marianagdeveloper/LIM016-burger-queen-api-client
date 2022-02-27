@@ -96,7 +96,7 @@ para mantener actualizado el menú.
   Actualizar datos de productos.
 ```
 ### 3.2. Interfaz 🚀
-agregar gif demo
+![gif-interfaz](./coffee-queen/src/assets/CoffeeQueen-interfaz.gif)
 
 ## 4. Consideraciones Generales 🚨
 
