@@ -20,7 +20,7 @@ export class CardOrderCookComponent implements OnInit {
   constructor(public ordersService: OrdersService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.dateOrder = this.data.dateEntry.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    this.timeOnCardFooter()
   }
 
   changeStatusToDelivering(){
@@ -68,9 +68,33 @@ export class CardOrderCookComponent implements OnInit {
     return this.secondsToString(diff);
   }
 
+  timeOnCardFooter(){
+    this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
+    let firstNumber = parseInt(this.dateOrder[0].split(':')[0]);
+    if (firstNumber<12){
+      this.dateOrder = this.dateOrder + 'am';
+    } else {
+      this.dateOrder = this.dateOrder + 'pm';
+    }
+  }
+
   open(content: any) {
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-class', scrollable: true, backdrop: false, keyboard:false})
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+          this.setcomment = this.comment;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  openModal(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-modal', scrollable: true})
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;

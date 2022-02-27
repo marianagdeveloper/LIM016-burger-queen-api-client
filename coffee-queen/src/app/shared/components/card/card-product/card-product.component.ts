@@ -40,7 +40,8 @@ export class CardProductComponent implements OnInit {
     timeResult:'',
     dateProcessed: '',
     dateCanceled: '',
-    additional: ''
+    additional: '',
+
   };
   public products!: Product[];
   messageProduct = '';
@@ -59,12 +60,14 @@ export class CardProductComponent implements OnInit {
     this.products.map((producto) => {
       if (productSelected.name == producto.name) {
         producto.qty = this.data.qty;
+        producto.subTotal = this.data.subTotal;
         this.isRepeat = true;
       }
     });
   }
 
   increaseQuantity(product: any) {
+
     this.quantity = product.qty += 1;
     product.subTotal = this.quantity * product.price;
     this.order.total += product.subTotal;
@@ -75,7 +78,7 @@ export class CardProductComponent implements OnInit {
     if (!(this.isRepeat || product.qty > 1)) {
       this.productService.setProducts(product);
     }
-    this.messageProduct = 'Producto agregado.';
+
   }
 
   decreaseQuantity(productSelected: any) {

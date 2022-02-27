@@ -7,4 +7,5 @@ export interface Product {
   qty?: number;
   subTotal?: number;
   dateEntry: string;
+  messageCard?: string;
 }

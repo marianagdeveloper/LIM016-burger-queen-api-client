@@ -12,6 +12,7 @@ export class CookHistoryComponent implements OnInit {
   public orders: Order[] = [];
   public reversedListOrder: Order[] = [];
   public getOrder: string = '';
+  public clean: string = '';
 
   constructor(public ordersService: OrdersService) { }
 
@@ -49,9 +50,9 @@ export class CookHistoryComponent implements OnInit {
         this.orders = data;
         this.translateStatus();
       }else{
-      this.orders = data;
-      this.translateStatus();
-      this.orders = this.orders?.filter(
+        this.orders = data;
+        this.translateStatus();
+        this.orders = this.orders?.filter(
         (elem) => elem.status.toLowerCase().indexOf(this.getOrder) > -1
       );
     }

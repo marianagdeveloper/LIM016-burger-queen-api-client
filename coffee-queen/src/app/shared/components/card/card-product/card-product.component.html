@@ -18,7 +18,8 @@
             <!-- <button class="btn btn-success" (click)="getInfoProduct()">Añadir</button> -->
         </div>
     </div>
-    <p *ngIf="data.qty != 0" class="msgCard text-success">{{ messageProduct }}</p>
+    <!-- <p *ngIf="data.qty != 0" class="msgCard text-success">{{ messageProduct }}</p> -->
+    <p *ngIf="data.qty != 0" class="msgCard text-success">{{ data?.messageCard }}</p>
     <!-- <ngb-alert #selfClosingAlert class="alertProduct" *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
     </ngb-alert> -->
 </fieldset>

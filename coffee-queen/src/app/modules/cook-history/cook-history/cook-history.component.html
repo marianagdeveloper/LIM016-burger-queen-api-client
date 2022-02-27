@@ -8,6 +8,7 @@
       <button class=" btn btnSearch mx-2" (click)="searchStatus()">Buscar</button>
   </div>
 </div>
+
 <div class="tablePedidos p-3">
 
   <table class="p-5 table table-striped ">
@@ -20,7 +21,7 @@
               <th scope="col">Estado</th>
           </tr>
       </thead>
-      <tbody>
+      <tbody class="{{clean}}">
           <tr *ngFor="let order of orders.slice().reverse()">
               <td>{{ order.id }}</td>
               <td>{{ order.userName }}</td>
@@ -31,8 +32,8 @@
                   </li>
                 </ul>
               </td>
-              <td>{{cutNameProduct(order.dateEntry)}}</td>
-              <td>{{ order.status }}</td>
+              <td class="">{{cutNameProduct(order.dateEntry)}}</td>
+              <td class="">{{ order.status }}</td>
           </tr>
       </tbody>
   </table>
