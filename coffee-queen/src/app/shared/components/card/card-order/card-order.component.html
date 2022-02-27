@@ -6,7 +6,7 @@
     </div>
     <div class="card-body">
       <p>Total productos: {{data.totalQty}}</p>
-      <ul class="mx-0 p-0">
+      <ul class="mx-0">
         <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
           {{ product.qty }} {{ product.name }}
         </li>
@@ -29,6 +29,7 @@
           <hr>
           <div class="mt-2 mx-4 text-left text-beige">
             <p>Mesero: {{ data?.userName }}</p>
+            <p>Pedido N°: {{ data?.id }}</p>
             <p>Creación de pedido: <span>{{dateOrderCreate}}</span></p>
             <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{dateOrderDelivering}}</p>
             <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{dateOrderDone}}</p>
@@ -38,7 +39,7 @@
           </div>
         </div>
         <div class="modal-footer test d-flex justify-content-around">
-          <button type="button" class="btn btn-danger" style="border-radius: 10px" (click)="open(confirm);modal.close('return')" *ngIf="btnCanceled" >Cancelar pedido</button>
+          <button type="button" class="btn btn-danger" style="border-radius: 10px" (click)="open(confirm);modal.close('return')" *ngIf="btnCanceled">Cancelar pedido</button>
           <button type="button" class="btn btn-warning" style="border-radius: 10px" (click)="modal.close('return')">Volver a pedidos</button>
         </div>
       </ng-template>
@@ -67,6 +68,6 @@
       </div>
 
     </div>
-    <div class="card-footer text-muted"> Pedido N° {{ data?.id }} - {{dateOrder}}</div>
+    <div class="card-footer text-muted">Hora de creación: {{dateOrder}}</div>
   </div>
 </div>

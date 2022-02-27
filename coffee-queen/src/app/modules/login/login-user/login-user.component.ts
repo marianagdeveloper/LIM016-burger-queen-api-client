@@ -90,14 +90,8 @@ export class LoginUserComponent implements OnInit {
       }
 
       this.isGetUser = this.userData;
-      console.log('return this.isGetUser', this.isGetUser);
       return this.isGetUser
-
-      console.log(res);
-
    });
-
-
   }
 
   campoEsValido(inputForm: string) {
