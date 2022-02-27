@@ -1,17 +1,14 @@
-.bg-skeleton {
-  background-image: url('../../../../assets/bg-3 1.png');
-  min-height: 448px;
-  .groupLegend {
-    max-width: 380px;
-    margin: auto;
-    position: sticky;
-    z-index: 10;
-    background-color: white;
-    padding: 15px;
-    top: 0px;
-    .pointerLegend {
-        cursor: pointer;
-    }
+.groupLegend {
+  max-width: 380px;
+  margin: auto;
+  position: sticky;
+  z-index: 10;
+  background-color: white;
+  padding: 15px;
+  margin-top: -24px;
+  top: 1px;
+  .pointerLegend {
+      cursor: pointer;
   }
 }
 .scrollOrders {

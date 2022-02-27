@@ -48,7 +48,12 @@ export class LoginUserComponent implements OnInit {
 
   getUserCredentials():any {
     this.isCheck = { user: 'checked'}
-
+    /* const emailUser = this.loginForm.value.email;
+    const passwordUser = this.loginForm.value.password;
+    const prueba = {
+      email: emailUser,
+      password: passwordUser
+    } */
     this.userService.getAllUsers().subscribe((res) => {
       let userValidate: any;
       const credentials = res.find((a: any) => {

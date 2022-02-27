@@ -1,8 +1,10 @@
 <!-- CardsOrder -->
 <div class="card text-center m-3" *ngIf="data">
+
   <div class="card-header">
       <img src="../../../../assets/{{data.status}}.png" alt="" width="30"> Pedido N° {{ data.id }}
   </div>
+
   <div class="card-body">
     <p><strong>Total productos: {{data.totalQty}}</strong> </p>
     <ul class="mx-1 p-0">
@@ -10,14 +12,37 @@
         {{ order.qty }} {{ order.name }}
       </li>
     </ul>
+
       <button class="btn btn-sm btn-more mt-2" (click)="open(content)">Ver Más</button>
       <br>
-      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDelivering()" *ngIf="data.status =='pending'">
+      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="openModal(contentPending)" *ngIf="data.status =='pending'">
         Recibir pedido
       </button>
-      <!-- <button class="btn btn-{{data.status}} mt-2" type="button" (click)="changeStatusToDone()" *ngIf="data.status =='delivering'">
+      <!-- Modal for Receive Order button -->
+      <ng-template #contentPending let-modal>
+        <div class="modal-body">
+          <p class="modal-title d-flex justify-content-center" id="modal-basic-title" *ngIf="data.status =='pending'">¿Seguro de cambiar el estado a 'En Preparación'?</p>
+        </div>
+        <div class="d-flex justify-content-center mx-3">
+            <button type="button" class="btn btn-sm btn-danger m-2" (click)="modal.close('return')">Cancelar</button>
+            <button type="button" class="btn btn-sm btn-warning m-2" (click)="changeStatusToDelivering()" (click)="modal.close('return')">Enviar</button>
+        </div>
+      </ng-template><!-- Modal for Receive Order button -->
+
+      <button class="btn btn-{{data.status}} mt-2" type="button" (click)="openModal(contentDelivering)" *ngIf="data.status =='delivering'">
         Preparado
-      </button> -->
+      </button>
+      <!-- Modal for Prepared button -->
+      <ng-template #contentDelivering let-modal>
+        <div class="modal-body">
+          <p class="modal-title d-flex justify-content-center" id="modal-basic-title" *ngIf="data.status =='delivering'">¿Seguro de cambiar el estado a 'Preparado'?</p>
+        </div>
+        <div class="d-flex justify-content-center mx-3">
+            <button type="button" class="btn btn-sm btn-danger m-2" (click)="modal.close('return')">Cancelar</button>
+            <button type="button" class="btn btn-sm btn-warning m-2" (click)="changeStatusToDone()" (click)="modal.close('return')">Enviar</button>
+        </div>
+      </ng-template><!-- Modal for Prepared button -->
+
       <ng-template #content let-modal class="custom-class">
 
           <div class="modal-header">
@@ -46,22 +71,13 @@
             </div>
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-warning" (click)="open(content2)" (click)="modal.close('return')" *ngIf="data.status == 'delivering'">Preparado</button>
-<!--             <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
+<!--             <button type="button" class="btn btn-warning" (click)="open(content2)" (click)="modal.close('return')" *ngIf="data.status == 'delivering'">Preparado</button>
+ --><!--             <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
  -->          </div>
       </ng-template>
   </div>
   <div class="card-footer text-muted">
-    {{ dateOrder }}
+    Hora de creación: {{ dateOrder }}
   </div>
 </div>
-<ng-template #content2 let-modal>
-  <div class="modal-body">
-    <h5 class="modal-title" id="modal-basic-title" *ngIf="data.status =='pending'">¿Seguro de cambiar el estado a 'En Preparación'?</h5>
-    <p class="modal-title d-flex justify-content-center" id="modal-basic-title" *ngIf="data.status =='delivering'">¿Seguro de cambiar el estado a 'Preparado'?</p>
-  </div>
-  <div class="d-flex justify-content-center mx-3">
-      <button type="button" class="btn btn-sm btn-danger m-2" (click)="modal.close('return')">Cancelar</button>
-      <button type="button" class="btn btn-sm btn-warning m-2" (click)="changeStatusToDone()" (click)="modal.close('return')">Enviar</button>
-  </div>
-</ng-template>
+

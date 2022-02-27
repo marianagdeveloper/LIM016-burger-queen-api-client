@@ -10,28 +10,33 @@ import { Product } from '../../../../shared/components/card/card-product/card-pr
 export class DessertsListComponent implements OnInit {
 
   public products!: Product[];
-  public desserts!: Product[];
   public orderDesserts!: Product[];
+
   constructor(public productService: ProductService) {}
 
   ngOnInit() {
+    this.getDessertsProducts();
+  }
+
+  getDessertsProducts(){
     this.productService.getAllProducts().subscribe(data => {
-      this.products = data;
-
-      function filtrarPorType(obj: Product): any {
-        if (obj.type === "desserts") {
-          return obj;
+      const desserts = data.filter((item: any) => {
+        if (item.type === "desserts") {
+          return item;
         }
-      }
-      this.desserts = data.filter(filtrarPorType);
+      })
+      this.products = desserts;
       this.orderDesserts = this.productService.arrayProducts;
+      this.keepQuantityUpdate(this.products, this.orderDesserts)
+    });
+  }
 
-      this.desserts.forEach((producto) => {
-        this.orderDesserts.forEach((pedido: Product) => {
-          if (pedido.name == producto.name) {
-            producto.qty = pedido.qty;
-          }
-        });
+  keepQuantityUpdate(products: any, orderProduct: any){
+    products.forEach((product: any) => {
+      orderProduct.forEach((order: Product) => {
+        if (order.name == product.name) {
+          product.qty = order.qty;
+        }
       });
     });
   }

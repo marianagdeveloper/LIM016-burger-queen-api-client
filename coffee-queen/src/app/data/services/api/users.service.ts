@@ -16,6 +16,11 @@ export class UsersService {
     return this.http.get<User[]>('http://localhost:3000/users');
   }
 
+  getAllUsersAuth(credential: any): Observable<any>{
+    // fetch('url', {method: GET})
+    return this.http.post<any>('https://coffeequeen.herokuapp.com/auth', credential);
+  }
+
   postUser(newUser: User): Observable<User[]>{
     return this.http.post<User[]>('http://localhost:3000/users', newUser);
   }

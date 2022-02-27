@@ -10,32 +10,36 @@ import { Product } from '../../../../shared/components/card/card-product/card-pr
 export class SnacksListComponent implements OnInit {
 
   public products!: Product[];
-
   public snacks!: Product[];
   public orderSnacks!: Product[];
-
 
   constructor(public productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getAllProducts().subscribe(data => {
-      this.products = data;
-      function filtrarPorType(obj: Product): any {
-        if (obj.type === "snacks") {
-          return obj;
-        }
-      }
-      this.snacks = data.filter(filtrarPorType);
-      this.orderSnacks = this.productService.arrayProducts;
+    this.getSnacksProducts();
+  }
 
-      this.snacks.forEach((producto) => {
-        this.orderSnacks.forEach((pedido: Product) => {
-          if (pedido.name == producto.name) {
-            producto.qty = pedido.qty;
-          }
-        });
-      });
+  getSnacksProducts(){
+    this.productService.getAllProducts().subscribe(data => {
+      this.snacks = data.filter((item: any) => {
+        if (item.type === "snacks") {
+          return item;
+        }
+      })
+      this.products = this.snacks;
+
+      this.orderSnacks = this.productService.arrayProducts;
+      this.keepQuantityUpdate(this.products, this.orderSnacks)
     });
   }
 
+  keepQuantityUpdate(products: any, orderProduct: any){
+    products.forEach((product: any) => {
+      orderProduct.forEach((order: Product) => {
+        if (order.name == product.name) {
+          product.qty = order.qty;
+        }
+      });
+    });
+  }
 }
