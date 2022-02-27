@@ -1,4 +1,4 @@
-![cover page](./coffee-queen/src/assets/portada2.png)
+![cover page](./coffee-queen/src/assets/portada.png)
 # Coffee Queen (API Client)
 
 ## Índice
@@ -18,7 +18,7 @@ Tomar un café en ‘Coffee Queen’ en compañía de amigos y familiares tiene 
 
 ## 2. Resumen del proyecto 📋
 
-Coffee Queen es una pequeña cafetería con un sistema en el cual puedan tomar pedidos usando una _tablet_, y enviarlos a la cocina para que se preparen ordenada y eficientemente. Este proyecto consta de dos áreas: interfaz (cliente) y API (servidor). Se nos ha solicitado desarrollar la interfaz que se integre con la API que otro equipo de desarrolladoras está trabajando simultáneamente. 
+Coffee Queen es la aplicación web para una cafetería en el cual puedan tomar pedidos usando una _tablet_, y enviarlos a la cocina para que se preparen ordenados y con eficiencia. Este proyecto consta de dos áreas: interfaz (cliente) y API (servidor). Se nos ha solicitado desarrollar la interfaz que se integre con la API que otro equipo de desarrolladoras está trabajando simultáneamente. 
 
 El objetivo principal es aprender a construir una _interfaz web_ usando
 el _framework_ Angular. Donde la aplicación debe ser un Single Page App y no debe ser una app nativa, sino una web app que sea mobile-first.
@@ -104,7 +104,7 @@ para mantener actualizado el menú.
 
 - La lógica del proyecto esta implementada en TypeScript, HTML y SASS y empaquetada de manera automatizada.
 
-- Uso del framework [Angular](https://angular.io/)).
+- Uso del framework [Angular](https://angular.io/).
 
 - Es un aplicación _Single Page App_.
 

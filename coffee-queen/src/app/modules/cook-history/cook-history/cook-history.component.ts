@@ -21,7 +21,6 @@ export class CookHistoryComponent implements OnInit {
       this.orders = data;
       this.translateStatus();
     });
-    //this.cleanTable();
   }
   translateStatus(){
     this.orders.forEach( order => {
@@ -65,8 +64,5 @@ export class CookHistoryComponent implements OnInit {
       this.translateStatus();
     });
     this.getOrder='';
-  }
-  cleanTable(){
-    this.clean = 'clean';
   }
 }
