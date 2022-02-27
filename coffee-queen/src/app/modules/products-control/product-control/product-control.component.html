@@ -45,9 +45,9 @@
                         </ng-select>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button type="button" class="btn btn-warning" (click)="modal.close('return')">Cancelar</button>
+                        <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
 
-                        <button type="button" class="btn btn-warning" (click)="modal.close('return')" (click)="updateProduct(product)"> Modificar</button>
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="updateProduct(product)"> Modificar</button>
                     </div>
                 </ng-template>
                 <ng-template #content let-modal class="custom-class">
@@ -55,8 +55,8 @@
                         <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar {{ product.name }} ?</h5>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button type="button" class="btn btn-warning" (click)="modal.close('return')">Cancelar</button>
-                        <button type="button" class="btn btn-warning" (click)="modal.close('return')" (click)="deleteUser( product.id)">Eliminar</button>
+                        <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="deleteUser( product.id)">Eliminar</button>
                     </div>
                 </ng-template>
             </tr>
@@ -104,10 +104,10 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
 
                     <div class="wrapper-button">
-                        <button class="w-100 btn btn-warning" type="submit" [disabled]="loading" data-bs-dismiss="modal">
+                        <button class="w-100 btn btn-palet" type="submit" [disabled]="loading" data-bs-dismiss="modal">
 
                              {{(loading) ? 'Cargando...' : 'Agregar'}}
                 </button>

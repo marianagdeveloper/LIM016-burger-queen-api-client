@@ -84,6 +84,11 @@ const routes: Routes = [
         path:'cook-history',
         loadChildren:()=>
         import ('./modules/cook-history/cook-history.module').then((m)=> m.CookHistoryModule)
+      },
+      {
+        path:'sales',
+        loadChildren:()=>
+        import ('./modules/orders-history/orders-history.module').then((m)=> m.OrdersHistoryModule)
       }
     /*   {
         path: '**',
