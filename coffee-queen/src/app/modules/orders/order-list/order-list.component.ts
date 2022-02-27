@@ -84,7 +84,8 @@ export class OrderListComponent implements OnInit {
   ngOnInit(): void {
     this.order.userName=this.usersService.disparador.getValue().name;
     this.products = this.productService.arrayProducts;
-    this.products.map((ele: any) => {
+
+      this.products.map((ele: any) => {
       this.order.total += ele.subTotal;
       this.order.totalQty += ele.qty;
     });
@@ -97,6 +98,7 @@ export class OrderListComponent implements OnInit {
         this.selfClosingAlert2.close();
       }
     })
+
     //alert
     this._successOrder.subscribe(message => this.successMessageOrder = message);
     this._successOrder.pipe(debounceTime(5000)).subscribe(() => {
