@@ -1,1 +1,2 @@
-<p>canceled works!</p>
+<app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order>
+

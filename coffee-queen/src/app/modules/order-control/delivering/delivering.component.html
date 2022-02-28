@@ -1,1 +1,1 @@
-<p>delivering works!</p>
+<app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order>
