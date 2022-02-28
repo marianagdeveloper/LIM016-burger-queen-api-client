@@ -42,41 +42,32 @@ describe('SnacksListComponent', () => {
         "dateEntry": "21/01/2022 09:24:00",
         "qty": 2,
         "subTotal": 6
+      },
+      {
+        "id": 24,
+        "name": "Papas Fritas",
+        "price": 12,
+        "image": "../../assets/images/Papas fritas.png",
+        "type": "snacks",
+        "dateEntry": "21/01/2022 09:24:00",
+        "qty": 0,
+        "subTotal": 12,
+        "messageCard": "Producto agregado."
       }
-
     ]
     const orderTest = [
       {
-        "id": 1,
-        "userName": "Maria",
-        "client": "Juanita",
-        "products": [
-          {
-            "id": 33,
-            "name": "Granola",
-            "price": 6,
-            "image": "../../assets/images/granola.png",
-            "type": "snacks",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 2,
-            "subTotal": 6
-          }
-        ],
-        "total": 30,
-        "totalQty": 2,
-        "numberTable": "1",
-        "status": "delivered",
-        "dateEntry": "Sun Feb 20 2022 17:59:36 GMT-0500 (hora estándar de Colombia)",
-        "dateDelivering": "Sun Feb 20 2022 18:00:27 GMT-0500 (hora estándar de Colombia)",
-        "dateDone": "Sun Feb 20 2022 18:01:14 GMT-0500 (hora estándar de Colombia)",
-        "timeResult": "00:00:47",
-        "dateProcessed": "Sun Feb 20 2022 18:01:50 GMT-0500 (hora estándar de Colombia)",
-        "dateCanceled": "",
-        "additional": ""
+        "id": 33,
+        "name": "Granola",
+        "price": 6,
+        "image": "../../assets/images/granola.png",
+        "type": "snacks",
+        "dateEntry": "21/01/2022 09:24:00",
+        "qty": 2,
+        "subTotal": 6
       }
-
     ]
     component.keepQuantityUpdate(productTest, orderTest);
-    //expect(productTest[0].qty).toBe(orderTest[0].products[0].qty);
+    expect(orderTest[0].qty).toBe(productTest[0].qty);
   });
 });
