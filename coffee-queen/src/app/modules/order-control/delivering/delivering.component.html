@@ -1,1 +1,4 @@
-<p>delivering works!</p>
+<div class=" d-flex justify-content-center pending mt-4">
+
+    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order>
+</div>
