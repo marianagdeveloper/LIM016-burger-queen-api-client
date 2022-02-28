@@ -33,9 +33,9 @@ export class SnacksListComponent implements OnInit {
     });
   }
 
-  keepQuantityUpdate(products: any, orderProduct:any){
-    products.forEach((product: any) => {
-      orderProduct.products.forEach((order: Product) => {
+  keepQuantityUpdate(products: Product[], orderProduct: Product[]){
+    products.map((product: any) => {
+      orderProduct.filter((order: Product) => {
         if (order.name == product.name) {
           product.qty = order.qty;
         }
