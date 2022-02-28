@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { LoginUserComponent } from './modules/login/login-user/login-user.component';
+import { ControlComponent } from './modules/order-control/control/control.component';
 
 
 
@@ -58,7 +59,7 @@ const routes: Routes = [
       {
         path:'order-control',
         loadChildren:()=>
-        import ('./modules/order-control/order-control.module').then((m)=> m.OrderControlModule)
+        import ('./modules/order-control/order-control.module').then((m)=> m.OrderControlModule),
       },
       {
         path:'orders',
@@ -96,7 +97,7 @@ const routes: Routes = [
         pathMatch: 'full'
       } */
       ]
-  },
+  }
  /*  {
     path: '**',
     redirectTo: '/login',

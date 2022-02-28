@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-between groupLegend mb-3">
-    <div class="pointerLegend " (click)="navigateToSection('pending')">
+    <div class="pointerLegend ">
         <img src="../../../../assets/pending.png" alt="" width="25" height="25" />
-        <a fragment="pending" class="button d-none d-sm-inline-block" routerLinkActive="activebutton">Pendiente</a>
+        <a class="button d-none d-sm-inline-block" [routerLink]="['/pending']" routerLinkActive="activebutton">Pendiente</a>
     </div>
     <div class="pointerLegend" (click)="navigateToSection('delivering')">
         <img src="../../../../assets/delivering.png" alt="" width="25" height="25" />
@@ -23,8 +23,10 @@
     </div>
 </div>
 <div class="scrollOrders">
-
-    <section id="pending" class="d-flex flex-wrap justify-content-between">
+  <section class="d-flex flex-wrap justify-content-between">
+    <router-outlet></router-outlet>
+  </section>
+    <!-- <section id="pending" class="d-flex flex-wrap justify-content-between">
         <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'pending'"></app-card-order>
     </section>
 
@@ -45,6 +47,6 @@
     <hr />
     <section id="canceled" class="d-flex flex-wrap justify-content-between">
         <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order>
-    </section>
+    </section> -->
 
 </div>
