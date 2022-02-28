@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from '../../orders/order-list/order-list.metadata';
+import { OrdersService } from '../../../data/services/api/orders.service';
 
 @Component({
   selector: 'app-delivered',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delivered.component.scss']
 })
 export class DeliveredComponent implements OnInit {
+  public orders: Order[] = [];
 
-  constructor() { }
+  constructor(public ordersService: OrdersService) { }
 
   ngOnInit(): void {
+    this.ordersService.getOrder().subscribe((res: any) => {
+      this.orders = res;
+      return res;
+    });
   }
 
 }

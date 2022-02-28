@@ -1,1 +1,1 @@
-<p>done works!</p>
+<app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'done'"></app-card-order>
