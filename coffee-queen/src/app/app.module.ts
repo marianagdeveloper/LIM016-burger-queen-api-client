@@ -1,30 +1,66 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { LoginModule } from './modules/login/login.module';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { SkeletonComponent } from './layout/skeleton/skeleton.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { CookControlModule } from './modules/cook-control/cook-control.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
 
-import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu/menu.component';
-import { MenuListComponent } from './menu/menu-list/menu-list.component';
-import { DesayunoComponent } from './menu/desayuno/desayuno.component';
+
+
+// Importing forms module
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
+
   declarations: [
     AppComponent,
-    LoginComponent,
-    MenuComponent,
-    MenuListComponent,
-    DesayunoComponent
+    SkeletonComponent,
+    FooterComponent,
+    SidebarComponent,
+    HeaderComponent,
+    
+
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     FormsModule,
     AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    LoginModule,
+    CookControlModule,
+    NgbModule,
+    NgSelectModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy,
+    },
+  ],
+
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
+
+

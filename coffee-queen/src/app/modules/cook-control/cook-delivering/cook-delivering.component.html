@@ -1,0 +1,3 @@
+<div class=" justify-content-center delivering mt-4">
+  <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order-cook>
+</div>

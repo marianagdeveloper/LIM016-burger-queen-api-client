@@ -1,0 +1,44 @@
+header {
+    background: #dd8017;
+    color: #fff;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 100 !important;
+    .borderButton {
+        border: 3px solid white;
+        padding: 0px !important;
+        background-color: white;
+    }
+}
+
+.container {
+    max-width: 1220px !important;
+}
+
+.typeText {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 16px;
+}
+
+.button {
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 15px;
+    text-decoration: none;
+    outline: 0;
+}
+
+.activebutton {
+    background: #fafafa2f !important;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    text-decoration: none;
+    outline: 0;
+}

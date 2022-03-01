@@ -1,0 +1,107 @@
+<div class="mb-4 mt-4">
+    <button class="btn btnAgregar" data-bs-toggle="modal" data-bs-target="#modalFormUser" data-bs-whatever="@getbootstrap">Agregar Usuario</button>
+</div>
+<div class="margen tablePedidos p-3">
+
+    <table class="p-5 table table-striped ">
+        <thead>
+            <tr class="colorPedido">
+                <th scope="col">Nombres y Apellidos</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Roles</th>
+                <th scope="col">Acciones</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td *ngIf="user.roles.admin==true">Admin</td>
+                <td *ngIf="user.roles.waiter==true">Mesero</td>
+                <td *ngIf="user.roles.cook==true">Jefe de cocina</td>
+                <td><img class="cursor" (click)="open(contentEdit)" (click)="capturar(user)" src="../../../../assets/editar.png"></td>
+                <td><img class="cursor" (click)="open(content)" src="../../../../assets/bxs-trash.png"></td>
+                <ng-template #content let-modal class="custom-class">
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar a {{ user.name }} ?</h5>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="deleteUser( user.id)">Eliminar</button>
+                    </div>
+                </ng-template>
+                <ng-template #contentEdit let-modal class="custom-class">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="nameUserUpdate" name="inputUserEdit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Correo Electrónico:</label>
+                            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="emailUserUpdate" name="inputEmailEdit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Contraseña:</label>
+                            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="passwordUserUpdate" name="inputPasswordEdit">
+                        </div>
+                        <label for="select" class="col-form-label w-75">Rol:</label>
+
+                        <ng-select [items]="arrayRole" [(ngModel)]="optionSelectedRole">
+                        </ng-select>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
+
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="updateUser(user)"> Modificar</button>
+                    </div>
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<div class="modal fade" id="modalFormUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Nombre:</label>
+
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="nameUser" name="inputName">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label w-50">Correo Electrónico:</label>
+                        <input type="text" class="form-control w-50" id="recipient-email" [(ngModel)]="emailUser" name="inputEmail">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label w-50">Contraseña:</label>
+                        <input type="text" class="form-control w-50" id="recipient-password" [(ngModel)]="passwordUser" name="inputPassword">
+
+                    </div>
+                    <div>
+                        <label class="col-label w-75">Rol:</label>
+                        <ng-select class=" mb-3" name="selectRole" [items]="arrayRole" [(ngModel)]="optionSelected">
+                        </ng-select>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                    <button type="button" class="btn btn-palet" data-bs-dismiss="modal" (click)="addUser()">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>

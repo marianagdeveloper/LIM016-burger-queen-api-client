@@ -1,0 +1,47 @@
+.groupLegend {
+  max-width: 380px;
+  margin: auto;
+  position: sticky;
+  z-index: 10;
+  background-color: white;
+  padding: 15px;
+  margin-top: -24px;
+  top: 1px;
+  .pointerLegend {
+      cursor: pointer;
+  }
+}
+/* .scrollOrders {
+  overflow-y: scroll;
+  max-height: 300px;
+} */
+.card {
+  width: 270px;
+  img {
+      width: 30px;
+  }
+  .btnEnPreparacion {
+    background-color: #F1EA33;
+    border-radius: 10px;
+    color: white;
+  }
+}
+.footer {
+  padding: 10px;
+  background: #dd8017;
+  color: #fff;
+}
+
+.activebutton {
+  background: #8b878336 !important;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  color: #111010;
+  font-size: 16px;
+  text-decoration: none;
+  outline: 0;
+  padding: 3px;
+}
+
+

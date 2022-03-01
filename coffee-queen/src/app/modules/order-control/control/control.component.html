@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between groupLegend mb-3">
+    <div class="pointerLegend" [routerLink]="['pending']" routerLinkActive="activebutton">
+        <img src="../../../../assets/pending.png" alt="" width="25" height="25" />
+        <a class="button d-none d-sm-inline-block">Pendiente</a>
+    </div>
+    <div class="pointerLegend" [routerLink]="['delivering']" routerLinkActive="activebutton">
+        <img src="../../../../assets/delivering.png" alt="" width="25" height="25" />
+        <a fragment="delivering " class="button d-none d-sm-inline-block">En Preparación</a>
+    </div>
+    <div class="pointerLegend " [routerLink]="['done']" routerLinkActive="activebutton">
+        <img src="../../../../assets/done.png" alt="" width="25" height="25" />
+        <a fragment="done" class="button d-none d-sm-inline-block">Preparado</a>
+    </div>
+    <div class="pointerLegend" [routerLink]="['delivered']" routerLinkActive="activebutton">
+        <img src="../../../../assets/delivered.png" alt="" width="25" height="25" />
+        <a fragment="delivered " class="button d-none d-sm-inline-block">Entregado</a>
+    </div>
+    <div class="pointerLegend" [routerLink]="['canceled']" routerLinkActive="activebutton">
+        <img src="../../../../assets/canceled.png" width="20" height="20" />
+        <a fragment="canceled" class="button d-none d-sm-inline-block">Cancelado</a>
+    </div>
+</div>
+<div class="scrollOrders">
+    <section class="d-flex flex-wrap ">
+        <router-outlet> </router-outlet>
+    </section>
+</div>

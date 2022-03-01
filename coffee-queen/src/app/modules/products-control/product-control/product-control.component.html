@@ -1,0 +1,121 @@
+<div class="mb-4 mt-4">
+    <button class="btn btnAgregar" data-bs-toggle="modal" data-bs-target="#modalFormUser" data-bs-whatever="@getbootstrap">Agregar Producto</button>
+</div>
+
+
+<div class="margen tablePedidos p-3">
+
+    <table class="p-5 table table-striped ">
+        <thead>
+            <tr class="colorPedido">
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">imagen</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">fecha de Ingreso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}.00</td>
+                <td><img width="60" src="{{product.image}}" alt=""></td>
+                <td *ngIf="product.type=='drinks'">Bebidas</td>
+                <td *ngIf="product.type=='juices'">Jugos</td>
+                <td *ngIf="product.type=='desserts'">Postres</td>
+                <td *ngIf="product.type=='cafes'">Cafés/Tés</td>
+                <td *ngIf="product.type=='hamburguers'">Hamburguesas</td>
+                <td *ngIf="product.type=='snacks'">Snacks</td>
+                <td>{{ product.dateEntry }}</td>
+                <td><img class="cursor" (click)="open(contentEditProduct)" (click)="capturar(product)" src="../../../../assets/editar.png"></td>
+                <td><img class="cursor" (click)="open(content)" src="../../../../assets/bxs-trash.png"></td>
+                <ng-template #contentEditProduct let-modal class="custom-class">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="nameProductUpdate" class="col-form-label">Descripción:</label>
+                            <input type="text" class="form-control" id="nameProductUpdate" [(ngModel)]="nameProductUpdate" name="inputProductEdit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPriceEdit" class="col-form-label">Precio:</label>
+                            <input type="text" class="form-control" id="inputPriceEdit" [(ngModel)]="priceProductUpdate" name="inputPriceEdit">
+                        </div>
+                        <label for="select" class="col-form-label w-75">Categoria:</label>
+
+                        <ng-select [items]="arrayCategory" [(ngModel)]="optionSelectedCategory">
+                        </ng-select>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
+
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="updateProduct(product)"> Modificar</button>
+                    </div>
+                </ng-template>
+                <ng-template #content let-modal class="custom-class">
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar {{ product.name }} ?</h5>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="deleteUser( product.id)">Eliminar</button>
+                    </div>
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="modalFormUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="post" name="formProduct" (ngSubmit)="loadImages()">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Descripción:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="description" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <input type="file" id="file" class="input-file" (change)="onFileSelected($event)">
+
+                    <div>
+                        <label for="">Preview</label>
+                        <div>
+                            <img width="100px" [src]="imagenPrevia" alt="">
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-3 d-flex">
+                        <div>
+                            <label for="recipient-name" class="col-form-label w-50">Precio:</label>
+                            <input type="text" class="form-control w-50" id="recipient-name" [(ngModel)]="priceProduct" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div>
+                            <label for="recipient-name" class="col-form-label w-75">Categoria:</label>
+
+                            <ng-select [items]="arrayCategory" [(ngModel)]="optionSelected" name="selectCategory">
+                            </ng-select>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                    <div class="wrapper-button">
+                        <button class="w-100 btn btn-palet" type="submit" [disabled]="loading" data-bs-dismiss="modal">
+
+                             {{(loading) ? 'Cargando...' : 'Agregar'}}
+                </button>
+                    </div>
+
+                </div>
+            </form>
+            <!--  termina el form -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+<div class=" justify-content-center canceled mt-4">
+  <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order-cook>
+</div>
