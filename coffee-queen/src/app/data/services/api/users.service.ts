@@ -9,24 +9,12 @@ import { User } from './../../../modules/users-control/user-control/user-control
 export class UsersService {
 
   @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
-  public headers!:any;
 
   constructor(private http: HttpClient ) { }
 
-
-
   getAllUsers(): Observable<User[]>{
     // fetch('url', {method: GET})
-    return this.http.get<User[]>('https://coffeequeen.herokuapp.com/users');
-  }
-  getAllUsersPrueba(header: any): Observable<User[]>{
-    // fetch('url', {method: GET})
-    return this.http.get<User[]>('https://coffeequeen.herokuapp.com/users');
-  }
-
-  getAllUsersAuth(credential: any): Observable<any>{
-    // fetch('url', {method: GET})
-    return this.http.post<any>('https://coffeequeen.herokuapp.com/auth', credential);
+    return this.http.get<User[]>('http://localhost:3000/users');
   }
 
   postUser(newUser: User): Observable<User[]>{

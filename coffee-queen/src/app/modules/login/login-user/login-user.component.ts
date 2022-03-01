@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/data/services/api/users.service';
-import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -33,7 +32,7 @@ export class LoginUserComponent implements OnInit {
 
   public isCheck: any;
   public isGetUser: any;
-  public headers!:any;
+
   constructor(
     private formBuilder: FormBuilder,
     public userService: UsersService,
@@ -47,29 +46,11 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
-
   getUserCredentials():any {
     this.isCheck = { user: 'checked'}
-    const emailUser = this.loginForm.value.email;
-    const passwordUser = this.loginForm.value.password;
-    const credential = {
-      email: emailUser,
-      password: passwordUser
-    }
 
-    this.userService.getAllUsersAuth(credential).subscribe((token) => {
-      sessionStorage.setItem('token', token);
-
-      const tokenStorage = sessionStorage.getItem('token');
-      this.headers = new HttpHeaders({'authorization': `Bearer ${tokenStorage}` });
-      console.log(' get tokenStorage',tokenStorage);
-      console.log('headers',this.headers);
-
-
-      this.userService.getAllUsersPrueba({ 'headers': this.headers }).subscribe( (res) => {
-        console.log(res);
-      })
-      /* let userValidate: any;
+    this.userService.getAllUsers().subscribe((res) => {
+      let userValidate: any;
       const credentials = res.find((a: any) => {
         const emailUser = this.loginForm.value.email;
         const passwordUser = this.loginForm.value.password;
@@ -104,12 +85,8 @@ export class LoginUserComponent implements OnInit {
       }
 
       this.isGetUser = this.userData;
-      return this.isGetUser */
-      console.log(token);
-
+      return this.isGetUser
    });
-
-
   }
 
   campoEsValido(inputForm: string) {
