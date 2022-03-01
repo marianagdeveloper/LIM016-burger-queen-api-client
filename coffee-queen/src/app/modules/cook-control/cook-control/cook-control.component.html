@@ -1,49 +1,22 @@
-<!-- <div class="bg-skeleton scrollOrders"> -->
-  <!-- Legend -->
+<!-- Legend -->
   <div class="d-flex justify-content-between groupLegend mb-3 ">
-    <div class="pointerLegend">
+    <div class="pointerLegend" [routerLink]="['pending']" routerLinkActive="activebutton">
         <img src="../../../../assets/pending.png" alt="" width="25" height="25">
-        <a fragment="pending" (click)="navigateToSection('pending')">Pendiente</a>
+        <a fragment="pending">Pendiente</a>
     </div>
-    <div class="pointerLegend">
+    <div class="pointerLegend" [routerLink]="['delivering']" routerLinkActive="activebutton">
         <img src="../../../../assets/delivering.png" alt="" width="25" height="25">
-        <a fragment="delivering " (click)="navigateToSection('delivering')">En Preparación</a>
+        <a fragment="delivering ">En Preparación</a>
     </div>
-    <div class="pointerLegend">
+    <div class="pointerLegend" [routerLink]="['canceled']" routerLinkActive="activebutton">
       <img src="../../../../assets/canceled.png" width="20" height="20" />
-      <a fragment="canceled" (click)="navigateToSection('canceled')" >Cancelado</a>
+      <a fragment="canceled">Cancelado</a>
     </div>
   </div><!-- Legend -->
 
 <div class="scrollOrders">
-<!-- Section CardsOrder pending -->
-  <section id="pending" class="d-flex flex-wrap justify-content-between">
-    <div class="d-flex flex-wrap mt-3">
-      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'pending'"></app-card-order-cook>
-    </div>
-
-  </section><!-- Section CardsOrder pending -->
-
-  <hr>
-
-<!-- Section CardsOrder delivering -->
-  <section id="delivering" class="d-flex flex-wrap justify-content-between">
-    <div class="d-flex flex-direction-column">
-
-      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order-cook>
-
-    </div>
-  </section><!-- Section CardsOrder delivering -->
-
-  <hr>
-
-  <!-- Section CardsOrder canceled -->
-  <section id="canceled" class="d-flex flex-wrap justify-content-between">
-    <div class="d-flex flex-direction-column">
-
-      <app-card-order-cook [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled'"></app-card-order-cook>
-
-    </div>
-  </section><!-- Section CardsOrder canceled -->
+  <section class="d-flex flex-wrap">
+    <router-outlet></router-outlet>
+  </section>
 </div>
-<!-- </div> -->
+
