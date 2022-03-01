@@ -24,11 +24,11 @@
         outline: 0;
     }*/
      }
-     
-     .scrollOrders {
+     /*   .scrollOrders {
          overflow-y: scroll;
-         max-height: 300px;
-     }
+         margin-top: 50px;
+         max-height: 310px;
+     } */
      
      .classNew {
          top: 210px;
@@ -75,7 +75,7 @@
      }
      
      .activebutton {
-         background: #f38c5d77 !important;
+         background: #8b878336 !important;
          border-radius: 6px;
          display: inline-block;
          cursor: pointer;
@@ -84,4 +84,5 @@
          font-size: 16px;
          text-decoration: none;
          outline: 0;
+         padding: 3px;
      }
