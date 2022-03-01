@@ -11,32 +11,10 @@
          .pointerLegend {
              cursor: pointer;
          }
-         /*
-    .activebutton:hover {
-        background: #8b878336 !important;
-        border-radius: 6px;
-        display: inline-block;
-        cursor: pointer;
-        color: #ffffff;
-        font-family: Arial;
-        font-size: 15px;
-        text-decoration: none;
-        outline: 0;
-    }*/
      }
-     /*   .scrollOrders {
-         overflow-y: scroll;
-         margin-top: 50px;
-         max-height: 310px;
-     } */
-     
      .classNew {
          top: 210px;
      }
-     /* .topSection {
-    top: 200px;
-} */
-     
      .card {
          .btnPedido {
              background-color: #e73434;
@@ -62,25 +40,23 @@
              color: white;
          }
      }
-     
+
      .button {
          border-radius: 6px;
          display: inline-block;
          cursor: pointer;
          color: #111010;
-         font-family: Arial;
          font-size: 15px;
          text-decoration: none;
          outline: 0;
      }
-     
+
      .activebutton {
          background: #8b878336 !important;
          border-radius: 6px;
          display: inline-block;
          cursor: pointer;
          color: #111010;
-         font-family: Arial;
          font-size: 16px;
          text-decoration: none;
          outline: 0;
