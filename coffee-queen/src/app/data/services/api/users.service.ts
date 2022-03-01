@@ -1,5 +1,5 @@
 import { Injectable, Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from './../../../modules/users-control/user-control/user-control.metadata';
 
@@ -9,11 +9,19 @@ import { User } from './../../../modules/users-control/user-control/user-control
 export class UsersService {
 
   @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
+  public headers!:any;
 
   constructor(private http: HttpClient ) { }
+
+
+
   getAllUsers(): Observable<User[]>{
     // fetch('url', {method: GET})
-    return this.http.get<User[]>('http://localhost:3000/users');
+    return this.http.get<User[]>('https://coffeequeen.herokuapp.com/users');
+  }
+  getAllUsersPrueba(header: any): Observable<User[]>{
+    // fetch('url', {method: GET})
+    return this.http.get<User[]>('https://coffeequeen.herokuapp.com/users');
   }
 
   getAllUsersAuth(credential: any): Observable<any>{
