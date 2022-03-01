@@ -1,5 +1,5 @@
 import { Injectable, Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from './../../../modules/users-control/user-control/user-control.metadata';
 
@@ -9,9 +9,11 @@ import { User } from './../../../modules/users-control/user-control/user-control
 export class UsersService {
 
   @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
+  public headers!:any;
 
   constructor(private http: HttpClient ) { }
 
+<<<<<<< HEAD
   getAllUsers(): Observable<User[]> {
 
     const tokenSS: any = sessionStorage.getItem("token")
@@ -24,6 +26,17 @@ export class UsersService {
   };
     // return this.http.get<User[]>('http://localhost:3000/users');
     return this.http.get<any>('https://coffeequeen1.herokuapp.com/users', headers );
+=======
+
+
+  getAllUsers(): Observable<User[]>{
+    // fetch('url', {method: GET})
+    return this.http.get<User[]>('https://coffeequeen.herokuapp.com/users');
+  }
+  getAllUsersPrueba(header: any): Observable<User[]>{
+    // fetch('url', {method: GET})
+    return this.http.get<User[]>('https://coffeequeen.herokuapp.com/users');
+>>>>>>> 9567f2e1c1caeb62ba9c60c5f7cd1ae47bad9a3f
   }
 
   getAllUsersAuth(credential: any): Observable<any>{
