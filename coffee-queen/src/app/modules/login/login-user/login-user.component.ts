@@ -48,50 +48,62 @@ export class LoginUserComponent implements OnInit {
 
   getUserCredentials():any {
     this.isCheck = { user: 'checked'}
-    /* const emailUser = this.loginForm.value.email;
+
+    const emailUser = this.loginForm.value.email;
     const passwordUser = this.loginForm.value.password;
-    const prueba = {
+    const credentials = {
       email: emailUser,
       password: passwordUser
-    } */
+    }
+
+    //auth
+    this.userService.getAllUsersAuth(credentials).subscribe((res)=>{
+      console.log('token:', res);
+      sessionStorage.setItem('token', JSON.stringify(res))
+    })
+
+    //users
     this.userService.getAllUsers().subscribe((res) => {
-      let userValidate: any;
-      const credentials = res.find((a: any) => {
-        const emailUser = this.loginForm.value.email;
-        const passwordUser = this.loginForm.value.password;
-        if (a.email === emailUser && a.password === passwordUser) {
-          userValidate = a.email;
-        }
-        return a.email === emailUser && a.password === passwordUser;
-      });
+      console.log('get all users:', res);
 
-      if (credentials) {
-          let rol = res.filter((a: any) => {
-            if (a.email == userValidate) {
-              this.userData.name = a.name;
-              this.userData.email = a.email;
-              this.userData.roles = a.roles;
-              this.userData.avatar = a.avatar;
-              return a.roles;
-            }
-          });
+      // let userValidate: any;
+      // const credentials = res.find((a: any) => {
+      //   const emailUser = this.loginForm.value.email;
+      //   const passwordUser = this.loginForm.value.password;
+      //   if (a.email === emailUser && a.password === passwordUser) {
+      //     userValidate = a.email;
+      //   }
+      //   return a.email === emailUser && a.password === passwordUser;
+      // });
 
-            if (rol[0].roles.admin) {
-              this.router.navigate(['product']);
-            } else if (rol[0].roles.cook) {
-              this.router.navigate(['cook-control']);
-            } else if (rol[0].roles.waiter) {
-              this.router.navigate(['product']);
-            }
-            this.userService.disparador.next(this.userData);
+      // if (credentials) {
+      //     let rol = res.filter((a: any) => {
+      //       if (a.email == userValidate) {
+      //         this.userData.name = a.name;
+      //         this.userData.email = a.email;
+      //         this.userData.roles = a.roles;
+      //         this.userData.avatar = a.avatar;
+      //         return a.roles;
+      //       }
+      //     });
 
-      } else {
-        this.htmlStr = '*Usuario y/o contraseña inválidos.';
-      }
+      //       if (rol[0].roles.admin) {
+      //         this.router.navigate(['product']);
+      //       } else if (rol[0].roles.cook) {
+      //         this.router.navigate(['cook-control']);
+      //       } else if (rol[0].roles.waiter) {
+      //         this.router.navigate(['product']);
+      //       }
+      //       this.userService.disparador.next(this.userData);
 
-      this.isGetUser = this.userData;
-      return this.isGetUser
+      // } else {
+      //   this.htmlStr = '*Usuario y/o contraseña inválidos.';
+      // }
+
+      // this.isGetUser = this.userData;
+      // return this.isGetUser
    });
+
   }
 
   campoEsValido(inputForm: string) {
