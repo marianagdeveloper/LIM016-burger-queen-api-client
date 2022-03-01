@@ -50,7 +50,6 @@ export class LoginUserComponent implements OnInit {
 
   getUserCredentials():any {
     this.isCheck = { user: 'checked'}
-
     const emailUser = this.loginForm.value.email;
     const passwordUser = this.loginForm.value.password;
     const credentials = {
@@ -58,13 +57,13 @@ export class LoginUserComponent implements OnInit {
       password: passwordUser
     }
 
-    //auth
+    // auth
     this.userService.getAllUsersAuth(credentials).subscribe((res)=>{
       console.log('token:', res);
       sessionStorage.setItem('token', JSON.stringify(res))
     })
 
-    //users
+    // users
     this.userService.getAllUsers().subscribe((res) => {
       console.log('get all users:', res);
 

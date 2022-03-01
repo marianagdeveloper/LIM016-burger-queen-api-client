@@ -15,7 +15,8 @@ export class UsersService {
 
   getAllUsers(): Observable<User[]> {
 
-    const tokenSS: any = sessionStorage.getItem("token")
+    const tokenSS: any = sessionStorage.getItem("token");
+
     const token:  any = JSON.parse(tokenSS).token;
     const headers = {
       headers: {
@@ -24,7 +25,7 @@ export class UsersService {
     },
   };
     // return this.http.get<User[]>('http://localhost:3000/users');
-    return this.http.get<any>('https://coffeequeen1.herokuapp.com/users', headers );
+    return this.http.get<User[]>('https://coffeequeen1.herokuapp.com/users', headers );
   }
 
   getAllUsersAuth(credential: any): Observable<any>{
