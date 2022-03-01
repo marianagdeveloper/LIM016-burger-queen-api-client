@@ -68,42 +68,43 @@ export class LoginUserComponent implements OnInit {
     this.userService.getAllUsers().subscribe((res) => {
       console.log('get all users:', res);
 
-      // let userValidate: any;
-      // const credentials = res.find((a: any) => {
-      //   const emailUser = this.loginForm.value.email;
-      //   const passwordUser = this.loginForm.value.password;
-      //   if (a.email === emailUser && a.password === passwordUser) {
-      //     userValidate = a.email;
-      //   }
-      //   return a.email === emailUser && a.password === passwordUser;
-      // });
+      let userValidate: any;
+      const credentials = res.find((a: any) => {
+        const emailUser = this.loginForm.value.email;
+        const passwordUser = this.loginForm.value.password;
+        // if (a.email === emailUser && a.password === passwordUser) {
+        if (a.email === emailUser) {
+          userValidate = a.email;
+        }
+        return a.email === emailUser;
+      });
 
-      // if (credentials) {
-      //     let rol = res.filter((a: any) => {
-      //       if (a.email == userValidate) {
-      //         this.userData.name = a.name;
-      //         this.userData.email = a.email;
-      //         this.userData.roles = a.roles;
-      //         this.userData.avatar = a.avatar;
-      //         return a.roles;
-      //       }
-      //     });
+      if (credentials) {
+          let rol = res.filter((a: any) => {
+            if (a.email == userValidate) {
+              this.userData.name = a.name;
+              this.userData.email = a.email;
+              this.userData.roles = a.roles;
+              this.userData.avatar = a.avatar;
+              return a.roles;
+            }
+          });
 
-      //       if (rol[0].roles.admin) {
-      //         this.router.navigate(['product']);
-      //       } else if (rol[0].roles.cook) {
-      //         this.router.navigate(['cook-control']);
-      //       } else if (rol[0].roles.waiter) {
-      //         this.router.navigate(['product']);
-      //       }
-      //       this.userService.disparador.next(this.userData);
+            if (rol[0].roles.admin) {
+              this.router.navigate(['product']);
+            } else if (rol[0].roles.cook) {
+              this.router.navigate(['cook-control']);
+            } else if (rol[0].roles.waiter) {
+              this.router.navigate(['product']);
+            }
+            this.userService.disparador.next(this.userData);
 
-      // } else {
-      //   this.htmlStr = '*Usuario y/o contraseña inválidos.';
-      // }
+      } else {
+        this.htmlStr = '*Usuario y/o contraseña inválidos.';
+      }
 
-      // this.isGetUser = this.userData;
-      // return this.isGetUser
+      this.isGetUser = this.userData;
+      return this.isGetUser
    });
 
   }
