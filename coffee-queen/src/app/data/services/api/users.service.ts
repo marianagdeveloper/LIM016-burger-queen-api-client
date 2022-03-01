@@ -12,9 +12,22 @@ export class UsersService {
 
   constructor(private http: HttpClient ) { }
 
-  getAllUsers(): Observable<User[]>{
-    // fetch('url', {method: GET})
-    return this.http.get<User[]>('http://localhost:3000/users');
+  getAllUsers(): Observable<User[]> {
+
+    const tokenSS: any = sessionStorage.getItem("token")
+    const token:  any = JSON.parse(tokenSS).token;
+    const headers = {
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        Authorization: `Bearer ${token}`,
+    },
+  };
+    // return this.http.get<User[]>('http://localhost:3000/users');
+    return this.http.get<any>('https://coffeequeen1.herokuapp.com/users', headers );
+  }
+
+  getAllUsersAuth(credential: any): Observable<any>{
+    return this.http.post<any>('https://coffeequeen1.herokuapp.com/auth', credential);
   }
 
   postUser(newUser: User): Observable<User[]>{
