@@ -28,6 +28,9 @@ export class UsersService {
   getAllUsers(): Observable<any[]> {
     return this.http.get<any>('https://coffeequeen3.herokuapp.com/users');
   }
+  getUser(email:any): Observable<any[]> {
+    return this.http.get<any>(`https://coffeequeen3.herokuapp.com/users/?email=${email}`);
+  }
 
   getAllUsersAuth(credential: any): Observable<any>{
     return this.http.post<any>('https://coffeequeen3.herokuapp.com/auth', credential);
