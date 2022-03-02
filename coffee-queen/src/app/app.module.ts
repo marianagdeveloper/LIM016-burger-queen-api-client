@@ -19,13 +19,9 @@ import { CookControlModule } from './modules/cook-control/cook-control.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AuthInterceptor } from './data/services/interceptor/auth.interceptor';
-
-
-
 // Importing forms module
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {AuthGuard} from './guard/auth.guard'
 
 @NgModule({
 
