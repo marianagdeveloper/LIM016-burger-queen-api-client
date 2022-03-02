@@ -62,7 +62,11 @@ export class LoginUserComponent implements OnInit {
       sessionStorage.setItem('token',(res.token))
       this.userService.getAllUsers().subscribe((res) => {
         console.log('get user:', res);
-
+        res[0].nameUser='Maria',
+        res[0].image='../../assets/admin-avatar.png'
+        this.userService.putUserApi(res[0],res[0]._id).subscribe((data) => {
+        console.log('esta es data',data);
+        });
         let userValidate: any;
         const credentials = res.find((a: any) => {
           const emailUser = this.loginForm.value.email;
