@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
@@ -18,13 +18,14 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { CookControlModule } from './modules/cook-control/cook-control.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AuthInterceptor } from './data/services/interceptor/auth.interceptor';
 
 
 
 // Importing forms module
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {AuthGuard} from './guard/auth.guard'
 
 @NgModule({
 
@@ -34,11 +35,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     SidebarComponent,
     HeaderComponent,
-    
+
 
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     CoreModule,
     FormsModule,
     AppRoutingModule,
@@ -52,9 +53,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
   ],
   providers: [
-    {
+    /* {
       provide: LocationStrategy,
       useClass: PathLocationStrategy,
+    }, */
+
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi:true
     },
   ],
 

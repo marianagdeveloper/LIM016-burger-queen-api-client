@@ -11,21 +11,30 @@ export class UsersService {
   @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
   public headers!:any;
 
+  loggedIn():Boolean{
+    return !!sessionStorage.getItem('token');
+  }
+
+  getToken(){
+    return sessionStorage.getItem('token');
+
+  }
+  removeToken(){
+    return sessionStorage.removeItem('token');
+
+  }
   constructor(private http: HttpClient ) { }
 
   getAllUsers(): Observable<User[]> {
 
-    const tokenSS: any = sessionStorage.getItem("token");
-
-    const token:  any = JSON.parse(tokenSS).token;
+   /*  const token: any = sessionStorage.getItem("token")
     const headers = {
       headers: {
         "Content-Type": "application/json; charset=utf-8",
         Authorization: `Bearer ${token}`,
     },
-  };
-    // return this.http.get<User[]>('http://localhost:3000/users');
-    return this.http.get<User[]>('https://coffeequeen1.herokuapp.com/users', headers );
+  }; */
+    return this.http.get<any>('https://coffeequeen1.herokuapp.com/users');
   }
 
   getAllUsersAuth(credential: any): Observable<any>{
