@@ -31,7 +31,7 @@
                     <img src="{{avatarUser}}" alt="" width="35" height="35" class="rounded-circle ">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-white typeText" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item typeText" [routerLink]="['/login']">Cerrar Sesión</a></li>
+                    <li><a class="dropdown-item typeText" (click)="logout()">Cerrar Sesión</a></li>
 
                 </ul>
             </li>

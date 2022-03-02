@@ -14,11 +14,11 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.rolesUser=this.usersServices.disparador.getValue( ).roles;
-    if (this.rolesUser == undefined) {
+    /* if (this.rolesUser == undefined) {
       this.router.navigate(['login']);
-    } else {
+    } else { */
       this.invalidRoleCook = !this.rolesUser.cook;
-    }
+    //}
 
   }
   flag = false;

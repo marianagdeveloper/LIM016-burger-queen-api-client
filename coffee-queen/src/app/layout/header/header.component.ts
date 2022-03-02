@@ -28,14 +28,23 @@ export class HeaderComponent implements OnInit {
     this.nameUser=this.usersServices.disparador.getValue( ).name;
     this.avatarUser=this.usersServices.disparador.getValue( ).avatar;
     this.rolesUser=this.usersServices.disparador.getValue( ).roles;
-
+/*
    if (this.rolesUser == undefined) {
       this.router.navigate(['login']);
-    } else {
+    } else { */
       this.roleCook = this.rolesUser.cook;
       this.roleWaiter = this.rolesUser.waiter;
       this.roleAdmin = this.rolesUser.admin;
-    }
+    //}
 
   }
+  logout(){
+    this.usersServices.removeToken();
+    this.router.navigate(['login'])
+  }
 }
+/* {
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptor,
+  multi:true
+}, */
