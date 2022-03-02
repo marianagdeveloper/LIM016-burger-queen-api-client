@@ -57,10 +57,6 @@ export class LoginUserComponent implements OnInit {
       email: emailUser,
       password: passwordUser
     }
-
-    //auth
-    console.log("click");
-
     this.userService.getAllUsersAuth(credentials).subscribe((res)=>{
       console.log('token:', res.token);
       sessionStorage.setItem('token',(res.token))

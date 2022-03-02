@@ -26,14 +26,6 @@ export class UsersService {
   constructor(private http: HttpClient ) { }
 
   getAllUsers(): Observable<User[]> {
-
-   /*  const token: any = sessionStorage.getItem("token")
-    const headers = {
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        Authorization: `Bearer ${token}`,
-    },
-  }; */
     return this.http.get<any>('https://coffeequeen1.herokuapp.com/users');
   }
 
@@ -54,3 +46,12 @@ export class UsersService {
   }
 
 }
+
+
+   /*  const token: any = sessionStorage.getItem("token")
+    const headers = {
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        Authorization: `Bearer ${token}`,
+    },
+  }; */

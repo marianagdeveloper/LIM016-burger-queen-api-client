@@ -20,8 +20,6 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     const token: any = sessionStorage.getItem('token');
-
-
     let req = request;
     if (token) {
       req = request.clone({
@@ -30,8 +28,6 @@ export class AuthInterceptor implements HttpInterceptor {
         }
       });
     }
-
-
     return next.handle(req).pipe(
       catchError((err: HttpErrorResponse) => {
 
