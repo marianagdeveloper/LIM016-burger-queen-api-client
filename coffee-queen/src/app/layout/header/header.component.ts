@@ -25,9 +25,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.nameUser=this.usersServices.disparador.getValue( ).name;
-    this.avatarUser=this.usersServices.disparador.getValue( ).avatar;
+    this.nameUser=this.usersServices.disparador.getValue( ).nameUser;
+    this.avatarUser=this.usersServices.disparador.getValue( ).image;
     this.rolesUser=this.usersServices.disparador.getValue( ).roles;
+    console.log("rol",this.rolesUser);
+
 /*
    if (this.rolesUser == undefined) {
       this.router.navigate(['login']);
