@@ -25,24 +25,19 @@ export class UsersService {
   }
   constructor(private http: HttpClient ) { }
 
-  getAllUsers(): Observable<User[]> {
-
-   /*  const token: any = sessionStorage.getItem("token")
-    const headers = {
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        Authorization: `Bearer ${token}`,
-    },
-  }; */
-    return this.http.get<any>('https://coffeequeen1.herokuapp.com/users');
+  getAllUsers(): Observable<any[]> {
+    return this.http.get<any>('https://coffeequeen3.herokuapp.com/users');
   }
 
   getAllUsersAuth(credential: any): Observable<any>{
-    return this.http.post<any>('https://coffeequeen1.herokuapp.com/auth', credential);
+    return this.http.post<any>('https://coffeequeen3.herokuapp.com/auth', credential);
+  }
+  putUserApi(updateUser: any, _idUser:any): Observable<any[]>{
+    return this.http.put<any[]>(`https://coffeequeen3.herokuapp.com/users/${_idUser}`, updateUser)
   }
 
-  postUser(newUser: User): Observable<User[]>{
-    return this.http.post<User[]>('http://localhost:3000/users', newUser);
+  postUser(newUser: any): Observable<any[]>{
+    return this.http.post<any[]>('http://localhost:3000/users', newUser);
   }
 
   putUser(updateUser: User, _idUser:string): Observable<User[]>{
@@ -54,3 +49,12 @@ export class UsersService {
   }
 
 }
+
+
+   /*  const token: any = sessionStorage.getItem("token")
+    const headers = {
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        Authorization: `Bearer ${token}`,
+    },
+  }; */
