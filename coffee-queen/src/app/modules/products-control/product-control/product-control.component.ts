@@ -21,7 +21,7 @@ export class ProductControlComponent implements OnInit {
   public products!: Product[];
   //public file: File = {} as File
   public productsAdd: Product = {
-    id: 0,
+    _id: '',
     name: '',
     price: 0,
     image: '',
@@ -35,7 +35,7 @@ export class ProductControlComponent implements OnInit {
   public description: string = '';
   public previsualizacion: string = '';
   public optionSelected: string = '';
-  public priceProduct: any;
+  public priceProduct: number=0;
   public fileCaptured: any;
   public loading: boolean = false;
   public prueba: any;
@@ -172,11 +172,10 @@ export class ProductControlComponent implements OnInit {
           this.productsAdd.type = 'hamburguers';
           break;
       }
-      this.productsAdd.price = this.priceProduct;
-      //this.uploadFiles ( this.imagen)
+      this.productsAdd.price = Number(this.priceProduct);
       this.productsAdd.image= "../../assets/images/default.png"
       this.productsService
-        .post(`http://localhost:3000/products`, this.productsAdd)
+        .post(this.productsAdd)
         .subscribe((res) => {
           this.loading = false;
           console.log('Carga exitosa', res);
@@ -191,7 +190,7 @@ export class ProductControlComponent implements OnInit {
   };
   cleanProductForm() {
     this.description = '';
-    this.priceProduct = '';
+    this.priceProduct = 0;
     this.optionSelected = 'Seleccione Rol';
   }
 
@@ -222,9 +221,9 @@ export class ProductControlComponent implements OnInit {
       }
     });
 
-  deleteUser(idProduct: number) {
+    deleteProduct(idProduct: string) {
     this.productsService.deleteProduct(idProduct);
-    const data = this.products.filter((item: any) => item.id != idProduct);
+    const data = this.products.filter((item: any) => item._id != idProduct);
     this.products = data;
   }
 

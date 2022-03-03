@@ -30,18 +30,19 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:3000/products');
+    return this.http.get<Product[]>('https://coffeequeen3.herokuapp.com/products');
   }
 
-  public post(url:string, body:any): Observable<Product[]> {
-    return this.http.post<Product[]>(url,body); // POST  
+  public post(body:any): Observable<Product[]> {
+    return this.http.post<Product[]>('https://coffeequeen3.herokuapp.com/products',body); // POST
   }
   putProduct(newProduct: any,idProduct:number): Observable<Product[]>{
     return this.http.put<any[]>(`http://localhost:3000/products/${idProduct}`, newProduct);
-    
+
   }
-  deleteProduct(idProduct: number): Observable<Product[]>{
-   return this.http.delete<Product[]>(`http://localhost:3000/products/${idProduct}`);
+  deleteProduct(idProduct: string): Observable<Product[]>{
+  return this.http.delete<Product[]>(`https://coffeequeen3.herokuapp.com/products/${idProduct}`);
+
   }
 }
 /*  postProduct(newProduct: any){
