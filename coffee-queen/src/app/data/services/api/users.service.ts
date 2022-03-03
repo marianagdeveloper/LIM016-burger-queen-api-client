@@ -17,38 +17,36 @@ export class UsersService {
 
   getToken(){
     return sessionStorage.getItem('token');
-
   }
   removeToken(){
     return sessionStorage.removeItem('token');
-
   }
   constructor(private http: HttpClient ) { }
 
-  getAllUsers(): Observable<any[]> {
-    return this.http.get<any>('https://coffeequeen3.herokuapp.com/users');
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>('https://coffeequeen3.herokuapp.com/users');
   }
-  getUser(email:any): Observable<any[]> {
-    return this.http.get<any>(`https://coffeequeen3.herokuapp.com/users/?email=${email}`);
+  getUserByEmail(email:string): Observable<User> {
+    return this.http.get<User>(`https://coffeequeen3.herokuapp.com/users/${email}`);
   }
 
-  getAllUsersAuth(credential: any): Observable<any>{
+  getTokenAuth(credential: object): Observable<any>{
     return this.http.post<any>('https://coffeequeen3.herokuapp.com/auth', credential);
   }
   putUserApi(updateUser: any, _idUser:any): Observable<any[]>{
     return this.http.put<any[]>(`https://coffeequeen3.herokuapp.com/users/${_idUser}`, updateUser)
   }
 
-  postUser(newUser: any): Observable<any[]>{
-    return this.http.post<any[]>('http://localhost:3000/users', newUser);
+  postUserApi(newUser: any): Observable<User[]>{
+    return this.http.post<User[]>('https://coffeequeen3.herokuapp.com/users/', newUser);
   }
 
   putUser(updateUser: User, _idUser:string): Observable<User[]>{
     return this.http.put<User[]>(`http://localhost:3000/users/${_idUser}`, updateUser)
   }
 
-  deleteUser(idUser: string): Observable<User[]>{
-   return this.http.delete<User[]>(`http://localhost:3000/users/${idUser}`)
+  deleteUserApi(idUser: string): Observable<User[]>{
+   return this.http.delete<User[]>(`https://coffeequeen3.herokuapp.com/users/${idUser}`)
   }
 
 }

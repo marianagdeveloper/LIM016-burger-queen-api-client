@@ -14,10 +14,10 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./user-control.component.scss'],
 })
 export class UserControlComponent implements OnInit {
-  public users!: User[];
-  public newUser: User = {
-    id: '',
-    name: '',
+  public users!: any;
+  public newUser: any = {
+    _id: '',
+    nameUser: '',
     email: '',
     password: '',
     roles: {
@@ -25,7 +25,7 @@ export class UserControlComponent implements OnInit {
       cook: false,
       waiter: false,
     },
-    avatar: '',
+    image: '',
   };
 
   public arrayRole: string[] = [];
@@ -95,7 +95,7 @@ export class UserControlComponent implements OnInit {
 
   addUser() {
     this.newUser={ id: '',
-    name: '',
+    nameUser: '',
     email: '',
     password: '',
     roles: {
@@ -103,30 +103,30 @@ export class UserControlComponent implements OnInit {
       cook: false,
       waiter: false,
     },
-    avatar: '',}
-    this.newUser.name = this.nameUser;
+    image: '',}
+    this.newUser.nameUser = this.nameUser;
     this.newUser.email = this.emailUser;
     this.newUser.password = this.passwordUser;
     switch (this.optionSelected) {
       case 'Jefe de cocina':
         this.newUser.roles = { admin: false, waiter: false, cook: true };
-        this.newUser.avatar = '../../assets/cook-avatar.png';
+        this.newUser.image = '../../assets/cook-avatar.png';
         break;
       case 'Mesero':
         this.newUser.roles = { admin: false, waiter: true, cook: false };
-        this.newUser.avatar = '../../assets/mesero-avatar.png';
+        this.newUser.image = '../../assets/mesero-avatar.png';
         break;
       case 'Administrador':
         this.newUser.roles = { admin: true, waiter: false, cook: false };
-        this.newUser.avatar = '../../assets/admin-avatar.png';
+        this.newUser.image = '../../assets/admin-avatar.png';
         break;
     }
-    this.userService.postUser(this.newUser).subscribe()
+    this.userService.postUserApi(this.newUser).subscribe()
     this.users.push(this.newUser);
     this.cleanUserForm();
   }
   deleteUser(idUser: string) {
-    this.userService.deleteUser(idUser).subscribe();
+    this.userService.deleteUserApi(idUser).subscribe();
     const data = this.users.filter((item: any) => item.id != idUser);
     this.users = data;
   }

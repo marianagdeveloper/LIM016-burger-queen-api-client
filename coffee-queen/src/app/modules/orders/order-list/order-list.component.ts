@@ -33,7 +33,7 @@ export class OrderListComponent implements OnInit {
     client: '',
     products: [
       {
-        id: 0,
+        _id: '',
         name: '',
         price: 0,
         image: '',

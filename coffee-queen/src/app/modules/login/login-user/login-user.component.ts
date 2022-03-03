@@ -19,6 +19,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class LoginUserComponent implements OnInit {
 
   public htmlStr: string = '';
+  public userData2: any;
   public userData: ILoginUsers = {
     name: '',
     email: '',
@@ -46,8 +47,6 @@ export class LoginUserComponent implements OnInit {
       password: ['', Validators.required],
     });
   }
-
-
   getUserCredentials():any {
     this.isCheck = { user: 'checked'}
     const emailUser = this.loginForm.value.email;
@@ -56,12 +55,27 @@ export class LoginUserComponent implements OnInit {
       email: emailUser,
       password: passwordUser
     }
-    this.userService.getAllUsersAuth(credentials).subscribe((res)=>{
+    this.userService.getTokenAuth(credentials).subscribe((res)=>{
       console.log('token:', res.token);
       sessionStorage.setItem('token',(res.token))
+        this.userService.getUserByEmail(emailUser).subscribe((res) =>{
+          console.log(res);
+          console.log(res.roles);
 
-        this.userService.getUser(emailUser).subscribe((res) => console.log('res', res))
+          if (res.roles.admin) {
 
+          this.router.navigate(['product']);
+        } else if (res.roles.cook) {
+          this.router.navigate(['cook-control']);
+        } else if (res.roles.waiter) {
+          this.router.navigate(['product']);
+        }
+        this.userData2=res;
+
+
+        this.userService.disparador.next(this.userData2);
+
+      })
     //   this.userService.getAllUsers().subscribe((res) => {
     //     // console.log('get user:', res);
     //     // res[0].nameUser='Maria',
