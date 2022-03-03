@@ -1,11 +1,11 @@
 export interface Product {
-  id: number;
+  _id: string;
   name: string;
   price: number;
-  image?: any;
-  type?: string;
-  qty?: number;
-  subTotal?: number;
+  image: string;
+  type: string;
+  qty: number;
+  subTotal: number;
   dateEntry: string;
   messageCard?: string;
 }

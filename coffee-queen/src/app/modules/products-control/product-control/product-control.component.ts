@@ -21,7 +21,7 @@ export class ProductControlComponent implements OnInit {
   public products!: Product[];
   //public file: File = {} as File
   public productsAdd: Product = {
-    id: 0,
+    _id: '',
     name: '',
     price: 0,
     image: '',
@@ -35,7 +35,7 @@ export class ProductControlComponent implements OnInit {
   public description: string = '';
   public previsualizacion: string = '';
   public optionSelected: string = '';
-  public priceProduct: any;
+  public priceProduct: number=0;
   public fileCaptured: any;
   public loading: boolean = false;
   public prueba: any;
@@ -93,11 +93,11 @@ export class ProductControlComponent implements OnInit {
       break;
   }
   this.nameProductUpdate = product.name;
-  this.priceProductUpdate = product.price;
+  this.priceProductUpdate =Number( product.price);
   }
   updateProduct(updateProduct:any){
     updateProduct.name = this.nameProductUpdate;
-    updateProduct.price = this.priceProductUpdate;
+    updateProduct.price = Number(this.priceProductUpdate);
 
     switch (this.optionSelectedCategory) {
       case 'cafés/tés':
@@ -120,7 +120,7 @@ export class ProductControlComponent implements OnInit {
         break;
     }
     console.log(updateProduct);
-    this.productsService.putProduct(updateProduct, updateProduct.id);
+    this.productsService.putProductApi(updateProduct, updateProduct._id).subscribe();
   }
   public onFileSelected(event: any) {
     this.imagen = event.target.files[0];
@@ -172,17 +172,14 @@ export class ProductControlComponent implements OnInit {
           this.productsAdd.type = 'hamburguers';
           break;
       }
-      this.productsAdd.price = this.priceProduct;
-      //this.uploadFiles ( this.imagen)
+      this.productsAdd.price = Number(this.priceProduct);
       this.productsAdd.image= "../../assets/images/default.png"
       this.productsService
-        .post(`http://localhost:3000/products`, this.productsAdd)
+        .post(this.productsAdd)
         .subscribe((res) => {
           this.loading = false;
           console.log('Carga exitosa', res);
         });
-
-
         this.products.push(this.productsAdd);
         this.cleanProductForm();
     } catch (e) {
@@ -191,7 +188,7 @@ export class ProductControlComponent implements OnInit {
   };
   cleanProductForm() {
     this.description = '';
-    this.priceProduct = '';
+    this.priceProduct = 0;
     this.optionSelected = 'Seleccione Rol';
   }
 
@@ -222,10 +219,11 @@ export class ProductControlComponent implements OnInit {
       }
     });
 
-  deleteUser(idProduct: number) {
-    this.productsService.deleteProduct(idProduct);
-    const data = this.products.filter((item: any) => item.id != idProduct);
+    deleteProduct(idProduct: string) {
+    this.productsService.deleteProduct(idProduct).subscribe();
+    const data = this.products.filter((item: any) => item._id != idProduct);
     this.products = data;
+    console.log( this.products);
   }
 
 

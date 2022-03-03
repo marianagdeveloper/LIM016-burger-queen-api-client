@@ -1,9 +1,11 @@
 import { IRoles } from '../../login/login-user/login-user.metadata';
 export interface User {
-  id: string;
-  name: string;
+  _id: string;
+  nameUser: string;
   email: string;
   password: string;
   roles: IRoles;
-  avatar?: string;
+  image?: string;
+  updatedAt?:string;
+  createdAt?:string;
 }

@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
-                <td>{{ user.name }}</td>
+                <td>{{ user.nameUser }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.password }}</td>
                 <td *ngIf="user.roles.admin==true">Admin</td>
@@ -26,11 +26,11 @@
                 <td><img class="cursor" (click)="open(content)" src="../../../../assets/bxs-trash.png"></td>
                 <ng-template #content let-modal class="custom-class">
                     <div class="modal-body">
-                        <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar a {{ user.name }} ?</h5>
+                        <h5 class="modal-title" id="modal-basic-title">¿Estás seguro que deseas eliminar a {{ user.nameUser }} ?</h5>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
-                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="deleteUser( user.id)">Eliminar</button>
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="deleteUser( user._id)">Eliminar</button>
                     </div>
                 </ng-template>
                 <ng-template #contentEdit let-modal class="custom-class">

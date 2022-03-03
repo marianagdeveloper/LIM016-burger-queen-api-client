@@ -18,7 +18,7 @@
         <tbody>
             <tr *ngFor="let product of products">
                 <td>{{ product.name }}</td>
-                <td>{{ product.price }}.00</td>
+                <td>{{ product.price }}</td>
                 <td><img width="60" src="{{product.image}}" alt=""></td>
                 <td *ngIf="product.type=='drinks'">Bebidas</td>
                 <td *ngIf="product.type=='juices'">Jugos</td>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputPriceEdit" class="col-form-label">Precio:</label>
-                            <input type="text" class="form-control" id="inputPriceEdit" [(ngModel)]="priceProductUpdate" name="inputPriceEdit">
+                            <input class="form-control" id="inputPriceEdit" [(ngModel)]="priceProductUpdate" name="inputPriceEdit">
                         </div>
                         <label for="select" class="col-form-label w-75">Categoria:</label>
 
@@ -56,7 +56,7 @@
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="button" class="btn btn-secondary" (click)="modal.close('return')">Cancelar</button>
-                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="deleteUser( product.id)">Eliminar</button>
+                        <button type="button" class="btn btn-palet" (click)="modal.close('return')" (click)="deleteProduct( product._id)">Eliminar</button>
                     </div>
                 </ng-template>
             </tr>
@@ -85,13 +85,10 @@
                             <img width="100px" [src]="imagenPrevia" alt="">
                         </div>
                     </div>
-
-
-
                     <div class="mb-3 d-flex">
                         <div>
-                            <label for="recipient-name" class="col-form-label w-50">Precio:</label>
-                            <input type="text" class="form-control w-50" id="recipient-name" [(ngModel)]="priceProduct" [ngModelOptions]="{standalone: true}">
+                            <label for="recipient-name5" class="col-form-label w-50">Precio:</label>
+                            <input class="form-control w-50" id="recipient-name5" [(ngModel)]="priceProduct" [ngModelOptions]="{standalone: true}">
                         </div>
                         <div>
                             <label for="recipient-name" class="col-form-label w-75">Categoria:</label>
