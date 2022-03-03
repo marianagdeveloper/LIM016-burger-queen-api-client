@@ -36,11 +36,14 @@ export class ProductService {
   public post(body:any): Observable<Product[]> {
     return this.http.post<Product[]>('https://coffeequeen3.herokuapp.com/products',body); // POST
   }
-  putProduct(newProduct: any,idProduct:number): Observable<Product[]>{
-    return this.http.put<any[]>(`http://localhost:3000/products/${idProduct}`, newProduct);
+  putProductApi(newProduct: any,idProduct:string): Observable<any[]>{
+    console.log("id de product",idProduct);
+    console.log("new de product",newProduct);
+    return this.http.put<any[]>(`https://coffeequeen3.herokuapp.com/products/${idProduct}`, newProduct);
 
   }
   deleteProduct(idProduct: string): Observable<Product[]>{
+
   return this.http.delete<Product[]>(`https://coffeequeen3.herokuapp.com/products/${idProduct}`);
 
   }

@@ -93,11 +93,11 @@ export class ProductControlComponent implements OnInit {
       break;
   }
   this.nameProductUpdate = product.name;
-  this.priceProductUpdate = product.price;
+  this.priceProductUpdate =Number( product.price);
   }
   updateProduct(updateProduct:any){
     updateProduct.name = this.nameProductUpdate;
-    updateProduct.price = this.priceProductUpdate;
+    updateProduct.price = Number(this.priceProductUpdate);
 
     switch (this.optionSelectedCategory) {
       case 'cafés/tés':
@@ -120,7 +120,7 @@ export class ProductControlComponent implements OnInit {
         break;
     }
     console.log(updateProduct);
-    this.productsService.putProduct(updateProduct, updateProduct.id);
+    this.productsService.putProductApi(updateProduct, updateProduct._id).subscribe();
   }
   public onFileSelected(event: any) {
     this.imagen = event.target.files[0];
@@ -180,8 +180,6 @@ export class ProductControlComponent implements OnInit {
           this.loading = false;
           console.log('Carga exitosa', res);
         });
-
-
         this.products.push(this.productsAdd);
         this.cleanProductForm();
     } catch (e) {
@@ -222,9 +220,10 @@ export class ProductControlComponent implements OnInit {
     });
 
     deleteProduct(idProduct: string) {
-    this.productsService.deleteProduct(idProduct);
+    this.productsService.deleteProduct(idProduct).subscribe();
     const data = this.products.filter((item: any) => item._id != idProduct);
     this.products = data;
+    console.log( this.products);
   }
 
 
