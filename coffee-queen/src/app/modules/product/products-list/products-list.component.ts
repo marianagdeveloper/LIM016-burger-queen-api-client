@@ -10,8 +10,8 @@ import { Product, Products } from '../../../shared/components/card/card-product/
   styleUrls: ['./products-list.component.scss'],
 })
 export class ProductsListComponent implements OnInit {
-  public products?: Products[];
-  public todos!: Products[];
+  public products?: any[];
+  public todos!: any[];
   public getProduct: string = '';
   public array: any;
 
@@ -30,15 +30,15 @@ export class ProductsListComponent implements OnInit {
       } else {
         this.products.forEach((producto) => {
           this.todos.forEach((pedido) => {
-            if (pedido.product.name == producto.product.name) {
-              // producto.qty = pedido.qty;
-              producto.product.messageCard = pedido.product.messageCard;
+            if (pedido.name == producto.name) {
+              producto.qty = pedido.qty;
+              producto.messageCard = pedido.messageCard;
             }
           });
         });
 
         this.products = this.products?.filter(
-          (elem) => elem.product.name.toLowerCase().indexOf(this.getProduct) > -1
+          (elem) => elem.name.toLowerCase().indexOf(this.getProduct) > -1
         );
       }
     });
@@ -50,9 +50,9 @@ export class ProductsListComponent implements OnInit {
       this.todos = this.productService.arrayProducts;
       this.products.forEach((producto) => {
         this.todos.forEach((pedido) => {
-          if (pedido.product.name == producto.product.name) {
-            // producto.qty = pedido.qty;
-            producto.product.messageCard = pedido.product.messageCard;
+          if (pedido.name == producto.name) {
+            producto.qty = pedido.qty;
+            producto.messageCard = pedido.messageCard;
           }
         });
       });

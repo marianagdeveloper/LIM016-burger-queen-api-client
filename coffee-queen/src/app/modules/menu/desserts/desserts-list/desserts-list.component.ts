@@ -9,8 +9,8 @@ import { Product, Products } from '../../../../shared/components/card/card-produ
 })
 export class DessertsListComponent implements OnInit {
 
-  public products!: Products[];
-  public orderDesserts!: Products[];
+  public products!: any[];
+  public orderDesserts!: any[];
 
   constructor(public productService: ProductService) {}
 
@@ -33,8 +33,8 @@ export class DessertsListComponent implements OnInit {
 
   keepQuantityUpdate(products: any, orderProduct: any){
     products.forEach((product: any) => {
-      orderProduct.forEach((order: Products) => {
-        if (order.product.name == product.name) {
+      orderProduct.forEach((order: any) => {
+        if (order.name == product.name) {
            product.qty = order.qty;
         }
       });

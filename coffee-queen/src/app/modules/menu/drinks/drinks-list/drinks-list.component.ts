@@ -9,15 +9,15 @@ import { Product, Products } from './../../../../shared/components/card/card-pro
 })
 export class DrinksListComponent implements OnInit {
 
-  public products?: Products[];
-  public orderDrinks!: Products[];
+  public products?: any[];
+  public orderDrinks!: any[];
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((res) => {
-      let arrayNew: Products[] = [];
-      res.filter((data: Products) => {
-        if (data.product.type === 'drinks') {
+      let arrayNew: any[] = [];
+      res.filter((data: any) => {
+        if (data.type === 'drinks') {
           arrayNew.push(data);
         }
       });
@@ -25,8 +25,8 @@ export class DrinksListComponent implements OnInit {
       this.orderDrinks = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
-        this.orderDrinks.forEach((pedido: Products) => {
-          if (pedido.product.name == producto.product.name) {
+        this.orderDrinks.forEach((pedido: any) => {
+          if (pedido.name == producto.name) {
             producto.qty = pedido.qty;
           }
         });

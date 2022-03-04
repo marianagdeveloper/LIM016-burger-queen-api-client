@@ -9,8 +9,8 @@ import { Product, Products } from 'src/app/shared/components/card/card-product/c
 })
 export class CafesListComponent implements OnInit {
 
-  public products!: Products[];
-  public orderCafe!: Products[];
+  public products!: any[];
+  public orderCafe!: any[];
 
   constructor(public productService: ProductService) {}
 
@@ -25,8 +25,8 @@ export class CafesListComponent implements OnInit {
       this.orderCafe = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
-        this.orderCafe.forEach((pedido: Products) => {
-          if (pedido.product.name == producto.product.name) {
+        this.orderCafe.forEach((pedido: any) => {
+          if (pedido.name == producto.name) {
             producto.qty = pedido.qty;
           }
         });

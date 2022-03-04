@@ -8,15 +8,15 @@ import { Product, Products } from './../../../../shared/components/card/card-pro
   styleUrls: ['./burgers-list.component.scss'],
 })
 export class BurgersListComponent implements OnInit {
-  public products?: Products[];
-  public orderBurger!: Products[];
+  public products?: any[];
+  public orderBurger!: any[];
   constructor(public productService: ProductService) {}
 
   ngOnInit() {
     this.productService.getAllProducts().subscribe((res) => {
-      let arrayNew: Products[] = [];
-      res.filter((data: Products) => {
-        if (data.product.type === 'hamburguers') {
+      let arrayNew: any[] = [];
+      res.filter((data: any) => {
+        if (data.type === 'hamburguers') {
           arrayNew.push(data);
         }
       });
@@ -24,8 +24,8 @@ export class BurgersListComponent implements OnInit {
       this.orderBurger = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
-        this.orderBurger.forEach((pedido: Products) => {
-          if (pedido.product.name == producto.product.name) {
+        this.orderBurger.forEach((pedido: any) => {
+          if (pedido.name == producto.name) {
              producto.qty = pedido.qty;
           }
         });

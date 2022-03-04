@@ -26,23 +26,23 @@ export class OrderListComponent implements OnInit {
   @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
   @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
-  public products!: Products[];
+  public products!: any[];
   public order: Order = {
     _id: '',
     userId: '',
     client: '',
-    products: [
-      {
+    products: [{
+      qty: 0,
+      subTotal: 0,
+      product: {
         _id: '',
         name: '',
         price: 0,
         image: '',
         type: '',
-        qty: 0,
-        subTotal: 0,
         dateEntry: '',
       },
-    ],
+    }],
     total: 0,
     totalQty: 0,
     numberTable:'',
