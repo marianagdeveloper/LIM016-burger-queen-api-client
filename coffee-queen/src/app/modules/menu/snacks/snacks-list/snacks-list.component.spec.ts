@@ -32,41 +32,34 @@ describe('SnacksListComponent', () => {
   });
 
   it('If keepQuantityUpdate works right', () => {
-    const productTest = [
+    const productTest =[
       {
-        "id": 33,
+        "qty": 2,
+        "subTotal": 6,
+        "product":{
+          "_id": "33",
+          "name": "Granola",
+          "price": 6,
+          "image": "../../assets/images/granola.png",
+          "type": "snacks",
+          "dateEntry": "21/01/2022 09:24:00",
+          }
+        }
+    ]
+
+
+    const orderTest = [{
+      "qty": 2,
+      "subTotal": 6,
+      "product":{
+        "_id": "33",
         "name": "Granola",
         "price": 6,
         "image": "../../assets/images/granola.png",
         "type": "snacks",
         "dateEntry": "21/01/2022 09:24:00",
-        "qty": 2,
-        "subTotal": 6
-      },
-      {
-        "id": 24,
-        "name": "Papas Fritas",
-        "price": 12,
-        "image": "../../assets/images/Papas fritas.png",
-        "type": "snacks",
-        "dateEntry": "21/01/2022 09:24:00",
-        "qty": 0,
-        "subTotal": 12,
-        "messageCard": "Producto agregado."
       }
-    ]
-    const orderTest = [
-      {
-        "id": 33,
-        "name": "Granola",
-        "price": 6,
-        "image": "../../assets/images/granola.png",
-        "type": "snacks",
-        "dateEntry": "21/01/2022 09:24:00",
-        "qty": 2,
-        "subTotal": 6
-      }
-    ]
+      }];
     component.keepQuantityUpdate(productTest, orderTest);
     expect(orderTest[0].qty).toBe(productTest[0].qty);
   });

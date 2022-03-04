@@ -131,21 +131,21 @@ export class OrderListComponent implements OnInit {
 
   increaseQuantity(product: any) {
     this.quantity = product.qty += 1;
-    product.subTotal = this.quantity * product.price;
+    product.subTotal = this.quantity * product.product.price;
     this.order.total += product.subTotal;
-    this.order.total -= product.price * (this.quantity - 1);
+    this.order.total -= product.product.price * (this.quantity - 1);
     this.order.totalQty += 1
   }
 
   decreaseQuantity(product: any) {
     if (product.qty < 2) {
       product.qty = 1;
-      product.subTotal = product.price;
+      product.subTotal = product.product.price;
     } else {
       this.quantity = product.qty -= 1;
-      product.subTotal = this.quantity * product.price;
+      product.subTotal = this.quantity * product.product.price;
       this.order.total -= product.subTotal;
-      this.order.total += product.price * (this.quantity - 1);
+      this.order.total += product.product.price * (this.quantity - 1);
       this.order.totalQty -= 1
     }
     return this.order.total;
@@ -153,18 +153,18 @@ export class OrderListComponent implements OnInit {
 
   deleteProduct(product: any) {
     this.products.filter((item: any) => {
-      if (item.name == product.name) {
+      if (item.name == product.product.name) {
         const newLocal = 'delete';
         this.productService.setProducts(item, newLocal);
       } else {
-        this.deleteSubtotal = product.subTotal - product.price;
+        this.deleteSubtotal = product.subTotal - product.product.price;
       }
     });
     this.products = this.productService.arrayProducts;
     if (product.qty > 1) {
       this.order.total = this.decreaseQuantity(product) - product.subTotal;
     } else {
-      this.order.total = this.decreaseQuantity(product) - product.price;
+      this.order.total = this.decreaseQuantity(product) - product.product.price;
     }
     this.order.totalQty -= product.qty;
   }

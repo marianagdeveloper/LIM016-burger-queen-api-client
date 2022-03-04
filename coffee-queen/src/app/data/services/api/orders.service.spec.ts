@@ -27,20 +27,22 @@ describe('(3) Test of Service OrdersService', () => {
 
     const mockOrderResult =
       {
-        "id": 6,
-        "userName": "Manuel Guerrero",
+        "_id": "6",
+        "userId": "Manuel Guerrero",
         "client": "Mauricio",
-        "products": [
-          {
-            "id": 4,
+        "products": [{
+          "qty": 1,
+          "subTotal": 12,
+          "product": {
+            "_id": "4",
             "name": "Jugo de frutas natural",
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.png",
             "type": "juices",
             "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
           }
+        }
+
         ],
         "total": 12,
         "totalQty": 1,
@@ -64,21 +66,21 @@ describe('(3) Test of Service OrdersService', () => {
   it('Should be create orders', (done: DoneFn) => {
     const mockOrderResult =
       {
-        "id": 6,
-        "userName": "Manuel Guerrero",
+        "_id": "6",
+        "userId": "Manuel Guerrero",
         "client": "Mauricio",
-        "products": [
-          {
-            "id": 4,
+        "products": [{
+          "qty": 1,
+          "subTotal": 12,
+          "product": {
+            "_id": "4",
             "name": "Jugo de frutas natural",
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.png",
             "type": "juices",
             "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
           }
-        ],
+        }],
         "total": 12,
         "totalQty": 1,
         "numberTable": "2",
@@ -101,21 +103,21 @@ describe('(3) Test of Service OrdersService', () => {
   it('Should be change status of orders', (done: DoneFn) => {
     const mockOrderStatus =
     {
-      "id": 6,
-      "userName": "Manuel Guerrero",
+      "_id": "6",
+      "userId": "Manuel Guerrero",
       "client": "Mauricio",
-      "products": [
-        {
-          "id": 4,
+      "products": [{
+        "qty": 1,
+        "subTotal": 12,
+        "product": {
+          "_id": "4",
           "name": "Jugo de frutas natural",
           "price": 12,
           "image": "../../assets/images/Jugo de frutas natural.png",
           "type": "juices",
           "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 12
         }
-      ],
+      }],
       "total": 12,
       "totalQty": 1,
       "numberTable": "2",
@@ -130,20 +132,22 @@ describe('(3) Test of Service OrdersService', () => {
   };
     const mockOrderStatusResult =
       {
-        "id": 6,
-        "userName": "Manuel Guerrero",
+        "_id": "6",
+        "userId": "Manuel Guerrero",
         "client": "Mauricio",
-        "products": [
-          {
-            "id": 4,
+        "products": [{
+          "qty": 1,
+          "subTotal": 12,
+          "product": {
+            "_id": "4",
             "name": "Jugo de frutas natural",
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.png",
             "type": "juices",
             "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
           }
+        }
+
         ],
         "total": 12,
         "totalQty": 1,
@@ -158,7 +162,7 @@ describe('(3) Test of Service OrdersService', () => {
         "additional": ""
     };
     httpClientSpyPut.put.and.returnValue(of(mockOrderStatusResult));
-    servicePut.putOrder(mockOrderStatus, mockOrderStatus.id).subscribe((res: any) => {
+    servicePut.putOrder(mockOrderStatus, mockOrderStatus._id).subscribe((res: any) => {
       expect(res).toEqual(mockOrderStatusResult);
     });
     done();

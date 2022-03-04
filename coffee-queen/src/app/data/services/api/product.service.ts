@@ -58,8 +58,6 @@ export class ProductService {
     return this.http.post<Product[]>('https://coffeequeen3.herokuapp.com/products',body); // POST
   }
   putProductApi(newProduct: any,idProduct:string): Observable<any[]>{
-    console.log("id de product",idProduct);
-    console.log("new de product",newProduct);
     return this.http.put<any[]>(`https://coffeequeen3.herokuapp.com/products/${idProduct}`, newProduct);
 
   }

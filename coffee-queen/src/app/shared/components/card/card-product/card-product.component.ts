@@ -71,6 +71,7 @@ export class CardProductComponent implements OnInit {
     this.dataProducts.product.image = this.data.image;
     this.dataProducts.product.type = this.data.type;
     this.dataProducts.product.dateEntry = this.data.dateEntry;
+    this.dataProducts.product.messageCard = this.data.messageCard;
     //this.data.product.image = this.imageService.getImages();
     console.log('this.dataProducts', this.dataProducts);
   }
