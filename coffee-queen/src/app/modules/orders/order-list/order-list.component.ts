@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
+import { Product, Products } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { Order } from './order-list.metadata';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../../data/services/api/orders.service';
@@ -26,10 +26,10 @@ export class OrderListComponent implements OnInit {
   @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
   @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
-  public products!: Product[];
+  public products!: Products[];
   public order: Order = {
-    id: 0,
-    userName: '',
+    _id: '',
+    userId: '',
     client: '',
     products: [
       {
@@ -47,7 +47,7 @@ export class OrderListComponent implements OnInit {
     totalQty: 0,
     numberTable:'',
     status: '',
-    dateEntry: Date,
+    dateEntry: '',
     dateDelivering: '',
     dateDone: '',
     timeResult: '',
@@ -82,7 +82,7 @@ export class OrderListComponent implements OnInit {
   @ViewChild('selfClosingAlert2', {static: false}) selfClosingAlert2!: NgbAlert;
 
   ngOnInit(): void {
-    this.order.userName=this.usersService.disparador.getValue().name;
+    this.order.userId=this.usersService.disparador.getValue().name;
     this.products = this.productService.arrayProducts;
 
       this.products.map((ele: any) => {

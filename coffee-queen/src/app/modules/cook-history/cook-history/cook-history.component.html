@@ -23,8 +23,8 @@
       </thead>
       <tbody class="{{clean}}">
           <tr *ngFor="let order of orders.slice().reverse()">
-              <td>{{ order.id }}</td>
-              <td>{{ order.userName }}</td>
+              <td>{{ order._id }}</td>
+              <td>{{ order.userId }}</td>
               <td>
                 <ul class="mx-1 p-0">
                   <li *ngFor="let product of order.products" style="list-style-type: none;">

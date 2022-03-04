@@ -46,7 +46,7 @@
       <ng-template #content let-modal class="custom-class">
 
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-basic-title">Pedido N° {{ data.id }} : {{ data?.client }}</h5>
+            <h5 class="modal-title" id="modal-basic-title">Pedido N° {{ data._id }} : {{ data?.client }}</h5>
             <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
           </div>
           <div class="modal-body">
@@ -60,7 +60,7 @@
             <p>Adicionales: {{data.additional}}</p>
             <hr>
             <div class="mt-2 mx-4 text-left text-beige">
-              <p>Mesero: {{ data?.userName }}</p>
+              <p>Mesero: {{ data?.userId }}</p>
               <p>Mesa N°: {{ data.numberTable }}</p>
               <p>Creación de pedido: <span>{{cutNameProduct(data.dateEntry)}}</span></p>
               <p *ngIf="data.status != 'pending' && data.status != 'canceled'">Inicio de preparación: {{cutNameProduct(data.dateDelivering)}}</p>

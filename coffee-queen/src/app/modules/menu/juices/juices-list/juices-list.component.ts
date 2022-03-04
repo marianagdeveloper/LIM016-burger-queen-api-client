@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
+import { Product, Products } from 'src/app/shared/components/card/card-product/card-product.metadata';
 
 @Component({
   selector: 'app-juices-list',
@@ -9,8 +9,8 @@ import { Product } from 'src/app/shared/components/card/card-product/card-produc
 })
 export class JuicesListComponent implements OnInit {
 
-  public products?: Product[];
-  public orderJuices!: Product[];
+  public products?: Products[];
+  public orderJuices!: Products[];
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
@@ -24,8 +24,8 @@ export class JuicesListComponent implements OnInit {
       this.orderJuices = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
-        this.orderJuices.forEach((pedido: Product) => {
-          if (pedido.name == producto.name) {
+        this.orderJuices.forEach((pedido: Products) => {
+          if (pedido.product.name == producto.product.name) {
             producto.qty = pedido.qty;
           }
         });

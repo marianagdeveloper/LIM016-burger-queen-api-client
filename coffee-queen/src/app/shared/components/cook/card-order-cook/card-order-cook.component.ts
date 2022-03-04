@@ -11,7 +11,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CardOrderCookComponent implements OnInit {
   @Input() data!: Order;
-  public dateOrder: string = '';
+  public dateOrder?: string[];
   public dateDelivering: any;
   public dateDone: any;
   closeResult = '';
@@ -26,7 +26,7 @@ export class CardOrderCookComponent implements OnInit {
   changeStatusToDelivering(){
     this.data.status='delivering';
     this.data.dateDelivering = new Date().toString();
-    this.ordersService.putOrder(this.data, this.data.id).subscribe();
+    this.ordersService.putOrder(this.data, this.data._id).subscribe();
   }
 
   changeStatusToDone(){
@@ -35,7 +35,7 @@ export class CardOrderCookComponent implements OnInit {
     this.dateDone = new Date();
     this.data.timeResult = this.getDiffDate(this.dateDelivering, this.dateDone)
     this.data.dateDone = this.dateDone.toString();
-    this.ordersService.putOrder(this.data, this.data.id).subscribe();
+    this.ordersService.putOrder(this.data, this.data._id).subscribe();
   }
 
   cutNameProduct(item: string ){
@@ -72,9 +72,9 @@ export class CardOrderCookComponent implements OnInit {
     this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
     let firstNumber = parseInt(this.dateOrder[0].split(':')[0]);
     if (firstNumber<12){
-      this.dateOrder = this.dateOrder + 'am';
+      this.dateOrder[0] = this.dateOrder + 'am';
     } else {
-      this.dateOrder = this.dateOrder + 'pm';
+      this.dateOrder[0] = this.dateOrder + 'pm';
     }
   }
 

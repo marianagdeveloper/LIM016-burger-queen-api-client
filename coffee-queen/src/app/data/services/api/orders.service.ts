@@ -15,14 +15,14 @@ export class OrdersService {
   constructor(private http: HttpClient) { }
 
   getOrder(): Observable<Order[]>{
-    return this.http.get<Order[]>('http://localhost:3000/order');
+    return this.http.get<Order[]>('https://coffeequeen3.herokuapp.com/orders');
   }
 
   postOrder(newOrder: Order): Observable<Order[]>{
     return this.http.post<Order[]>('http://localhost:3000/order', newOrder);
   }
 
-  putOrder(newOrder: Order, _idOrder:number): Observable<Order[]>{
+  putOrder(newOrder: Order, _idOrder:string): Observable<Order[]>{
     return this.http.put<Order[]>(`http://localhost:3000/order/${_idOrder}`, newOrder);
   }
 

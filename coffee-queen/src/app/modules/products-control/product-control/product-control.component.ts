@@ -26,8 +26,6 @@ export class ProductControlComponent implements OnInit {
     price: 0,
     image: '',
     type: '',
-    qty: 0,
-    subTotal: 0,
     dateEntry: '',
   };
   public arrayCategory: string[] = [];

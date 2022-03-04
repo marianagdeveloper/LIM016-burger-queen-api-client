@@ -2,7 +2,7 @@ import { Component, Input, OnInit, Sanitizer, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
-import { Product } from './card-product.metadata';
+import { Product, Products } from './card-product.metadata';
 
 @Component({
   selector: 'app-card-product',
@@ -10,24 +10,27 @@ import { Product } from './card-product.metadata';
   styleUrls: ['./card-product.component.scss'],
 })
 export class CardProductComponent implements OnInit {
-  @Input() data!: Product;
+  @Input() data!: any;
+
 
   public quantity: number = 0;
   public isRepeat: boolean = false;
   public order: Order = {
-    id: 0,
-    userName: '',
+    _id: '',
+    userId: '',
     client: '',
     products: [
       {
-        _id: '',
-        name: '',
-        price: 0,
-        image: '',
-        type: '',
-        dateEntry: '',
         qty: 0,
         subTotal: 0,
+        product: {
+          _id: '',
+          name: '',
+          price: 0,
+          image: '',
+          type: '',
+          dateEntry: ''
+        }
       },
     ],
     total: 0,
@@ -43,7 +46,7 @@ export class CardProductComponent implements OnInit {
     additional: '',
 
   };
-  public products!: Product[];
+  public products!: Products[];
   messageProduct = '';
 
   constructor(public productService: ProductService, private sanitizer: DomSanitizer) {
@@ -51,14 +54,17 @@ export class CardProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
-    //this.data.image = this.imageService.getImages();
+    // this.data.product.image = this.imageService.getImages();
+    console.log('this.data', this.data.image);
+
   }
 
   public get safeUrlPic() { return this.sanitizer.bypassSecurityTrustResourceUrl(this.data.image)}
 
   updateRepeats(productSelected?: any) {
+
     this.products.map((producto) => {
-      if (productSelected.name == producto.name) {
+      if (productSelected.name == producto.product.name) {
         producto.qty = this.data.qty;
         producto.subTotal = this.data.subTotal;
         this.isRepeat = true;
@@ -96,7 +102,7 @@ export class CardProductComponent implements OnInit {
     }
 
     this.products.map((producto) => {
-      if (productSelected.name == producto.name) {
+      if (productSelected.name == producto.product.name) {
         producto.qty = this.quantity;
 
         // in the order(cart) componet qty never be less than zero
