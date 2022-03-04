@@ -1,10 +1,10 @@
-import { Product } from '../../../shared/components/card/card-product/card-product.metadata';
+import { Products } from 'src/app/shared/components/card/card-product/card-product.metadata';
 
 export interface Order {
-  _id: string;
+  _id: string,
   userId: string;
   client: string;
-  products: any[];
+  products: Products[];
   total: number;
   totalQty: number;
   numberTable: string;

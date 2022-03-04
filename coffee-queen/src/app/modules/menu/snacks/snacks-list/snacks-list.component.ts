@@ -35,8 +35,8 @@ export class SnacksListComponent implements OnInit {
 
   keepQuantityUpdate(products: Products[], orderProduct: Products[]){
     products.map((product: any) => {
-      orderProduct.filter((order: Products) => {
-        if (order.product.name == product.name) {
+      orderProduct.filter((order: any) => {
+        if (order.name == product.name) {
            product.qty = order.qty;
         }
       });

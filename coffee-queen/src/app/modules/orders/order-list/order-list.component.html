@@ -35,13 +35,13 @@
                         <button type="button" class="btn btn-light btn-sm" (click)="decreaseQuantity(product)">
               -
             </button>
-                        <!-- <input [attr.disabled]="true" type="text" class="form-control form-control-sm text-center" [(ngModel)]="product.qty" /> -->
+                        <input [attr.disabled]="true" type="text" class="form-control form-control-sm text-center" [(ngModel)]="product.qty" />
                         <button type="button" class="btn btn-light btn-sm" (click)="increaseQuantity(product)">
               +
             </button>
                     </div>
                 </td>
-                <!-- <td>{{ product.subTotal | currency: "S/. " }}</td> -->
+                <td>{{ product.subTotal | currency: "S/. " }}</td>
                 <td class="cursor">
                     <img (click)="deleteProduct(product)" src="../../../../assets/bxs-trash.png" />
                 </td>

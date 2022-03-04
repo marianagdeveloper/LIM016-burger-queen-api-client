@@ -43,7 +43,7 @@ describe('(2) Test of Service UsersService', () => {
       roles: { admin: true, waiter: false, cook: false },
     };
     httpClientSpy.post.and.returnValue(of(mockUserResult));
-    service.postUser(mockUserCredentials).subscribe((res: any) => {
+    service.postUserApi(mockUserCredentials).subscribe((res: any) => {
       expect(res).toEqual(mockUserResult);
     });
     done();
@@ -65,7 +65,7 @@ describe('(2) Test of Service UsersService', () => {
       roles: { admin: true, waiter: false, cook: false },
     };
     httpClientSpyPut.put.and.returnValue(of(mockUserResult));
-    servicePut.putUser(mockUserCredentials, mockUserCredentials.id).subscribe((res: any) => {
+    servicePut.putUserApi(mockUserCredentials, mockUserCredentials.id).subscribe((res: any) => {
       expect(res).toEqual(mockUserResult);
     });
     done();
@@ -75,7 +75,7 @@ describe('(2) Test of Service UsersService', () => {
     const mockUserCredentials = 'Ic2O4Ip';
     const mockUserResult = { };
     httpClientSpyDelete.delete.and.returnValue(of(mockUserResult));
-    serviceDelete.deleteUser(mockUserCredentials).subscribe((res: any) => {
+    serviceDelete.deleteUserApi(mockUserCredentials).subscribe((res: any) => {
       expect(res).toEqual(mockUserResult);
     });
     done();

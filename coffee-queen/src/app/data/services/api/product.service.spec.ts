@@ -31,18 +31,20 @@ describe('(4) Test of Service ProductService', () => {
   it('Should be get products', (done: DoneFn) => {
 
     const mockProductResult =
-    
-          {
-            "id": 4,
-            "name": "Jugo de frutas natural",
-            "price": 12,
-            "image": "../../assets/images/Jugo de frutas natural.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
-          }
-       
+
+    {
+      "qty": 1,
+      "subTotal": 12,
+      "product": {
+        "_id": "4",
+        "name": "Jugo de frutas natural",
+        "price": 12,
+        "image": "../../assets/images/Jugo de frutas natural.png",
+        "type": "juices",
+        "dateEntry": "21/01/2022 09:24:00",
+      }
+    }
+
     httpClientSpyGet.get.and.returnValue(of(mockProductResult));
     serviceGet.getAllProducts().subscribe((res: any) => {
       expect(res).toEqual(mockProductResult);
@@ -51,58 +53,56 @@ describe('(4) Test of Service ProductService', () => {
   });
   it('Should be create product', (done: DoneFn) => {
     const mockProductResult =
-      
-          {
-            "id": 4,
-            "name": "Jugo de frutas natural",
-            "price": 12,
-            "image": "../../assets/images/Jugo de frutas natural.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
-          }
+
+    {
+      "qty": 1,
+      "subTotal": 12,
+      "product": {
+        "_id": "4",
+        "name": "Jugo de frutas natural",
+        "price": 12,
+        "image": "../../assets/images/Jugo de frutas natural.png",
+        "type": "juices",
+        "dateEntry": "21/01/2022 09:24:00",
+      }
+    }
       const url:string='http://localhost:3000/products';
     httpClientSpyPost.post.and.returnValue(of(mockProductResult));
-    servicePost.post(url,mockProductResult).subscribe((res: any) => {
+    servicePost.post(mockProductResult).subscribe((res: any) => {
       expect(res).toEqual(mockProductResult);
     });
     done();
   });
   it('Should be update product', (done: DoneFn) => {
     const mockProduct =
-        {
-          "id": 4,
-          "name": "Jugo de frutas natural",
-          "price": 12,
-          "image": "../../assets/images/Jugo de frutas natural.png",
-          "type": "juices",
-          "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 12
-        }
-     
+    {
+      "_id": "4",
+      "name": "Jugo de frutas natural",
+      "price": 12,
+      "image": "../../assets/images/Jugo de frutas natural.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+    }
+
     const mockProductResult =
-     
-          {
-            "id": 4,
-            "name": "Jugo fresas",
-            "price": 10,
-            "image": "../../assets/images/Jugo de fresas.png",
-            "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
-          }
-     
+
+    {
+      "_id": "4",
+      "name": "Jugo de frutas natural",
+      "price": 12,
+      "image": "../../assets/images/Jugo de frutas natural.png",
+      "type": "juices",
+      "dateEntry": "21/01/2022 09:24:00",
+    }
+
     httpClientSpyPut.put.and.returnValue(of(mockProductResult));
-    servicePut.putProduct(mockProduct, mockProduct.id).subscribe((res: any) => {
+    servicePut.putProductApi(mockProduct, mockProduct._id).subscribe((res: any) => {
       expect(res).toEqual(mockProductResult);
     });
     done();
   });
   it('Should be delete product', (done: DoneFn) => {
-    const mockProductCredentials = 4;
+    const mockProductCredentials = "4";
     const mockProductResult = { };
     httpClientSpyDelete.delete.and.returnValue(of(mockProductResult));
     serviceDelete.deleteProduct(mockProductCredentials).subscribe((res: any) => {

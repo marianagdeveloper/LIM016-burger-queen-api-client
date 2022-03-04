@@ -9,7 +9,6 @@ import { User } from './../../../modules/users-control/user-control/user-control
 export class UsersService {
 
   @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
-  public headers!:any;
 
   loggedIn():Boolean{
     return !!sessionStorage.getItem('token');

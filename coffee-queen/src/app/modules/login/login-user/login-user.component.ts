@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/data/services/api/users.service';
-import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -34,7 +33,7 @@ export class LoginUserComponent implements OnInit {
 
   public isCheck: any;
   public isGetUser: any;
-  public headers!:any;
+
   constructor(
     private formBuilder: FormBuilder,
     public userService: UsersService,

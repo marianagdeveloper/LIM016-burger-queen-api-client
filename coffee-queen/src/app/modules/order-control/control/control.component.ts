@@ -17,18 +17,18 @@ export class ControlComponent implements OnInit {
     _id: '',
     userId: '',
     client: '',
-    products: [
-      {
+    products: [{
+      qty: 0,
+      subTotal: 0,
+      product: {
         _id: '',
         name: '',
         price: 0,
         image: '',
         type: '',
-        qty: 0,
-        subTotal: 0,
         dateEntry: '',
       },
-    ],
+    }],
     total: 0,
     totalQty: 0,
     numberTable: '',

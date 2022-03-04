@@ -9,8 +9,8 @@ import { Product, Products } from 'src/app/shared/components/card/card-product/c
 })
 export class JuicesListComponent implements OnInit {
 
-  public products?: Products[];
-  public orderJuices!: Products[];
+  public products?: any[];
+  public orderJuices!: any[];
   constructor(public productService: ProductService) {}
 
   ngOnInit(): void {
@@ -24,8 +24,8 @@ export class JuicesListComponent implements OnInit {
       this.orderJuices = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
-        this.orderJuices.forEach((pedido: Products) => {
-          if (pedido.product.name == producto.product.name) {
+        this.orderJuices.forEach((pedido: any) => {
+          if (pedido.name == producto.name) {
             producto.qty = pedido.qty;
           }
         });
