@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../data/services/api/product.service';
-import { Product } from '../../../shared/components/card/card-product/card-product.metadata';
+import { Product, Products } from '../../../shared/components/card/card-product/card-product.metadata';
 
 //@Pipe({filter:'filter'})
 
@@ -10,8 +10,8 @@ import { Product } from '../../../shared/components/card/card-product/card-produ
   styleUrls: ['./products-list.component.scss'],
 })
 export class ProductsListComponent implements OnInit {
-  public products?: Product[];
-  public todos!: Product[];
+  public products?: Products[];
+  public todos!: Products[];
   public getProduct: string = '';
   public array: any;
 
@@ -30,15 +30,15 @@ export class ProductsListComponent implements OnInit {
       } else {
         this.products.forEach((producto) => {
           this.todos.forEach((pedido) => {
-            if (pedido.name == producto.name) {
-              producto.qty = pedido.qty;
-              producto.messageCard = pedido.messageCard;
+            if (pedido.product.name == producto.product.name) {
+              // producto.qty = pedido.qty;
+              producto.product.messageCard = pedido.product.messageCard;
             }
           });
         });
 
         this.products = this.products?.filter(
-          (elem) => elem.name.toLowerCase().indexOf(this.getProduct) > -1
+          (elem) => elem.product.name.toLowerCase().indexOf(this.getProduct) > -1
         );
       }
     });
@@ -50,9 +50,9 @@ export class ProductsListComponent implements OnInit {
       this.todos = this.productService.arrayProducts;
       this.products.forEach((producto) => {
         this.todos.forEach((pedido) => {
-          if (pedido.name == producto.name) {
-            producto.qty = pedido.qty;
-            producto.messageCard = pedido.messageCard;
+          if (pedido.product.name == producto.product.name) {
+            // producto.qty = pedido.qty;
+            producto.product.messageCard = pedido.product.messageCard;
           }
         });
       });

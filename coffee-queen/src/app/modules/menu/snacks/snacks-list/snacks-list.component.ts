@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
-import { Product } from '../../../../shared/components/card/card-product/card-product.metadata';
+import { Product, Products } from '../../../../shared/components/card/card-product/card-product.metadata';
 
 @Component({
   selector: 'app-snacks-list',
@@ -9,9 +9,9 @@ import { Product } from '../../../../shared/components/card/card-product/card-pr
 })
 export class SnacksListComponent implements OnInit {
 
-  public products!: Product[];
-  public snacks!: Product[];
-  public orderSnacks!: Product[];
+  public products!: Products[];
+  public snacks!: Products[];
+  public orderSnacks!: Products[];
 
   constructor(public productService: ProductService) {}
 
@@ -33,11 +33,11 @@ export class SnacksListComponent implements OnInit {
     });
   }
 
-  keepQuantityUpdate(products: Product[], orderProduct: Product[]){
+  keepQuantityUpdate(products: Products[], orderProduct: Products[]){
     products.map((product: any) => {
-      orderProduct.filter((order: Product) => {
-        if (order.name == product.name) {
-          product.qty = order.qty;
+      orderProduct.filter((order: Products) => {
+        if (order.product.name == product.name) {
+           product.qty = order.qty;
         }
       });
     });

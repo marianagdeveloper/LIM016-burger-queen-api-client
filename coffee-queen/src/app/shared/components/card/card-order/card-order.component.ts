@@ -13,7 +13,7 @@ export class CardOrderComponent implements OnInit {
   closeResult = '';
   comment = '';
   setcomment = '';
-  dateOrder = "";
+  dateOrder?: string;
   dateOrderCreate = "";
   dateOrderDelivering = "";
   dateOrderDone = "";
@@ -30,21 +30,26 @@ export class CardOrderComponent implements OnInit {
   ngOnInit(): void {
 
     this.ordersService.getOrder().subscribe((res: any) => {
+      console.log('orders:', res);
+
       this.orders = res;
       return res;
     });
-    // date delivered of modal
-    this.dateOrderProcessed = this.data.dateProcessed.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // date canceled of modal
-    this.dateOrderCanceled = this.data.dateCanceled.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // date done of modal
-    this.dateOrderDone = this.data.dateDone.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // date delivering of modal
-    this.dateOrderDelivering = this.data.dateDelivering.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // date pending of modal
-    this.dateOrderCreate = this.data.dateEntry.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // footer card
-    this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
+    // // date delivered of modal
+    // this.dateOrderProcessed = this.data.dateProcessed.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // // date canceled of modal
+    // this.dateOrderCanceled = this.data.dateCanceled.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // // date done of modal
+    // this.dateOrderDone = this.data.dateDone.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // // date delivering of modal
+    // this.dateOrderDelivering = this.data.dateDelivering.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // // date pending of modal
+    // this.dateOrderCreate = this.data.dateEntry.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
+    // // footer card
+    // // this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
+    this.dateOrder = this.data.dateEntry;
+    console.log("🚀 ~ file: card-order.component.ts ~ line 50 ~ CardOrderComponent ~ ngOnInit ~ this.dateOrder", this.dateOrder)
+    console.log("🚀 ~ file: card-order.component.ts ~ line 50 ~ CardOrderComponent ~ ngOnInit ~ this.data.dateEntry", this.data.dateEntry)
     // btn canceled
     this.btnCanceled =  this.data.status != 'delivered' && this.data.status != 'canceled' ? true : false
     // date canceled in modal
@@ -81,13 +86,13 @@ export class CardOrderComponent implements OnInit {
   updateStatus(){
     this.data.status = 'delivered'
     this.data.dateProcessed = new Date().toString();
-    this.ordersService.putOrder(this.data, this.data.id).subscribe();
+    this.ordersService.putOrder(this.data, this.data._id).subscribe();
   }
 
   canceledOrder(){
     this.data.status = 'canceled'
     this.data.dateCanceled = new Date().toString();
-    this.ordersService.putOrder(this.data, this.data.id).subscribe();
+    this.ordersService.putOrder(this.data, this.data._id).subscribe();
   }
 
 }

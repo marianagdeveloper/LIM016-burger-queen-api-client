@@ -8,7 +8,7 @@
       <p>Total productos: {{data.totalQty}}</p>
       <ul class="mx-0">
         <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
-          {{ product.qty }} {{ product.name }}
+          {{ product.product.qty }} {{ product.product.name }}
         </li>
       </ul>
 
@@ -21,16 +21,16 @@
           <p>Total productos: {{data.totalQty}}</p>
           <ul *ngFor="let product of data.products">
             <li style="text-align: left; list-style-type: none">
-              {{ product.qty }}  {{ product.name }}
+              {{ product.product.qty }}  {{ product.product.name }}
             </li>
           </ul>
           <hr>
           <p>Adicionales: {{data.additional}}</p>
           <hr>
           <div class="mt-2 mx-4 text-left text-beige">
-            <p>Mesero: {{ data?.userName }}</p>
-            <p>Pedido N°: {{ data?.id }}</p>
-            <p>Creación de pedido: <span>{{dateOrderCreate}}</span></p>
+            <p>Mesero: {{ data?.userId }}</p>
+            <p>Pedido N°: {{ data?._id }}</p>
+            <p>Creación de pedido: <span>{{dateOrder}}</span></p>
             <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{dateOrderDelivering}}</p>
             <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{dateOrderDone}}</p>
             <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Tiempo de preparación: {{data.timeResult}}</p>
@@ -52,7 +52,7 @@
           <p>Total productos: {{data.totalQty}}</p>
           <ul *ngFor="let product of data.products">
             <li style="text-align: left; list-style-type: none">
-              {{ product.qty }}  {{ product.name }}
+              {{ product.product.qty }}  {{ product.product.name }}
             </li>
           </ul>
         </div>

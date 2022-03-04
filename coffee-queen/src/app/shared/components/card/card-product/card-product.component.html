@@ -2,14 +2,14 @@
 
     <div>
         <div class="dsc-card__img">
-            <!--             <img class="d-block my-auto mx-auto" src=" {{ data.image }}" alt="">
- --><img class="d-block my-auto mx-auto" [src]="safeUrlPic" alt="">
+            <!--             <img class="d-block my-auto mx-auto" src=" {{ data.image }}" alt=""> -->
+            <img class="d-block my-auto mx-auto" [src]="safeUrlPic" alt="">
 
         </div>
 
         <div class="dsc-card__info">
-            <p>{{ data?.name }}</p>
-            <p>{{ data?.price | currency: "S/. "}}</p>
+            <p>{{ data.name }}</p>
+            <p>{{ data.price | currency: "S/. "}}</p>
             <div class=" inputCant mt-2">
                 <button type="button" class="btn btn-light sizeBtn" (click)="decreaseQuantity(data)">-</button>
                 <input [attr.disabled]="true" type="text" class=" form-control  formInput text-center" [(ngModel)]="data.qty">
@@ -18,7 +18,7 @@
             <!-- <button class="btn btn-success" (click)="getInfoProduct()">Añadir</button> -->
         </div>
     </div>
-    <!-- <p *ngIf="data.qty != 0" class="msgCard text-success">{{ messageProduct }}</p> -->
+    <p *ngIf="data.qty != 0" class="msgCard text-success">{{ messageProduct }}</p>
     <p *ngIf="data.qty != 0" class="msgCard text-success">{{ data?.messageCard }}</p>
     <!-- <ngb-alert #selfClosingAlert class="alertProduct" *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
     </ngb-alert> -->

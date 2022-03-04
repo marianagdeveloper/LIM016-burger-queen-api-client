@@ -14,8 +14,8 @@ export class ControlComponent implements OnInit {
   public activebutton?:string;
   public orders: Order[] = [];
   public order: Order = {
-    id: 0,
-    userName: '',
+    _id: '',
+    userId: '',
     client: '',
     products: [
       {
@@ -33,7 +33,7 @@ export class ControlComponent implements OnInit {
     totalQty: 0,
     numberTable: '',
     status: '',
-    dateEntry: Date,
+    dateEntry: '',
     dateDelivering: '',
     dateDone: '',
     timeResult: '',

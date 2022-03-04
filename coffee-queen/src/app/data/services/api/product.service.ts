@@ -1,7 +1,7 @@
 import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
+import { Product, Products } from 'src/app/shared/components/card/card-product/card-product.metadata';
 import { Order } from '../../../modules/orders/order-list/order-list.metadata';
 
 @Injectable({
@@ -10,16 +10,16 @@ import { Order } from '../../../modules/orders/order-list/order-list.metadata';
 export class ProductService {
   @Output() disparadorProduct: BehaviorSubject<any> = new BehaviorSubject({});
 
-  public products: Product[] = [];
+  public products: Products[] = [];
 
   get arrayProducts() {
     return [...this.products];
   }
 
-  setProducts(producto: Product, flag?: string) {
+  setProducts(producto: Products, flag?: string) {
     if (flag == 'delete') {
       const data = this.products.filter(
-        (item: any) => item.name != producto.name
+        (item: any) => item.name != producto.product.name
       );
       this.products = data
     }
@@ -29,8 +29,8 @@ export class ProductService {
   }
 
   constructor(private http: HttpClient) {}
-  getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('https://coffeequeen3.herokuapp.com/products');
+  getAllProducts(): Observable<Products[]> {
+    return this.http.get<Products[]>('https://coffeequeen3.herokuapp.com/products');
   }
 
   public post(body:any): Observable<Product[]> {

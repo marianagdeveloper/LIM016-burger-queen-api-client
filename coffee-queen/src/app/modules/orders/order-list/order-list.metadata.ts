@@ -1,19 +1,21 @@
 import { Product } from '../../../shared/components/card/card-product/card-product.metadata';
 
 export interface Order {
-  id: number;
-  userName: string;
+  _id: string;
+  userId: string;
   client: string;
-  products: Product[];
+  products: any[];
   total: number;
   totalQty: number;
   numberTable: string;
   status: string;
-  dateEntry: any;
-  dateDelivering: any;
-  dateDone: any;
-  timeResult: any;
-  dateProcessed: any;
+  dateEntry: string;
+  dateDelivering: string;
+  dateDone: string;
+  timeResult: string;
+  dateProcessed: string;
   dateCanceled:string;
   additional: string;
 }
+
+

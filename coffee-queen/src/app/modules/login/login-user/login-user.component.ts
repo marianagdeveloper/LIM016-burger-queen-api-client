@@ -59,8 +59,8 @@ export class LoginUserComponent implements OnInit {
       console.log('token:', res.token);
       sessionStorage.setItem('token',(res.token))
         this.userService.getUserByEmail(emailUser).subscribe((res) =>{
-          console.log(res);
-          console.log(res.roles);
+          // console.log(res);
+          // console.log(res.roles);
 
           if (res.roles.admin) {
 
