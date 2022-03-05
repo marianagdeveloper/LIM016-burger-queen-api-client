@@ -33,27 +33,30 @@ export class OrderListComponent implements OnInit {
     client: '',
     products: [
       {
-        _id: '',
-        name: '',
-        price: 0,
-        image: '',
-        type: '',
         qty: 0,
         subTotal: 0,
-        dateEntry: '',
+        product: {
+          _id: '',
+          name: '',
+          price: 0,
+          image: '',
+          type: '',
+          dateEntry: ''
+        }
       },
     ],
     total: 0,
     totalQty: 0,
-    numberTable:'',
+    numberTable: '',
     status: '',
     dateEntry: '',
     dateDelivering: '',
     dateDone: '',
-    timeResult: '',
+    timeResult:'',
     dateProcessed: '',
     dateCanceled: '',
-    additional:'' ,
+    additional: '',
+
   };
   public deleteSubtotal: number = 0;
   public quantity: number = 0;
@@ -72,6 +75,7 @@ export class OrderListComponent implements OnInit {
     public productService: ProductService,public usersService: UsersService,
     private router: Router,
     public ordersService: OrdersService,
+    public usersServices: UsersService,
     alertConfig: NgbAlertConfig,
     private modalService: NgbModal
     ) {
@@ -82,7 +86,7 @@ export class OrderListComponent implements OnInit {
   @ViewChild('selfClosingAlert2', {static: false}) selfClosingAlert2!: NgbAlert;
 
   ngOnInit(): void {
-    this.order.userId=this.usersService.disparador.getValue().name;
+    // this.order.userId=this.usersService.disparador.getValue().name;
     this.products = this.productService.arrayProducts;
 
       this.products.map((ele: any) => {
@@ -118,9 +122,12 @@ export class OrderListComponent implements OnInit {
     this.order.products = this.productService.arrayProducts;
     this.order.status = 'pending'
     this.order.dateEntry = new Date().toString();
+    this.order.userId= this.usersServices.disparador.getValue( )._id;
     if(this.order.client == '' || this.order.numberTable == '' || this.order.total == 0){
       this._success2.next(`Hay campos vacíos. Verifique antes de enviar por favor.`);
     } else{
+      console.log('this.order', this.order);
+
       this.ordersService.postOrder(this.order).subscribe();
       this.order.products.forEach(product => {
       this.productService.setProducts(product, 'delete');

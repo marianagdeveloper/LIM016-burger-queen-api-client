@@ -19,7 +19,7 @@ export class OrdersService {
   }
 
   postOrder(newOrder: Order): Observable<Order[]>{
-    return this.http.post<Order[]>('http://localhost:3000/order', newOrder);
+    return this.http.post<Order[]>('https://coffeequeen3.herokuapp.com/orders', newOrder);
   }
 
   putOrder(newOrder: Order, _idOrder:string): Observable<Order[]>{

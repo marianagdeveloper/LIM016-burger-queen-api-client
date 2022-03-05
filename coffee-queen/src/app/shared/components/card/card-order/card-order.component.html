@@ -8,7 +8,7 @@
       <p>Total productos: {{data.totalQty}}</p>
       <ul class="mx-0">
         <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
-          {{ product.product.qty }} {{ product.product.name }}
+          {{ product.qty }} {{ product.product.name }}
         </li>
       </ul>
 
@@ -21,7 +21,7 @@
           <p>Total productos: {{data.totalQty}}</p>
           <ul *ngFor="let product of data.products">
             <li style="text-align: left; list-style-type: none">
-              {{ product.product.qty }}  {{ product.product.name }}
+              {{ product.qty }}  {{ product.product.name }}
             </li>
           </ul>
           <hr>
@@ -52,7 +52,7 @@
           <p>Total productos: {{data.totalQty}}</p>
           <ul *ngFor="let product of data.products">
             <li style="text-align: left; list-style-type: none">
-              {{ product.product.qty }}  {{ product.product.name }}
+              {{ product.qty }}  {{ product.product.name }}
             </li>
           </ul>
         </div>
