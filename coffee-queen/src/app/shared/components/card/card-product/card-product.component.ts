@@ -46,16 +46,19 @@ export class CardProductComponent implements OnInit {
     additional: '',
 
   };
-  public products!: Products[];
+  public products!: Product[];
   messageProduct = '';
 
   constructor(public productService: ProductService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
+    // console.log('this.products', this.products);
     this.products = this.productService.arrayProducts;
+
+
     // this.data.product.image = this.imageService.getImages();
-    console.log('this.data', this.data.image);
+    // console.log('this.products', this.products);
 
   }
 
@@ -63,8 +66,12 @@ export class CardProductComponent implements OnInit {
 
   updateRepeats(productSelected?: any) {
 
+    // console.log('productSelected', productSelected);
+    // console.log('this.products', this.products);
+
     this.products.map((producto) => {
-      if (productSelected.name == producto.product.name) {
+
+      if (productSelected.name == producto.name) {
         producto.qty = this.data.qty;
         producto.subTotal = this.data.subTotal;
         this.isRepeat = true;
@@ -73,7 +80,6 @@ export class CardProductComponent implements OnInit {
   }
 
   increaseQuantity(product: any) {
-
     this.quantity = product.qty += 1;
     product.subTotal = this.quantity * product.price;
     this.order.total += product.subTotal;
@@ -102,7 +108,7 @@ export class CardProductComponent implements OnInit {
     }
 
     this.products.map((producto) => {
-      if (productSelected.name == producto.product.name) {
+      if (productSelected.name == producto.name) {
         producto.qty = this.quantity;
 
         // in the order(cart) componet qty never be less than zero

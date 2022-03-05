@@ -26,7 +26,7 @@ export class OrderListComponent implements OnInit {
   @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
   @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
 
-  public products!: Products[];
+  public products!: Product[];
   public order: Order = {
     _id: '',
     userId: '',

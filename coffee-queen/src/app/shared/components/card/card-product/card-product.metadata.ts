@@ -6,6 +6,8 @@ export interface Product {
   type: string;
   dateEntry: string;
   messageCard?: string;
+  qty?: number;
+  subTotal?: number;
 }
 
 export interface Products {

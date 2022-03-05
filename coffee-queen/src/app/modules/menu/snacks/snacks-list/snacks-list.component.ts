@@ -9,9 +9,9 @@ import { Product, Products } from '../../../../shared/components/card/card-produ
 })
 export class SnacksListComponent implements OnInit {
 
-  public products!: Products[];
-  public snacks!: Products[];
-  public orderSnacks!: Products[];
+  public products!: Product[];
+  public snacks!: Product[];
+  public orderSnacks!: Product[];
 
   constructor(public productService: ProductService) {}
 
@@ -33,10 +33,10 @@ export class SnacksListComponent implements OnInit {
     });
   }
 
-  keepQuantityUpdate(products: Products[], orderProduct: Products[]){
+  keepQuantityUpdate(products: Product[], orderProduct: Product[]){
     products.map((product: any) => {
-      orderProduct.filter((order: Products) => {
-        if (order.product.name == product.name) {
+      orderProduct.filter((order: Product) => {
+        if (order.name == product.name) {
            product.qty = order.qty;
         }
       });
