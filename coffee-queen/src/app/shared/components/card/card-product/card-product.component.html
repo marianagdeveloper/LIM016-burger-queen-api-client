@@ -1,4 +1,4 @@
-<fieldset class="dsc-card mt-1  mb-2">
+<fieldset class="dsc-card mt-1 mb-2">
 
     <div>
         <div class="dsc-card__img">
@@ -8,14 +8,14 @@
         </div>
 
         <div class="dsc-card__info">
-            <p>{{ dataProducts.product.name }}</p>
-            <p>{{ dataProducts.product.price | currency: "S/. "}}</p>
+            <p>{{ data.product.name }}</p>
+            <p>{{ data.product.price | currency: "S/. "}}</p>
             <div class=" inputCant mt-2">
-                <button type="button" class="btn btn-light sizeBtn" (click)="decreaseQuantity(dataProducts)">-</button>
-                <input [attr.disabled]="true" type="text" class=" form-control  formInput text-center" [(ngModel)]="dataProducts.qty">
-                <button type="button" class="btn btn-light sizeBtn" (click)="increaseQuantity(dataProducts)">+</button>
+                <button type="button" class="btn btn-light sizeBtn" (click)="decreaseQuantity(data)">-</button>
+                <input [attr.disabled]="true" type="text" class=" form-control  formInput text-center" [(ngModel)]="data.qty">
+                <button type="button" class="btn btn-light sizeBtn" (click)="increaseQuantity(data)">+</button>
             </div>
         </div>
     </div>
-    <p *ngIf="dataProducts.qty != 0" class="msgCard text-success">{{ dataProducts.product.messageCard }}</p>
+    <p *ngIf="data.qty != 0" class="msgCard text-success">{{ data.product.messageCard }}</p>
 </fieldset>

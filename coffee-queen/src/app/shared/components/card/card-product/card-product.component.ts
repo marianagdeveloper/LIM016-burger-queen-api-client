@@ -65,28 +65,29 @@ export class CardProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productService.arrayProducts;
-    this.dataProducts.product._id = this.data._id;
+
+    /* this.dataProducts.product._id = this.data._id;
     this.dataProducts.product.name = this.data.name;
     this.dataProducts.product.price = this.data.price;
     this.dataProducts.product.image = this.data.image;
     this.dataProducts.product.type = this.data.type;
     this.dataProducts.product.dateEntry = this.data.dateEntry;
     this.dataProducts.product.messageCard = this.data.messageCard;
-    //this.data.product.image = this.imageService.getImages();
-    console.log('this.dataProducts', this.dataProducts);
+    console.log('this.products',this.products);
+    console.log('this.dataProducts', this.dataProducts); */
   }
 
-  public get safeUrlPic() { return this.sanitizer.bypassSecurityTrustResourceUrl(this.data.image)}
+  public get safeUrlPic() { return this.sanitizer.bypassSecurityTrustResourceUrl(this.data.product.image)}
 
   updateRepeats(productSelected?: any) {
 
-    this.products = this.productService.arrayProducts;
-    console.log(this.products);
+    //this.products = this.productService.arrayProducts;
+    //console.log(this.products);
 
     this.products.map((producto) => {
       if (productSelected.product.name == producto.product.name) {
-        producto.qty = this.dataProducts.qty;
-        producto.subTotal = this.dataProducts.subTotal;
+        producto.qty = this.data.qty;
+        producto.subTotal = this.data.subTotal;
         this.isRepeat = true;
       }
     });
@@ -102,7 +103,7 @@ export class CardProductComponent implements OnInit {
     this.updateRepeats(product);
     // add new product
     if (!(this.isRepeat || product.qty > 1)) {
-      console.log('product', product);
+      //console.log('product', product);
 
       this.productService.setProducts(product);
       //console.log(product);
@@ -113,9 +114,9 @@ export class CardProductComponent implements OnInit {
 
   decreaseQuantity(productSelected: any) {
     this.quantity = productSelected.qty -= 1;
-    productSelected.subTotal = this.quantity * productSelected.price;
+    productSelected.subTotal = this.quantity * productSelected.product.price;
     this.order.total -= productSelected.subTotal;
-    this.order.total += productSelected.price * (this.quantity - 1);
+    this.order.total += productSelected.product.price * (this.quantity - 1);
 
     // in the card componet qty never be less than zero
     if (this.quantity < 0) {
@@ -126,7 +127,7 @@ export class CardProductComponent implements OnInit {
     }
 
     this.products.map((producto) => {
-      if (productSelected.name == producto.name) {
+      if (productSelected.product.name == producto.product.name) {
         producto.qty = this.quantity;
 
         // in the order(cart) componet qty never be less than zero
@@ -137,7 +138,7 @@ export class CardProductComponent implements OnInit {
         }
 
         this.products = this.productService.arrayProducts;
-        producto.subTotal = producto.qty * productSelected.price;
+        producto.subTotal = producto.qty * productSelected.product.price;
       }
     });
 
