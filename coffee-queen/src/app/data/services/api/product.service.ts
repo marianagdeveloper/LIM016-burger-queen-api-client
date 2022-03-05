@@ -50,8 +50,8 @@ export class ProductService {
   }
 
   constructor(private http: HttpClient) {}
-  getAllProducts(): Observable<Products[]> {
-    return this.http.get<Products[]>('https://coffeequeen3.herokuapp.com/products');
+  getAllProducts(): Observable<any[]> {
+    return this.http.get<any[]>('https://coffeequeen3.herokuapp.com/products');
   }
 
   public post(body:any): Observable<Product[]> {
