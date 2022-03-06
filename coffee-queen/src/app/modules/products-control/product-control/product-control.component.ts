@@ -27,6 +27,8 @@ export class ProductControlComponent implements OnInit {
     image: '',
     type: '',
     dateEntry: '',
+    qty:0,
+    subTotal:0
   };
   public arrayCategory: string[] = [];
   public filesImage: any[] = [];
@@ -117,7 +119,7 @@ export class ProductControlComponent implements OnInit {
         updateProduct.type = 'hamburguers';
         break;
     }
-    console.log(updateProduct);
+
     this.productsService.putProductApi(updateProduct, updateProduct._id).subscribe();
   }
   public onFileSelected(event: any) {

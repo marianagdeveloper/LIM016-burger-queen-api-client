@@ -1,73 +1,72 @@
 <div class="d-flex flex-direction-column">
-  <div class="card text-center m-3">
-    <div class="card-header">
-      <img src="../../../../assets/{{data.status}}.png" alt="" />
-      Mesa N° {{ data?.numberTable }} : {{ data?.client }}
+    <div class="card text-center m-3">
+        <div class="card-header">
+            <img src="../../../../assets/{{data.status}}.png" alt="" /> Mesa N° {{ data?.numberTable }} : {{ data?.client }}
+        </div>
+        <div class="card-body">
+            <p>Total productos: {{data.totalQty}}</p>
+            <ul class="mx-0">
+                <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
+                    {{ product }} {{ product }}
+                </li>
+            </ul>
+
+            <ng-template #content let-modal>
+                <div class="modal-header test">
+                    <h5 class="modal-title" id="modal-basic-title">Mesa N° {{ data?.numberTable }} : {{ data?.client }}</h5>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Total productos: {{data.totalQty}}</p>
+                    <ul *ngFor="let product of data.products">
+                        <li style="text-align: left; list-style-type: none">
+                            {{ product.qty }} {{ product.productId.name }}
+                        </li>
+                    </ul>
+                    <hr>
+                    <p>Adicionales: {{data.additional}}</p>
+                    <hr>
+                    <div class="mt-2 mx-4 text-left text-beige">
+                        <p>Mesero: {{ data?.userId }}</p>
+                        <p>Pedido N°: {{ data?._id }}</p>
+                        <p>Creación de pedido: <span>{{dateOrder}}</span></p>
+                        <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{dateOrderDelivering}}</p>
+                        <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{dateOrderDone}}</p>
+                        <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Tiempo de preparación: {{data.timeResult}}</p>
+                        <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'done'&& data.status != 'canceled'">Entrega de pedido: {{dateOrderProcessed}}</p>
+                        <p *ngIf="dateCanceledModal">Pedido Cancelado: {{dateOrderCanceled}}</p>
+                    </div>
+                </div>
+                <div class="modal-footer test d-flex justify-content-around">
+                    <button type="button" class="btn btn-danger" style="border-radius: 10px" (click)="open(confirm);modal.close('return')" *ngIf="btnCanceled">Cancelar pedido</button>
+                    <button type="button" class="btn btn-warning" style="border-radius: 10px" (click)="modal.close('return')">Volver a pedidos</button>
+                </div>
+            </ng-template>
+
+            <ng-template #confirm let-modal>
+                <div class="modal-body">
+                    <h5>¿Desea cancelar el pedido de la Mesa N° {{ data?.numberTable }} ?</h5>
+                    <hr>
+                    <p>Cliente: {{ data?.client }}</p>
+                    <p>Total productos: {{data.totalQty}}</p>
+                    <ul *ngFor="let product of data.products">
+                        <li style="text-align: left; list-style-type: none">
+                            {{ product.qty }} {{ product.productId.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer d-flex justify-content-around">
+                    <button type="button" class="btn btn-danger" style="width: 120px; border-radius: 10px" (click)="modal.close('cancel')">Si</button>
+                    <button type="button" class="btn btn-warning" style="width: 120px; border-radius: 10px" (click)="modal.close('return')">No</button>
+                </div>
+            </ng-template>
+
+            <div>
+                <button class="btn btn-sm btn-{{data.status}} " (click)="open(content)">Ver detalle</button>
+                <button class="btn btn-sm btn-delivered m-2 " (click)="updateStatus()" *ngIf="data.status == 'done'">Entregado</button>
+            </div>
+
+        </div>
+        <div class="card-footer text-muted">Hora de creación: {{dateOrder}}</div>
     </div>
-    <div class="card-body">
-      <p>Total productos: {{data.totalQty}}</p>
-      <ul class="mx-0">
-        <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
-          {{ product.qty }} {{ product.product.name }}
-        </li>
-      </ul>
-
-      <ng-template #content let-modal >
-        <div class="modal-header test">
-          <h5 class="modal-title" id="modal-basic-title">Mesa N° {{ data?.numberTable }} : {{ data?.client }}</h5>
-          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-        </div>
-        <div class="modal-body">
-          <p>Total productos: {{data.totalQty}}</p>
-          <ul *ngFor="let product of data.products">
-            <li style="text-align: left; list-style-type: none">
-              {{ product.qty }}  {{ product.product.name }}
-            </li>
-          </ul>
-          <hr>
-          <p>Adicionales: {{data.additional}}</p>
-          <hr>
-          <div class="mt-2 mx-4 text-left text-beige">
-            <p>Mesero: {{ data?.userId }}</p>
-            <p>Pedido N°: {{ data?._id }}</p>
-            <p>Creación de pedido: <span>{{dateOrder}}</span></p>
-            <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{dateOrderDelivering}}</p>
-            <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{dateOrderDone}}</p>
-            <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Tiempo de preparación: {{data.timeResult}}</p>
-            <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'done'&& data.status != 'canceled'">Entrega de pedido: {{dateOrderProcessed}}</p>
-            <p *ngIf="dateCanceledModal">Pedido Cancelado: {{dateOrderCanceled}}</p>
-          </div>
-        </div>
-        <div class="modal-footer test d-flex justify-content-around">
-          <button type="button" class="btn btn-danger" style="border-radius: 10px" (click)="open(confirm);modal.close('return')" *ngIf="btnCanceled">Cancelar pedido</button>
-          <button type="button" class="btn btn-warning" style="border-radius: 10px" (click)="modal.close('return')">Volver a pedidos</button>
-        </div>
-      </ng-template>
-
-      <ng-template #confirm let-modal >
-        <div class="modal-body">
-          <h5>¿Desea cancelar el pedido de la Mesa N° {{ data?.numberTable }} ?</h5>
-          <hr>
-          <p>Cliente: {{ data?.client }}</p>
-          <p>Total productos: {{data.totalQty}}</p>
-          <ul *ngFor="let product of data.products">
-            <li style="text-align: left; list-style-type: none">
-              {{ product.qty }}  {{ product.product.name }}
-            </li>
-          </ul>
-        </div>
-        <div class="modal-footer d-flex justify-content-around">
-          <button type="button" class="btn btn-danger" style="width: 120px; border-radius: 10px" (click)="modal.close('cancel')" >Si</button>
-          <button type="button" class="btn btn-warning" style="width: 120px; border-radius: 10px" (click)="modal.close('return')">No</button>
-        </div>
-      </ng-template>
-
-      <div>
-        <button class="btn btn-sm btn-{{data.status}} " (click)="open(content)">Ver detalle</button>
-        <button class="btn btn-sm btn-delivered m-2 " (click)="updateStatus()" *ngIf="data.status == 'done'">Entregado</button>
-      </div>
-
-    </div>
-    <div class="card-footer text-muted">Hora de creación: {{dateOrder}}</div>
-  </div>
 </div>

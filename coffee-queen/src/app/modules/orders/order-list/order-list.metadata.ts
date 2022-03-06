@@ -4,7 +4,7 @@ export interface Order {
   _id: string;
   userId: string;
   client: string;
-  products: any[];
+  products: ProductsOrders[];
   total: number;
   totalQty: number;
   numberTable: string;
@@ -16,6 +16,11 @@ export interface Order {
   dateProcessed: string;
   dateCanceled:string;
   additional: string;
+}
+export interface ProductsOrders {
+      qty: number,
+      subTotal: number,
+      productId: Product
 }
 
 

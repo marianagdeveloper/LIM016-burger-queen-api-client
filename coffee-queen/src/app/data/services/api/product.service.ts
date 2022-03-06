@@ -17,7 +17,6 @@ export class ProductService {
   }
 
   setProducts(producto: Product, flag?: string) {
-    console.log('producto en servicio', producto);
 
     if (flag == 'delete') {
       const data = this.products.filter(

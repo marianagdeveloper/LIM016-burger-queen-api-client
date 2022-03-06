@@ -28,20 +28,20 @@
         </thead>
         <tbody>
             <tr *ngFor="let product of products">
-                <th>{{ product.name }}</th>
-                <td>{{ product.price | currency: "S/. " }}</td>
+                <th>{{ product.productId.name }}</th>
+                <td>{{ product.productId.price | currency: "S/. " }}</td>
                 <td class="inputCant">
                     <div class="input-group input-group-sm mb-1">
-                        <button type="button" class="btn btn-light btn-sm" (click)="decreaseQuantity(product)">
+                        <button type="button" class="btn btn-light btn-sm" (click)="decreaseQuantity(product.productId)">
               -
             </button>
                         <input [attr.disabled]="true" type="text" class="form-control form-control-sm text-center" [(ngModel)]="product.qty" />
-                        <button type="button" class="btn btn-light btn-sm" (click)="increaseQuantity(product)">
+                        <button type="button" class="btn btn-light btn-sm" (click)="increaseQuantity(product.productId)">
               +
             </button>
                     </div>
                 </td>
-                <td>{{ product.subTotal | currency: "S/. " }}</td>
+                <td>{{ product.productId.subTotal | currency: "S/. " }}</td>
                 <td class="cursor">
                     <img (click)="deleteProduct(product)" src="../../../../assets/bxs-trash.png" />
                 </td>
@@ -55,51 +55,34 @@
         </thead>
     </table>
 
-<!-- </div> -->
-  <div class="mb-3 d-flex justify-content-between">
-    <div class="col-6">
-      <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="order.additional"></textarea>
-    </div>
+    <!-- </div> -->
+    <div class="mb-3 d-flex justify-content-between">
+        <div class="col-6">
+            <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="order.additional"></textarea>
+        </div>
 
-    <div class="text-end col-6 align-self-end">
-      <a
-        class="btn btn-danger btn-md bordes m-3"
-        role="button"
-        aria-disabled="true"
-        (click)="open(confirm)"
-        ><img src="../../../../assets/x-light.png"
-      /></a>
-      <a
-        class="btn btn-success btn-md bordes m-3"
-        role="button"
-        aria-disabled="true"
-        (click)="sendOrder()"
-        ><img src="../../../../assets/check-light.png"
-      /></a>
+        <div class="text-end col-6 align-self-end">
+            <a class="btn btn-danger btn-md bordes m-3" role="button" aria-disabled="true" (click)="open(confirm)"><img src="../../../../assets/x-light.png" /></a>
+            <a class="btn btn-success btn-md bordes m-3" role="button" aria-disabled="true" (click)="sendOrder()"><img src="../../../../assets/check-light.png" /></a>
+        </div>
     </div>
-  </div>
-  <ngb-alert #selfClosingAlert2 class="alertProduct" *ngIf="successMessage2" type="danger" (closed)="successMessage2 = ''">
-    <img src="../../../../assets/warning-circle.png" class="mx-2" alt="">{{ successMessage2 }}
-  </ngb-alert>
+    <ngb-alert #selfClosingAlert2 class="alertProduct" *ngIf="successMessage2" type="danger" (closed)="successMessage2 = ''">
+        <img src="../../../../assets/warning-circle.png" class="mx-2" alt="">{{ successMessage2 }}
+    </ngb-alert>
 </div>
 
 <hr />
 
-<ngb-alert
-  #selfClosingAlert
-  *ngIf="successMessageOrder"
-  type="success"
-  (closed)="successMessageOrder = ''"
-  >{{ successMessageOrder }}
+<ngb-alert #selfClosingAlert *ngIf="successMessageOrder" type="success" (closed)="successMessageOrder = ''">{{ successMessageOrder }}
 </ngb-alert>
 
-<ng-template #confirm let-modal >
-  <div class="modal-body">
-    <h5>¿ Desea cancelar el pedido ?</h5>
-  </div>
-  <div class="modal-footer d-flex justify-content-around">
-    <button type="button" class="btn btn-danger" style="width: 120px; border-radius: 10px" (click)="modal.close('cancel')" >Si</button>
-    <button type="button" class="btn btn-warning" style="width: 120px; border-radius: 10px" (click)="modal.close('return')">No</button>
-  </div>
+<ng-template #confirm let-modal>
+    <div class="modal-body">
+        <h5>¿ Desea cancelar el pedido ?</h5>
+    </div>
+    <div class="modal-footer d-flex justify-content-around">
+        <button type="button" class="btn btn-danger" style="width: 120px; border-radius: 10px" (click)="modal.close('cancel')">Si</button>
+        <button type="button" class="btn btn-warning" style="width: 120px; border-radius: 10px" (click)="modal.close('return')">No</button>
+    </div>
 </ng-template>
