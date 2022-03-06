@@ -18,8 +18,8 @@ export class OrdersService {
     return this.http.get<Order[]>('https://coffeequeen3.herokuapp.com/orders');
   }
 
-  postOrder(newOrder: Order): Observable<Order[]>{
-    return this.http.post<Order[]>('https://coffeequeen3.herokuapp.com/orders', newOrder);
+  postOrder(newOrder: any): Observable<any[]>{
+    return this.http.post<any[]>('https://coffeequeen3.herokuapp.com/orders', newOrder);
   }
 
   putOrder(newOrder: Order, _idOrder:string): Observable<Order[]>{

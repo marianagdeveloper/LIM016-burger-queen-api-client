@@ -62,12 +62,11 @@ export class ProductsListComponent implements OnInit {
           configurable: true
         });
       })
-      console.log('this.products en product list', this.products);
       this.todos = this.productService.arrayProducts;
+      console.log("aquiu regresamos a todos",this.todos);
+
       this.products.forEach((producto) => {
         this.todos.forEach((pedido) => {
-          console.log('producto', producto);
-          console.log('pedido', pedido);
 
           if (pedido.name == producto.name) {
             producto.qty = pedido.qty;

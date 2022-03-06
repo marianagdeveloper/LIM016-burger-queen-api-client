@@ -23,14 +23,16 @@ export class CardProductComponent implements OnInit {
       {
         qty: 0,
         subTotal: 0,
-        product: {
+        productId: {
           _id: '',
           name: '',
           price: 0,
           image: '',
           type: '',
-          dateEntry: ''
-        }
+          dateEntry: '',
+          qty: 0,
+          subTotal: 0,
+        },
       },
     ],
     total: 0,
@@ -40,11 +42,10 @@ export class CardProductComponent implements OnInit {
     dateEntry: '',
     dateDelivering: '',
     dateDone: '',
-    timeResult:'',
+    timeResult: '',
     dateProcessed: '',
     dateCanceled: '',
     additional: '',
-
   };
   public products!: Product[];
   messageProduct = '';

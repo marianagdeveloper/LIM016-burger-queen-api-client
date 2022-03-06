@@ -22,18 +22,17 @@ export class CardOrderComponent implements OnInit {
   btnCanceled= false;
   dateCanceledModal= false;
 
-  @Input() data!: Order;
-  public orders!: Order[];
+  @Input() data: any;
+  public orders!: any[];
 
   constructor(public ordersService: OrdersService ,private modalService: NgbModal) {}
 
   ngOnInit(): void {
-
+console.log(this.data);
     this.ordersService.getOrder().subscribe((res: any) => {
       console.log('orders:', res);
-
       this.orders = res;
-      return res;
+      return  this.orders ;
     });
     // // date delivered of modal
     // this.dateOrderProcessed = this.data.dateProcessed.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
@@ -48,8 +47,6 @@ export class CardOrderComponent implements OnInit {
     // // footer card
     // // this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
     this.dateOrder = this.data.dateEntry;
-    console.log("🚀 ~ file: card-order.component.ts ~ line 50 ~ CardOrderComponent ~ ngOnInit ~ this.dateOrder", this.dateOrder)
-    console.log("🚀 ~ file: card-order.component.ts ~ line 50 ~ CardOrderComponent ~ ngOnInit ~ this.data.dateEntry", this.data.dateEntry)
     // btn canceled
     this.btnCanceled =  this.data.status != 'delivered' && this.data.status != 'canceled' ? true : false
     // date canceled in modal

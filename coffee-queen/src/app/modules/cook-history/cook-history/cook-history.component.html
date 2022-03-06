@@ -1,40 +1,40 @@
 <div class="col-12 col-sm-9 col-md-9 mt-4 col-lg-6 mlSearch">
-  <div class="d-flex justify-content-end px-3 pb-4 ">
-      <div class="input-group ">
-          <input class="form-control  w-25" placeholder="Estado" aria-label="Search" [(ngModel)]="getOrder">
-          <span class="input-group-text bgwhite" (click)="cleanSearch()">x</span>
+    <div class="d-flex justify-content-end px-3 pb-4 ">
+        <div class="input-group ">
+            <input class="form-control  w-25" placeholder="Estado" aria-label="Search" [(ngModel)]="getOrder">
+            <span class="input-group-text bgwhite" (click)="cleanSearch()">x</span>
 
-      </div>
-      <button class=" btn btnSearch mx-2" (click)="searchStatus()">Buscar</button>
-  </div>
+        </div>
+        <button class=" btn btnSearch mx-2" (click)="searchStatus()">Buscar</button>
+    </div>
 </div>
 
 <div class="tablePedidos p-3">
 
-  <table class="p-5 table table-striped ">
-      <thead>
-          <tr class="colorPedido">
-              <th scope="col">N° Pedido</th>
-              <th scope="col">Mesero</th>
-              <th scope="col">Productos</th>
-              <th scope="col">Fecha de Creación</th>
-              <th scope="col">Estado</th>
-          </tr>
-      </thead>
-      <tbody class="{{clean}}">
-          <tr *ngFor="let order of orders.slice().reverse()">
-              <td>{{ order._id }}</td>
-              <td>{{ order.userId }}</td>
-              <td>
-                <ul class="mx-1 p-0">
-                  <li *ngFor="let product of order.products" style="list-style-type: none;">
-                    {{ product.qty }} {{ product.name }}
-                  </li>
-                </ul>
-              </td>
-              <td class="">{{cutNameProduct(order.dateEntry)}}</td>
-              <td class="">{{ order.status }}</td>
-          </tr>
-      </tbody>
-  </table>
+    <table class="p-5 table table-striped ">
+        <thead>
+            <tr class="colorPedido">
+                <th scope="col">N° Pedido</th>
+                <th scope="col">Mesero</th>
+                <th scope="col">Productos</th>
+                <th scope="col">Fecha de Creación</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody class="{{clean}}">
+            <tr *ngFor="let order of orders.slice().reverse()">
+                <td>{{ order._id }}</td>
+                <td>{{ order.userId }}</td>
+                <td>
+                    <ul class="mx-1 p-0">
+                        <li *ngFor="let product of order.products" style="list-style-type: none;">
+                            {{ product.qty }} {{ product.productId.name }}
+                        </li>
+                    </ul>
+                </td>
+                <td class="">{{cutNameProduct(order.dateEntry)}}</td>
+                <td class="">{{ order.status }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
