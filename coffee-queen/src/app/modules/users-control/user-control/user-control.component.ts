@@ -14,8 +14,8 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./user-control.component.scss'],
 })
 export class UserControlComponent implements OnInit {
-  public users!: any;
-  public newUser: any = {
+  public users!: User[];
+  public newUser: User = {
     _id: '',
     nameUser: '',
     email: '',
@@ -39,6 +39,8 @@ export class UserControlComponent implements OnInit {
   public passwordUser: string = '';
   public selecte: any;
   public htmlStr: string = '';
+  public viewInput: string = 'd-none';
+  public enabledInput:boolean=true;
   closeResult = '';
   comment = '';
   setcomment = '';
@@ -51,12 +53,16 @@ export class UserControlComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe((data: any) => {
       this.users = data;
+      console.log("dataa",data)
+      console.log("uiserrrrrrr",this.users)
     });
     this.arrayRole = ['Jefe de cocina', 'Mesero', 'Administrador'];
     this.optionSelected = 'Seleccione Rol';
+
   }
 
   capturar(user: any) {
+    console.log("user",user)
     if (user.roles.admin == true) {
       this.optionSelectedRole = 'Administrador';
     }
@@ -66,35 +72,50 @@ export class UserControlComponent implements OnInit {
     if (user.roles.waiter == true) {
       this.optionSelectedRole = 'Mesero';
     }
-    this.nameUserUpdate = user.name;
+    this.nameUserUpdate = user.nameUser;
     this.emailUserUpdate = user.email;
-    this.passwordUserUpdate = user.password;
   }
   updateUser(updateUser: any) {
-    updateUser.name = this.nameUserUpdate;
+    updateUser.nameUser = this.nameUserUpdate;
     updateUser.email = this.emailUserUpdate;
-    updateUser.password = this.passwordUserUpdate;
 
     switch (this.optionSelectedRole) {
       case 'Jefe de cocina':
         updateUser.roles = { admin: false, waiter: false, cook: true };
-        updateUser.avatar = '../../assets/cook-avatar.png';
+        updateUser.image = '../../assets/cook-avatar.png';
         break;
       case 'Mesero':
         updateUser.roles = { admin: false, waiter: true, cook: false };
-        updateUser.avatar = '../../assets/mesero-avatar.png';
+        updateUser.image = '../../assets/mesero-avatar.png';
         break;
       case 'Administrador':
         updateUser.roles = { admin: true, waiter: false, cook: false };
-        updateUser.avatar = '../../assets/admin-avatar.png';
+        updateUser.image = '../../assets/admin-avatar.png';
         break;
     }
-    console.log(updateUser);
-    this.userService.putUser(updateUser, updateUser.id).subscribe();
+    console.log("usuario modificado",updateUser);
+    if(this.passwordUserUpdate!=''){
+      updateUser.password = this.passwordUserUpdate;
+      this.userService.putUserApi(updateUser, updateUser._id).subscribe(res=>{
+        console.log("respuesta",res)
+      });
+    }else{
+      delete updateUser.password;
+      console.log("despues de eliminarlo",updateUser);
+      this.userService.putUserApi(updateUser, updateUser._id).subscribe(res=>{
+        console.log("respuesta",res)
+      });
+    }
+
+  }
+  updatePassword(){
+    this.viewInput='d-block'
+    this.enabledInput=false;
+
   }
 
   addUser() {
-    this.newUser={ id: '',
+    this.newUser={ _id: '',
     nameUser: '',
     email: '',
     password: '',

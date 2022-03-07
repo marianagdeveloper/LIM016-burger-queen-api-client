@@ -1,11 +1,15 @@
-import { IRoles } from '../../login/login-user/login-user.metadata';
-export interface User {
-  _id: string;
-  nameUser: string;
-  email: string;
-  password: string;
-  roles: IRoles;
-  image?: string;
-  updatedAt?:string;
-  createdAt?:string;
+export interface User{
+_id:string,
+email: string,
+password:string,
+nameUser: string,
+roles: IRoles,
+image: string
 }
+
+export interface IRoles{
+admin: boolean,
+cook: boolean,
+waiter:boolean
+}
+

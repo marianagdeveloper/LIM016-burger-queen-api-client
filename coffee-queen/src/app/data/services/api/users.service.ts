@@ -33,8 +33,8 @@ export class UsersService {
   getTokenAuth(credential: object): Observable<any>{
     return this.http.post<any>('https://coffeequeen3.herokuapp.com/auth', credential);
   }
-  putUserApi(updateUser: any, _idUser:any): Observable<any[]>{
-    return this.http.put<any[]>(`https://coffeequeen3.herokuapp.com/users/${_idUser}`, updateUser)
+  putUserApi(updateUser: User, _idUser:string): Observable<User[]>{
+    return this.http.put<User[]>(`https://coffeequeen3.herokuapp.com/users/${_idUser}`, updateUser)
   }
 
   postUserApi(newUser: any): Observable<User[]>{
