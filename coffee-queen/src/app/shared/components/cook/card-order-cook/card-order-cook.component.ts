@@ -20,7 +20,6 @@ export class CardOrderCookComponent implements OnInit {
   constructor(public ordersService: OrdersService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.timeOnCardFooter()
   }
 
   changeStatusToDelivering(){
@@ -31,17 +30,17 @@ export class CardOrderCookComponent implements OnInit {
 
   changeStatusToDone(){
     this.data.status='preparing';
-    /* this.dateDelivering = new Date(this.data.dateDelivering);
+    this.dateDelivering = new Date(this.data.dateDelivering);
     this.dateDone = new Date();
     this.data.timeResult = this.getDiffDate(this.dateDelivering, this.dateDone)
-    this.data.dateDone = this.dateDone.toString(); */
+    this.data.dateDone = this.dateDone.toString();
     this.ordersService.putOrder(this.data, this.data._id).subscribe((res)=>{
       console.log(res);
 
     });
   }
 
-  cutNameProduct(item: string ){
+  cutDate(item: string ){
     return item.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
   }
 
@@ -71,14 +70,19 @@ export class CardOrderCookComponent implements OnInit {
     return this.secondsToString(diff);
   }
 
-  timeOnCardFooter(){
-    this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1);
-    let firstNumber = parseInt(this.dateOrder[0].split(':')[0]);
+  timeToShowOnCard(dateOrder: any){
+    let date = dateOrder.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1).toString().split(':').splice(0,2);
+    let hour = date[0];
+    let minute = date[1];
+    let timeDate = hour.concat(':', minute);
+    date = Array(timeDate);
+    let firstNumber = parseInt(date[0].split(':')[0]);
     if (firstNumber<12){
-      this.dateOrder[0] = this.dateOrder + 'am';
+      date[0] = date + ' am';
     } else {
-      this.dateOrder[0] = this.dateOrder + 'pm';
+      date[0] = date + ' pm';
     }
+    return date;
   }
 
   open(content: any) {

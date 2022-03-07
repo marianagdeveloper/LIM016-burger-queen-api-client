@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { LoginUserComponent } from './modules/login/login-user/login-user.component';
-import { ControlComponent } from './modules/order-control/control/control.component';
 
 import {AuthGuard} from './guard/auth.guard'
 

@@ -6,7 +6,7 @@ import {Order} from '../../orders/order-list/order-list.metadata';
 })
 export class FilterStatusPipe implements PipeTransform {
 
-  transform(items: Order[], filter: any,userId:any): any {
+  transform(items: Order[], filter: any, userId:any): any {
     return items.filter(item => item.status == filter).filter(ele=>ele.userId == userId);
   }
 

@@ -13,8 +13,6 @@
     <table class="p-5 table table-striped ">
         <thead>
             <tr class="colorPedido">
-                <th scope="col">N° Pedido</th>
-                <th scope="col">Mesero</th>
                 <th scope="col">Productos</th>
                 <th scope="col">Total</th>
                 <th scope="col">Fecha de Creación</th>
@@ -22,9 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let order of orders.slice().reverse()">
-                <td>{{ order._id }}</td>
-                <td>{{ order.userId }}</td>
+            <tr *ngFor="let order of orders.slice().reverse() | filterStatusOrders: 'delivered':idPrueba ">
 
                 <td>
                     <ul class="mx-1 p-0">
@@ -33,9 +29,9 @@
                         </li>
                     </ul>
                 </td>
-                <td>{{ order.total }}.00</td>
+                <td>{{ order.total | currency: "S/. " }}</td>
                 <td>{{cutNameProduct(order.dateEntry)}}</td>
-                <td>{{order.status}}</td>
+                <td>Entregado</td>
             </tr>
         </tbody>
     </table>

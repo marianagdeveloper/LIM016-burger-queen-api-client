@@ -64,25 +64,9 @@ export class CardOrderComponent implements OnInit {
       return  this.orders ;
     });
     const idPrueba = this.userService.disparador.getValue()._id;
-    console.log(idPrueba);
     this.userService.getUserByEmail(idPrueba).subscribe((res)=>{
       this.nameUser = res.nameUser;
     })
-    // // date delivered of modal
-    //this.dateOrderProcessed = this.data.dateProcessed.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // // date canceled of modal
-    //this.dateOrderCanceled = this.data.dateCanceled.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // // date done of modal
-    //this.dateOrderDone = this.data.dateDone.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // // date delivering of modal
-    //this.dateOrderDelivering = this.data.dateDelivering.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // // date pending of modal
-    //this.dateOrderCreate = this.data.dateEntry.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
-    // // footer card
-    //this.dateOrder = this.data.dateEntry.split(' ').splice(4, 4).toString().replace(/,+/g, ' ').split('GMT').splice(0, 1).toString().split(':').splice(0,2);
-
-    //console.log(this.dateOrder);
-
     // btn canceled
     this.btnCanceled =  this.data.status != 'delivered' && this.data.status != 'canceled' ? true : false
     // date canceled in modal
@@ -102,6 +86,10 @@ export class CardOrderComponent implements OnInit {
       date[0] = date + ' pm';
     }
     return date;
+  }
+
+  cutDate(item: string ){
+    return item.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
   }
 
   open(content: any) {

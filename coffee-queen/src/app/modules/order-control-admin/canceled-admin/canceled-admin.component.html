@@ -13,7 +13,6 @@
     <table class="p-5 table table-striped ">
         <thead>
             <tr class="colorPedido">
-                <th scope="col">N° Pedido</th>
                 <th scope="col">Mesero</th>
                 <th scope="col">Productos</th>
                 <th scope="col">Total</th>
@@ -22,7 +21,6 @@
         </thead>
         <tbody>
             <tr *ngFor="let order of orders.slice().reverse() |  filterStatusAdmin :'canceled' ">
-                <td>{{ order._id }}</td>
                 <td>{{ order.userId }}</td>
 
                 <td>
@@ -32,7 +30,7 @@
                         </li>
                     </ul>
                 </td>
-                <td>{{ order.total }}.00</td>
+                <td>{{ order.total | currency: "S/. " }}</td>
                 <td>{{cutNameProduct(order.dateEntry)}}</td>
             </tr>
         </tbody>

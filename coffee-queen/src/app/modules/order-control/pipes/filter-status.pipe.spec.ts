@@ -1,11 +1,13 @@
 import { FilterStatusPipe } from './filter-status.pipe';
 const dataOrder = [{
-  "id": 1,
-  "userName": "Maria",
+  "_id": '1',
+  "userId": "Maria",
   "client": "Juanita",
-  "products": [
-    {
-      "id": 2,
+  "products": [{
+    "qty": 2,
+    "subTotal": 30,
+    "productId": {
+      "_id": '2',
       "name": "Café con leche",
       "price": 15,
       "image": "../../assets/images/cafe_leche.png",
@@ -14,6 +16,8 @@ const dataOrder = [{
       "qty": 2,
       "subTotal": 30
     }
+  }
+
   ],
   "total": 30,
   "totalQty": 2,
@@ -37,7 +41,7 @@ describe('FilterStatusPipe', () => {
   it('Should be return the status filter', () => {
     const pipe = new FilterStatusPipe();
 
-    const result = pipe.transform(dataOrder,'delivered')
+    const result = pipe.transform(dataOrder,'delivered', dataOrder)
     expect(result).toEqual(dataOrder);
   });
 
