@@ -14,8 +14,8 @@ export class OrdersService {
 
   constructor(private http: HttpClient) { }
 
-  getOrder(): Observable<Order[]>{
-    return this.http.get<Order[]>('https://coffeequeen3.herokuapp.com/orders');
+  getOrder(): Observable<OrderRecive[]>{
+    return this.http.get<OrderRecive[]>('https://coffeequeen3.herokuapp.com/orders');
   }
 
   postOrder(newOrder: any): Observable<any[]>{

@@ -8,7 +8,6 @@
             <tr class="colorPedido">
                 <th scope="col">Nombres y Apellidos</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Contraseña</th>
                 <th scope="col">Roles</th>
                 <th scope="col">Acciones</th>
                 <th scope="col"></th>
@@ -18,7 +17,6 @@
             <tr *ngFor="let user of users">
                 <td>{{ user.nameUser }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.password }}</td>
                 <td *ngIf="user.roles.admin==true">Admin</td>
                 <td *ngIf="user.roles.waiter==true">Mesero</td>
                 <td *ngIf="user.roles.cook==true">Jefe de cocina</td>

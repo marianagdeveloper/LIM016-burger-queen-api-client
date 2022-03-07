@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../../data/services/api/orders.service';
 
-import { Order } from '../../orders/order-list/order-list.metadata';
+import { Order, OrderRecive } from '../../orders/order-list/order-list.metadata';
 
 @Component({
   selector: 'app-cook-history',
@@ -9,7 +9,7 @@ import { Order } from '../../orders/order-list/order-list.metadata';
   styleUrls: ['./cook-history.component.scss']
 })
 export class CookHistoryComponent implements OnInit {
-  public orders: Order[] = [];
+  public orders: OrderRecive[] = [];
   public reversedListOrder: Order[] = [];
   public getOrder: string = '';
   public clean: string = '';

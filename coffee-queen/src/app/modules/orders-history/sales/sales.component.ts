@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from './../../../data/services/api/orders.service';
-import { Order } from 'src/app/modules/orders/order-list/order-list.metadata';
+import { Order, OrderRecive } from 'src/app/modules/orders/order-list/order-list.metadata';
 
 @Component({
   selector: 'app-sales',
@@ -8,7 +8,7 @@ import { Order } from 'src/app/modules/orders/order-list/order-list.metadata';
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent implements OnInit {
-  public orders: Order[] = [];
+  public orders: OrderRecive[] = [];
   constructor(public ordersService: OrdersService) { }
   public delivered = 'delivered';
   public getOrder: string = 'Entregado';

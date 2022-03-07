@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/data/services/api/users.service';
 import { OrdersService } from '../../../data/services/api/orders.service';
 import { Order } from '../../orders/order-list/order-list.metadata';
 
@@ -9,7 +10,8 @@ import { Order } from '../../orders/order-list/order-list.metadata';
 })
 export class PendingComponent implements OnInit {
   public orders: Order[] = [];
-  constructor(public ordersService: OrdersService) {}
+  public idPrueba:string='';
+  constructor(public ordersService: OrdersService,public userService: UsersService ) {}
 
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((res: any) => {
@@ -17,5 +19,6 @@ export class PendingComponent implements OnInit {
 
       return this.orders;
     });
+    this.idPrueba = this.userService.disparador.getValue()._id;
   }
 }
