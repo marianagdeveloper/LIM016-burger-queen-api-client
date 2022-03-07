@@ -9,7 +9,7 @@
         <p><strong>Total productos: {{data.totalQty}}</strong> </p>
         <ul class="mx-1 p-0">
             <li *ngFor="let order of data.products | slice:0:2" class="text-center" style="list-style-type: none;">
-                {{ order.qty }} {{ order.productId.name }}
+                {{ order.qty }} {{ order.product.name }}
             </li>
         </ul>
 
@@ -55,7 +55,7 @@
                 <p>Total productos: {{data.totalQty}}</p>
                 <ul *ngFor="let product of data.products">
                     <li style="text-align: left; list-style-type: none">
-                        {{ product.qty }} {{ product.productId.name }}
+                        {{ product.qty }} {{ product.product.name }}
                     </li>
                 </ul>
                 <hr>
@@ -68,7 +68,7 @@
                     <p *ngIf="data.status != 'pending' && data.status != 'canceled'">Inicio de preparación: {{cutNameProduct(data.dateDelivering)}}</p>
                     <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{cutNameProduct(data.dateDone)}}</p>
                     <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Tiempo de preparación: {{data.timeResult}}</p>
-                    <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'done'&& data.status != 'canceled'">Entrega de pedido: {{cutNameProduct(data.dateProcessed)}}</p>
+                    <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'preparing' && data.status != 'canceled'">Entrega de pedido: {{cutNameProduct(data.dateProcessed)}}</p>
                     <p *ngIf="data.status == 'canceled'">Pedido Cancelado: {{cutNameProduct(data.dateCanceled)}}</p>
                 </div>
             </div>

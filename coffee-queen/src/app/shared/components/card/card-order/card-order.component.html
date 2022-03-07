@@ -7,7 +7,7 @@
             <p>Total productos: {{data.totalQty}}</p>
             <ul class="mx-0">
                 <li *ngFor="let product of data.products | slice:0:2" style="text-align: center; list-style-type: none">
-                    {{ product }} {{ product }}
+                    {{ product.qty }} {{ product.product.name}}
                 </li>
             </ul>
 
@@ -20,20 +20,20 @@
                     <p>Total productos: {{data.totalQty}}</p>
                     <ul *ngFor="let product of data.products">
                         <li style="text-align: left; list-style-type: none">
-                            {{ product.qty }} {{ product.productId.name }}
+                            {{ product.qty }} {{ product.product.name }}
                         </li>
                     </ul>
                     <hr>
                     <p>Adicionales: {{data.additional}}</p>
                     <hr>
                     <div class="mt-2 mx-4 text-left text-beige">
-                        <p>Mesero: {{ data?.userId }}</p>
+                        <p>Mesero: {{ nameUser }}</p>
                         <p>Pedido N°: {{ data?._id }}</p>
-                        <p>Creación de pedido: <span>{{dateOrder}}</span></p>
+                        <p>Creación de pedido: <span>{{timeToShowOnCard(data.dateEntry)}}</span></p>
                         <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{dateOrderDelivering}}</p>
                         <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{dateOrderDone}}</p>
                         <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Tiempo de preparación: {{data.timeResult}}</p>
-                        <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'done'&& data.status != 'canceled'">Entrega de pedido: {{dateOrderProcessed}}</p>
+                        <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'preparing' && data.status != 'canceled'">Entrega de pedido: {{dateOrderProcessed}}</p>
                         <p *ngIf="dateCanceledModal">Pedido Cancelado: {{dateOrderCanceled}}</p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <p>Total productos: {{data.totalQty}}</p>
                     <ul *ngFor="let product of data.products">
                         <li style="text-align: left; list-style-type: none">
-                            {{ product.qty }} {{ product.productId.name }}
+                            {{ product.qty }} {{ product.product.name }}
                         </li>
                     </ul>
                 </div>
@@ -63,10 +63,10 @@
 
             <div>
                 <button class="btn btn-sm btn-{{data.status}} " (click)="open(content)">Ver detalle</button>
-                <button class="btn btn-sm btn-delivered m-2 " (click)="updateStatus()" *ngIf="data.status == 'done'">Entregado</button>
+                <button class="btn btn-sm btn-delivered m-2 " (click)="updateStatus()" *ngIf="data.status == 'preparing'">Entregado</button>
             </div>
 
         </div>
-        <div class="card-footer text-muted">Hora de creación: {{dateOrder}}</div>
+        <div class="card-footer text-muted">Hora de creación: {{timeToShowOnCard(data.dateEntry)}}</div>
     </div>
 </div>

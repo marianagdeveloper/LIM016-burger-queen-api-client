@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { Order } from '../../../../modules/orders/order-list/order-list.metadata';
+import { Order, OrderRecive } from '../../../../modules/orders/order-list/order-list.metadata';
 import { OrdersService } from '../../../../data/services/api/orders.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,7 +10,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   encapsulation: ViewEncapsulation.None
 })
 export class CardOrderCookComponent implements OnInit {
-  @Input() data!: Order;
+  @Input() data!: OrderRecive;
   public dateOrder?: string[];
   public dateDelivering: any;
   public dateDone: any;
@@ -30,12 +30,15 @@ export class CardOrderCookComponent implements OnInit {
   }
 
   changeStatusToDone(){
-    this.data.status='done';
-    this.dateDelivering = new Date(this.data.dateDelivering);
+    this.data.status='preparing';
+    /* this.dateDelivering = new Date(this.data.dateDelivering);
     this.dateDone = new Date();
     this.data.timeResult = this.getDiffDate(this.dateDelivering, this.dateDone)
-    this.data.dateDone = this.dateDone.toString();
-    this.ordersService.putOrder(this.data, this.data._id).subscribe();
+    this.data.dateDone = this.dateDone.toString(); */
+    this.ordersService.putOrder(this.data, this.data._id).subscribe((res)=>{
+      console.log(res);
+
+    });
   }
 
   cutNameProduct(item: string ){

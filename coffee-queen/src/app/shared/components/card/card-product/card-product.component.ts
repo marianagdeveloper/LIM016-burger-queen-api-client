@@ -10,7 +10,7 @@ import { Product, Products } from './card-product.metadata';
   styleUrls: ['./card-product.component.scss'],
 })
 export class CardProductComponent implements OnInit {
-  @Input() data!: any;
+  @Input() data!: Product;
 
 
   public quantity: number = 0;
@@ -54,22 +54,12 @@ export class CardProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log('this.products', this.products);
     this.products = this.productService.arrayProducts;
-
-
-    // this.data.product.image = this.imageService.getImages();
-    // console.log('this.products', this.products);
-
   }
 
   public get safeUrlPic() { return this.sanitizer.bypassSecurityTrustResourceUrl(this.data.image)}
 
-  updateRepeats(productSelected?: any) {
-
-    // console.log('productSelected', productSelected);
-    // console.log('this.products', this.products);
-
+  updateRepeats(productSelected: Product) {
     this.products.map((producto) => {
 
       if (productSelected.name == producto.name) {
@@ -80,7 +70,7 @@ export class CardProductComponent implements OnInit {
     });
   }
 
-  increaseQuantity(product: any) {
+  increaseQuantity(product: Product) {
     this.quantity = product.qty += 1;
     product.subTotal = this.quantity * product.price;
     this.order.total += product.subTotal;
@@ -94,7 +84,7 @@ export class CardProductComponent implements OnInit {
 
   }
 
-  decreaseQuantity(productSelected: any) {
+  decreaseQuantity(productSelected: Product) {
     this.quantity = productSelected.qty -= 1;
     productSelected.subTotal = this.quantity * productSelected.price;
     this.order.total -= productSelected.subTotal;
