@@ -5,7 +5,7 @@
             <h4 class="colorLetra">Agregar Pedido</h4>
         </div>
         <div class="d-flex flex-row align-items-center">
-            <span class="grosorLetra my-3">Cliente:</span> <input type="text" class="borde ml-3" [(ngModel)]="order.client">
+            <span class="grosorLetra my-3">Cliente:</span> <input type="text" class="borde ml-3" [(ngModel)]="orderPrueba.client">
             <span class="colorLetra grosorLetra ml-3">Mesa:</span>
             <select class="form-select ml-3" aria-label="Default select example" [(ngModel)]="optionSelected" (change)="captureNumberTable()">
                 <option value="0">N°</option>
@@ -28,8 +28,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let product of products">
-                <th>{{ product.productId.name }}</th>
-                <td>{{ product.productId.price | currency: "S/. " }}</td>
+                <th>{{ product.name }}</th>
+                <td>{{ product.price | currency: "S/. " }}</td>
                 <td class="inputCant">
                     <div class="input-group input-group-sm mb-1">
                         <button type="button" class="btn btn-light btn-sm" (click)="decreaseQuantity(product)">
@@ -41,17 +41,17 @@
             </button>
                     </div>
                 </td>
-                <td>{{ product.productId.subTotal | currency: "S/. " }}</td>
+                <td>{{ product.subTotal | currency: "S/. " }}</td>
                 <td class="cursor">
-                    <img (click)="deleteProduct(product.productId)" src="../../../../assets/bxs-trash.png" />
+                    <img (click)="deleteProduct(product)" src="../../../../assets/bxs-trash.png" />
                 </td>
             </tr>
         </tbody>
         <thead>
             <th scope="col">Total</th>
             <th scope="col"></th>
-            <th scope="col">{{ order.totalQty }}</th>
-            <th scope="col">{{ order.total | currency: "S/. " }}</th>
+            <th scope="col">{{ orderPrueba.totalQty }}</th>
+            <th scope="col">{{ orderPrueba.total | currency: "S/. " }}</th>
         </thead>
     </table>
 
@@ -59,7 +59,7 @@
     <div class="mb-3 d-flex justify-content-between">
         <div class="col-6">
             <label for="exampleFormControlTextarea1" class="form-label">Adicionales</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="order.additional"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="orderPrueba.additional"></textarea>
         </div>
 
         <div class="text-end col-6 align-self-end">

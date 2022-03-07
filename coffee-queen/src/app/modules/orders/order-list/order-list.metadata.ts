@@ -56,3 +56,22 @@ export interface ProductRecive {
   dateEntry: string,
   messageCard?: string
 }
+
+//
+export interface OrderPrueba {
+  _id: string;
+  userId: string;
+  client: string;
+  products: Product[];
+  total: number;
+  totalQty: number;
+  numberTable: string;
+  status: string;
+  dateEntry: any;
+  dateDelivering: any;
+  dateDone: any;
+  timeResult: any;
+  dateProcessed: any;
+  dateCanceled:string;
+  additional: string;
+}
