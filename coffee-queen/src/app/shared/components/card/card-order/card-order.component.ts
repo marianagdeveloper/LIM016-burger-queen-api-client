@@ -3,6 +3,7 @@ import { Order } from 'src/app/modules/orders/order-list/order-list.metadata';
 import { OrdersService } from '../../../../data/services/api/orders.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { OrderRecive } from '../../../../modules/orders/order-list/order-list.metadata';
+import { UsersService } from '../../../../data/services/api/users.service';
 
 @Component({
   selector: 'app-card-order',
@@ -54,14 +55,19 @@ export class CardOrderComponent implements OnInit {
     dateCanceled: '',
     additional: '',
   }];
-
-  constructor(public ordersService: OrdersService ,private modalService: NgbModal) {}
+  public nameUser: string = '';
+  constructor(public ordersService: OrdersService, public userService: UsersService ,private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((res: any) => {
       this.orders = res;
       return  this.orders ;
     });
+    const idPrueba = this.userService.disparador.getValue()._id;
+    console.log(idPrueba);
+    this.userService.getUserByEmail(idPrueba).subscribe((res)=>{
+      this.nameUser = res.nameUser;
+    })
     // // date delivered of modal
     //this.dateOrderProcessed = this.data.dateProcessed.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
     // // date canceled of modal

@@ -27,7 +27,7 @@
                     <p>Adicionales: {{data.additional}}</p>
                     <hr>
                     <div class="mt-2 mx-4 text-left text-beige">
-                        <p>Mesero: {{ data?.userId }}</p>
+                        <p>Mesero: {{ nameUser }}</p>
                         <p>Pedido N°: {{ data?._id }}</p>
                         <p>Creación de pedido: <span>{{timeToShowOnCard(data.dateEntry)}}</span></p>
                         <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{dateOrderDelivering}}</p>
