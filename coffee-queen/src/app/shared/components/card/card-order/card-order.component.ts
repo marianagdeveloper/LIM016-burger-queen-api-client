@@ -64,7 +64,6 @@ export class CardOrderComponent implements OnInit {
       return  this.orders ;
     });
     const idPrueba = this.userService.disparador.getValue()._id;
-    console.log(idPrueba);
     this.userService.getUserByEmail(idPrueba).subscribe((res)=>{
       this.nameUser = res.nameUser;
     })

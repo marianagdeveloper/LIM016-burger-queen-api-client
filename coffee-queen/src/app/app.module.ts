@@ -35,7 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     CoreModule,
     FormsModule,
     AppRoutingModule,
@@ -49,11 +49,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
   ],
   providers: [
-    /* {
-      provide: LocationStrategy,
-      useClass: PathLocationStrategy,
-    }, */
-
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

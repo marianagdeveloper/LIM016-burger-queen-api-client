@@ -13,7 +13,6 @@ export class PendingAdminComponent implements OnInit {
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((data) => {
       this.orders = data;
-      console.log(this.orders)
     });
   }
   cutNameProduct(item: string ){

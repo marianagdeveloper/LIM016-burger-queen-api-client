@@ -34,7 +34,7 @@ describe('SnacksListComponent', () => {
   it('If keepQuantityUpdate works right', () => {
     const productTest = [
       {
-        "id": 33,
+        "_id": '33',
         "name": "Granola",
         "price": 6,
         "image": "../../assets/images/granola.png",
@@ -44,7 +44,7 @@ describe('SnacksListComponent', () => {
         "subTotal": 6
       },
       {
-        "id": 24,
+        "_id": '24',
         "name": "Papas Fritas",
         "price": 12,
         "image": "../../assets/images/Papas fritas.png",
@@ -57,7 +57,7 @@ describe('SnacksListComponent', () => {
     ]
     const orderTest = [
       {
-        "id": 33,
+        "_id": '33',
         "name": "Granola",
         "price": 6,
         "image": "../../assets/images/granola.png",

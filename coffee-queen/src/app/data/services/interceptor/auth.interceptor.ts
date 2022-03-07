@@ -8,8 +8,7 @@ import {
 } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { UsersService } from 'src/app/data/services/api/users.service';
-/* import { CookieService } from 'ngx-cookie-service';
- */import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

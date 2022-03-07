@@ -1,5 +1,5 @@
 import { Injectable, Output } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from './../../../modules/users-control/user-control/user-control.metadata';
 
@@ -18,14 +18,17 @@ export class UsersService {
   getToken(){
     return sessionStorage.getItem('token');
   }
+
   removeToken(){
     return sessionStorage.removeItem('token');
   }
+
   constructor(private http: HttpClient ) { }
 
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>('https://coffeequeen3.herokuapp.com/users');
   }
+
   getUserByEmail(email:string): Observable<User> {
     return this.http.get<User>(`https://coffeequeen3.herokuapp.com/users/${email}`);
   }
@@ -33,6 +36,7 @@ export class UsersService {
   getTokenAuth(credential: object): Observable<any>{
     return this.http.post<any>('https://coffeequeen3.herokuapp.com/auth', credential);
   }
+
   putUserApi(updateUser: any, _idUser:any): Observable<any[]>{
     return this.http.put<any[]>(`https://coffeequeen3.herokuapp.com/users/${_idUser}`, updateUser)
   }
@@ -46,16 +50,6 @@ export class UsersService {
   }
 
   deleteUserApi(idUser: string): Observable<User[]>{
-   return this.http.delete<User[]>(`https://coffeequeen3.herokuapp.com/users/${idUser}`)
+    return this.http.delete<User[]>(`https://coffeequeen3.herokuapp.com/users/${idUser}`)
   }
-
 }
-
-
-   /*  const token: any = sessionStorage.getItem("token")
-    const headers = {
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        Authorization: `Bearer ${token}`,
-    },
-  }; */
