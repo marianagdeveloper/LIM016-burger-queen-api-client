@@ -31,7 +31,7 @@ export class SalesComponent implements OnInit {
       if(order.status == 'delivering'){
         order.status = 'En preparación';
       }
-      if(order.status == 'done'){
+      if(order.status == 'preparing'){
         order.status = 'Preparado';
       }
       if(order.status == 'delivered'){

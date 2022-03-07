@@ -23,4 +23,36 @@ export interface ProductsOrders {
       productId: Product
 }
 
+//
+export interface OrderRecive {
+  _id: string;
+  userId: string;
+  client: string;
+  products: ProductsOrdersRecive[];
+  total: number;
+  totalQty: number;
+  numberTable: string;
+  status: string;
+  dateEntry: string;
+  dateDelivering: string;
+  dateDone: string;
+  timeResult: string;
+  dateProcessed: string;
+  dateCanceled:string;
+  additional: string;
+}
+export interface ProductsOrdersRecive {
+    qty: number,
+    subTotal: number,
+    product: ProductRecive
+}
 
+export interface ProductRecive {
+  _id: string,
+  name: string,
+  price: number,
+  image: string,
+  type: string,
+  dateEntry: string,
+  messageCard?: string
+}

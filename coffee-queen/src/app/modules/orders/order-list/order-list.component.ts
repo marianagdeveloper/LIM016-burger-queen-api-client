@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/data/services/api/product.service';
 import { Product } from 'src/app/shared/components/card/card-product/card-product.metadata';
-import { Order, ProductsOrders } from './order-list.metadata';
+import { Order, ProductsOrders, OrderRecive } from './order-list.metadata';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../../data/services/api/orders.service';
 import { UsersService } from './../../../data/services/api/users.service';
@@ -25,6 +25,7 @@ export class OrderListComponent implements OnInit {
   @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert!: NgbAlert;
 
   public products!: ProductsOrders[];
+  public uniq?: any[];
   public order: Order = {
     _id: '',
     userId: '',
@@ -67,6 +68,7 @@ export class OrderListComponent implements OnInit {
   closeResult = '';
   comment = '';
   setcomment = '';
+  public isRepeat: boolean = false;
   @Input() data!: Order;
 
   constructor(
@@ -86,7 +88,6 @@ export class OrderListComponent implements OnInit {
   selfClosingAlert2!: NgbAlert;
 
   ngOnInit(): void {
-    console.log(this.order.userId);
     //this.products = this.productService.arrayProducts;
     const getArray = this.productService.arrayProducts;
     getArray.forEach((product, index, array: any) => {
@@ -100,12 +101,15 @@ export class OrderListComponent implements OnInit {
           image: product.image,
           type: product.type,
           dateEntry: product.dateEntry,
-        /*   qty: product.qty,
-          subTotal: product.subTotal, */
+          qty: product.qty,
+          subTotal: product.subTotal,
         },
       };
       this.products = array;
     });
+    this.uniq = [...new Set(this.products.map((elem) => elem.productId._id))].map(e => this.products.find((elem) => elem.productId._id == e));
+    this.products = this.uniq;
+
     this.products.map((ele: any) => {
       this.order.total += ele.subTotal;
       this.order.totalQty += ele.qty;
@@ -166,10 +170,15 @@ export class OrderListComponent implements OnInit {
 
   increaseQuantity(product: any) {
     this.quantity = product.qty += 1;
-    product.subTotal = this.quantity * product.price;
+    product.productId.qty = this.quantity;
+    product.subTotal = this.quantity * product.productId.price;
+    product.productId.subTotal = product.subTotal;
     this.order.total += product.subTotal;
-    this.order.total -= product.price * (this.quantity - 1);
+    this.order.total -= product.productId.price * (this.quantity - 1);
     this.order.totalQty += 1;
+
+    this.productService.setProducts(product.productId)
+
   }
 
   decreaseQuantity(product: any) {

@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Order } from '../../../modules/orders/order-list/order-list.metadata';
+import { Order, OrderRecive } from '../../../modules/orders/order-list/order-list.metadata';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -22,8 +22,8 @@ export class OrdersService {
     return this.http.post<any[]>('https://coffeequeen3.herokuapp.com/orders', newOrder);
   }
 
-  putOrder(newOrder: Order, _idOrder:string): Observable<Order[]>{
-    return this.http.put<Order[]>(`http://localhost:3000/order/${_idOrder}`, newOrder);
+  putOrder(newOrder: OrderRecive, _idOrder:string): Observable<OrderRecive[]>{
+    return this.http.put<OrderRecive[]>(`https://coffeequeen3.herokuapp.com/orders/${_idOrder}`, newOrder);
   }
 
 }

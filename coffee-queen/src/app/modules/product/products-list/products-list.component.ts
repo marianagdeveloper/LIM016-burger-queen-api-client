@@ -63,8 +63,6 @@ export class ProductsListComponent implements OnInit {
         });
       })
       this.todos = this.productService.arrayProducts;
-      console.log("aquiu regresamos a todos",this.todos);
-
       this.products.forEach((producto) => {
         this.todos.forEach((pedido) => {
 
