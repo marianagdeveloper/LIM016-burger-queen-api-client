@@ -11,7 +11,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
     UserControlComponent
   ],
   imports: [
-
   CommonModule,
     UsersControlRoutingModule,
     FormsModule,

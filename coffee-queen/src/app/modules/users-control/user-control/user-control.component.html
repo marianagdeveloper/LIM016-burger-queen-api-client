@@ -42,8 +42,10 @@
                             <input type="text" class="form-control" id="recipient-name" [(ngModel)]="emailUserUpdate" name="inputEmailEdit">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Contraseña:</label>
-                            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="passwordUserUpdate" name="inputPasswordEdit">
+
+                            <button type="button" class="btn btn-secondary my-2" (click)="updatePassword()">Cambiar contraseña</button>
+                            <input type="text" class="form-control {{viewInput}} " id="recipient-name" [(ngModel)]="passwordUserUpdate" [disabled]="enabledInput" name="inputPasswordEdit">
+
                         </div>
                         <label for="select" class="col-form-label w-75">Rol:</label>
 
