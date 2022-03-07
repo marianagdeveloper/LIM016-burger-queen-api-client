@@ -20,8 +20,9 @@
             </tr>
         </thead>
         <tbody>
+
             <tr *ngFor="let order of orders.slice().reverse() |  filterStatusAdmin :'pending' ">
-                <td>{{ order.userId }}</td>
+                <td>{{order.userId}}</td>
 
                 <td>
                     <ul class="mx-1 p-0">

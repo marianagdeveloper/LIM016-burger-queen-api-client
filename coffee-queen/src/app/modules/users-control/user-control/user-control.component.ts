@@ -148,8 +148,9 @@ export class UserControlComponent implements OnInit {
   }
   deleteUser(idUser: string) {
     this.userService.deleteUserApi(idUser).subscribe();
-    const data = this.users.filter((item: any) => item.id != idUser);
+    const data = this.users.filter((item: any) => item._id !== idUser);
     this.users = data;
+
   }
   cleanUserForm() {
     this.nameUser = '';
