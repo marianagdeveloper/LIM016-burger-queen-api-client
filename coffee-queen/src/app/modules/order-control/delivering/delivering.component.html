@@ -1,4 +1,4 @@
 <div class=" d-flex justify-content-center pending mt-4">
 
-    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering'"></app-card-order>
+    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'delivering':idPrueba"></app-card-order>
 </div>

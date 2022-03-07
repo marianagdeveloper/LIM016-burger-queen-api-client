@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-
 @import '../node_modules/bootstrap/scss/toasts';
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
@@ -9,4 +8,76 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Raleway', sans-serif;
+}
+
+.btnAgregar {
+    background: #dd8017 !important;
+    color: white !important;
+    border: none !important;
+     :focus {
+        outline: none;
+    }
+}
+
+.tablePedidos {
+    background: rgba(255, 255, 255, 0.781);
+    border-radius: 20px;
+    padding: 0.5rem;
+    .colorLetra {
+        color: #B85C38;
+        font-weight: 600;
+        margin: 10px;
+    }
+    .grosorLetra {
+        font-weight: 600;
+        margin: 10px;
+    }
+    .borde:focus {
+        outline: none;
+    }
+    .table {
+        .colorPedido {
+            color: rgba(0, 0, 0, 0.37);
+        }
+        .inputCant {
+            width: 120px;
+        }
+    }
+    .table-striped>tbody>tr:nth-child(2n+1)>td,
+    .table-striped>tbody>tr:nth-child(2n+1)>th {
+        background-color: #f8b12e70;
+        .cursor {
+            cursor: pointer;
+        }
+    }
+}
+
+.btn-outline-secondary {
+    color: #6c757d47;
+    border-color: #6c757d47;
+    background: white;
+}
+
+.btnSearch {
+    background-color: rgb(230, 148, 16);
+    color: white;
+}
+
+.bgwhite {
+    background: white;
+    color: rgba(112, 112, 111, 0.65);
+    font-weight: bold;
+}
+
+.mlSearch {
+    margin-left: auto;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.btn-palet {
+    background: #dd8017;
+    color: white;
 }

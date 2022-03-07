@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OrdersService } from '../../../data/services/api/orders.service';
 
-import { Order } from '../../orders/order-list/order-list.metadata';
+import { Order, OrderRecive } from '../../orders/order-list/order-list.metadata';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CookControlComponent implements OnInit {
 
-  public orders: Order[] = [];
+  public orders: OrderRecive[] = [];
 
   constructor(public ordersService: OrdersService, private router: Router) { }
 

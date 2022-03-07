@@ -104,6 +104,12 @@ const routes: Routes = [
         canActivate:[AuthGuard],
         loadChildren:()=>
         import ('./modules/orders-history/orders-history.module').then((m)=> m.OrdersHistoryModule)
+      },
+      {
+        path:'order-control-admin',
+        canActivate:[AuthGuard],
+        loadChildren:()=>
+        import ('./modules/order-control-admin/order-control-admin.module').then((m)=> m.OrderControlAdminModule)
       }
     /*   {
         path: '**',
