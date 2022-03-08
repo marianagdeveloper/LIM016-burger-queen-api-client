@@ -10,7 +10,10 @@ import { UsersService } from '../../../data/services/api/users.service';
 })
 export class DeliveredAdminComponent implements OnInit {
   public orders: OrderRecive[] = [];
+  public ordersFilter: OrderRecive[] = [];
+  public viewList: string='';
   public pruebaId: string='';
+  public getOrder: string='delivered';
   constructor(
     public ordersService: OrdersService,
     public userService: UsersService
@@ -23,6 +26,12 @@ export class DeliveredAdminComponent implements OnInit {
             ele.userId=res.nameUser;
           });
       });
+      this.ordersFilter = this.orders?.filter((elem) =>(elem.status==this.getOrder))
+      if( this.ordersFilter.length>0){
+        this.viewList='d-block'
+      }else{
+        this.viewList='d-none'
+      }
     });
   }
   cutNameProduct(item: string ){

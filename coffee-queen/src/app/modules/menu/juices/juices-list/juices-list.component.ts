@@ -21,12 +21,28 @@ export class JuicesListComponent implements OnInit {
         }
       });
       this.products = juices;
+      this.products.map((product)=> {
+        Object.defineProperty(product, 'qty', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+        Object.defineProperty(product, 'subTotal', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+      })
       this.orderJuices = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
         this.orderJuices.forEach((pedido: Product) => {
           if (pedido.name == producto.name) {
             producto.qty = pedido.qty;
+            producto.messageCard = pedido.messageCard;
+
           }
         });
       });
