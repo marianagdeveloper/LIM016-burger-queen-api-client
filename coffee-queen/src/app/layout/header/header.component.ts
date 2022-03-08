@@ -28,11 +28,9 @@ export class HeaderComponent implements OnInit {
     this.nameUser=this.usersServices.disparador.getValue( ).nameUser;
     this.avatarUser=this.usersServices.disparador.getValue( ).image;
     this.rolesUser=this.usersServices.disparador.getValue( ).roles;
-
-/*
-   if (this.rolesUser == undefined) {
-      this.router.navigate(['login']);
-    } else { */
+    localStorage.setItem("nameUser",this.nameUser);
+    localStorage.setItem("imageUser",this.avatarUser);
+    localStorage.setItem("rolUser",this.rolesUser);
       this.roleCook = this.rolesUser.cook;
       this.roleWaiter = this.rolesUser.waiter;
       this.roleAdmin = this.rolesUser.admin;
