@@ -9,15 +9,17 @@ import { UsersService } from 'src/app/data/services/api/users.service';
 })
 export class SidebarComponent implements OnInit {
   public rolesUser:any;
+  roleCook = false;
   invalidRoleCook=false;
   constructor(public usersServices: UsersService, private router: Router) { }
 
   ngOnInit(): void {
-    this.rolesUser=this.usersServices.disparador.getValue( ).roles;
+    //this.rolesUser=this.usersServices.disparador.getValue( ).roles;
     /* if (this.rolesUser == undefined) {
       this.router.navigate(['login']);
     } else { */
-      this.invalidRoleCook = !this.rolesUser.cook;
+      this.roleCook = sessionStorage.getItem("roleCook") === "true"? true : false;
+      this.invalidRoleCook = !this.roleCook;
     //}
 
   }

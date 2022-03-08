@@ -21,7 +21,7 @@
                     <li><a class="nav-link px-3 text-white typeText" routerLinkActive="activebutton" [routerLink]="['/sales']" *ngIf="roleWaiter">Historial de Pedidos</a></li>
                     <li><a class="nav-link px-3 text-white typeText" routerLinkActive="activebutton" [routerLink]="['/cook-control']" *ngIf="roleCook">Control de Pedidos</a></li>
                     <li><a class="nav-link px-3 text-white typeText" routerLinkActive="activebutton" [routerLink]="['/cook-history']" *ngIf="roleCook">Historial de Pedidos</a></li>
-                    <li class="d-md-none"><a class="nav-link px-3 text-white typeText " routerLinkActive="activebutton" [routerLink]="['/login']">Cerrar Sesión</a></li>
+                    <li class="d-md-none"><a class="nav-link px-3 text-white typeText " routerLinkActive="activebutton" (click)="logout()">Cerrar Sesión</a></li>
                 </ul>
             </div>
 

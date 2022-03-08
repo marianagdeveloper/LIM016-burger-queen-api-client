@@ -25,21 +25,25 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.nameUser=this.usersServices.disparador.getValue( ).nameUser;
-    this.avatarUser=this.usersServices.disparador.getValue( ).image;
-    this.rolesUser=this.usersServices.disparador.getValue( ).roles;
-    localStorage.setItem("nameUser",this.nameUser);
-    localStorage.setItem("imageUser",this.avatarUser);
-    localStorage.setItem("rolUser",this.rolesUser);
-      this.roleCook = this.rolesUser.cook;
-      this.roleWaiter = this.rolesUser.waiter;
-      this.roleAdmin = this.rolesUser.admin;
-    //}
+    /* this.nameUser = this.usersServices.disparador.getValue().nameUser;
+    this.avatarUser = this.usersServices.disparador.getValue().image;
+    this.rolesUser = this.usersServices.disparador.getValue().roles; */
+
+    this.nameUser = sessionStorage.getItem("nameUser");
+    this.avatarUser = sessionStorage.getItem("imageUser");
+    this.roleAdmin = sessionStorage.getItem("roleAdmin") === "true"? true : false;
+    this.roleCook = sessionStorage.getItem("roleCook") === "true"? true : false;
+    this.roleWaiter = sessionStorage.getItem("roleWaiter") === "true"? true : false;
 
   }
   logout(){
     this.usersServices.removeToken();
-    this.router.navigate(['login'])
+    sessionStorage.removeItem("nameUser");
+    sessionStorage.removeItem("imageUser");
+    sessionStorage.removeItem("roleAdmin");
+    sessionStorage.removeItem("roleCook");
+    sessionStorage.removeItem("roleWaiter");
+    this.router.navigate([''])
   }
 }
 /* {

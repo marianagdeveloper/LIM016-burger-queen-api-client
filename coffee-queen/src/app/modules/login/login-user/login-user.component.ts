@@ -9,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/data/services/api/users.service';
 import { HttpHeaders } from '@angular/common/http';
+import { User } from '../../users-control/user-control/user-control.metadata';
 
 
 @Component({
@@ -71,8 +72,8 @@ export class LoginUserComponent implements OnInit {
         }
         this.userData2=res;
 
-
-        this.userService.disparador.next(this.userData2);
+        this.saveUserDataOnSessionStorage(this.userData2)
+        //this.userService.disparador.next(this.userData2);
 
       })
     //   this.userService.getAllUsers().subscribe((res) => {
@@ -127,6 +128,13 @@ export class LoginUserComponent implements OnInit {
 
   }
 
+  saveUserDataOnSessionStorage(userData: User){
+    sessionStorage.setItem('nameUser',userData.nameUser);
+    sessionStorage.setItem("imageUser",userData.image);
+    sessionStorage.setItem("roleAdmin", userData.roles.admin.toString());
+    sessionStorage.setItem("roleCook", userData.roles.cook.toString());
+    sessionStorage.setItem("roleWaiter", userData.roles.waiter.toString());
+  }
   campoEsValido(inputForm: string) {
     return (
       this.loginForm.controls[inputForm].dirty &&
