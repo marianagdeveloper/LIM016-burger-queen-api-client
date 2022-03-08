@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from 'src/app/data/services/api/orders.service';
 import { OrderRecive } from '../../orders/order-list/order-list.metadata';
+import { UsersService } from '../../../data/services/api/users.service';
 
 @Component({
   selector: 'app-canceled-admin',
@@ -9,10 +10,19 @@ import { OrderRecive } from '../../orders/order-list/order-list.metadata';
 })
 export class CanceledAdminComponent implements OnInit {
   public orders: OrderRecive[] = [];
-  constructor(public ordersService: OrdersService) { }
+  public pruebaId: string='';
+  constructor(
+    public ordersService: OrdersService,
+    public userService: UsersService
+  ) {}
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((data) => {
       this.orders = data;
+      this.orders.map((ele) => {
+        this.userService.getUserByEmail(ele.userId).subscribe((res) => {
+            ele.userId=res.nameUser;
+          });
+      });
     });
   }
   cutNameProduct(item: string ){

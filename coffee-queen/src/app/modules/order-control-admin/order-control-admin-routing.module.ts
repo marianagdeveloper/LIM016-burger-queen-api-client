@@ -14,23 +14,23 @@ const routes: Routes = [
     component: ControlAdminComponent,
     children: [
       {
-        path: 'pending-admin',
+        path: 'pending',
         component: PendingAdminComponent
       },
       {
-        path: 'delivering-admin',
+        path: 'delivering',
         component: DeliveringAdminComponent
       },
       {
-        path: 'preparing-admin',
+        path: 'preparing',
         component: DoneAdminComponent
       },
       {
-        path: 'delivered-admin',
+        path: 'delivered',
         component: DeliveredAdminComponent
       },
       {
-        path: 'canceled-admin',
+        path: 'canceled',
         component: CanceledAdminComponent
       }
     ]

@@ -23,7 +23,6 @@ export class PendingAdminComponent implements OnInit {
       this.orders = data;
       this.orders.map((ele) => {
         this.userService.getUserByEmail(ele.userId).subscribe((res) => {
-            console.log(res.nameUser);
             ele.userId=res.nameUser;
           });
       });
