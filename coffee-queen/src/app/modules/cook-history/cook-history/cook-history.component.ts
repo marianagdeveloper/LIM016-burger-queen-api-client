@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../../data/services/api/orders.service';
 
 import { Order, OrderRecive } from '../../orders/order-list/order-list.metadata';
+import { UsersService } from '../../../data/services/api/users.service';
 
 @Component({
   selector: 'app-cook-history',
@@ -14,7 +15,7 @@ export class CookHistoryComponent implements OnInit {
   public getOrder: string = '';
   public clean: string = '';
 
-  constructor(public ordersService: OrdersService) { }
+  constructor(public ordersService: OrdersService, public userService: UsersService) { }
 
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((data) => {

@@ -9,13 +9,11 @@
     </div>
 </div>
 
-<div class="tablePedidos p-3">
+<div class="tablePedidos p-3 centerTable">
 
     <table class="p-5 table table-striped ">
         <thead>
             <tr class="colorPedido">
-                <th scope="col">N° Pedido</th>
-                <th scope="col">Mesero</th>
                 <th scope="col">Productos</th>
                 <th scope="col">Fecha de Creación</th>
                 <th scope="col">Estado</th>
@@ -23,8 +21,6 @@
         </thead>
         <tbody class="{{clean}}">
             <tr *ngFor="let order of orders.slice().reverse()">
-                <td>{{ order._id }}</td>
-                <td>{{ order.userId }}</td>
                 <td>
                     <ul class="mx-1 p-0">
                         <li *ngFor="let product of order.products" style="list-style-type: none;">
