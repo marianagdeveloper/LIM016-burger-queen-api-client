@@ -1,7 +1,7 @@
 import { FilterStatusPipe } from './filter-status.pipe';
 const dataOrder = [{
   "_id": '1',
-  "userId": "Maria",
+  "userId": "123",
   "client": "Juanita",
   "products": [{
     "qty": 2,
@@ -41,7 +41,7 @@ describe('FilterStatusPipe', () => {
   it('Should be return the status filter', () => {
     const pipe = new FilterStatusPipe();
 
-    const result = pipe.transform(dataOrder,'delivered', dataOrder)
+    const result = pipe.transform(dataOrder,'delivered', dataOrder[0].userId)
     expect(result).toEqual(dataOrder);
   });
 

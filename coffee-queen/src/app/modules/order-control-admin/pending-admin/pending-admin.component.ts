@@ -1,21 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from 'src/app/data/services/api/orders.service';
-import { Order, OrderRecive } from '../../orders/order-list/order-list.metadata';
+import { UsersService } from 'src/app/data/services/api/users.service';
+import {
+  Order,
+  OrderRecive,
+} from '../../orders/order-list/order-list.metadata';
 
 @Component({
   selector: 'app-pending-admin',
   templateUrl: './pending-admin.component.html',
-  styleUrls: ['./pending-admin.component.scss']
+  styleUrls: ['./pending-admin.component.scss'],
 })
 export class PendingAdminComponent implements OnInit {
   public orders: OrderRecive[] = [];
-  constructor(public ordersService: OrdersService) { }
+  public pruebaId: string='';
+  constructor(
+    public ordersService: OrdersService,
+    public userService: UsersService
+  ) {}
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((data) => {
       this.orders = data;
+      this.orders.map((ele) => {
+        this.userService.getUserByEmail(ele.userId).subscribe((res) => {
+            console.log(res.nameUser);
+            ele.userId=res.nameUser;
+          });
+      });
     });
   }
-  cutNameProduct(item: string ){
+  cutNameProduct(item: string) {
     return item.split(' ').splice(1, 4).toString().replace(/,+/g, ' ');
   }
 }

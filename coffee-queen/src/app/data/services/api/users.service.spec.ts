@@ -51,21 +51,23 @@ describe('(2) Test of Service UsersService', () => {
 
   it('Should be edit user', (done: DoneFn) => {
     const mockUserCredentials = {
-      id: 'Ic2O4Ip',
-      name: 'ruben',
+      _id: 'Ic2O4Ip',
+      nameUser: 'ruben',
       email: 'ruben@gmail.com',
       password: 'ruben',
       roles: { admin: true, waiter: false, cook: false },
+      image:'../image.png'
     };
     const mockUserResult = {
-      id: 'Ic2O4Ip',
-      name: 'ruben',
+      _id: 'Ic2O4Ip',
+      nameUser: 'ruben',
       email: 'ruben@gmail.com',
       password: 'ruben',
       roles: { admin: true, waiter: false, cook: false },
+      image:'../image.png'
     };
     httpClientSpyPut.put.and.returnValue(of(mockUserResult));
-    servicePut.putUserApi(mockUserCredentials, mockUserCredentials.id).subscribe((res: any) => {
+    servicePut.putUserApi(mockUserCredentials, mockUserCredentials._id).subscribe((res: any) => {
       expect(res).toEqual(mockUserResult);
     });
     done();

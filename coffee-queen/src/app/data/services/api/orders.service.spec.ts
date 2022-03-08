@@ -27,20 +27,22 @@ describe('(3) Test of Service OrdersService', () => {
 
     const mockOrderResult =
       {
-        "id": 6,
-        "userName": "Manuel Guerrero",
+        "_id":"6",
+        "userId": "Manuel Guerrero",
         "client": "Mauricio",
-        "products": [
-          {
-            "id": 4,
+        "products": [{
+          "qty": 1,
+          "subTotal": 12,
+          "product":{
+            "_id": "4",
             "name": "Jugo de frutas natural",
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.png",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
+            "dateEntry": "21/01/2022 09:24:12",
           }
+        }
+
         ],
         "total": 12,
         "totalQty": 1,
@@ -64,20 +66,21 @@ describe('(3) Test of Service OrdersService', () => {
   it('Should be create orders', (done: DoneFn) => {
     const mockOrderResult =
       {
-        "id": 6,
-        "userName": "Manuel Guerrero",
+        "_id": "6",
+        "userId": "Manuel Guerrero",
         "client": "Mauricio",
-        "products": [
-          {
-            "id": 4,
+        "products": [{
+          "qty": 1,
+          "subTotal": 12,
+          "product":{
+            "_id": "4",
             "name": "Jugo de frutas natural",
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.png",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
+            "dateEntry": "21/01/2022 09:24:12",
           }
+        }
         ],
         "total": 12,
         "totalQty": 1,
@@ -107,17 +110,16 @@ describe('(3) Test of Service OrdersService', () => {
       "products": [{
         "qty": 1,
         "subTotal": 12,
-        "product": {
-          "_id": '4',
+        "product":{
+          "_id": "4",
           "name": "Jugo de frutas natural",
           "price": 12,
           "image": "../../assets/images/Jugo de frutas natural.png",
           "type": "juices",
-          "dateEntry": "21/01/2022 09:24:00",
-          "qty": 1,
-          "subTotal": 12
-          }
+          "dateEntry": "21/01/2022 09:24:12",
         }
+      }
+
       ],
       "total": 12,
       "totalQty": 1,
@@ -133,25 +135,27 @@ describe('(3) Test of Service OrdersService', () => {
   };
     const mockOrderStatusResult =
       {
-        "id": '6',
-        "userName": "Manuel Guerrero",
+        "_id": '6',
+        "userId": "Manuel Guerrero",
         "client": "Mauricio",
-        "products": [
-          {
-            "id": '4',
+        "products": [{
+          "qty": 1,
+          "subTotal": 12,
+          "product":{
+            "_id": "4",
             "name": "Jugo de frutas natural",
             "price": 12,
             "image": "../../assets/images/Jugo de frutas natural.png",
             "type": "juices",
-            "dateEntry": "21/01/2022 09:24:00",
-            "qty": 1,
-            "subTotal": 12
+            "dateEntry": "21/01/2022 09:24:12",
           }
+        }
+
         ],
         "total": 12,
         "totalQty": 1,
         "numberTable": "2",
-        "status": "canceled",
+        "status": "pending",
         "dateEntry": "Wed Feb 23 2022 11:14:36 GMT-0500 (hora estándar de Perú)",
         "dateDelivering": "Wed Feb 23 2022 11:14:46 GMT-0500 (hora estándar de Perú)",
         "dateDone": "",
@@ -162,9 +166,9 @@ describe('(3) Test of Service OrdersService', () => {
     };
     httpClientSpyPut.put.and.returnValue(of(mockOrderStatusResult));
     servicePut.putOrder(mockOrderStatus, mockOrderStatus._id).subscribe((res: any) => {
-      console.log(res);
 
-      expect(res).toEqual(mockOrderStatus);
+
+      expect(res).toEqual(mockOrderStatusResult);
     });
     done();
   });

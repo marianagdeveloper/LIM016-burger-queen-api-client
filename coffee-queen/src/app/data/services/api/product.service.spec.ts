@@ -2,6 +2,7 @@ import { of } from 'rxjs';
 
 import { ProductService } from './product.service';
 import { TestBed } from '@angular/core/testing';
+import { Product, Products } from 'src/app/shared/components/card/card-product/card-product.metadata';
 
 
 describe('(4) Test of Service ProductService', () => {
@@ -50,10 +51,7 @@ describe('(4) Test of Service ProductService', () => {
     done();
   });
   it('Should be create product', (done: DoneFn) => {
-    const mockProductResult ={
-      "qty": 1,
-      "subTotal": 12,
-      "product": {
+    const mockProductResult = {
         "_id": '4',
         "name": "Jugo de frutas natural",
         "price": 12,
@@ -62,22 +60,19 @@ describe('(4) Test of Service ProductService', () => {
         "dateEntry": "21/01/2022 09:24:00",
         "qty": 1,
         "subTotal": 12
-      }
-    }
+     }
 
 
-    const url:string='http://localhost:3000/products';
+
     httpClientSpyPost.post.and.returnValue(of(mockProductResult));
-    servicePost.post(url).subscribe((res: any) => {
+    servicePost.post(mockProductResult).subscribe((res: any) => {
       expect(res).toEqual(mockProductResult);
     });
     done();
   });
   it('Should be update product', (done: DoneFn) => {
     const mockProduct = {
-      "qty": 1,
-      "subTotal": 12,
-      "product":{
+
         "_id": '4',
         "name": "Jugo de frutas natural",
         "price": 12,
@@ -86,14 +81,11 @@ describe('(4) Test of Service ProductService', () => {
         "dateEntry": "21/01/2022 09:24:00",
         "qty": 1,
         "subTotal": 12
-      }
+
     }
 
 
     const mockProductResult = {
-      "qty": 1,
-      "subTotal": 12,
-      "product":{
         "_id": '4',
         "name": "Jugo fresas",
         "price": 10,
@@ -102,13 +94,10 @@ describe('(4) Test of Service ProductService', () => {
         "dateEntry": "21/01/2022 09:24:00",
         "qty": 1,
         "subTotal": 12
-      }
+
     }
-
-
-
     httpClientSpyPut.put.and.returnValue(of(mockProductResult));
-    servicePut.putProductApi(mockProduct, mockProduct.product._id).subscribe((res: any) => {
+    servicePut.putProductApi(mockProduct, mockProduct._id).subscribe((res: any) => {
       expect(res).toEqual(mockProductResult);
     });
     done();
@@ -125,7 +114,7 @@ describe('(4) Test of Service ProductService', () => {
   it('Should be function set product', () => {
     const product=
     {
-      "id": 4,
+      "_id": 4,
       "name": "Jugo fresas",
       "price": 10,
       "image": "../../assets/images/Jugo de fresas.png",
@@ -137,7 +126,7 @@ describe('(4) Test of Service ProductService', () => {
     const arrayProduct=
     [
     {
-      "id": 4,
+      "_id": 4,
       "name": "Jugo fresas",
       "price": 10,
       "image": "../../assets/images/Jugo de fresas.png",
