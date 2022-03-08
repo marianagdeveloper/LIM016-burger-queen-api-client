@@ -33,7 +33,7 @@ export class ProductService {
     return this.http.get<Product[]>('https://coffeequeen3.herokuapp.com/products');
   }
 
-  public post(body:any): Observable<Products[]> {
+  public post(body:Product): Observable<Products[]> {
     return this.http.post<Products[]>('https://coffeequeen3.herokuapp.com/products',body);
   }
 
