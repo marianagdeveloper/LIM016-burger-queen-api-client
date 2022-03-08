@@ -24,17 +24,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
-
   declarations: [
     AppComponent,
     SkeletonComponent,
     FooterComponent,
     SidebarComponent,
     HeaderComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -53,20 +51,18 @@ import { environment } from '../environments/environment';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi:true
+      multi: true,
     },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
 
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-
-

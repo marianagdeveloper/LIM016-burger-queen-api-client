@@ -10,8 +10,7 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test --code-coverage",
         "server": "node src/app/data/backend/server.js",
-        "http": "http-server -p 8080 -c-1 dist/coffee-queen"
-
+        "http": "serve dist/coffee-queen"
     },
     "private": true,
     "dependencies": {

@@ -7,13 +7,13 @@ import { LoginUserComponent } from './modules/login/login-user/login-user.compon
 import {AuthGuard} from './guard/auth.guard'
 
 const routes: Routes = [
-  {
+  /* {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full'
-  },
+  }, */
   {
-    path:'login',
+    path:'',
     component: LoginUserComponent,
   },
   {
