@@ -22,12 +22,28 @@ export class DrinksListComponent implements OnInit {
         }
       });
       this.products = arrayNew;
+      this.products.map((product)=> {
+        Object.defineProperty(product, 'qty', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+        Object.defineProperty(product, 'subTotal', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+      })
       this.orderDrinks = this.productService.arrayProducts;
 
       this.products.forEach((producto) => {
         this.orderDrinks.forEach((pedido: Product) => {
           if (pedido.name == producto.name) {
             producto.qty = pedido.qty;
+            producto.messageCard = pedido.messageCard;
+
           }
         });
       });

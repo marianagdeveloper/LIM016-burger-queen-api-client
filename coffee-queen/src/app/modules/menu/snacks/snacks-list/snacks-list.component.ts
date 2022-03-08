@@ -27,6 +27,20 @@ export class SnacksListComponent implements OnInit {
         }
       })
       this.products = this.snacks;
+      this.products.map((product)=> {
+        Object.defineProperty(product, 'qty', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+        Object.defineProperty(product, 'subTotal', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+      })
 
       this.orderSnacks = this.productService.arrayProducts;
       this.keepQuantityUpdate(this.products, this.orderSnacks)
@@ -38,6 +52,8 @@ export class SnacksListComponent implements OnInit {
       orderProduct.filter((order: Product) => {
         if (order.name == product.name) {
            product.qty = order.qty;
+           product.messageCard = order.messageCard;
+
         }
       });
     });

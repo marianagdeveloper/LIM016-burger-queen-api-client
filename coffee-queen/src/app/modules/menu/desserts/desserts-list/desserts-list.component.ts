@@ -26,6 +26,20 @@ export class DessertsListComponent implements OnInit {
         }
       })
       this.products = desserts;
+      this.products.map((product)=> {
+        Object.defineProperty(product, 'qty', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+        Object.defineProperty(product, 'subTotal', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+      })
       this.orderDesserts = this.productService.arrayProducts;
       this.keepQuantityUpdate(this.products, this.orderDesserts)
     });
@@ -36,6 +50,8 @@ export class DessertsListComponent implements OnInit {
       orderProduct.forEach((order: Product) => {
         if (order.name == product.name) {
            product.qty = order.qty;
+           product.messageCard = order.messageCard;
+
         }
       });
     });

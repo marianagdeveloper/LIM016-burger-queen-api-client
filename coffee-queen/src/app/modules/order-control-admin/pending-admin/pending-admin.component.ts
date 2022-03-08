@@ -13,7 +13,10 @@ import {
 })
 export class PendingAdminComponent implements OnInit {
   public orders: OrderRecive[] = [];
+  public ordersFilter: OrderRecive[] = [];
   public pruebaId: string='';
+  public viewList: string='';
+  public getOrder: string='pending';
   constructor(
     public ordersService: OrdersService,
     public userService: UsersService
@@ -26,6 +29,13 @@ export class PendingAdminComponent implements OnInit {
             ele.userId=res.nameUser;
           });
       });
+      this.ordersFilter = this.orders?.filter((elem) =>(elem.status==this.getOrder))
+
+      if( this.ordersFilter.length>0){
+        this.viewList='d-block'
+      }else{
+        this.viewList='d-none'
+      }
     });
   }
   cutNameProduct(item: string) {
