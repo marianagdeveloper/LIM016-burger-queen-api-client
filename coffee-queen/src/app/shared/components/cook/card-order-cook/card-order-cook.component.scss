@@ -1,7 +1,5 @@
 .custom-class {
   top: 10%;
-  left: 56%;
-  width: 50%;
   .modal-footer, .modal-header{
     background-image: url("../../../../../assets/mantel.png");
     .modal-title {
@@ -62,12 +60,5 @@
       font-size: small;
       margin: 0;
     }
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .custom-class {
-    left: 60%;
-    width: 40%;
   }
 }

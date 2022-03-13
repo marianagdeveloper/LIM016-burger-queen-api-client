@@ -33,11 +33,7 @@ const routes: Routes = [
         component: CanceledComponent
       }
     ]
-  }/* ,
-  {
-    path: 'pending',
-    component: PendingComponent
-  } */
+  }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

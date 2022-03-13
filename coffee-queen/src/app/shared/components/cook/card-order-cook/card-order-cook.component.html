@@ -45,7 +45,7 @@
         </ng-template>
         <!-- Modal for Prepared button -->
 
-        <ng-template #content let-modal class="custom-class">
+        <ng-template #content let-modal>
 
             <div class="modal-header">
                 <h5 class="modal-title" id="modal-basic-title">Mesa N° {{ data.numberTable }} : {{ data?.client }}</h5>
@@ -62,7 +62,6 @@
                 <p>Adicionales: {{data.additional}}</p>
                 <hr>
                 <div class="mt-2 mx-4 text-left text-beige">
-                    <p>Mesero: {{ data?.userId }}</p>
                     <p>Creación de pedido: <span>{{cutDate(data.dateEntry)}}</span></p>
                     <p *ngIf="data.status != 'pending' && data.status != 'canceled'">Inicio de preparación: {{cutDate(data.dateDelivering)}}</p>
                     <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{cutDate(data.dateDone)}}</p>
@@ -72,10 +71,7 @@
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <!--             <button type="button" class="btn btn-warning" (click)="open(content2)" (click)="modal.close('return')" *ngIf="data.status == 'delivering'">Preparado</button>
- -->
-                <!--             <button type="button" class="btn btn-warning" (click)="modal.close('return')">Volver a pedidos</button>
- --></div>
+ </div>
         </ng-template>
     </div>
     <div class="card-footer text-muted">

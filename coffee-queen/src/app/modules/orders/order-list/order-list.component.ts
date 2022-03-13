@@ -173,10 +173,11 @@ export class OrderListComponent implements OnInit {
     this.order.totalQty = this.orderPrueba.totalQty;
     this.order.status = 'pending';
     this.order.dateEntry = new Date().toString();
-    this.order.userId = this.usersServices.disparador.getValue()._id;
+    this.order.userId = sessionStorage.getItem("userId")?.toString();
+
     if (
-      this.orderPrueba.client == '' ||
-      this.orderPrueba.numberTable == '' ||
+      this.orderPrueba.client === ' ' || this.orderPrueba.client.trim() ==='' ||
+      this.orderPrueba.numberTable === ' ' ||
       this.orderPrueba.total == 0
     ) {
       this._success2.next(

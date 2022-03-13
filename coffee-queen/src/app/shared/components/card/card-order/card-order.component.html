@@ -28,7 +28,6 @@
                     <p>Adicionales: {{data.additional}}</p>
                     <hr>
                     <div class="mt-2 mx-4 text-left text-beige">
-                        <p>Mesero: {{ nameUser }}</p>
                         <p>Creación de pedido: <span>{{cutDate(data.dateEntry)}}</span></p>
                         <p *ngIf="data.status != 'pending' && data.status != 'canceled' ">Inicio de preparación: {{cutDate(data.dateDelivering)}}</p>
                         <p *ngIf="data.status != 'pending' && data.status != 'delivering' && data.status != 'canceled'">Fin de preparación: {{cutDate(data.dateDone)}}</p>

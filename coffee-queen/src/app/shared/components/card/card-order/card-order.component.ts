@@ -63,10 +63,10 @@ export class CardOrderComponent implements OnInit {
       this.orders = res;
       return  this.orders ;
     });
-    const idPrueba = this.userService.disparador.getValue()._id;
+    /* const idPrueba = this.userService.disparador.getValue()._id;
     this.userService.getUserByEmail(idPrueba).subscribe((res)=>{
       this.nameUser = res.nameUser;
-    })
+    }) */
     // btn canceled
     this.btnCanceled =  this.data.status != 'delivered' && this.data.status != 'canceled' ? true : false
     // date canceled in modal
