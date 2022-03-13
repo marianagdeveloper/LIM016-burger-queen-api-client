@@ -103,7 +103,12 @@ export class UserControlComponent implements OnInit {
         console.log("respuesta",res)
       });
     }
-
+    this.viewInput='d-none';
+    this.passwordUserUpdate='';
+  }
+  cancelUpdate(){
+    this.viewInput='d-none';
+    this.passwordUserUpdate='';
   }
   updatePassword(){
     this.viewInput='d-block'
@@ -160,9 +165,7 @@ export class UserControlComponent implements OnInit {
       .open(content, {
         ariaLabelledBy: 'modal-basic-title',
         windowClass: 'custom-class',
-        scrollable: true,
-        backdrop: false,
-        keyboard: false,
+        scrollable: true
       })
       .result.then(
         (result) => {
