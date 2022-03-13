@@ -10,15 +10,14 @@ import { Order } from '../../orders/order-list/order-list.metadata';
 })
 export class PendingComponent implements OnInit {
   public orders: Order[] = [];
-  public idPrueba:string='';
+  public userId?:string;
   constructor(public ordersService: OrdersService,public userService: UsersService ) {}
 
   ngOnInit(): void {
     this.ordersService.getOrder().subscribe((res: any) => {
       this.orders = res;
-
       return this.orders;
     });
-    this.idPrueba = this.userService.disparador.getValue()._id;
+    this.userId = sessionStorage.getItem('userId')?.toString();
   }
 }

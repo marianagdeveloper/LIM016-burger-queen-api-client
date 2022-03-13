@@ -10,7 +10,7 @@ import { UsersService } from '../../../data/services/api/users.service';
 })
 export class SalesComponent implements OnInit {
   public orders: OrderRecive[] = [];
-  public idPrueba:string='';
+  public userId!:string;
   public nameUser: string = '';
   constructor(public ordersService: OrdersService,public userService: UsersService ) {}
 
@@ -19,8 +19,9 @@ export class SalesComponent implements OnInit {
       this.orders = res;
       return this.orders;
     });
-    this.idPrueba = this.userService.disparador.getValue()._id;
-    this.userService.getUserByEmail(this.idPrueba).subscribe((res)=>{
+    //this.idPrueba = this.userService.disparador.getValue()._id;
+    this.userId = sessionStorage.getItem('userId')!.toString();
+    this.userService.getUserByEmail(this.userId).subscribe((res)=>{
       this.nameUser = res.nameUser;
     })
   }

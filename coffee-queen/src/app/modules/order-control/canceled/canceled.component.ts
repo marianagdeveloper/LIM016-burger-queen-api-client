@@ -10,7 +10,7 @@ import { UsersService } from 'src/app/data/services/api/users.service';
 })
 export class CanceledComponent implements OnInit {
   public orders: Order[] = [];
-  public idPrueba:string='';
+  public userId?:string='';
   constructor(public ordersService: OrdersService,public userService: UsersService) { }
 
   ngOnInit(): void {
@@ -18,7 +18,8 @@ export class CanceledComponent implements OnInit {
       this.orders = res;
       return res;
     });
-    this.idPrueba = this.userService.disparador.getValue()._id;
+    //this.idPrueba = this.userService.disparador.getValue()._id;
+    this.userId = sessionStorage.getItem('userId')?.toString();
   }
 
 }

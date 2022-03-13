@@ -53,8 +53,6 @@ export class UserControlComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe((data: any) => {
       this.users = data;
-      console.log("dataa",data)
-      console.log("uiserrrrrrr",this.users)
     });
     this.arrayRole = ['Jefe de cocina', 'Mesero', 'Administrador'];
     this.optionSelected = 'Seleccione Rol';
@@ -62,7 +60,6 @@ export class UserControlComponent implements OnInit {
   }
 
   capturar(user: any) {
-    console.log("user",user)
     if (user.roles.admin == true) {
       this.optionSelectedRole = 'Administrador';
     }
@@ -106,7 +103,12 @@ export class UserControlComponent implements OnInit {
         console.log("respuesta",res)
       });
     }
-
+    this.viewInput='d-none';
+    this.passwordUserUpdate='';
+  }
+  cancelUpdate(){
+    this.viewInput='d-none';
+    this.passwordUserUpdate='';
   }
   updatePassword(){
     this.viewInput='d-block'
@@ -163,9 +165,7 @@ export class UserControlComponent implements OnInit {
       .open(content, {
         ariaLabelledBy: 'modal-basic-title',
         windowClass: 'custom-class',
-        scrollable: true,
-        backdrop: false,
-        keyboard: false,
+        scrollable: true
       })
       .result.then(
         (result) => {

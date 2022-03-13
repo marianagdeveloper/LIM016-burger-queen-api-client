@@ -1,4 +1,4 @@
 <div class=" justify-content-center pending mt-4">
 
-    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled':idPrueba"></app-card-order>
+    <app-card-order [data]="order" *ngFor="let order of orders  | filterStatus: 'canceled':userId"></app-card-order>
 </div>

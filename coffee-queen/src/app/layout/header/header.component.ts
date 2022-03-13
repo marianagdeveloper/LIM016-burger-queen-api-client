@@ -43,6 +43,7 @@ export class HeaderComponent implements OnInit {
     sessionStorage.removeItem("roleAdmin");
     sessionStorage.removeItem("roleCook");
     sessionStorage.removeItem("roleWaiter");
+    sessionStorage.removeItem("userId");
     this.router.navigate([''])
   }
 }

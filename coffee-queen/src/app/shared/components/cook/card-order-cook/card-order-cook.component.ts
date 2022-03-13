@@ -87,7 +87,7 @@ export class CardOrderCookComponent implements OnInit {
 
   open(content: any) {
     this.modalService
-      .open(content, { ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-class', scrollable: true, backdrop: false, keyboard:false})
+      .open(content, { ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-class', scrollable: true})
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;

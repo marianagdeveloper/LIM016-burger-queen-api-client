@@ -2,7 +2,7 @@ import { Product } from '../../../shared/components/card/card-product/card-produ
 
 export interface Order {
   _id: string;
-  userId: string;
+  userId?: string;
   client: string;
   products: ProductsOrders[];
   total: number;

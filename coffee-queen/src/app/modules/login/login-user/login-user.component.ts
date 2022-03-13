@@ -134,6 +134,7 @@ export class LoginUserComponent implements OnInit {
     sessionStorage.setItem("roleAdmin", userData.roles.admin.toString());
     sessionStorage.setItem("roleCook", userData.roles.cook.toString());
     sessionStorage.setItem("roleWaiter", userData.roles.waiter.toString());
+    sessionStorage.setItem("userId", userData._id);
   }
   campoEsValido(inputForm: string) {
     return (

@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let order of orders.slice().reverse() | filterStatusOrders: 'delivered':idPrueba ">
+            <tr *ngFor="let order of orders.slice().reverse() | filterStatusOrders: 'delivered':userId">
 
                 <td>
                     <ul class="mx-1 p-0">
