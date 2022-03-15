@@ -1,9 +1,5 @@
 import { of } from 'rxjs';
-
 import { ProductService } from './product.service';
-import { TestBed } from '@angular/core/testing';
-import { Product, Products } from 'src/app/shared/components/card/card-product/card-product.metadata';
-
 
 describe('(4) Test of Service ProductService', () => {
   let serviceGet: ProductService;

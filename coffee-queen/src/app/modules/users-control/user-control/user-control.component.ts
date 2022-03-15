@@ -39,11 +39,11 @@ export class UserControlComponent implements OnInit {
   public passwordUser: string = '';
   public selecte: any;
   public htmlStr: string = '';
-  public viewInput: string = 'd-none';
   public enabledInput:boolean=true;
   closeResult = '';
   comment = '';
   setcomment = '';
+  flag = false;
   public UserForm!: FormGroup;
   constructor(
     public userService: UsersService,
@@ -90,30 +90,26 @@ export class UserControlComponent implements OnInit {
         updateUser.image = '../../assets/admin-avatar.png';
         break;
     }
-    console.log("usuario modificado",updateUser);
     if(this.passwordUserUpdate!=''){
       updateUser.password = this.passwordUserUpdate;
-      this.userService.putUserApi(updateUser, updateUser._id).subscribe(res=>{
-        console.log("respuesta",res)
-      });
+      this.userService.putUserApi(updateUser, updateUser._id).subscribe();
     }else{
       delete updateUser.password;
-      console.log("despues de eliminarlo",updateUser);
-      this.userService.putUserApi(updateUser, updateUser._id).subscribe(res=>{
-        console.log("respuesta",res)
-      });
+      this.userService.putUserApi(updateUser, updateUser._id).subscribe();
     }
-    this.viewInput='d-none';
+    this.flag = false;
     this.passwordUserUpdate='';
   }
   cancelUpdate(){
-    this.viewInput='d-none';
+    this.flag = false;
     this.passwordUserUpdate='';
   }
   updatePassword(){
-    this.viewInput='d-block'
     this.enabledInput=false;
 
+  }
+  changeFlag(){
+    this.flag =!this.flag;
   }
 
   addUser() {
@@ -187,25 +183,3 @@ export class UserControlComponent implements OnInit {
     }
   }
 }
-/*   campoEsValido(inputForm: string) {
-    return (
-      this.UserForm.controls[inputForm].dirty &&
-      this.UserForm.hasError('required', inputForm)
-    );
-  }
-
-  get campoEmail(): { [key: string]: AbstractControl } {
-    return this.UserForm.controls;
-  }
-  limpiar() {
-    this.htmlStr = '';
-  }
-   */
-
-//dentro del ngoninit
-/*  this.UserForm = this.formBuilder.group({
-      inputEmail: ['', [Validators.required, Validators.email]],
-      inputName: ['', Validators.required],
-      inputPassword: ['', Validators.required],
-      selectRole: ['Seleccione Rol', Validators.required],
-    }); */

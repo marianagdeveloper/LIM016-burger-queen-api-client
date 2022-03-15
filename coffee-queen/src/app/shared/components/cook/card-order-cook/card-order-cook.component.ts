@@ -34,10 +34,7 @@ export class CardOrderCookComponent implements OnInit {
     this.dateDone = new Date();
     this.data.timeResult = this.getDiffDate(this.dateDelivering, this.dateDone)
     this.data.dateDone = this.dateDone.toString();
-    this.ordersService.putOrder(this.data, this.data._id).subscribe((res)=>{
-      console.log(res);
-
-    });
+    this.ordersService.putOrder(this.data, this.data._id).subscribe();
   }
 
   cutDate(item: string ){

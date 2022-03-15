@@ -5,13 +5,6 @@ import { ProductService } from './../../../data/services/api/product.service';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-/* import {
-  storage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  uploadBytesResumable,
-} from '../../../data/Firebase/config'; */
 @Component({
   selector: 'app-product-control',
   templateUrl: './product-control.component.html',
@@ -19,7 +12,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ProductControlComponent implements OnInit {
   public products!: Product[];
-  //public file: File = {} as File
   public productsAdd: Product = {
     _id: '',
     name: '',
@@ -124,9 +116,7 @@ export class ProductControlComponent implements OnInit {
   }
   public onFileSelected(event: any) {
     this.imagen = event.target.files[0];
-    console.log(this.imagen);
     if ('image/png'.includes(this.imagen.type)) {
-      console.log('Si es una imagen');
       this.files.push(this.imagen);
       this.blobFile(this.imagen).then((res: any) => {
         this.imagenPrevia = res.base;
@@ -178,7 +168,7 @@ export class ProductControlComponent implements OnInit {
         .post(this.productsAdd)
         .subscribe((res) => {
           this.loading = false;
-          console.log('Carga exitosa', res);
+          return res;
         });
         this.products.push(this.productsAdd);
         this.cleanProductForm();
@@ -223,7 +213,6 @@ export class ProductControlComponent implements OnInit {
     this.productsService.deleteProduct(idProduct).subscribe();
     const data = this.products.filter((item: any) => item._id != idProduct);
     this.products = data;
-    console.log( this.products);
   }
 
 
@@ -354,8 +343,6 @@ export class ProductControlComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
-          console.log('this.closeResult', this.closeResult);
-          console.log('result', result);
 
           this.setcomment = this.comment;
         },
@@ -374,18 +361,3 @@ export class ProductControlComponent implements OnInit {
     }
   }
 }
-
-/*  const dateEntryInt = new Date().toString();
-    this.productsAdd.dateEntry = dateEntryInt.split(' ').splice(0, 4).toString().replace(/,+/g, ' ');
-    this.productsAdd.name = this.description;
-    this.productsAdd.type = this.optionSelected;
-    this.productsAdd.price = this.priceProduct;
-    this.productsAdd.image = this.fileCaptured[0];
-    console.log(typeof(this.fileCaptured[0]) );
-    console.log(this.productsAdd.image);
-
-  this.http.post<Product[]>('http://localhost:3000/products',  this.productsAdd).subscribe( (res:any) => {
-    this.loading=false;
-      console.log(res);
-
-    }); */
