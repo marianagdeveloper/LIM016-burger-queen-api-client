@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/data/services/api/users.service';
-import { HttpHeaders } from '@angular/common/http';
 import { User } from '../../users-control/user-control/user-control.metadata';
 
 
@@ -59,11 +58,8 @@ export class LoginUserComponent implements OnInit {
     this.userService.getTokenAuth(credentials).subscribe((res)=>{
       sessionStorage.setItem('token',(res.token))
         this.userService.getUserByEmail(emailUser).subscribe((res) =>{
-          // console.log(res);
-          // console.log(res.roles);
 
           if (res.roles.admin) {
-
           this.router.navigate(['product']);
         } else if (res.roles.cook) {
           this.router.navigate(['cook-control']);
@@ -73,59 +69,8 @@ export class LoginUserComponent implements OnInit {
         this.userData2=res;
 
         this.saveUserDataOnSessionStorage(this.userData2)
-        //this.userService.disparador.next(this.userData2);
-
       })
-    //   this.userService.getAllUsers().subscribe((res) => {
-    //     // console.log('get user:', res);
-    //     // res[0].nameUser='Maria',
-    //     // res[0].image='../../assets/admin-avatar.png'
-    //     // this.userService.putUserApi(res[0],res[0]._id).subscribe((data) => {
-    //     // console.log('esta es data',data);
-    //     // });
-    //     let userValidate: any;
-    //     const credentials = res.find((a: any) => {
-    //       const emailUser = this.loginForm.value.email;
-    //       const passwordUser = this.loginForm.value.password;
-    //       // if (a.email === emailUser && a.password === passwordUser) {
-    //       if (a.email === emailUser) {
-    //         userValidate = a.email;
-    //       }
-    //       return a.email === emailUser;
-    //     });
-
-    //     if (credentials) {
-    //         let rol = res.filter((a: any) => {
-    //           if (a.email == userValidate) {
-    //             this.userData.name = a.name;
-    //             this.userData.email = a.email;
-    //             this.userData.roles = a.roles;
-    //             this.userData.avatar = a.avatar;
-    //             return a.roles;
-    //           }
-    //         });
-
-    //           if (rol[0].roles.admin) {
-    //             this.router.navigate(['product']);
-    //           } else if (rol[0].roles.cook) {
-    //             this.router.navigate(['cook-control']);
-    //           } else if (rol[0].roles.waiter) {
-    //             this.router.navigate(['product']);
-    //           }
-    //           this.userService.disparador.next(this.userData);
-
-    //     } else {
-    //       this.htmlStr = '*Usuario y/o contraseña inválidos.';
-    //     }
-
-    //     this.isGetUser = this.userData;
-    //     return this.isGetUser
-    //  });
     })
-
-    //users
-
-
   }
 
   saveUserDataOnSessionStorage(userData: User){

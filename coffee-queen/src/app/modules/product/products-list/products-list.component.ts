@@ -24,6 +24,21 @@ export class ProductsListComponent implements OnInit {
   searchProduct() {
     this.productService.getAllProducts().subscribe((data) => {
       this.products = data;
+      // add qty
+      this.products.map((product)=> {
+        Object.defineProperty(product, 'qty', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+        Object.defineProperty(product, 'subTotal', {
+          value: 0,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+      })
       this.todos = this.productService.arrayProducts;
       if (this.getProduct === '') {
         this.products = data;
@@ -31,7 +46,7 @@ export class ProductsListComponent implements OnInit {
         this.products.forEach((producto) => {
           this.todos.forEach((pedido) => {
             if (pedido.name == producto.name) {
-              // producto.qty = pedido.qty;
+              producto.qty = pedido.qty;
               producto.messageCard = pedido.messageCard;
             }
           });

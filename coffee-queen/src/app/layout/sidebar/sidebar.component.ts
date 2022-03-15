@@ -23,10 +23,5 @@ export class SidebarComponent implements OnInit {
     //}
 
   }
-  flag = false;
-
-  cambiarFlag(){
-    this.flag = !this.flag;
-  }
 
 }
