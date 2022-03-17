@@ -60,6 +60,9 @@ export class ProductControlComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe((data: any) => {
       this.products = data;
+      this.products.map(product=>{
+        product.dateEntry = product.dateEntry.split('').slice(0,10).toString().replace(/,+/g, '');
+      })
     });
     this.optionSelected = 'Seleccione categoria';
   }
@@ -112,7 +115,14 @@ export class ProductControlComponent implements OnInit {
         break;
     }
 
-    this.productsService.putProductApi(updateProduct, updateProduct._id).subscribe();
+    this.productsService.putProductApi(updateProduct, updateProduct._id).subscribe(()=>{
+      this.productsService.getAllProducts().subscribe((data: any) => {
+        this.products = data;
+        this.products.map(product=>{
+          product.dateEntry = product.dateEntry.split('').slice(0,10).toString().replace(/,+/g, '');
+        })
+      });
+    });
   }
   public onFileSelected(event: any) {
     this.imagen = event.target.files[0];
@@ -164,10 +174,17 @@ export class ProductControlComponent implements OnInit {
       }
       this.productsAdd.price = Number(this.priceProduct);
       this.productsAdd.image= "../../assets/images/default.png"
+
       this.productsService
         .post(this.productsAdd)
         .subscribe((res) => {
           this.loading = false;
+          this.productsService.getAllProducts().subscribe((data: any) => {
+            this.products = data;
+            this.products.map(product=>{
+              product.dateEntry = product.dateEntry.split('').slice(0,10).toString().replace(/,+/g, '');
+            })
+          });
           return res;
         });
         this.products.push(this.productsAdd);
