@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-control',
   templateUrl: './user-control.component.html',
@@ -48,7 +49,8 @@ export class UserControlComponent implements OnInit {
   constructor(
     public userService: UsersService,
     private modalService: NgbModal,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public router: Router
   ) {}
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe((data: any) => {
@@ -56,7 +58,6 @@ export class UserControlComponent implements OnInit {
     });
     this.arrayRole = ['Jefe de cocina', 'Mesero', 'Administrador'];
     this.optionSelected = 'Seleccione Rol';
-
   }
 
   capturar(user: any) {
@@ -95,7 +96,11 @@ export class UserControlComponent implements OnInit {
       this.userService.putUserApi(updateUser, updateUser._id).subscribe();
     }else{
       delete updateUser.password;
-      this.userService.putUserApi(updateUser, updateUser._id).subscribe();
+      this.userService.putUserApi(updateUser, updateUser._id).subscribe(()=>{
+        this.userService.getAllUsers().subscribe((data: any) => {
+          this.users = data;
+        });
+      });
     }
     this.flag = false;
     this.passwordUserUpdate='';
@@ -140,12 +145,20 @@ export class UserControlComponent implements OnInit {
         this.newUser.image = '../../assets/admin-avatar.png';
         break;
     }
-    this.userService.postUserApi(this.newUser).subscribe()
-    this.users.push(this.newUser);
+    this.userService.postUserApi(this.newUser).subscribe(()=>{
+      this.userService.getAllUsers().subscribe((data: any) => {
+        this.users = data;
+      });
+    });
     this.cleanUserForm();
+
   }
   deleteUser(idUser: string) {
-    this.userService.deleteUserApi(idUser).subscribe();
+    this.userService.deleteUserApi(idUser).subscribe(()=>{
+      this.userService.getAllUsers().subscribe((data: any) => {
+        this.users = data;
+      });
+    });
     const data = this.users.filter((item: any) => item._id !== idUser);
     this.users = data;
 
