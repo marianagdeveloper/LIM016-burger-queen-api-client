@@ -14,6 +14,7 @@
         <thead>
             <tr class="colorPedido">
                 <th scope="col">Mesero</th>
+                <th scope="col">Mesa</th>
                 <th scope="col">Productos</th>
                 <th scope="col">Total</th>
                 <th scope="col">Fecha de Creación</th>
@@ -23,7 +24,7 @@
 
             <tr *ngFor="let order of orders.slice().reverse() |  filterStatusAdmin :'pending' ">
                 <td>{{order.userId}}</td>
-
+                <td>{{ order.numberTable }}</td>
                 <td>
                     <ul class="mx-1 p-0">
                         <li *ngFor="let product of order.products" style="list-style-type: none;">

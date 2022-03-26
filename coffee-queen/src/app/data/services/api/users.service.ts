@@ -11,6 +11,9 @@ export class UsersService {
   @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
   public headers!:any;
 
+  // HERE LINK url API!
+  public urlAPI: string = 'https://coffeequeen3.herokuapp.com';
+
   loggedIn():Boolean{
     return !!sessionStorage.getItem('token');
   }
@@ -26,29 +29,25 @@ export class UsersService {
   constructor(private http: HttpClient ) { }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>('https://coffeequeen3.herokuapp.com/users');
+    return this.http.get<User[]>(this.urlAPI + '/users');
   }
 
   getUserByEmail(email:string): Observable<User> {
-    return this.http.get<User>(`https://coffeequeen3.herokuapp.com/users/${email}`);
+    return this.http.get<User>(this.urlAPI + `/users/${email}`);
   }
 
   getTokenAuth(credential: object): Observable<any>{
-    return this.http.post<any>('https://coffeequeen3.herokuapp.com/auth', credential);
+    return this.http.post<any>(this.urlAPI + '/auth', credential);
   }
   putUserApi(updateUser: User, _idUser:string): Observable<User[]>{
-    return this.http.put<User[]>(`https://coffeequeen3.herokuapp.com/users/${_idUser}`, updateUser)
+    return this.http.put<User[]>(this.urlAPI + `/users/${_idUser}`, updateUser)
   }
 
   postUserApi(newUser: any): Observable<User[]>{
-    return this.http.post<User[]>('https://coffeequeen3.herokuapp.com/users/', newUser);
-  }
-
-  putUser(updateUser: User, _idUser:string): Observable<User[]>{
-    return this.http.put<User[]>(`http://localhost:3000/users/${_idUser}`, updateUser)
+    return this.http.post<User[]>(this.urlAPI + '/users/', newUser);
   }
 
   deleteUserApi(idUser: string): Observable<User[]>{
-    return this.http.delete<User[]>(`https://coffeequeen3.herokuapp.com/users/${idUser}`)
+    return this.http.delete<User[]>(this.urlAPI + `/users/${idUser}`)
   }
 }
