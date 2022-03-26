@@ -10,6 +10,7 @@ export class ProductService {
   @Output() disparadorProduct: BehaviorSubject<any> = new BehaviorSubject({});
 
   public products: Product[] = [];
+  public urlAPI: string = 'https://coffeequeen3.herokuapp.com';
 
   get arrayProducts() {
     return [...this.products];
@@ -30,18 +31,18 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('https://coffeequeen3.herokuapp.com/products');
+    return this.http.get<Product[]>(this.urlAPI + '/products');
   }
 
   public post(body:Product): Observable<Products[]> {
-    return this.http.post<Products[]>('https://coffeequeen3.herokuapp.com/products',body);
+    return this.http.post<Products[]>(this.urlAPI +'/products',body);
   }
 
   putProductApi(newProduct: any,idProduct:string): Observable<any[]>{
-    return this.http.put<any[]>(`https://coffeequeen3.herokuapp.com/products/${idProduct}`, newProduct);
+    return this.http.put<any[]>(this.urlAPI +`/products/${idProduct}`, newProduct);
   }
 
   deleteProduct(idProduct: string): Observable<Product[]>{
-    return this.http.delete<Product[]>(`https://coffeequeen3.herokuapp.com/products/${idProduct}`);
+    return this.http.delete<Product[]>(this.urlAPI +`/products/${idProduct}`);
   }
 }

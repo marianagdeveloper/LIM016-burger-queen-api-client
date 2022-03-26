@@ -1,8 +1,8 @@
 {
-  "name": "coffee-queen",
-  "short_name": "coffee-queen",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Coffee Queen",
+  "short_name": "Coffee Queen",
+  "theme_color": "#DD8017",
+  "background_color": "#DD8017",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

@@ -11,19 +11,19 @@ export class OrdersService {
 
   public orders: Order[] = [];
   public ordersDelivering: Order[] = [];
-
+  public urlAPI: string = 'https://coffeequeen3.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   getOrder(): Observable<OrderRecive[]>{
-    return this.http.get<OrderRecive[]>('https://coffeequeen3.herokuapp.com/orders');
+    return this.http.get<OrderRecive[]>(this.urlAPI + '/orders');
   }
 
   postOrder(newOrder: any): Observable<any[]>{
-    return this.http.post<any[]>('https://coffeequeen3.herokuapp.com/orders', newOrder);
+    return this.http.post<any[]>(this.urlAPI + '/orders', newOrder);
   }
 
   putOrder(newOrder: OrderRecive, _idOrder:string): Observable<OrderRecive[]>{
-    return this.http.put<OrderRecive[]>(`https://coffeequeen3.herokuapp.com/orders/${_idOrder}`, newOrder);
+    return this.http.put<OrderRecive[]>(this.urlAPI + `/orders/${_idOrder}`, newOrder);
   }
 
 }

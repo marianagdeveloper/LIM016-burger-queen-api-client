@@ -168,7 +168,13 @@ export class OrderListComponent implements OnInit {
     });
     this.order.client = this.orderPrueba.client;
     this.order.numberTable = this.orderPrueba.numberTable;
-    this.order.additional = this.orderPrueba.additional;
+
+    if(this.orderPrueba.additional.trim() === ''){
+      this.order.additional = 'ninguno';
+    } else {
+      this.order.additional = this.orderPrueba.additional;
+    }
+
     this.order.total = this.orderPrueba.total;
     this.order.totalQty = this.orderPrueba.totalQty;
     this.order.status = 'pending';
@@ -176,8 +182,8 @@ export class OrderListComponent implements OnInit {
     this.order.userId = sessionStorage.getItem("userId")?.toString();
 
     if (
-      this.orderPrueba.client === ' ' || this.orderPrueba.client.trim() ==='' ||
-      this.orderPrueba.numberTable === ' ' ||
+      this.orderPrueba.client.trim() ==='' ||
+      this.optionSelected === '0' ||
       this.orderPrueba.total == 0
     ) {
       this._success2.next(
