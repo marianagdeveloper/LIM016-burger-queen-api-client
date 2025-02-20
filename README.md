@@ -27,7 +27,7 @@ el _framework_ Angular. Donde la aplicación debe ser un Single Page App y no de
 
 ### 3.1. Historias de Usuario y Criterios de Aceptación 📢 📝
 
-![cover page]([./coffee-queen/src/assets/HU.png](https://github.com/fio-azahuanche/LIM016-burger-queen-api-client/blob/main/coffee-queen/src/assets/HU.png))
+![cover page](https://github.com/fio-azahuanche/LIM016-burger-queen-api-client/blob/main/coffee-queen/src/assets/HU.png)
 
 #### [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 ```
@@ -96,7 +96,7 @@ para mantener actualizado el menú.
   Actualizar datos de productos.
 ```
 ### 3.2. Interfaz 🚀
-![gif-interfaz]([./coffee-queen/src/assets/CoffeeQueen-interfaz.gif](https://github.com/fio-azahuanche/LIM016-burger-queen-api-client/blob/main/coffee-queen/src/assets/CoffeeQueen-interfaz.gif))
+![gif-interfaz](https://github.com/fio-azahuanche/LIM016-burger-queen-api-client/blob/main/coffee-queen/src/assets/CoffeeQueen-interfaz.gif)
 
 ## 4. Consideraciones Generales 🚨
 
