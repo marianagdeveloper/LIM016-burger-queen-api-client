@@ -1,4 +1,4 @@
-![cover page](./src/assets/portada.png)
+![cover page](https://github.com/fio-azahuanche/LIM016-burger-queen-api-client/blob/main/coffee-queen/src/assets/portada.png)
 # Coffee Queen (API Client)
 
 ## Índice
