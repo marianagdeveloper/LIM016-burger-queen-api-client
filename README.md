@@ -1,4 +1,4 @@
-![cover page](./coffee-queen/src/assets/portada.png)
+![cover page](./src/assets/portada.png)
 # Coffee Queen (API Client)
 
 ## Índice
